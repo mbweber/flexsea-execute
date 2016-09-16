@@ -102,9 +102,6 @@ void main_fsm_case_4(void)
 //Case 5: Position sensors & Position setpoint
 void main_fsm_case_5(void)
 {
-    
-
-	
 	//Refresh encoder readings (ENC_CONTROL only)
 	refresh_enc_control();
 	
@@ -117,9 +114,7 @@ void main_fsm_case_5(void)
 		ctrl.impedance.setpoint_val = trapez_get_pos(steps);	//New setpoint
 	}
 	
-	#endif	//USE_TRAPEZ
-    
-    
+	#endif	//USE_TRAPEZ    
 }
 
 //Case 6: P & Z controllers, 0 PWM
@@ -163,39 +158,37 @@ void main_fsm_case_8(void)
 
 //Case 9: User functions & 1s timebase	
 void main_fsm_case_9(void)
-{	
-    
+{    
 	#ifdef FINDPOLES
         find_poles();
     #elif (RUNTIME_FSM == ENABLED)
 	    user_fsm();
-	#endif //RUNTIME_FSM == ENABLED
-	
+	#endif //RUNTIME_FSM == ENABLED	
     
 	//1s timebase:
 	if(timebase_1s())
 	{
 		//Insert code that needs to run every second here
 		//...
-	}
- 
+	} 
 }
 
 //10kHz time slot:
 //================
 
 void main_fsm_10kHz(void)
-{
-    
-    //send command to read the as5047 angle
-    
-    as5047_read_single_isr(AS5047_REG_ANGLECOM);	//Start reading, result via ISR     
-	//set encoder reader timer to 0
-    
-    
-        
+{    
 	uint8 i = 0;
 	unsigned char result = 0;
+	
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
+	    //send command to read the as5047 angle
+	    #if(ENC_COMMUT == ENC_AS5047)
+			as5047_read_single_isr(AS5047_REG_ANGLECOM);	//Start reading, result via ISR  
+		#endif //ENC_AS5047
+	       
+		//set encoder reader timer to 0  
+	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 	
 	//RS-485 Byte Input
 	#ifdef USE_RS485			
@@ -263,8 +256,7 @@ void main_fsm_10kHz(void)
 			rs485_puts(reply_ready_buf, reply_ready_len);	
 		
 			reply_ready_flag = 0;
-		}
-		
+		}		
 	}
 
 	//Valid communication from USB?
@@ -290,14 +282,6 @@ void main_fsm_10kHz(void)
 	}
 	
 	#endif	//USE_COMM
-	
-	#ifdef USE_SPI_COMMUT
-	
-		#if(ENC_COMMUT == ENC_AS5047)
-			sensor_commut_1();
-		#endif //ENC_AS5047
-		
-	#endif
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE)                       
 

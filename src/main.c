@@ -36,6 +36,9 @@ int main(void)
 	
 	//Power on delay with LEDs
 	power_on();	     
+	
+	//Prepare FlexSEA Stack:
+    init_flexsea_payload_ptr();
 
 	//Initialize all the peripherals
 	init_peripherals();
@@ -55,11 +58,9 @@ int main(void)
 		{
 			//If the time share slot changed we run the timing FSM. Refer to
 			//timing.xlsx for more details. 't1_new_value' updates at 10kHz,
-			//each slot at 1kHz.
-			
+			//each slot at 1kHz.			
             
-            t1_new_value = 0;
-            
+            t1_new_value = 0;            
 			
 			//Timing FSM:
 			switch(t1_time_share)
@@ -98,16 +99,13 @@ int main(void)
 					break;
 			}
 			
-			//The code below is executed every 100us, after the previous slot. 
-			//Keep it short!
-            
-            //Increment value, limits to 0-9
+			//Increment value, limits to 0-9
         	t1_time_share++;
 	        t1_time_share %= 10;
-            
-			main_fsm_10kHz();
-
-            
+			
+			//The code below is executed every 100us, after the previous slot. 
+			//Keep it short! (<10us if possible)
+			main_fsm_10kHz();         
 		}
 		else
 		{

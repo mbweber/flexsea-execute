@@ -132,6 +132,8 @@ int32 qei_read(void)
 
 void init_as5047(void)
 {
+	#ifdef USE_AS5047
+		
 	//Init SPIM module:
     SPIM_1_Start();
 	
@@ -143,16 +145,20 @@ void init_as5047(void)
 	
 	//Interrupt (TX):
 	isr_spi_tx_Start();
+	#endif	//USE_AS5047
 }
 
 uint16 as5047_read_single_isr(uint16 reg)
-{	
+{
+	#ifdef USE_AS5047
+		
 	//Prepare TX:
 	spidata_mosi2[0] = add_even_parity_msb(AS5047_READ | reg);	//1st byte (reg addr)
 	spi_isr_state = 0;
 	SPIM_1_WriteTxData(spidata_mosi2[0]);	
 	
 	//(Rest done via ISR)
+	#endif //USE_AS5047
 
 	return 0;
 }

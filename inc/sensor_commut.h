@@ -31,7 +31,6 @@ extern int8 phase_c_with_pos_current[2048];
 void motor_spi_block_commutation(int angle);
 void motor_spi_block_commutation_triangletest();
 void motor_spi_findpoles();
-void sensor_commut_1(void);
 void find_poles(void);
 void find_poles_blocking(void);
 void find_poles2(void);

@@ -73,8 +73,8 @@ void user_fsm(void);
 //Step 1) Select active project (from list):
 //==========================================
 
-#define ACTIVE_PROJECT			PROJECT_DEPHY_GRAVITY_1
-#define ACTIVE_SUBPROJECT		SUBPROJECT_A
+#define ACTIVE_PROJECT			PROJECT_BAREBONE
+#define ACTIVE_SUBPROJECT		SUBPROJECT_NONE
 
 //Step 2) Customize the enabled/disabled sub-modules:
 //===================================================
@@ -97,6 +97,7 @@ void user_fsm(void);
 	#define MOTOR_TYPE		MOTOR_BRUSHLESS
 	#define PWM_SIGN		1
 	#define MOTOR_COMMUT 	COMMUT_BLOCK
+	#define CURRENT_ZERO	((int32)2125)
 	
 	//Runtime finite state machine (FSM):
 	#define RUNTIME_FSM		DISABLED
@@ -110,7 +111,7 @@ void user_fsm(void);
 	#define CTRL_ENC_FCT(x) (x)	
 	
 	//Slave ID:
-	#define SLAVE_ID		FLEXSEA_EXECUTE_2
+	#define SLAVE_ID		FLEXSEA_EXECUTE_1
 	
 	//Project specific definitions:
 	//...

@@ -175,7 +175,7 @@ static void ankle_refresh_values(void)
     #if(ACTIVE_SUBPROJECT == SUBPROJECT_A)
         mot_angs[0] = as5047.angle_conts[0];
     #else
-        mot_angs[0] = -as5047.angle_cont;
+        mot_angs[0] = -as5047.angle_conts[0];
     #endif
      
      

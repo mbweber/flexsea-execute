@@ -48,8 +48,10 @@ void init_peripherals(void)
 	//Timebases:
 	init_tb_timers();
     
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
     //Angle read timer
     init_angle_timer();
+	#endif //(MOTOR_COMMUT == COMMUT_SINE) 
 
 	//UART 2 - RS-485
 	init_rs485();
@@ -124,10 +126,6 @@ void init_peripherals(void)
 	
 	#endif //USE_AS5047
 	
-	#ifdef USE_SPI_COMMUT
-	//...	
-	#endif 	//USE_SPI_COMMUT
-	
 	//Die temperatuire measurement
 	#ifdef USE_DIETEMP	
 	DieTemp_1_GetTemp(&temp);
@@ -149,8 +147,10 @@ void init_peripherals(void)
 	//Start with an empty buffer
 	flexsea_clear_slave_read_buffer();
 	
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	//Start converting:
 	ADC_SAR_2_StartConvert();
+	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 }
 
 //Timebase timers init:
@@ -166,7 +166,6 @@ void init_angle_timer(void)
 {
     Timer_angleread_Start();
 }
-
 
 //update the number of counts since the last time the angle sensor was read
 void update_counts_since_last_ang_read(void)
@@ -196,7 +195,6 @@ void reset_ang_counter(void)
 //update all of the angle variables
 void update_as5047(int32 ang)
 {
-
     //shift angle arrays
     int ii = 9;
     for (; ii>0;ii--)
@@ -252,9 +250,5 @@ void update_as5047(int32 ang)
     //Update the velocity compensated angle
     as5047.angle_comp = ((((counts_since_last_ang_read+90)*(as5047.angle_vel_filt[0]>>10))/angle_vel_denom_sum+(as5047.angle_raws[0])+16384)%16384);
     
-
     global_variable_1 = as5047.angle_vel_RPM;
-
 }
-
-

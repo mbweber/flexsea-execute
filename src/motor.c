@@ -42,6 +42,11 @@ void init_motor(void)
 	//Default is Brake mode:
 	Coast_Brake_Write(1);
 	
+	//ADC2: Motor current
+	ADC_SAR_2_Start();
+	adc_sar2_dma_config();
+	isr_sar2_dma_Start();
+	
 	#else	//(MOTOR_COMMUT == COMMUT_BLOCK)
 		
 	//Start 3 PWM at 0%  
@@ -55,6 +60,11 @@ void init_motor(void)
     Control_Reg_1_Write(1);
     //Control_Reg_2_Write(1);
 
+	//ADC2: Motor current
+	ADC_SAR_2_Start();
+	adc_sar2_dma_config();
+	isr_sar2_dma_Start();
+	ADC_SAR_2_IRQ_Enable();    
 	
 	//Angle table can be stored in EEPROM or FLASH:
 	#ifdef USE_EEPROM		
@@ -67,13 +77,6 @@ void init_motor(void)
 		
 	#endif	//(MOTOR_COMMUT == COMMUT_BLOCK)
 
-	//ADC2: Motor current
-	ADC_SAR_2_Start();
-	adc_sar2_dma_config();
-	isr_sar2_dma_Start();
-	ADC_SAR_2_IRQ_Enable();
-    
-	
 	//VDAC8: OpAmp VREF
 	VDAC8_1_Start();
 	

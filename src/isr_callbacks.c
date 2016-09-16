@@ -34,9 +34,6 @@ void isr_t1_Interrupt_InterruptCallback()
 	//10 slots form the original 1ms timebase
 	//'t1_time_share' is from 0 to 9, it controls the main FSM
 	
-	//Increment value, limits to 0-9
-	//t1_time_share++;
-	//t1_time_share %= 10;
 	t1_new_value = 1;
 	
 	//Flag for the main code
@@ -116,9 +113,7 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 	
 	#else
 		
-        update_current_arrays();
-		
-	//ToDo: re-enable the PID!
+    update_current_arrays();
 		
 	#endif
 }
@@ -126,15 +121,10 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 
 void isr_dma_uart_rx_Interrupt_InterruptCallback()
 {
-	//static uint8 toggle = 0;
-	
 	//Update rx_buf with the latest DMA data:
 	unwrap_buffer(uart_dma_rx_buf, uart_dma_rx_buf_unwrapped, 48);
 	update_rx_buf_array_485(uart_dma_rx_buf_unwrapped, 48);		//ToDo shouldn't be harcoded. Buffer name?
 	data_ready_485++;
-	
-	//toggle ^= 1;
-	//EXP10_Write(toggle);	
 }
 
 void isr_dma_uart_tx_Interrupt_InterruptCallback()
@@ -154,10 +144,10 @@ void ADC_SAR_1_ISR_InterruptCallback()
 	//Not used anymore
 }
 
-
 //SPI - AS5047 position sensor
 void isr_spi_tx_Interrupt_InterruptCallback()
 {
+	#ifdef USE_AS5047
     
 	//static volatile uint16 frame_errors = 0, parity_errors = 0, man_test = 0;
 	volatile uint8 tx_status_isr = 0;
@@ -197,8 +187,6 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 		//...
 		*/
         
-	}
-   
+	}   
+	#endif	//USE_AS5047
 }
-
-

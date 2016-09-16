@@ -16,6 +16,7 @@
 
 #include "main.h"
 #include "analog.h"
+#include <stdint.h>
 
 //****************************************************************************
 // Variable(s)
@@ -45,12 +46,9 @@ uint8 DMA_5_TD[1];
 uint8 DMA_1_Chan;
 uint8 DMA_1_TD[1];
 
-
 //****************************************************************************
 // Function(s)
 //****************************************************************************
-
-#include <stdint.h>
 
 uint32_t isqrt_impl(uint32_t const n, uint32_t const xk)
 {
@@ -76,7 +74,7 @@ void init_analog(void)
 	ADC_SAR_1_Start();
 	adc_sar1_dma_config();
 	isr_sar1_dma_Start();
-	ADC_SAR_1_StartConvert();	//Start converting	ToDo Enable
+	ADC_SAR_1_StartConvert();	//Start converting
 }
 
 uint16 adc_avg8(uint16 new_data)
@@ -163,7 +161,6 @@ void adc_sar1_dma_config(void)
 	CyDmaTdSetAddress(DMA_5_TD[0], LO16((uint32)ADC_SAR_1_SAR_WRK0_PTR), LO16((uint32)adc_sar1_dma_array));
 	CyDmaChSetInitialTd(DMA_5_Chan, DMA_5_TD[0]);
 	CyDmaChEnable(DMA_5_Chan, 1);
-
 }
 
 //DMA for ADC SAR 2 transfers (motor current sensing)
@@ -191,10 +188,7 @@ void adc_sar2_dma_config(void)
 	CyDmaTdSetAddress(DMA_1_TD[0], LO16((uint32)ADC_SAR_2_SAR_WRK0_PTR), LO16((uint32)adc_dma_array));
 	CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
 	CyDmaChEnable(DMA_1_Chan, 1);
-    
-
 }
-
 
 //Calculates the motor current
 int motor_currents[2] = {0,0};
