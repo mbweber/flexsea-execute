@@ -467,7 +467,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
     if (curr_pwm < -1023)
     curr_pwm = -1023;
 
-    sine_commut_pwm = PWM_SIGN*curr_pwm;
+    sine_commut_pwm = PWM_SIGN*curr_pwm-(as5047.angle_vel_RPM*6)/8;
 	return ctrl.current.error;
     
     
