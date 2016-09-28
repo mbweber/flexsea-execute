@@ -250,5 +250,5 @@ void update_as5047(int32 ang)
     //Update the velocity compensated angle
     as5047.angle_comp = ((((counts_since_last_ang_read+90)*(as5047.angle_vel_filt[0]>>10))/angle_vel_denom_sum+(as5047.angle_raws[0])+16384)%16384);
     
-    global_variable_1 = as5047.angle_vel_RPM;
+    //global_variable_1 = as5047.angle_vel_RPM;
 }

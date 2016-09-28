@@ -24,6 +24,10 @@ extern int findingpoles;
 extern int8 phase_a_with_pos_current[2048]; 
 extern int8 phase_b_with_pos_current[2048]; 
 extern int8 phase_c_with_pos_current[2048]; 
+
+extern uint16 phaseAcoms[2048]; 
+extern uint16 phaseBcoms[2048]; 
+extern uint16 phaseCcoms[2048]; 
 //****************************************************************************
 // Public Function Prototype(s):
 //****************************************************************************	

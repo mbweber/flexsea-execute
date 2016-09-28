@@ -30,6 +30,7 @@ void double_buffer_adc(void);
 void current_rms_1(void);
 void update_current_arrays(void);
 void filt_array(int *,int *);
+int get_median(int, int, int);
 
 //****************************************************************************
 // Definition(s):
