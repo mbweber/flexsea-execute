@@ -65,8 +65,8 @@ void gravity_1_fsm(void)
                 dg_maxDF = as5047.angle_conts[0];
                 ctrl.active_ctrl = CTRL_CURRENT;
                 ctrl.current.setpoint_val = 0;
-                ctrl.current.gain.I_KP = 10;
-                ctrl.current.gain.I_KI = 0;
+                ctrl.current.gain.I_KP = 100;
+                ctrl.current.gain.I_KI = 10;
                 change_state(0);
             }
             break;
