@@ -115,7 +115,7 @@ unsigned char flexsea_prepare_rs485_tx_buffer(void)
 	
 	flexsea_update_slave_read_buffer(read_offset);
 	build_slave_payload(read_offset);
-	numb = comm_gen_str(payload_str, comm_str_485, PAYLOAD_BUF_LEN);
+	numb = comm_gen_str(payload_str, comm_str_485_1, PAYLOAD_BUF_LEN);
 	
 	return (numb + 1);
 }

@@ -1,14 +1,35 @@
-//****************************************************************************
-// MIT Media Lab - Biomechatronics
-// Erin Main & JFDuval
-// ermain@mit.edu, jfduval@mit.edu
-// 01/2015
-//****************************************************************************
-// imu: IMU configuration
-//****************************************************************************
+/****************************************************************************
+	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
+	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
 
-#ifndef _FM_IMU_H_
-#define _FM_IMU_H_
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************
+	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	Biomechatronics research group <http://biomech.media.mit.edu/>
+	[Contributors] Erin Main (ermain@mit.edu)
+*****************************************************************************
+	[This file] fm_i2c: IMU configuration
+*****************************************************************************
+	[Change log] (Convention: YYYY-MM-DD | author | comment)
+	* 2016-09-23 | jfduval | Initial GPL-3.0 release
+	*
+****************************************************************************/
+
+#ifndef INC_IMU_H_
+#define INC_IMU_H_
 
 //****************************************************************************
 // Include(s)
@@ -21,7 +42,7 @@
 //****************************************************************************	
 	
 extern struct imu_s imu;
-extern uint8 imu_last_request;
+//extern uint8 imu_last_request;
 	
 //****************************************************************************
 // Define Flag(s):
@@ -145,20 +166,4 @@ void imu_test_code_blocking(void);
 // Structure(s):
 //****************************************************************************
 
-//Inner structure for the gyro and the accelero
-struct xyz
-{
-     int16 x;
-     int16 y;
-     int16 z;
-};
-
-//IMU data & config
-struct imu_s
-{
-     struct xyz accel;
-     struct xyz gyro;
-     uint32_t config;
-};
-
-#endif //_FM_I2C_H_ 
+#endif //INC_IMU_H_ 

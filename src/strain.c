@@ -18,7 +18,7 @@
 // Variable(s)
 //****************************************************************************
 
-struct strain_s strain;
+struct strain_s strain1;
 uint16 adc_strain_filtered = 0;
 volatile uint16 adc_strain = 0;
 volatile uint16 adc_delsig_dma_array[8];
@@ -46,13 +46,13 @@ void init_strain(void)
 	//Defaults:
 	//=-=-=-=-=-=
 	
-	strain.offset = STRAIN_DEFAULT_OFFSET;
-	strain.gain = STRAIN_DEFAULT_GAIN;
+	strain1.ch[0].offset = STRAIN_DEFAULT_OFFSET;
+	strain1.ch[0].gain = STRAIN_DEFAULT_GAIN;
 	//strain.oref = STRAIN_DEFAULT_OREF;	
-	strain.vo1 = 0;
+	strain1.ch[0].vo1 = 0;
 	//strain.vo2 = 0;
-	strain.filtered_strain = 0;
-	strain_config(strain.offset, strain.gain);
+	strain1.ch[0].strain_filtered = 0;
+	strain_config(strain1.ch[0].offset, strain1.ch[0].gain);
 }
 
 //Configure the strain gauge amplifier
@@ -105,7 +105,7 @@ uint16 strain_filter(void)
 	avg = (uint16)(sum >> STRAIN_SHIFT);
 	
 	//Store in structure:
-	strain.filtered_strain = avg;
+	strain1.ch[0].strain_filtered = avg;
 	adc_strain_filtered = avg;
 	
 	return avg;	
@@ -129,7 +129,7 @@ uint16 strain_filter_dma(void)
 	avg = (uint16)(sum >> STRAIN_SHIFT);
 	
 	//Store in structure:
-	strain.filtered_strain = avg;
+	strain1.ch[0].strain_filtered = avg;
 	adc_strain_filtered = avg;
 	
 	return avg;	

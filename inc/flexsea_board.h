@@ -58,7 +58,7 @@ void rs485_reply_ready(uint8_t *buf, uint32_t len);
 
 //Overload buffer & function names (for user convenience):
 
-#define comm_str_485				comm_str_1
+#define comm_str_485_1				comm_str_1
 #define unpack_payload_485			unpack_payload_1
 #define rx_command_485				rx_command_1
 #define update_rx_buf_byte_485		update_rx_buf_byte_1

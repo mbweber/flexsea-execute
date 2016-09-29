@@ -1,11 +1,32 @@
-//****************************************************************************
-// MIT Media Lab - Biomechatronics
-// Erin Main & JFDuval
-// ermain@mit.edu, jfduval@mit.edu
-// 02/2015
-//****************************************************************************
-// imu: I2C IMU (MPU-6500)
-//****************************************************************************
+/****************************************************************************
+	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
+	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************
+	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	Biomechatronics research group <http://biomech.media.mit.edu/>
+	[Contributors] Erin Main (ermain@mit.edu)
+*****************************************************************************
+	[This file] fm_i2c: IMU configuration
+*****************************************************************************
+	[Change log] (Convention: YYYY-MM-DD | author | comment)
+	* 2016-09-23 | jfduval | Initial GPL-3.0 release
+	*
+****************************************************************************/
 
 //****************************************************************************
 // Include(s)
@@ -19,35 +40,36 @@
 //****************************************************************************
 
 volatile uint8 i2c_tmp_buf[IMU_MAX_BUF_SIZE];
-//volatile uint8 i2c_0_r_buf[16];
 struct imu_s imu;
 
 //****************************************************************************
 // Private Function Prototype(s)
 //****************************************************************************
 
-
 //****************************************************************************
 // Public Function(s)
 //****************************************************************************
 
-//// HIGH LEVEL FUNCTIONS ////
 // Initialize the IMU w/ default values in config registers
-void init_imu() 
+void init_imu(void) 
 {
 	//Reset the IMU
 	reset_imu();
-	//while(I2C_0_MasterStatus() != I2C_0_MSTAT_WR_CMPLT);
 	CyDelay(25);
-	//ToDo: add a timeout
 	
-	// Initialize the config registers.
-	uint8_t config[4] = { D_IMU_CONFIG, D_IMU_GYRO_CONFIG, D_IMU_ACCEL_CONFIG, D_IMU_ACCEL_CONFIG2 };
+	//Initialize the config registers.
+	uint8_t config[4] = { D_IMU_CONFIG, D_IMU_GYRO_CONFIG, D_IMU_ACCEL_CONFIG, \
+							D_IMU_ACCEL_CONFIG2 };
 	
 	//Send the config sequence
 	imu_write(IMU_CONFIG, config, 4);
-	//while(I2C_0_MasterStatus() != I2C_0_MSTAT_WR_CMPLT);
-	//ToDo: add a timeout
+}
+
+// Reset the IMU to default settings
+void reset_imu(void) 
+{
+	uint8 config = D_DEVICE_RESET;
+	imu_write(IMU_PWR_MGMT_1, &config, 1);
 }
 
 // Get accel X
@@ -113,14 +135,6 @@ void get_gyro_xyz(void)
 	
 	//According to the documentation it's X_H, X_L, Y_H, ...
 	i2c0_read(IMU_ADDR, IMU_GYRO_XOUT_H, tmp_data, 6);
-	//Note: reading 6 bytes causes a bad reading on Z ([6] always 0).	
-}
-
-// Reset the IMU to default settings
-void reset_imu(void) 
-{
-	uint8 config = D_DEVICE_RESET;
-	imu_write(IMU_PWR_MGMT_1, &config, 1);
 }
 
 //// LOW LEVEL FUNCTIONS /////
