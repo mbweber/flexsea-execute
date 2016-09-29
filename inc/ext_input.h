@@ -1,18 +1,39 @@
-//****************************************************************************
-// Dephy, Inc.
-// Jean-Francois (JF) Duval
-// jfduval@dephy.compare
-// 08/2016
-//****************************************************************************
-// ext_input: External Input Devices/Sensors
-//****************************************************************************
-	
+/****************************************************************************
+	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
+	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************
+	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	Biomechatronics research group <http://biomech.media.mit.edu/>
+	[Contributors]
+*****************************************************************************
+	[This file] ext_input: External Input Devices/Sensors
+*****************************************************************************
+	[Change log] (Convention: YYYY-MM-DD | author | comment)
+	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	*
+****************************************************************************/
+
 #ifndef INC_EXT_IN_H
 #define INC_EXT_IN_H
 
 //****************************************************************************
 // Include(s)
-//****************************************************************************		
+//****************************************************************************
 	
 #include "main.h"
 	
@@ -31,7 +52,7 @@ volatile uint16 as5047_empty_read;
 
 //****************************************************************************
 // Public Function Prototype(s):
-//****************************************************************************	
+//****************************************************************************
 
 void init_qei(void);
 //int32 encoder_read(void);
@@ -58,7 +79,7 @@ void get_as5048b_position(void);
 
 //****************************************************************************
 // Definition(s):
-//****************************************************************************	
+//****************************************************************************
 
 #define QUAD1_INIT				0	//Initial value, quadrature encoder
 

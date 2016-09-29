@@ -1,11 +1,32 @@
-//****************************************************************************
-// MIT Media Lab - Biomechatronics
-// Jean-Francois (Jeff) Duval
-// jfduval@media.mit.edu
-// 05/2016
-//****************************************************************************
-// i2c: I2C functions
-//****************************************************************************
+/****************************************************************************
+	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
+	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************
+	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	Biomechatronics research group <http://biomech.media.mit.edu/>
+	[Contributors]
+*****************************************************************************
+	[This file] i2c: I2C functions
+*****************************************************************************
+	[Change log] (Convention: YYYY-MM-DD | author | comment)
+	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	*
+****************************************************************************/
 
 //****************************************************************************
 // Include(s)
@@ -46,7 +67,7 @@ void i2c_0_fsm(void)
 		//Case 0.0: Accelerometer
 		case 0:
 		
-			#ifdef USE_IMU							
+			#ifdef USE_IMU
 			get_accel_xyz();
 			i2c_last_request = I2C_RQ_ACCEL;
 			#endif 	//USE_IMU
@@ -56,8 +77,8 @@ void i2c_0_fsm(void)
 		//Case 0.1: Gyroscope
 		case 1:
 			
-			#ifdef USE_IMU							
-			get_gyro_xyz();		
+			#ifdef USE_IMU
+			get_gyro_xyz();
 			i2c_last_request = I2C_RQ_GYRO;
 			#endif 	//USE_IMU
 			
@@ -67,7 +88,7 @@ void i2c_0_fsm(void)
 		case 2:
 			#ifdef USE_AS5048B
 			get_as5048b_position();
-			i2c_last_request = I2C_RQ_AS5048B;		
+			i2c_last_request = I2C_RQ_AS5048B;
 			#endif //USE_AS5048B
 			break;
 		
@@ -135,7 +156,7 @@ int i2c0_read(uint8 slave_addr, uint8 reg_addr, uint8 *pdata, uint16 length)
 	//I2C_0_MasterClearStatus();
 	
 	//Start, address, Write mode
-	status = I2C_0_MasterSendStart(slave_addr, 0);		
+	status = I2C_0_MasterSendStart(slave_addr, 0);
 	if(status != I2C_0_MSTR_NO_ERROR)
 		return 1;
 	

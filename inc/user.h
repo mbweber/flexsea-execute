@@ -1,18 +1,44 @@
-//****************************************************************************
-// MIT Media Lab - Biomechatronics
-// Jean-Francois (Jeff) Duval
-// jfduval@media.mit.edu
-// 06/2016
-//****************************************************************************
-// user: User Projects & Functions
-//****************************************************************************
-	
+/****************************************************************************
+	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
+	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************
+	[Lead developper] Jean-Francois Duval, jfduval at dephy dot com.
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	Biomechatronics research group <http://biomech.media.mit.edu/>
+	[Contributors]
+*****************************************************************************
+	[This file] user: User Projects & Functions
+*****************************************************************************
+	[Change log] (Convention: YYYY-MM-DD | author | comment)
+	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	*
+****************************************************************************/
+
+/*Important: we reached a point where we couldn't support all configurations
+  without changing the TopDesign (we ran out of ressources). You might have
+  to select a different TopDesign file than the one included by default (check
+  the folded, there is more than one included) */
+
 #ifndef INC_USER_H
 #define INC_USER_H
 
 //****************************************************************************
 // Include(s)
-//****************************************************************************		
+//****************************************************************************
 	
 #include "main.h"
 #include "user_exo.h"
@@ -29,7 +55,7 @@
 
 //****************************************************************************
 // Public Function Prototype(s):
-//****************************************************************************	
+//****************************************************************************
 
 void init_user(void);
 void user_fsm(void);
@@ -46,7 +72,8 @@ void user_fsm(void);
 #define ENC_ANALOG				3	//Potentiometer (or other), on ext. analog in.
 #define ENC_AS5047				4	//16-bit Magnetic Position Sensor, SPI
 #define ENC_AS5048B				5	//14-bit Magnetic Position Sensor, I2C
-#define ENC_CUSTOM              6   //Heavily modified user variable that cannot be represented CTRL_ENC_FCT
+#define ENC_CUSTOM              6   //Heavily modified user variable that cannot 
+									//be represented CTRL_ENC_FCT
 //(later you'll assign what encoder is used by the controllers, for motor
 // commutation, and which one is displayed in the GUI)
 
@@ -448,4 +475,3 @@ void user_fsm(void);
 //****************************************************************************	
 	
 #endif	//INC_USER_H
-	
