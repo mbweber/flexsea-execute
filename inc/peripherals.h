@@ -36,6 +36,7 @@
 //****************************************************************************
 	
 #include "main.h"
+#include "../../flexsea-system/inc/flexsea_system.h"
 	
 //****************************************************************************
 // Public Function Prototype(s):
@@ -45,9 +46,9 @@ void init_peripherals(void);
 void init_tb_timers(void);
 void init_angle_timer(void);
 
-void update_counts_since_last_ang_read(void);
-void reset_ang_counter(void);
-void update_as5047(int32);
+void update_counts_since_last_ang_read(struct as504x_s *as504x);
+void reset_ang_counter(struct as504x_s *);
+void update_as504x(int32_t, struct as504x_s *);
 
 
 //****************************************************************************

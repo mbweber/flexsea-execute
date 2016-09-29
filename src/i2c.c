@@ -89,6 +89,7 @@ void i2c_0_fsm(void)
 			#ifdef USE_AS5048B
 			get_as5048b_position();
 			i2c_last_request = I2C_RQ_AS5048B;
+            
 			#endif //USE_AS5048B
 			break;
 		
@@ -276,6 +277,7 @@ void assign_i2c_data(uint8 *newdata)
 	{
 			as5048b.angle_raws[0] = (newdata[0]<<6) + (newdata[1]&0x3F);
 			as5048b.angle_ctrl = CTRL_ENC_FCT(as5048b.angle_raws[0]);
+            update_as504x(as5048b.angle_ctrl, &as5048b);
 	}
 	else if(i2c_last_request == I2C_RQ_EXT_STRAIN)
 	{

@@ -302,7 +302,7 @@ void main_fsm_10kHz(void)
 		}
 	}
 	
-	#endif	//USE_COMM
+	#endif	//USE_COMM 
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE)                       
 
@@ -321,13 +321,13 @@ void main_fsm_10kHz(void)
             tt++;
             CyDelayUs(1);
         }
-        reset_ang_counter(); //reset the counter from the last time an angle was read
+        reset_ang_counter(&as5047); //reset the counter from the last time an angle was read
         
         //read as5047 encoder data from memory
         spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
         as5047_angle = (spidata_miso[spi_isr_state] & 0x3FFF);
         spi_read_flag = 0;
-        update_as5047(as5047_angle);
+        update_as504x(as5047_angle, &as5047);
         
         sensor_sin_commut(as5047.angle_comp>>3, sine_commut_pwm);
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
