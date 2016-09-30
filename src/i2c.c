@@ -274,8 +274,8 @@ void assign_i2c_data(uint8 *newdata)
 	}
 	else if(i2c_last_request == I2C_RQ_AS5048B)
 	{
-			as5048b.angle_raws[0] = (newdata[0]<<6) + (newdata[1]&0x3F);
-			as5048b.angle_ctrl = CTRL_ENC_FCT(as5048b.angle_raws[0]);
+		as5048b.angle_raws[0] = (newdata[0]<<6) + (newdata[1]&0x3F);
+		as5048b.angle_ctrl = CTRL_ENC_FCT(as5048b.angle_raws[0]);
 	}
 	else if(i2c_last_request == I2C_RQ_EXT_STRAIN)
 	{
