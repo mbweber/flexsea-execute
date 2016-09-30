@@ -100,7 +100,7 @@ void user_fsm(void);
 //Step 1) Select active project (from list):
 //==========================================
 
-#define ACTIVE_PROJECT			PROJECT_DEPHY_GRAVITY_1
+#define ACTIVE_PROJECT			PROJECT_RICNU_KNEE
 #define ACTIVE_SUBPROJECT		SUBPROJECT_A
 
 //Step 2) Customize the enabled/disabled sub-modules:
@@ -234,29 +234,42 @@ void user_fsm(void);
 	#define USE_IMU				//Requires USE_I2C_0
 	//#define USE_STRAIN		//Requires USE_I2C_1
 	#define USE_AS5047			//16-bit Position Sensor, SPI
-	#define USE_SPI_COMMUT		//
 	//#define USE_MINM_RGB		//External RGB LED. Requires USE_I2C_0.
-	#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
+	#define USE_EEPROM			//Non-volatile memory, EEPROM
+	//#define USE_FLASH			//Non-volatile memory, FLASH
+	//#define USE_BLUETOOTH		//Bluetooth module on EX12/EX13
+//	#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
 	#define USE_AS5048B			//14-bit Position Sensor, on I2C0
 	
 	//Motor type, direction and commutation:
-	#define MOTOR_COMMUT 	COMMUT_BLOCK
-	#define MOTOR_TYPE		MOTOR_BRUSHLESS
-	#define PWM_SIGN		1
+	#define MOTOR_COMMUT 			COMMUT_SINE
+	#define MOTOR_TYPE				MOTOR_BRUSHLESS
+	#define PWM_SIGN				1
 	
-	//Runtime finite state machine (FSM):
-	#define RUNTIME_FSM		ENABLED
+	//Define if you want to find the poles:
+    //#define FINDPOLES 		
+     
+    //Runtime finite state machine (FSM):         
+    #ifdef FINDPOLES
+        #define RUNTIME_FSM     	DISABLED
+    #else
+        #ifdef USE_TRAPEZ
+            #define RUNTIME_FSM     DISABLED
+        #else
+            #define RUNTIME_FSM     ENABLED
+        #endif
+    #endif
 
 	//Encoders:
-	#define ENC_CONTROL		ENC_AS5048B
-	#define ENC_COMMUT		ENC_AS5047
-	#define ENC_DISPLAY		ENC_CONTROL	
+	#define ENC_CONTROL				ENC_AS5048B
+	#define ENC_COMMUT				ENC_AS5047
+	#define ENC_DISPLAY				ENC_CONTROL	
 	
 	//Control encoder function:
-	#define CTRL_ENC_FCT(x) (14000 - x)	//ToDo make better
+	#define CTRL_ENC_FCT(x) 		(14000 - x)	//ToDo make better
 	
 	//Project specific definitions:
-	//...
+	#define CURRENT_ZERO			((int32)2127)
 	
 #endif	//PROJECT_RICNU_KNEE
 
