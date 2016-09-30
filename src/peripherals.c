@@ -37,6 +37,7 @@
 
 #include "main.h"
 #include "peripherals.h"
+#include "../../flexsea-system/inc/flexsea_system.h"
 
 //****************************************************************************
 // Variable(s)
@@ -49,9 +50,9 @@ uint8 DMA_4_Chan;
 uint8 DMA_4_TD[1];
 uint8 gui_fsm_flag = DISABLED;
 
-int32 last_ang_read_period;
-int32 counts_since_last_ang_read;
-int32 angtimer_read = 65000, last_angtimer_read = 65000;
+//int32 last_ang_read_period;
+//int32 counts_since_last_ang_read;
+int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 
 //****************************************************************************
 // Function(s)
@@ -188,7 +189,9 @@ void init_angle_timer(void)
     Timer_angleread_Start();
 }
 
+
 //update the number of counts since the last time the angle sensor was read
+/*
 void update_counts_since_last_ang_read(void)
 {
     angtimer_read = Timer_angleread_ReadCounter(); 
@@ -202,18 +205,35 @@ void update_counts_since_last_ang_read(void)
         counts_since_last_ang_read = counts_since_last_ang_read + last_angtimer_read-angtimer_read;
     }
     last_angtimer_read = angtimer_read;
+}
+*/
+
+//update the number of counts since the last time the angle sensor was read
+void update_counts_since_last_ang_read(struct as504x_s *as504x)
+{
+    angtimer_read = Timer_angleread_ReadCounter(); 
     
+    if (angtimer_read>as504x->last_angtimer_read+20000)
+    {
+        as504x->counts_since_last_ang_read =  as504x->counts_since_last_ang_read + as504x->last_angtimer_read+65000-angtimer_read;
+    }
+    else
+    {
+        as504x->counts_since_last_ang_read = as504x->counts_since_last_ang_read + as504x->last_angtimer_read-angtimer_read;
+    }
+    as504x->last_angtimer_read = angtimer_read;
 }
 
 //resent the angle read counter and store the the counts between last two readings
-void reset_ang_counter(void)
+void reset_ang_counter(struct as504x_s *as504x)
 {
-    update_counts_since_last_ang_read();
-    last_ang_read_period = counts_since_last_ang_read-0;
-    counts_since_last_ang_read = 0;
+    update_counts_since_last_ang_read(as504x);
+    as504x->last_ang_read_period = as504x->counts_since_last_ang_read-0;
+    as504x->counts_since_last_ang_read = 0;
 }
 
 //update all of the angle variables
+/*
 void update_as5047(int32 ang)
 {
     //shift angle arrays
@@ -270,6 +290,66 @@ void update_as5047(int32 ang)
     
     //Update the velocity compensated angle
     as5047.angle_comp = ((((counts_since_last_ang_read+90)*(as5047.angle_vel_filt[0]>>10))/angle_vel_denom_sum+(as5047.angle_raws[0])+16384)%16384);
+    
+    //global_variable_1 = as5047.angle_vel_RPM;
+}
+*/
+
+//update all of the angle variables
+void update_as504x(int32_t ang, struct as504x_s *as504x)
+{
+    //shift angle arrays
+    int ii = 9;
+    for (; ii>0;ii--)
+    {
+        as504x->angle_raws[ii] = as504x->angle_raws[ii-1];
+        as504x->angle_conts[ii] = as504x->angle_conts[ii-1];
+    }
+    
+    //assign latest raw angle value
+    as504x->angle_raws[0] = ang;
+    
+    //determine if the encoder has rotated past 0/18383 point and in what direction
+    if ((as504x->angle_raws[0]-as504x->angle_raws[1])<-5000)
+    {
+        as504x->num_rot++;
+    }
+    else if ((as504x->angle_raws[0]-as504x->angle_raws[1])>5000)
+    {
+        as504x->num_rot--;
+    }
+    
+    //calculate the continuous value of the encoder 
+    as504x->angle_conts[0] = 16384*as504x->num_rot+as504x->angle_raws[0]; 
+    
+    //calculate the simple difference velocity
+    as504x->angle_vel[1] = as504x->angle_vel[0];
+    as504x->angle_vel[0] = as504x->angle_conts[0]-as504x->angle_conts[8];
+    as504x->angle_vel_filt[1] = as504x->angle_vel_filt[0];
+    filt_array(as504x->angle_vel, as504x->angle_vel_filt);
+    
+    //sum the 1 MHz clicks between 8 readings of the angle sensor
+    int angle_vel_denom_sum = 0;
+    for (ii=7;ii>0;ii--)
+    {
+        as504x->angle_vel_denoms[ii] = as504x->angle_vel_denoms[ii-1];
+        angle_vel_denom_sum += as504x->angle_vel_denoms[ii];
+    }
+    as504x->angle_vel_denoms[0] = as504x->last_ang_read_period;
+    angle_vel_denom_sum += as504x->angle_vel_denoms[0];
+
+    //calculate the filtered RPM of the motor
+    as504x->angle_vel_RPMS_raw[1] = as504x->angle_vel_RPMS_raw[0];
+    as504x->angle_vel_RPMS_raw[0] = ((as504x->angle_vel_filt[0]*3662)/angle_vel_denom_sum)>>10; //clicks in 8 samples / 1 Mhz clicks in 8 samples * 3662. 3662 =  1000000 Hz /16384 clicks/rot *60 sec/min  
+    as504x->angle_vel_RPMS_filt[1] = as504x->angle_vel_RPMS_filt[0];
+    filt_array( as504x->angle_vel_RPMS_raw, as504x->angle_vel_RPMS_filt);
+    as504x->angle_vel_RPM = as504x->angle_vel_RPMS_filt[0]>>10;
+    
+    //update the 1 MHz counts from the last angle read
+    update_counts_since_last_ang_read(as504x);
+    
+    //Update the velocity compensated angle
+    as504x->angle_comp = ((((as504x->counts_since_last_ang_read+90)*(as504x->angle_vel_filt[0]>>10))/angle_vel_denom_sum+(as504x->angle_raws[0])+16384)%16384);
     
     //global_variable_1 = as5047.angle_vel_RPM;
 }
