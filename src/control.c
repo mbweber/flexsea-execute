@@ -569,6 +569,17 @@ int motor_impedance_encoder(int wanted_pos, int new_enc_count)
 	return ctrl.impedance.error;
 }
 
+
+void impedance_controller(struct as504x_s * as504x)
+{
+    int32 spring_torq; 
+    int32 damping_torq;
+    
+    spring_torq = ((as504x->angle_conts[0]-ctrl.impedance.setpoint_val)*ctrl.impedance.gain.g0)>>4;
+    damping_torq = ((as504x->angle_vel_RPM)*ctrl.impedance.gain.g1);
+    
+    ctrl.current.setpoint_val = spring_torq+damping_torq;
+}
 //****************************************************************************
 // Test Function(s) - Use with care!
 //****************************************************************************
