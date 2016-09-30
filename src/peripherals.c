@@ -172,6 +172,11 @@ void init_peripherals(void)
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	//Start converting:
 	ADC_SAR_2_StartConvert();
+	
+	//Initialize structures:
+	init_as504x(&as5047);
+	init_as504x(&as5048b);
+	
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 }
 
@@ -230,6 +235,38 @@ void reset_ang_counter(struct as504x_s *as504x)
     update_counts_since_last_ang_read(as504x);
     as504x->last_ang_read_period = as504x->counts_since_last_ang_read-0;
     as504x->counts_since_last_ang_read = 0;
+}
+
+//Initialize encoder structures
+void init_as504x(struct as504x_s *as504x)
+{
+	int i = 0;
+	
+	for(i = 0; i < 10; i++)
+	{
+		as504x->angle_raws[i] = 0;
+		as504x->angle_conts[i] = 0;
+	}
+	
+	for(i = 0; i < 8; i++)
+	{
+		as504x->angle_vel_denoms[i] = 0;
+	}
+	
+	as504x->num_rot = 0;
+	as504x->angle_vel[0] = 0;
+	as504x->angle_vel[1] = 0;
+	as504x->angle_vel_filt[0] = 0;
+	as504x->angle_vel_filt[1] = 0;
+	
+	as504x->angle_vel_RPMS_raw[0] = 0;
+	as504x->angle_vel_RPMS_raw[1] = 0;
+	as504x->angle_vel_RPMS_filt[0] = 0;
+	as504x->angle_vel_RPMS_filt[1] = 0;
+	
+	as504x->angle_vel_RPM = 0;
+	as504x->angle_comp = 0;
+	as504x->angle_ctrl = 0;
 }
 
 //update all of the angle variables
