@@ -201,7 +201,7 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	if(pwm <= -POS_PWM_LIMIT)
 		pwm = -POS_PWM_LIMIT;
 	
-	motor_open_speed_1(pwm);
+	motor_open_speed_1(PWM_SIGN*pwm);
 	in_control.output = pwm;
 	
 	return ctrl.position.error;
@@ -578,7 +578,7 @@ void impedance_controller(struct as504x_s * as504x)
     spring_torq = ((as504x->angle_conts[0]-ctrl.impedance.setpoint_val)*ctrl.impedance.gain.g0)>>4;
     damping_torq = ((as504x->angle_vel_RPM)*ctrl.impedance.gain.g1);
     
-    ctrl.current.setpoint_val = spring_torq+damping_torq;
+    ctrl.current.setpoint_val = PWM_SIGN*(spring_torq+damping_torq);
 }
 //****************************************************************************
 // Test Function(s) - Use with care!
