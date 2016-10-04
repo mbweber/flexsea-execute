@@ -56,12 +56,19 @@ void alive_led(void);
 void power_on(void);
 void set_led_rgb(unsigned char r, unsigned char g, unsigned char b);
 void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm);
+void rgbLedSet(uint8 r, uint8 g, uint8 b);
+void rgbLedRefresh(void);
+void rgbLedRefreshFade(void);
+void rgbLedRefresh_testcode_blocking(void);
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
 #define ALIVE_HALF_T				125		//ms	
+
+#define FADE_PERIOD_MS				1000
+#define FADE_MIDPOINT				(FADE_PERIOD_MS/2)
 
 //I2C - MinM
 #define MINM_BUF_SIZE				5

@@ -25,6 +25,7 @@
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	* 2016-10-04 | jfduval | New RGB LED driver that supports fading
 	*
 ****************************************************************************/
 
@@ -42,6 +43,10 @@
 //MinM RGB:
 uint8 minm_rgb_color = 0, last_minm_rgb_color = 0;
 uint8 minm_i2c_buf[MINM_BUF_SIZE];
+uint8 rgbFade = 0;
+
+//RGB LED:
+uint8 rgbPeriodR = 0, rgbPeriodG = 0, rgbPeriodB = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -208,6 +213,7 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 	static uint32_t cnt_comm = UI_COMM_TIMEOUT, cnt_err_l0 = 0, cnt_err_l1 = 0, cnt_flash = 0;
 	static uint8_t latch_err_l2 = 0, flash_red = 0, comm_blue = 0;
 	uint8_t r = 0, g = 0, b = 0;
+	int8 rgbStatus = 0;
 
 	//Set variable for the flashing red light:
 	if(cnt_flash < UI_RED_FLASH_ON)
@@ -246,6 +252,8 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 
 	//From the highest priority to the lowest:
 	//=======================================
+	
+	rgbStatus = -1;
 
 	if((err_l2 == 1) || (latch_err_l2 == 1))
 	{
@@ -282,6 +290,7 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 					r = 0;
 					g = 0;
 					b = 1;
+					rgbStatus = 0;
 				}
 				else
 				{
@@ -289,13 +298,116 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 					r = 0;
 					g = 1;
 					b = 0;
+					rgbStatus = 1;
 				}
 			}
 		}
 	}
 
 	//Assign the color to the RGB LED:
-	set_led_rgb(r, g, b);
+	
+	//Use the Fading code. 
+	//TODO this isn't the cleanest integration...
+	if(rgbStatus == 0)
+	{		
+		rgbLedSet(0,0,rgbFade);
+	}
+	else if(rgbStatus == 1)
+	{
+		rgbLedSet(0,rgbFade,0);
+	}
+	else
+	{
+		//Legacy code, used for all the errors
+		rgbLedSet(255*r, 255*b, 255*g);
+	}
+}
+
+//Use this to set a new value
+void rgbLedSet(uint8 r, uint8 g, uint8 b)
+{
+	rgbPeriodR = r;
+	rgbPeriodG = g;
+	rgbPeriodB = b;
+}
+
+//Timer-based RGB driver - w/ fading.
+//Call this function at 10kHz
+void rgbLedRefresh(void)
+{
+	static uint8 cnt = 0;
+	static uint8 rON = 0, gON = 0, bON = 0;
+	
+	//New cycle?
+	if(!cnt)
+	{
+		//All ON
+		LED_R_Write(0);
+		LED_G_Write(0);
+		LED_B_Write(0);
+		rON = 1;
+		gON = 1;
+		bON = 1;
+	}
+	
+	//Ready to turn OFF?
+	
+	if(rON && cnt >= rgbPeriodR)
+	{
+		LED_R_Write(1);
+		rON = 0;
+	}
+	
+	if(gON && cnt >= rgbPeriodG)
+	{
+		LED_G_Write(1);
+		gON = 0;
+	}
+	
+	if(bON && cnt >= rgbPeriodB)
+	{
+		LED_B_Write(1);
+		bON = 0;
+	}
+	
+	//Increment counter. It will eventually roll over.
+	cnt += 2;
+}
+
+//Call this function every ms. It will update the rgbFade variable.
+void rgbLedRefreshFade(void)
+{
+	static uint16 fade = 0, val = 0;
+
+	val++;
+	val %= FADE_PERIOD_MS;
+	
+	if(val > FADE_MIDPOINT-2)
+		fade = FADE_PERIOD_MS - val;
+	else
+		fade = val;
+	
+	rgbFade = (uint8) (fade>>1 & 0xFF);
+}
+
+//Test code
+void rgbLedRefresh_testcode_blocking(void)
+{
+	uint8 div = 0;
+	
+	while(1)
+	{		
+		rgbLedSet(0, rgbFade, 0);
+		CyDelayUs(100);
+		
+		div++;
+		div %= 10;
+		if(!div)
+		{
+			//1ms
+			rgbLedRefreshFade();
+		}
+	}
 }
 
 //****************************************************************************

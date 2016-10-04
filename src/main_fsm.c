@@ -102,6 +102,8 @@ void main_fsm_case_4(void)
 	
 	//UI RGB LED:
 	
+	rgbLedRefreshFade();
+	
 	if(safety_delay > SAFETY_DELAY)
 	{
 		//status_error_codes(safety_cop.status1, safety_cop.status2, &eL0, &eL1, &eL2); 
@@ -332,6 +334,9 @@ void main_fsm_10kHz(void)
         
         sensor_sin_commut(as5047.angle_comp>>3, sine_commut_pwm);
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
+	
+	//RGB LED:
+	rgbLedRefresh();
 }
 
 //Asynchronous time slots:
