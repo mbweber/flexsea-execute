@@ -84,6 +84,21 @@ uint8 timebase_1s(void)
 	return 0;
 }
 
+//Call this function in the 1kHz FSM. It will return 1 every 100ms.
+uint8 timebase_100ms(void)
+{
+	static uint16 time = 0;
+	
+	time++;
+	if(time >= 99)
+	{
+		time = 0;
+		return 1;
+	}
+	
+	return 0;
+}
+
 void test_code_blocking(void)
 {
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

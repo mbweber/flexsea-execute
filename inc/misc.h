@@ -61,6 +61,7 @@ extern int32 last_angle_read_gap;
 void test_code_blocking(void);	
 void test_code_non_blocking(void);
 uint8 timebase_1s(void);
+uint8 timebase_100ms(void);
 
 void timing_test_blocking(void);
 
