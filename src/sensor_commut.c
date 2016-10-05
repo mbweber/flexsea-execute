@@ -215,14 +215,7 @@ void find_poles(void)
             anglemap[127] = 1;
             
             save_angles_to_eeprom(anglemap);
-            
-            ii = 0;
-            while(ii<=MAX_ENC)
-            {
-                fill_comm_tables(ii);
-                ii = ii+8;
-            }
-     
+            load_eeprom_to_angles();     
             findingpoles = 0;
         }
     }
@@ -231,6 +224,7 @@ void find_poles(void)
 void load_eeprom_to_angles(void)
 {
     load_angles_from_eeprom(anglemap);
+    initpole = anglemap[126];
     
     int16 ii = 0;
     while(ii<=MAX_ENC)
@@ -238,8 +232,6 @@ void load_eeprom_to_angles(void)
         fill_comm_tables(ii);
         ii = ii+8;
     }   
-    initpole = anglemap[126];
-
 }
 
 //ang goes from 0 to 16384
@@ -306,7 +298,6 @@ void fill_comm_tables(int32 ang)
     
 }
 
-int64 counter = 0;
 //ang is the current angle of the motor, pwm ranges from -1024 to 1024
 //ang should be from 0 to 2048
 void sensor_sin_commut(int16 ang, int32 pwm)
@@ -338,8 +329,6 @@ void sensor_sin_commut(int16 ang, int32 pwm)
 
               
     }
-    
-    counter++;
     
 }
 
