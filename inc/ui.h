@@ -65,7 +65,7 @@ void rgbLedRefresh_testcode_blocking(void);
 // Definition(s):
 //****************************************************************************
 
-#define ALIVE_HALF_T				125		//ms	
+#define ALIVE_HALF_T				250		//ms	
 
 #define FADE_PERIOD_MS				1000
 #define FADE_MIDPOINT				(FADE_PERIOD_MS/2)

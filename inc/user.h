@@ -238,7 +238,7 @@ void user_fsm(void);
 	#define USE_EEPROM			//Non-volatile memory, EEPROM
 	//#define USE_FLASH			//Non-volatile memory, FLASH
 	//#define USE_BLUETOOTH		//Bluetooth module on EX12/EX13
-//	#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
+	#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
 	#define USE_AS5048B			//14-bit Position Sensor, on I2C0
 	
 	//Motor type, direction and commutation:

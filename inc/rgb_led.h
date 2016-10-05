@@ -16,78 +16,47 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************
-	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
+	[Lead developper] Jean-Francois Duval, jfduval at dephy dot com.
 	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
 	Biomechatronics research group <http://biomech.media.mit.edu/>
 	[Contributors]
 *****************************************************************************
-	[This file] main: FlexSEA-Execute
+	[This file] RGB LED: Onboard LED Driver that supports fading
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
-	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	* 2016-10-05 | jfduval | Copied from UI to make it more portable
 	*
 ****************************************************************************/
 
-#ifndef MAIN_H_
-#define MAIN_H_
+#ifndef INC_RGBLED_H
+#define INC_RGBLED_H
 
 //****************************************************************************
 // Include(s)
-//****************************************************************************
+//****************************************************************************	
 
-#include <project.h>
-#include <DieTemp_1.h>
-#include <math.h>
-#include "stdio.h"
-#include "main_fsm.h"
-#include "serial.h"
-#include "i2c.h"
-#include "motor.h"
-#include "misc.h"
-#include "ui.h"
-#include "rgb_led.h"
-#include "trapez.h"
-#include "imu.h"
-#include "analog.h"
-#include "usb.h"
-#include "strain.h"
-#include "safety.h"
-#include "peripherals.h"
-#include "control.h"
-#include "sensor_commut.h"
-#include "ext_input.h"
-#include "ext_output.h"
-#include "gen_waveform.h"
-#include "mem_angle.h"	
-#include "i2t-current-limit.h"
-#include "demo.h"
-#include "user.h"	//Contains all the user_x.h includes
-#include "flexsea_board.h"
-#include "../../flexsea-system/inc/flexsea_system.h"
-#include "../../flexsea-comm/inc/flexsea.h"	
+#include "main.h"
 
 //****************************************************************************
 // Shared variable(s)
-    extern int global_variable_1;
-    extern int global_variable_2;
-    extern int global_variable_3;
-    extern int global_variable_4;
-    extern int global_variable_5;
-    extern int global_variable_6;
-//****************************************************************************
+//****************************************************************************	
+
 
 //****************************************************************************
-// Prototype(s):
+// Public Function Prototype(s):
 //****************************************************************************
 
-int main(void);
-
-#if defined (__GNUC__)
-    asm (".global _printf_float");
-#endif
+void rgbLedSet(uint8 r, uint8 g, uint8 b);
+void rgbLedRefresh(void);
+void rgbLedRefreshFade(void);
+uint8 rgbLedGetFade(void);
+void rgbLedRefresh_testcode_blocking(void);
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
-#endif // MAIN_H_
+#define FADE_PERIOD_MS				1000
+#define FADE_MIDPOINT				(FADE_PERIOD_MS/2)
+
+#endif	//INC_RGBLED_H

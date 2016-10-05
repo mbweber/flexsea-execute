@@ -43,10 +43,6 @@
 //MinM RGB:
 uint8 minm_rgb_color = 0, last_minm_rgb_color = 0;
 uint8 minm_i2c_buf[MINM_BUF_SIZE];
-uint8 rgbFade = 0;
-
-//RGB LED:
-uint8 rgbPeriodR = 0, rgbPeriodG = 0, rgbPeriodB = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -82,7 +78,6 @@ void i2c_init_minm(uint8 color)
 	
 	CyDelay(25);
 }
-
 
 //Write to MinM RGB LED
 void i2c_write_minm_rgb(uint8 cmd, uint8 r, uint8 g, uint8 b)
@@ -310,103 +305,16 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 	//TODO this isn't the cleanest integration...
 	if(rgbStatus == 0)
 	{		
-		rgbLedSet(0,0,rgbFade);
+		rgbLedSet(0,0,rgbLedGetFade());
 	}
 	else if(rgbStatus == 1)
 	{
-		rgbLedSet(0,rgbFade,0);
+		rgbLedSet(0,rgbLedGetFade(),0);
 	}
 	else
 	{
 		//Legacy code, used for all the errors
 		rgbLedSet(255*r, 255*b, 255*g);
-	}
-}
-
-//Use this to set a new value
-void rgbLedSet(uint8 r, uint8 g, uint8 b)
-{
-	rgbPeriodR = r;
-	rgbPeriodG = g;
-	rgbPeriodB = b;
-}
-
-//Timer-based RGB driver - w/ fading.
-//Call this function at 10kHz
-void rgbLedRefresh(void)
-{
-	static uint8 cnt = 0;
-	static uint8 rON = 0, gON = 0, bON = 0;
-	
-	//New cycle?
-	if(!cnt)
-	{
-		//All ON
-		LED_R_Write(0);
-		LED_G_Write(0);
-		LED_B_Write(0);
-		rON = 1;
-		gON = 1;
-		bON = 1;
-	}
-	
-	//Ready to turn OFF?
-	
-	if(rON && cnt >= rgbPeriodR)
-	{
-		LED_R_Write(1);
-		rON = 0;
-	}
-	
-	if(gON && cnt >= rgbPeriodG)
-	{
-		LED_G_Write(1);
-		gON = 0;
-	}
-	
-	if(bON && cnt >= rgbPeriodB)
-	{
-		LED_B_Write(1);
-		bON = 0;
-	}
-	
-	//Increment counter. It will eventually roll over.
-	cnt += 2;
-}
-
-//Call this function every ms. It will update the rgbFade variable.
-void rgbLedRefreshFade(void)
-{
-	static uint16 fade = 0, val = 0;
-
-	val++;
-	val %= FADE_PERIOD_MS;
-	
-	if(val > FADE_MIDPOINT-2)
-		fade = FADE_PERIOD_MS - val;
-	else
-		fade = val;
-	
-	rgbFade = (uint8) (fade>>1 & 0xFF);
-}
-
-//Test code
-void rgbLedRefresh_testcode_blocking(void)
-{
-	uint8 div = 0;
-	
-	while(1)
-	{		
-		rgbLedSet(0, rgbFade, 0);
-		CyDelayUs(100);
-		
-		div++;
-		div %= 10;
-		if(!div)
-		{
-			//1ms
-			rgbLedRefreshFade();
-		}
 	}
 }
 
