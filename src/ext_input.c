@@ -195,11 +195,11 @@ void strain_6ch_bytes_to_words(uint8 *buf)
 	ext_strain[5] = ((((uint16)buf[10] << 8) & 0xFF00) | (uint16)buf[11]);
 }
 
-//Get latest readings from the 6-ch strain sensor
+//Get latest readings from the 6-ch strain sensor. Using the Compressed version,
+//9bytes, 12-bits per sensor
 void get_6ch_strain(void) 
-{
-	i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 12);
-	//strain_6ch_bytes_to_words();
+{	
+	i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 9);
 }
 
 //Get latest readings from the AS5048B position sensor

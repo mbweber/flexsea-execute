@@ -97,7 +97,7 @@ int main(void)
 					break;
 				case 3:				
 					main_fsm_case_3();					
-					break;					
+					break;
 				case 4:
 					main_fsm_case_4();			
 					break;				

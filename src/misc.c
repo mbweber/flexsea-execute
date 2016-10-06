@@ -121,7 +121,8 @@ void test_code_blocking(void)
 	//strain_amp_6ch_test_code_blocking();
 	//as5047_test_code_blocking();
 	//as5048b_test_code_blocking();
-	rgbLedRefresh_testcode_blocking();
+	//rgbLedRefresh_testcode_blocking();
+	compress6chTestCodeBlocking();
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=	
 }
 

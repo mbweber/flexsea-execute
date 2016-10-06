@@ -58,6 +58,12 @@ void strain_test_blocking(void);
 void dma_2_config(void);
 uint16 strain_filter_dma(void);
 
+uint8 compressAndSplit6ch(uint8 *buf, uint16 ch0, uint16 ch1, uint16 ch2, \
+							uint16 ch3, uint16 ch4, uint16 ch5);
+void unpackCompressed6ch(uint8 *buf, uint16 *v0, uint16 *v1, uint16 *v2, \
+							uint16 *v3, uint16 *v4, uint16 *v5);
+void compress6chTestCodeBlocking(void);
+
 //****************************************************************************
 // Definition(s):
 //****************************************************************************

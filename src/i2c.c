@@ -281,7 +281,12 @@ void assign_i2c_data(uint8 *newdata)
 	}
 	else if(i2c_last_request == I2C_RQ_EXT_STRAIN)
 	{
-		strain_6ch_bytes_to_words(newdata);
+		//strain_6ch_bytes_to_words(newdata);
+		int i = 0;
+		for(i = 0; i < 9; i++)
+		{
+			strain1.compressedBytes[i] = newdata[i];
+		}
 	}	
 }
 
