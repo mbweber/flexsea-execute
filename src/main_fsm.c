@@ -145,7 +145,9 @@ void main_fsm_case_5(void)
 	//Trapezoidal trajectories (can be used for both Position & Impedance)	
 	if((ctrl.active_ctrl == CTRL_POSITION) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
 	{									
-		ctrl.position.setp = trapez_get_pos(steps);	//New setpoint
+		ctrl.position.trap_t++;
+        ctrl.impedance.trap_t++;
+        ctrl.position.setp = trapez_get_pos(steps);	//New setpoint
 		ctrl.impedance.setpoint_val = trapez_get_pos(steps);	//New setpoint
 	}
 	

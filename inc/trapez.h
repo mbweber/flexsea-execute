@@ -42,6 +42,8 @@
 long long trapez_gen_motion_1(long long pos_i, long long pos_f, \
 								long long spd_max, long long a);
 long long trapez_get_pos(long long max_steps);
+void trapez_gen_smooth_motion_1(long long,long long,long long);
+
 
 //****************************************************************************
 // Definition(s):

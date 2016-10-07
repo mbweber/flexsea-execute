@@ -100,7 +100,7 @@ void user_fsm(void);
 //Step 1) Select active project (from list):
 //==========================================
 
-#define ACTIVE_PROJECT			PROJECT_RICNU_KNEE
+#define ACTIVE_PROJECT			PROJECT_DEPHY_GRAVITY_1
 #define ACTIVE_SUBPROJECT		SUBPROJECT_A
 
 //Step 2) Customize the enabled/disabled sub-modules:
@@ -232,13 +232,14 @@ void user_fsm(void);
 	#define USE_I2C_0			//3V3, IMU & Expansion.
 	#define USE_I2C_1			//5V, Safety-CoP & strain gauge pot.
 	#define USE_IMU				//Requires USE_I2C_0
-	//#define USE_STRAIN		//Requires USE_I2C_1
+	#define USE_STRAIN		//Requires USE_I2C_1
 	#define USE_AS5047			//16-bit Position Sensor, SPI
 	//#define USE_MINM_RGB		//External RGB LED. Requires USE_I2C_0.
 	#define USE_EEPROM			//Non-volatile memory, EEPROM
 	//#define USE_FLASH			//Non-volatile memory, FLASH
 	//#define USE_BLUETOOTH		//Bluetooth module on EX12/EX13
-	#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
+	
+    #define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
 	#define USE_AS5048B			//14-bit Position Sensor, on I2C0
 	
 	//Motor type, direction and commutation:
