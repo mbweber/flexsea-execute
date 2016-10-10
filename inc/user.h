@@ -220,7 +220,7 @@ void user_fsm(void);
 	
 #endif	//PROJECT_CSEA_KNEE
 
-//RIC/NU Knee
+//RIC/NU Kneegit 
 #if(ACTIVE_PROJECT == PROJECT_RICNU_KNEE)
 	
 	//Enable/Disable sub-modules:
@@ -262,12 +262,12 @@ void user_fsm(void);
     #endif
 
 	//Encoders:
-	#define ENC_CONTROL				ENC_AS5048B
+	#define ENC_CONTROL				ENC_AS5047
 	#define ENC_COMMUT				ENC_AS5047
 	#define ENC_DISPLAY				ENC_CONTROL	
 	
 	//Control encoder function:
-	#define CTRL_ENC_FCT(x) 		(14000 - x)	//ToDo make better
+	#define CTRL_ENC_FCT(x) 		(x)	//ToDo make better
 	
 	//Project specific definitions:
 	#define CURRENT_ZERO			((int32)2127)
