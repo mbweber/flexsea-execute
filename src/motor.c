@@ -89,7 +89,8 @@ void init_motor(void)
 	
 	//Angle table can be stored in EEPROM or FLASH:
 	#ifdef USE_EEPROM		
-	init_eeprom();		
+	init_eeprom();	
+    load_eeprom_to_angles();
 	#endif	//USE_EEPROM
 	
 	#ifdef USE_FLASH		
