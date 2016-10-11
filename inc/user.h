@@ -240,7 +240,7 @@ void user_fsm(void);
 	//#define USE_BLUETOOTH		//Bluetooth module on EX12/EX13
 	
     //#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
-	//#define USE_AS5048B			//14-bit Position Sensor, on I2C0
+	#define USE_AS5048B			//14-bit Position Sensor, on I2C0
 	
 	//Motor type, direction and commutation:
 	#define MOTOR_COMMUT 			COMMUT_SINE
@@ -262,12 +262,12 @@ void user_fsm(void);
     #endif
 
 	//Encoders:
-	#define ENC_CONTROL				ENC_AS5047
+	#define ENC_CONTROL				ENC_AS5048B
 	#define ENC_COMMUT				ENC_AS5047
 	#define ENC_DISPLAY				ENC_CONTROL	
 	
 	//Control encoder function:
-	#define CTRL_ENC_FCT(x) 		(x)	//ToDo make better
+	#define CTRL_ENC_FCT(x) 		(-x)	//ToDo make better
 	
 	//Project specific definitions:
 	#define CURRENT_ZERO			((int32)2127)
