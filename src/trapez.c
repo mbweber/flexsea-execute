@@ -56,7 +56,8 @@ long long pos_step = 0;
 long long trapez_transitions[3] = {0,0,0};
 long long sign = 0;
 
-int use_smooth = 0;
+int use_smooth = 0, no_trap = 0;
+long long no_trap_pos = 0;
 long long smooth_A = 0, smooth_pos_i = 0, smooth_pos_f = 0, smooth_max_steps = 0;
 //****************************************************************************
 // Private Function Prototype(s):
@@ -77,13 +78,22 @@ long long trapez_gen_motion_1(long long pos_i, long long pos_f, \
     ctrl.position.trap_t=0;
     ctrl.impedance.trap_t=0;
     
+    use_smooth = 0;
+    no_trap = 0;
+    
     if (a<=10)
     {
+        if (spd_max <= 1)
+        {
+            no_trap_pos = pos_f;
+            no_trap = 1;
+            return spd_max;
+        }
         trapez_gen_smooth_motion_1(pos_i,pos_f,spd_max);
         use_smooth = 1;
         return spd_max;
     }
-    use_smooth = 0;
+    
     
     long long abs_d_pos = 0, abs_acc_pos = 0, dual_abs_acc_pos = 0;
 
@@ -186,6 +196,11 @@ long long trapez_get_pos(long long max_steps)
         {
             position = smooth_pos_f;
         }
+        return position;
+    }
+    else if (no_trap)
+    {
+        position = no_trap_pos;
         return position;
     }
     
