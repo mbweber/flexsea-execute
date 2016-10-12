@@ -62,6 +62,7 @@ const uint16 squared[256] = {0,1,4,9,16,25,36,49,64,81,100,121,144,
 	61009,61504,62001,62500,63001,63504,64009,64516,65025};
 int16 currentSamples[I2T_SAMPLES];
 uint8 currentSampleIndex = 0;
+uint8 currentLimit = 0;
 
 //****************************************************************************
 // Private Function Prototype(s)

@@ -45,6 +45,12 @@ void i2t_sample(int32 lastCurrentRead);
 int i2t_compute(void);
 
 //****************************************************************************
+// Shared variable(s)
+//****************************************************************************
+
+extern uint8 currentLimit;
+
+//****************************************************************************
 // Definition(s):
 //****************************************************************************
 
@@ -52,29 +58,30 @@ int i2t_compute(void);
 #define I2T_SAMPLES_SHIFT		3
 //The algorithm uses 8bit values: we need to scale down the maximum current
 //accordingly.
-//Ex.: is you read ±11bits (±2048), 2048/256 = 8, so shift 3
-//In this project, we use flexsea_batt.current, an int16 value.
+//Ex.: if you read ±11bits (±2048), 2048/256 = 8, so shift 3
+//In this project, we use ctrl.current.actual_val, an int32 value. 
+//It is limited to ±30000mA (max that our sensor can read)
 //30000/256 = 117 => shift 7 (div by 128). 30A will give us 234
 #define I2C_SCALE_DOWN_SHIFT	7
 //We use a leaky integrator. The leak should be set to the maximum sustained
 //current required by your application. It's applied on the squared value (so 
 //max current = 65536). Pick a fraction of that number. Ex.: if the max current
-//that your sensor can read is 30A and you want to support 10A continuous, 
-//use (10000 >> I2C_SCALE_DOWN_SHIFT)^2 = 6104. With 10A flowing, your 
+//that your sensor can read is 30A and you want to support 15A continuous, 
+//use (15000 >> I2C_SCALE_DOWN_SHIFT)^2 = 13689. With 15A flowing, your 
 //integrator will stay at 0. Anything above it will increase its count.
-#define I2T_LEAK				6104
+#define I2T_LEAK				13689
 //What current limit do you want?
 //Limit = (TIME_AT_LIMIT_CURR / dt) * ( (CURR_LIMIT>>I2C_SCALE_DOWN_SHIFT)^2 - I2T_LEAK )
-//Ex.: 15A for 10s 
-//	Limit = (10s / 100ms) * ( (15000mA/128)^2 - 6104)
-//	Limit = 100 * ( 13733 - 6104) = 762891
-#define I2T_LIMIT				762891
+//Ex.: 30A for 7.5s 
+//	Limit = (7.5s / 100ms) * ( (30000mA/128)^2 - 13689)
+//	Limit = 75 * ( 54931 - 13689) = 3093150
+#define I2T_LIMIT				3093150
 #define I2T_WARNING				(0.8*I2T_LIMIT)
 
-//How long will it last at 11A?
+//How long will it last at 20A?
 //time = (Limit * dt) / ( (CURR>>I2C_SCALE_DOWN_SHIFT)^2 - I2T_LEAK )
-//time = (762891 * 0.1) / ( (11000mA>>7)^2 - 6104 ) = 76289 / (7385 - 6104)
-//time = 1 minute
+//time = (3093150 * 0.1) / ( (20000mA>>7)^2 - 13689 ) = 309315 / (24414 - 13689)
+//time = 29 seconds
 
 //Please note that there is an Octave/Matlab script in /ref/. It makes this 
 //calculation faster, and it plots limit vs time.
