@@ -266,7 +266,7 @@ void user_fsm(void);
 	#define ENC_DISPLAY				ENC_CONTROL	
 	
 	//Control encoder function:
-	#define CTRL_ENC_FCT(x) 		(14000 - x)	//ToDo make better
+	#define CTRL_ENC_FCT(x) 		(x)	//ToDo make better
 	
 	//Project specific definitions:
 	#define CURRENT_ZERO			((int32)2127)
