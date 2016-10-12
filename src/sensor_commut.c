@@ -43,6 +43,7 @@ int findingpoles = 0;
 uint16 initpole = 1;
 uint16 anglemap[128];
 uint16 temp_anglemap[128];
+int i2t_flag = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -309,20 +310,28 @@ void sensor_sin_commut(int16 ang, int32 pwm)
     
     if (findingpoles == 0)
     {
-        if (pwm>= 0)
+        if (i2t_flag)
         {
-            PWM_A_Value=((uint16)(((int32)(phaseAcoms[ang])*pwm)>>10)+PWM_DEAD);
-            PWM_B_Value=((uint16)(((int32)(phaseBcoms[ang])*pwm)>>10)+PWM_DEAD);
-            PWM_C_Value=((uint16)(((int32)(phaseCcoms[ang])*pwm)>>10)+PWM_DEAD);
+            PWM_A_Value=0;
+            PWM_B_Value=0;
+            PWM_C_Value=0;
         }
         else
         {
-            pwm = -pwm;
-            PWM_A_Value=((uint16)(((int32)(1970-phaseAcoms[ang])*pwm)>>10)+PWM_DEAD);
-            PWM_B_Value=((uint16)(((int32)(1970-phaseBcoms[ang])*pwm)>>10)+PWM_DEAD);
-            PWM_C_Value=((uint16)(((int32)(1970-phaseCcoms[ang])*pwm)>>10)+PWM_DEAD);
+            if (pwm>= 0)
+            {
+                PWM_A_Value=((uint16)(((int32)(phaseAcoms[ang])*pwm)>>10)+PWM_DEAD);
+                PWM_B_Value=((uint16)(((int32)(phaseBcoms[ang])*pwm)>>10)+PWM_DEAD);
+                PWM_C_Value=((uint16)(((int32)(phaseCcoms[ang])*pwm)>>10)+PWM_DEAD);
+            }
+            else
+            {
+                pwm = -pwm;
+                PWM_A_Value=((uint16)(((int32)(1970-phaseAcoms[ang])*pwm)>>10)+PWM_DEAD);
+                PWM_B_Value=((uint16)(((int32)(1970-phaseBcoms[ang])*pwm)>>10)+PWM_DEAD);
+                PWM_C_Value=((uint16)(((int32)(1970-phaseCcoms[ang])*pwm)>>10)+PWM_DEAD);
+            }
         }
-        
         PWM_A_WriteCompare1(PWM_A_Value);
         PWM_B_WriteCompare1(PWM_B_Value);
         PWM_C_WriteCompare1(PWM_C_Value);

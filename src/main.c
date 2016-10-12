@@ -71,6 +71,12 @@ int main(void)
     
 	//Project specific initialization code
 	init_user();
+    
+    //Turn on manage
+    EX15_Write(1);
+    CyDelay(1);
+    EX15_Write(0);
+    
 
 	//Main loop
 	while(1)

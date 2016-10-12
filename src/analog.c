@@ -242,7 +242,7 @@ void current_rms_1(void)
     
     //calculate the new filtered current 
     //the filter outputs raw values x 1024 in order to maintain precision
-    filt_array(motor_currents,motor_currents_filt);
+    filt_array_10k(motor_currents,motor_currents_filt,30);
 
     //current is divided by 1024 to account for filtering
     ctrl.current.actual_val = (int32)(PWM_SIGN*motor_currents_filt[0]>>5); // mAmps where I * the line-to-line motor constant = torque
@@ -272,12 +272,26 @@ void update_current_arrays(void)
 }
 
 
-//Filters raw signal at 30 Hz cutoff if sampled at 10 kHz
+//Filters raw signal at cut_off frequency if sampled at 10 kHz
 //filt is 1024 x raw in order to maintain precision
-void filt_array(int * raw,int * filt)
+void filt_array_10k(int * raw, int * filt, int cut_off)
 {
-    filt[0] = (int)(((9791*(raw[0]+raw[1]))
-              +1005*filt[1]+512)>>10);
+    int butter_a = 310*cut_off+685;
+    int butter_b = ((cut_off*6)/10)-1023;
+    
+    filt[0] = (int)(((butter_a*(raw[0]+raw[1]))
+              -butter_b*filt[1]+512)>>10);
+}
+
+//Filters raw signal at cut_off frequency if sampled at 250 Hz
+//filt is 1024 x raw in order to maintain precision
+void filt_array_250Hz(int * raw, int * filt, int cut_off)
+{
+    int butter_a = 7392*cut_off+58509;
+    int butter_b = ((cut_off*231)>>4)-910;
+    
+    filt[0] = (int)(((butter_a*(raw[0]+raw[1]))
+              -butter_b*filt[1]+512)>>10);
 }
 
 int get_median(int a, int b, int c)

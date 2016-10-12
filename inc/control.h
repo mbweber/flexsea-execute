@@ -56,7 +56,7 @@ int32 motor_current_pid(int32 wanted_curr, int32 measured_curr);
 int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr);
 extern inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr);
 int motor_impedance_encoder(int wanted_pos, int new_enc_count);
-void impedance_controller(struct as504x_s *);
+void impedance_controller();
 void in_control_combine(void);
 void in_control_get_pwm_dir(void);
 

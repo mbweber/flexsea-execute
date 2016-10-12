@@ -50,7 +50,8 @@ void adc_sar2_dma_config(void);
 void double_buffer_adc(void);
 void current_rms_1(void);
 void update_current_arrays(void);
-void filt_array(int *,int *);
+void filt_array_10k(int *,int *,int);
+void filt_array_250Hz(int *,int *,int);
 int get_median(int, int, int);
 
 //****************************************************************************

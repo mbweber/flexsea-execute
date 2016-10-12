@@ -142,6 +142,7 @@ void init_ctrl_data_structure(void)
 	ctrl.impedance.gain.g4 = 0;
 	ctrl.impedance.gain.g5 = 0;
 	ctrl.impedance.actual_val = 0;
+    ctrl.impedance.actual_vel = 0;
 	ctrl.impedance.setpoint_val = 0;
 	ctrl.impedance.error = 0;
 	ctrl.impedance.error_sum = 0;
@@ -488,7 +489,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
     if (curr_pwm < -1023)
     curr_pwm = -1023;
 
-    sine_commut_pwm = PWM_SIGN*curr_pwm-PWM_SIGN*(as5047.angle_vel_RPM>>1);
+    sine_commut_pwm = PWM_SIGN*curr_pwm;
     
     
 	return ctrl.current.error;
@@ -570,13 +571,13 @@ int motor_impedance_encoder(int wanted_pos, int new_enc_count)
 }
 
 
-void impedance_controller(struct as504x_s * as504x)
+void impedance_controller(void)
 {
     int32 spring_torq; 
     int32 damping_torq;
-    
-    spring_torq = ((as504x->angle_conts[0]-ctrl.impedance.setpoint_val)*ctrl.impedance.gain.g0)>>4;
-    damping_torq = ((as504x->angle_vel_RPM)*ctrl.impedance.gain.g1);
+
+    spring_torq = ((ctrl.impedance.actual_val-ctrl.impedance.setpoint_val)*ctrl.impedance.gain.g0)>>4;
+    damping_torq = ((ctrl.impedance.actual_vel)*ctrl.impedance.gain.g1);
     
     ctrl.current.setpoint_val = PWM_SIGN*(spring_torq+damping_torq);
 }

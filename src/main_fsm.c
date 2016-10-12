@@ -165,8 +165,7 @@ void main_fsm_case_6(void)
 	}
 	else if(ctrl.active_ctrl == CTRL_IMPEDANCE)
 	{
-		//motor_impedance_encoder(ctrl.impedance.setpoint_val, ctrl.impedance.actual_val);
-        impedance_controller(&as5047);
+        impedance_controller();
 	}
 	
 	#endif	//USE_TRAPEZ

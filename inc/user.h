@@ -239,7 +239,7 @@ void user_fsm(void);
 	//#define USE_FLASH			//Non-volatile memory, FLASH
 	//#define USE_BLUETOOTH		//Bluetooth module on EX12/EX13
 	
-    //#define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
+    #define USE_EXT_I2C_STRAIN	//External Strain Amplifier, on I2C0
 	#define USE_AS5048B			//14-bit Position Sensor, on I2C0
 	
 	//Motor type, direction and commutation:
@@ -262,12 +262,18 @@ void user_fsm(void);
     #endif
 
 	//Encoders:
-	#define ENC_CONTROL				ENC_AS5048B
+	#define ENC_CONTROL				ENC_AS5047
 	#define ENC_COMMUT				ENC_AS5047
 	#define ENC_DISPLAY				ENC_CONTROL	
 	
 	//Control encoder function:
-	#define CTRL_ENC_FCT(x) 		(-x)	//ToDo make better
+    #if (ENC_CONTROL == ENC_AS5047)
+    	#define CTRL_ENC_FCT(x) 		(x)	//ToDo make better    
+        #define CTRL_ENC_VEL_FCT(x) 	((x>>10))	//encoder velocity is measured in clicks/ms x 1024
+    #elif (ENC_CONTROL == ENC_AS5048B)
+        #define CTRL_ENC_FCT(x) 		(x)	//ToDo make better    
+        #define CTRL_ENC_VEL_FCT(x) 	((x>>8))	//encoder velocity is measured in clicks/ms x 1024
+    #endif
 	
 	//Project specific definitions:
 	#define CURRENT_ZERO			((int32)2127)
