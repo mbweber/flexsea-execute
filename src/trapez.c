@@ -40,7 +40,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "trapez.h"
-//#include "main.h"
+#include "main.h"
 
 
 //****************************************************************************
@@ -56,6 +56,8 @@ long long pos_step = 0;
 long long trapez_transitions[3] = {0,0,0};
 long long sign = 0;
 
+int use_smooth = 0;
+long long smooth_A = 0, smooth_pos_i = 0, smooth_pos_f = 0, smooth_max_steps = 0;
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************
@@ -72,7 +74,18 @@ static long long trapez_compute_params(long long pos_i, long long pos_f, \
 long long trapez_gen_motion_1(long long pos_i, long long pos_f, \
 								long long spd_max, long long a)
 {
-	long long abs_d_pos = 0, abs_acc_pos = 0, dual_abs_acc_pos = 0;
+    ctrl.position.trap_t=0;
+    ctrl.impedance.trap_t=0;
+    
+    if (a<=10)
+    {
+        trapez_gen_smooth_motion_1(pos_i,pos_f,spd_max);
+        use_smooth = 1;
+        return spd_max;
+    }
+    use_smooth = 0;
+    
+    long long abs_d_pos = 0, abs_acc_pos = 0, dual_abs_acc_pos = 0;
 
     //spd_max & a have to be positive
     spd_max = llabs(spd_max);
@@ -158,6 +171,24 @@ long long trapez_get_pos(long long max_steps)
 
     //At this point all the parameters are computed, we can get the 3 plots
 
+    
+    if (use_smooth)
+    {
+        if (ctrl.position.trap_t++<=smooth_max_steps/2)
+        {
+            position = smooth_A*ctrl.position.trap_t*ctrl.position.trap_t/smooth_max_steps/smooth_max_steps+smooth_pos_i;
+        }
+        else if (ctrl.position.trap_t++<=smooth_max_steps)
+        {
+            position = smooth_pos_f - smooth_A*(smooth_max_steps-ctrl.position.trap_t)*(smooth_max_steps-ctrl.position.trap_t)/smooth_max_steps/smooth_max_steps;
+        }
+        else
+        {
+            position = smooth_pos_f;
+        }
+        return position;
+    }
+    
     //First time:
     if(pos_step == 0)
     {
@@ -259,4 +290,12 @@ static long long trapez_compute_params(long long pos_i, long long pos_f, \
     #endif
 
     return 0;
+}
+
+void trapez_gen_smooth_motion_1(long long pos_i,long long pos_f,long long spd_max)
+{    
+    smooth_pos_i = pos_i;
+    smooth_pos_f = pos_f;
+    smooth_A = 2*smooth_pos_f-2*smooth_pos_i;
+    smooth_max_steps = spd_max;    
 }

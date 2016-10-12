@@ -174,8 +174,8 @@ void init_peripherals(void)
 	ADC_SAR_2_StartConvert();
 	
 	//Initialize structures:
-	init_as504x(&as5047);
-	init_as504x(&as5048b);
+	init_as504x(&as5047,10000); //10 is the sampling frequency in Hz
+	init_as504x(&as5048b,250); //1 is the sampling frequency in Hz
 	
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 }
@@ -238,7 +238,7 @@ void reset_ang_counter(struct as504x_s *as504x)
 }
 
 //Initialize encoder structures
-void init_as504x(struct as504x_s *as504x)
+void init_as504x(struct as504x_s *as504x, int sf)
 {
 	int i = 0;
 	
@@ -267,6 +267,8 @@ void init_as504x(struct as504x_s *as504x)
 	as504x->angle_vel_RPM = 0;
 	as504x->angle_comp = 0;
 	as504x->angle_ctrl = 0;
+    
+    as504x->samplefreq = sf;
 }
 
 //update all of the angle variables
@@ -361,32 +363,41 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     
     //calculate the simple difference velocity
     as504x->angle_vel[1] = as504x->angle_vel[0];
-    as504x->angle_vel[0] = as504x->angle_conts[0]-as504x->angle_conts[8];
-    as504x->angle_vel_filt[1] = as504x->angle_vel_filt[0];
-    filt_array(as504x->angle_vel, as504x->angle_vel_filt);
+    as504x->angle_vel[0] = ((as504x->angle_conts[0]-as504x->angle_conts[1])*1000)/as504x->last_ang_read_period; //clicks per ms
+    as504x->angle_vel_filt[1] = as504x->angle_vel_filt[0]; //clicks per ms x 1024
     
-    //sum the 1 MHz clicks between 8 readings of the angle sensor
-    int angle_vel_denom_sum = 0;
-    for (ii=7;ii>0;ii--)
+    
+    if (as504x->samplefreq == 10000)
     {
-        as504x->angle_vel_denoms[ii] = as504x->angle_vel_denoms[ii-1];
-        angle_vel_denom_sum += as504x->angle_vel_denoms[ii];
+        filt_array_10k(as504x->angle_vel, as504x->angle_vel_filt,30);
     }
-    as504x->angle_vel_denoms[0] = as504x->last_ang_read_period;
-    angle_vel_denom_sum += as504x->angle_vel_denoms[0];
-
+    else if (as504x->samplefreq == 250)
+    {
+        filt_array_250Hz(as504x->angle_vel, as504x->angle_vel_filt,30);
+    }
+    
+    
     //calculate the filtered RPM of the motor
     as504x->angle_vel_RPMS_raw[1] = as504x->angle_vel_RPMS_raw[0];
-    as504x->angle_vel_RPMS_raw[0] = ((as504x->angle_vel_filt[0]*3662)/angle_vel_denom_sum)>>10; //clicks in 8 samples / 1 Mhz clicks in 8 samples * 3662. 3662 =  1000000 Hz /16384 clicks/rot *60 sec/min  
+    as504x->angle_vel_RPMS_raw[0] = (as504x->angle_vel[0]*234)>>6; //RPM -> 234>>6 =  click/ms * 1000 ms/sec / 16384 clicks/rot * 60 seconds/min
     as504x->angle_vel_RPMS_filt[1] = as504x->angle_vel_RPMS_filt[0];
-    filt_array( as504x->angle_vel_RPMS_raw, as504x->angle_vel_RPMS_filt);
-    as504x->angle_vel_RPM = as504x->angle_vel_RPMS_filt[0]>>10;
+    
+    if (as504x->samplefreq == 10000)
+    {
+        filt_array_10k( as504x->angle_vel_RPMS_raw, as504x->angle_vel_RPMS_filt,30);
+        as504x->angle_vel_RPM = as504x->angle_vel_RPMS_filt[0]>>10;
+    }
+    else if (as504x->samplefreq == 250)
+    {
+        filt_array_250Hz( as504x->angle_vel_RPMS_raw, as504x->angle_vel_RPMS_filt,30);
+        as504x->angle_vel_RPM = as504x->angle_vel_RPMS_filt[0]>>10;
+    }
     
     //update the 1 MHz counts from the last angle read
     update_counts_since_last_ang_read(as504x);
     
     //Update the velocity compensated angle
-    as504x->angle_comp = ((((as504x->counts_since_last_ang_read+90)*(as504x->angle_vel_filt[0]>>10))/angle_vel_denom_sum+(as504x->angle_raws[0])+16384)%16384);
+    as504x->angle_comp = ((((as504x->counts_since_last_ang_read+90)*(as504x->angle_vel_filt[0]>>10))/1000+(as504x->angle_raws[0])+16384)%16384);
     
     //global_variable_1 = as5047.angle_vel_RPM;
 }

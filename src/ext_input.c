@@ -86,7 +86,7 @@ void init_qei(void)
 //Only deals with the Controller encoder (no commutation)
 int32 refresh_enc_control(void)
 {
-	//Count: actual, last, difference
+    //Count: actual, last, difference
 	encoder.count_last = encoder.count;
 	
 	#if(ENC_CONTROL == ENC_QUADRATURE)
@@ -94,9 +94,23 @@ int32 refresh_enc_control(void)
 	#elif(ENC_CONTROL == ENC_ANALOG)
 		encoder.count = get_analog_pos();	
 	#elif(ENC_CONTROL == ENC_AS5047)
-		encoder.count = CTRL_ENC_FCT(as5047.angle_conts[0]);
+		exec1.enc_control_ang = CTRL_ENC_FCT(as5047.angle_conts[0]);
+        exec1.enc_control_vel = CTRL_ENC_VEL_FCT(as5047.angle_vel_filt[0]);
+        exec1.enc_motor = exec1.enc_control_ang;
+        exec1.enc_joint = as5048b.angle_conts[0];
+        ctrl.impedance.actual_val = exec1.enc_control_ang;
+        ctrl.impedance.actual_vel = exec1.enc_control_vel;
+        ctrl.position.pos = exec1.enc_control_ang;
+        return exec1.enc_control_ang;
 	#elif(ENC_CONTROL == ENC_AS5048B)
-		encoder.count = as5048b.angle_conts[0];
+		exec1.enc_control_ang = CTRL_ENC_FCT(as5048b.angle_conts[0]);
+        exec1.enc_control_vel = CTRL_ENC_VEL_FCT(as5048b.angle_vel_filt[0]);
+        exec1.enc_motor = as5047b.angle_conts[0];
+        exec1.enc_joint = exec1.enc_control_ang;
+        ctrl.impedance.actual_val = exec1.enc_control_ang;
+        ctrl.impedance.actual_vel = exec1.enc_control_vel;
+        ctrl.position.pos = exec1.enc_control_ang;
+        return exec1.enc_control_ang;
     #elif(ENC_CONTROL == ENC_CUSTOM)
 		encoder.count = CTRL_ENC_FCT(get_enc_custom());
 	#endif

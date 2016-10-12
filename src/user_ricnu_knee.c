@@ -55,15 +55,15 @@ void init_ricnu_knee(void)
 	//FlexSEA-Execute setup:
     //Example:	ctrl.active_ctrl = CTRL_OPEN;	//Open controller
     //Example: motor_open_speed_1(0);			//0% PWM
-	ctrl.active_ctrl = CTRL_POSITION;	//Position controller
+	ctrl.active_ctrl = CTRL_OPEN;	//Position controller
     motor_open_speed_1(0);			//0% PWM
 	#if(MOTOR_COMMUT == COMMUT_BLOCK)
 	Coast_Brake_Write(1);			//Brake (rather than Coast)
 	#endif
 	   
     //Position PID gains:
-	ctrl.position.gain.P_KP = 22;
-	ctrl.position.gain.P_KI = 5;
+	//ctrl.position.gain.P_KP = 22;
+	//ctrl.position.gain.P_KI = 5;
     
     //Starts off:
 	LED_R_Write(1);
