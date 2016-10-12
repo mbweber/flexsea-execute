@@ -234,6 +234,7 @@ void overtemp_error(uint8 *eL1, uint8 *eL2)
 	}
 }
 
+//ToDo: why is that in safety.c???
 //Simplified version of I2C_1_MasterWriteByte() (single master only) with timeouts
 //timeout is in us
 uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
@@ -294,6 +295,31 @@ uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
     }
 
     return(errStatus);
+}
+
+//This function gets called by the lowest-level PWM functions. If it returns an
+//error, it will force the output to a 0% duty cycle. It will apply no power, 
+//and maximum damping to the motor.
+uint8 criticalError(void)
+{
+	static uint8 latchedOutput = 0;
+	
+	//I2t current protection:
+	#ifdef USE_I2T_LIMIT
+
+	if(currentLimit == RET_I2T_LIMIT)
+	{
+		//Error detected, latch output
+		latchedOutput = 1;
+	}
+		
+	#endif	//USE_I2T_LIMIT
+	
+	//Include other safety detections here:
+	//...
+	
+	//Return 0 when normal, 1 when under error
+	return latchedOutput;
 }
 
 //****************************************************************************

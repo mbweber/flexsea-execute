@@ -453,14 +453,9 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 //The sign of 'wanted_curr' will change the rotation direction, not the polarity of the current (I have no control on this)
 inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 {
-	
-
-    
     //Clip out of range values
 	//if(wanted_curr >= CURRENT_POS_LIMIT)
-	//	wanted_curr = CURRENT_POS_LIMIT;
-	
-	
+	//	wanted_curr = CURRENT_POS_LIMIT;	
 	
 	//Error and integral of errors:
 	ctrl.current.error = (wanted_curr - measured_curr);					//Actual error
@@ -470,8 +465,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	if(ctrl.current.error_sum >= MAX_CUMULATIVE_ERROR)
 		ctrl.current.error_sum = MAX_CUMULATIVE_ERROR;
 	if(ctrl.current.error_sum <= -MAX_CUMULATIVE_ERROR)
-		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;
-	
+		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
      
 	//Proportional term
 	int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
@@ -490,11 +484,8 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
     curr_pwm = -1023;
 
     sine_commut_pwm = PWM_SIGN*curr_pwm;
-    
-    
-	return ctrl.current.error;
-    
-    
+        
+	return ctrl.current.error;    
 }
 
 // Impedance controller -- EJ Rouse, 8/11/14
@@ -569,7 +560,6 @@ int motor_impedance_encoder(int wanted_pos, int new_enc_count)
 
 	return ctrl.impedance.error;
 }
-
 
 void impedance_controller(void)
 {

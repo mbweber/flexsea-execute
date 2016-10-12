@@ -63,6 +63,7 @@ void overtemp_error(uint8 *eL1, uint8 *eL2);
 
 void safety_cop_comm_test_blocking(void);
 void wdclk_test_blocking(void);
+uint8 criticalError(void);
 
 uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout);
 

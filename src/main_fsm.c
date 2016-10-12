@@ -47,9 +47,8 @@ uint8_t tmp_rx_command_usb[PAYLOAD_BUF_LEN];
 uint8 toggle_wdclk = 0;	
 uint8 cmd_ready_485 = 0, cmd_ready_usb = 0;	
 int steps = 0, current_step = 0;
-uint8 currentLimit = 0;
-
 int spi_read_flag = 0;
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************	
@@ -81,16 +80,18 @@ void main_fsm_case_1(void)
 //Case 2: some safety features & 100ms timebase
 void main_fsm_case_2(void)
 {
+	#ifdef USE_I2T_LIMIT
 	//Sample current (I2t limit):
 	i2t_sample(ctrl.current.actual_val);
-	//TODO: check units & gains!
+	#endif	//USE_I2T_LIMIT
 			
 	//100ms timebase:
 	if(timebase_100ms())
 	{
+		#ifdef USE_I2T_LIMIT
 		//Is the current in range?
 		currentLimit = i2t_compute();
-		//TODO: partial integration, this variable isn't used yet.
+		#endif	//USE_I2T_LIMIT
 	} 
 }
 

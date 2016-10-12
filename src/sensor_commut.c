@@ -310,15 +310,18 @@ void sensor_sin_commut(int16 ang, int32 pwm)
     
     if (findingpoles == 0)
     {
-        if (i2t_flag)
+        if (criticalError())
         {
+			//All PWM to 0 - Maximum damping
             PWM_A_Value=0;
             PWM_B_Value=0;
             PWM_C_Value=0;
         }
         else
         {
-            if (pwm>= 0)
+			//Normal operation
+			
+            if (pwm >= 0)
             {
                 PWM_A_Value=((uint16)(((int32)(phaseAcoms[ang])*pwm)>>10)+PWM_DEAD);
                 PWM_B_Value=((uint16)(((int32)(phaseBcoms[ang])*pwm)>>10)+PWM_DEAD);
@@ -332,13 +335,11 @@ void sensor_sin_commut(int16 ang, int32 pwm)
                 PWM_C_Value=((uint16)(((int32)(1970-phaseCcoms[ang])*pwm)>>10)+PWM_DEAD);
             }
         }
+		
         PWM_A_WriteCompare1(PWM_A_Value);
         PWM_B_WriteCompare1(PWM_B_Value);
-        PWM_C_WriteCompare1(PWM_C_Value);
-
-              
-    }
-    
+        PWM_C_WriteCompare1(PWM_C_Value);              
+    }    
 }
 
 //****************************************************************************
