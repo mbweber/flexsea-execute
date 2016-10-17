@@ -346,7 +346,7 @@ void main_fsm_10kHz(void)
         spi_read_flag = 0;
         update_as504x(as5047_angle, &as5047);
         
-        sensor_sin_commut(as5047.angle_comp>>3, sine_commut_pwm);
+        sensor_sin_commut(as5047.ang_comp_clks>>3, sine_commut_pwm);
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 	
 	//RGB LED:

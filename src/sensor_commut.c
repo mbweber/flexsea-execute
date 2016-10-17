@@ -179,10 +179,10 @@ void find_poles(void)
         
         if (counter == (pausetime-1))
         {
-            temp_anglemap[phasecounter%NUMPOLES] = as5047.angle_raws[0];  
-            if (as5047.angle_raws[0]<mincomang)
+            temp_anglemap[phasecounter%NUMPOLES] = as5047.ang_abs_clks;  
+            if (as5047.ang_abs_clks<mincomang)
             {
-                mincomang = as5047.angle_raws[0];
+                mincomang = as5047.ang_abs_clks;
                 mincomangindx = phasecounter%NUMPOLES;
                 initpole = phasecounter%6;
             }

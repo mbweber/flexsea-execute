@@ -100,7 +100,7 @@ void user_fsm(void);
 //Step 1) Select active project (from list):
 //==========================================
 
-#define ACTIVE_PROJECT			PROJECT_RICNU_KNEE
+#define ACTIVE_PROJECT			PROJECT_DEPHY_GRAVITY_1
 #define ACTIVE_SUBPROJECT		SUBPROJECT_A
 
 //Step 2) Customize the enabled/disabled sub-modules:
@@ -467,6 +467,7 @@ void user_fsm(void);
         #define PWM_SIGN			(-1) //1 for exo, -1 for test bench
         #define CURRENT_ZERO		((int32)2127) //1750 for test bench   
         #define CTRL_ENC_FCT(x) 	(x) 
+        #define CTRL_ENC_VEL_FCT(x) (x)
         //...
 		
 		//Slave ID:

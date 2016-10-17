@@ -184,11 +184,11 @@ long long trapez_get_pos(long long max_steps)
     
     if (use_smooth)
     {
-        if (ctrl.position.trap_t++<=smooth_max_steps/2)
+        if (ctrl.position.trap_t<=smooth_max_steps/2)
         {
             position = smooth_A*ctrl.position.trap_t*ctrl.position.trap_t/smooth_max_steps/smooth_max_steps+smooth_pos_i;
         }
-        else if (ctrl.position.trap_t++<=smooth_max_steps)
+        else if (ctrl.position.trap_t<=smooth_max_steps)
         {
             position = smooth_pos_f - smooth_A*(smooth_max_steps-ctrl.position.trap_t)*(smooth_max_steps-ctrl.position.trap_t)/smooth_max_steps/smooth_max_steps;
         }
