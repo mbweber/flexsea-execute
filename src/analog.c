@@ -47,9 +47,7 @@ volatile uint16 adc1_res[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_dbuf[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_res_filtered[ADC1_CHANNELS];
 
-int32 phase_a_currents[ADC2_BUF_LEN_3RD];
-int32 phase_b_currents[ADC2_BUF_LEN_3RD];
-int32 phase_c_currents[ADC2_BUF_LEN_3RD];
+
 int calculating_current_flag = 0;
 
 int16 adc_dma_array[ADC2_BUF_LEN];
@@ -222,16 +220,24 @@ void current_rms_1(void)
     //the line-to-line motor constant (what is usually given) needs to be divided by (3)^.5 for a sin wound motor and 2 for a trap wound motor
     //the current is divided by (3)^.5 so that a user can multiply the current by the common line-to-line motor constant
     calculating_current_flag = 1;
-    
+    static int phase_a_current, phase_b_current, phase_c_current;
     
     int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
     int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
     int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
     
-    int phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO))/106; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-    int phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO))/106; //units should be mAmps
-    int phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO))/106;
-    
+    if (measure_motor_resistance)
+    {
+        phase_a_current = (int)((phase_a_median-CURRENT_ZERO))*16; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
+        phase_b_current = -(int)((phase_b_median-CURRENT_ZERO))*16;;
+        phase_c_current = -(int)((phase_c_median-CURRENT_ZERO))*16;;
+    }
+    else
+    {
+        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO))/106; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
+        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO))/106; //units should be mAmps
+        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO))/106;
+    }
     calculating_current_flag = 0;
 
 
@@ -242,20 +248,7 @@ void current_rms_1(void)
     
     //calculate the new filtered current 
     //the filter outputs raw values x 1024 in order to maintain precision
-    ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20); // mAmps where I * the line-to-line motor constant = torque
-
-    //current is divided by 1024 to account for filtering
-    //ctrl.current.actual_val = (int32)(PWM_SIGN*motor_currents_filt[0]>>5); 
-    
-
-    //global_variable_1 = (adc_dma_array_buf[0]-CURRENT_ZERO)+(adc_dma_array_buf[1]-CURRENT_ZERO)+(adc_dma_array_buf[2]-CURRENT_ZERO);
-    //global_variable_2 = (phase_a_currents[0]*phase_a_currents[0] + phase_b_currents[0]*phase_b_currents[0] + phase_c_currents[0]*phase_c_currents[0])/2924;
-    //global_variable_3 = (ctrl.current.actual_val*ctrl.current.actual_val)/26316;
-    
-
-    
-    
-
+    ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20); // mAmps where I * the line-to-line motor constant = torque 
 }
 
 //update the current measurement buffer

@@ -273,7 +273,7 @@ void init_angsense(struct angsense_s *as)
     as ->vel_rpm = 0;
 }
 
-
+int error_flag = 0;
 //update all of the angle variables
 void update_as504x(int32_t ang, struct as504x_s *as504x)
 {  
@@ -299,8 +299,13 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     //calculate the simple difference velocity
     as504x->raw.vels_cpms[1] = as504x->raw.vels_cpms[0];
     as504x->raw.vels_ctrl_cpms[1] = as504x->raw.vels_ctrl_cpms[0];
-    as504x->raw.vels_cpms[0] = (int32_t)((int32_t)as504x->raw.angs_clks[0]-(int32_t)as504x->raw.angs_clks[10]); //clicks per ms
+    as504x->raw.vels_cpms[0] = (as504x->raw.angs_clks[0]-as504x->raw.angs_clks[10]); //clicks per ms
     as504x->raw.vels_ctrl_cpms[0] = as504x->raw.vels_cpms[0]*10;
+    
+    if (as504x->raw.vels_cpms[0]==0)
+    {
+        error_flag++;
+    }
     
     //calculate the filtered values and update the filtered arrays
     as504x->filt.vels_cpms[1] = as504x->filt.vels_cpms[0];
