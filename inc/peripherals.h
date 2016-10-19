@@ -50,6 +50,7 @@ void update_counts_since_last_ang_read(struct as504x_s *as504x);
 void reset_ang_counter(struct as504x_s *);
 void update_as504x(int32_t, struct as504x_s *);
 void init_as504x(struct as504x_s *as504x, int);
+void init_angsense(struct angsense_s *as);
 
 //****************************************************************************
 // Shared Variable(s):

@@ -70,8 +70,8 @@ void init_ankle_2dof(void)
     //Position PID gains - initially 0
     ctrl.position.gain.P_KP = 0;
     ctrl.position.gain.P_KI = 0;
-    angle_zero = as5047.angle_conts[0]*360/16384+16.4*44*28/12/13;
-    init_angle = as5047.angle_conts[0];   
+    angle_zero = as5047.raw.ang_clks*360/16384+16.4*44*28/12/13;
+    init_angle = as5047.raw.ang_clks;   
 }
  
 //Knee Finite State Machine.
@@ -92,7 +92,7 @@ void ankle_fsm(void)
             {
                 state_t = 0;
                 state = -1;
-                angle_zero = as5047.angle_conts[0]*360/16384; 
+                angle_zero = as5047.raw.ang_clks*360/16384; 
             }
             break;
         case(-1):
@@ -195,9 +195,9 @@ static void ankle_refresh_values(void)
     mot_angs[2] = mot_angs[1];
     mot_angs[1] = mot_angs[0];
     #if(ACTIVE_SUBPROJECT == SUBPROJECT_A)
-        mot_angs[0] = as5047.angle_conts[0];
+        mot_angs[0] = as5047.raw.ang_clks;
     #else
-        mot_angs[0] = -as5047.angle_conts[0];
+        mot_angs[0] = -as5047.raw.ang_clks;
     #endif
      
      

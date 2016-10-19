@@ -84,7 +84,7 @@ void gravity_1_fsm(void)
             dg_set_mot_volt(0);
             if (dg_statetimer>200)
             {
-                dg_maxDF = as5047.angle_conts[0];
+                dg_maxDF = as5047.raw.ang_clks;
                 ctrl.active_ctrl = CTRL_CURRENT;
                 ctrl.current.setpoint_val = 0;
                 ctrl.current.gain.I_KP = 100;
@@ -96,7 +96,7 @@ void gravity_1_fsm(void)
 			//dg_set_mot_volt(1500);
             //motor_open_speed_1(100);
             //global_variable_1 = -10*(as5047.angle_conts[0]-dg_maxDF)/12;
-            ctrl.current.setpoint_val = (as5047.angle_conts[0]-dg_maxDF)/12;
+            ctrl.current.setpoint_val = (as5047.raw.ang_clks-dg_maxDF)/12;
             break;
         case 1:
 
@@ -141,7 +141,7 @@ static void gravity_1_refresh_values(void)
 {
 	dg_statetimer++;
     dg_batvolt = (16*safety_cop.v_vb/3+302)*33; //battery voltage in mV
-    dg_act_ang = ((as5047.angle_conts[0]-dg_maxDF)*360)/16384;
+    dg_act_ang = ((as5047.raw.ang_clks-dg_maxDF)*360)/16384;
     dg_strain_read = strain_read();
     dg_get_ank_ang_trans();
 }
@@ -196,7 +196,7 @@ static void dg_set_mot_torque(int32 torq) //torq is in mNm
     {
     }
     int32 dg_des_cur = torq*10; //desired motor current in mAmps 
-    int32 dg_des_vol = (dg_des_cur*19)/100+as5047.angle_vel_RPM*10; //desired motor voltage in mV
+    int32 dg_des_vol = (dg_des_cur*19)/100+as5047.filt.vel_rpm*10; //desired motor voltage in mV
     dg_set_mot_volt(dg_des_vol);
 
     
