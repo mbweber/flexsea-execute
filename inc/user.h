@@ -80,6 +80,7 @@ void user_fsm(void);
 //Type of motor commutation:
 #define COMMUT_BLOCK			0
 #define COMMUT_SINE				1
+#define COMMUT_NONE				2	//SOftware test, no motor
 
 //List of projects:
 #define PROJECT_BAREBONE		0	//Barebone Execute, default option.
@@ -100,8 +101,8 @@ void user_fsm(void);
 //Step 1) Select active project (from list):
 //==========================================
 
-#define ACTIVE_PROJECT			PROJECT_DEPHY_GRAVITY_1
-#define ACTIVE_SUBPROJECT		SUBPROJECT_A
+#define ACTIVE_PROJECT			PROJECT_BAREBONE
+#define ACTIVE_SUBPROJECT		SUBPROJECT_NONE
 
 //Step 2) Customize the enabled/disabled sub-modules:
 //===================================================
@@ -113,7 +114,7 @@ void user_fsm(void);
 	#define USE_RS485
 	#define USE_USB
 	#define USE_COMM			//Requires USE_RS485 and/or USE_USB
-	#define USE_QEI
+	//#define USE_QEI
 	#define USE_TRAPEZ
 	#define USE_I2C_0			//3V3, IMU & Expansion.
 	#define USE_I2C_1			//5V, Safety-CoP & strain gauge pot.
@@ -124,16 +125,16 @@ void user_fsm(void);
 	//Motor type, direction and commutation:
 	#define MOTOR_TYPE		MOTOR_BRUSHLESS
 	#define PWM_SIGN		1
-	#define MOTOR_COMMUT 	COMMUT_BLOCK
-	#define CURRENT_ZERO	((int32)2125)
+	#define MOTOR_COMMUT 	COMMUT_NONE
+	#define CURRENT_ZERO	((int32)2048)
 	
 	//Runtime finite state machine (FSM):
 	#define RUNTIME_FSM		DISABLED
 	
 	//Encoders:
-	#define ENC_CONTROL		ENC_QUADRATURE
-	#define ENC_COMMUT		ENC_HALL
-	#define ENC_DISPLAY		ENC_QUADRATURE	
+	#define ENC_CONTROL		ENC_NONE
+	#define ENC_COMMUT		ENC_NONE
+	#define ENC_DISPLAY		ENC_NONE	
 	
 	//Control encoder function:
 	#define CTRL_ENC_FCT(x) (x)	

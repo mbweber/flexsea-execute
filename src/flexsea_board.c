@@ -51,14 +51,36 @@ uint8 board_sub2_id[SLAVE_BUS_2_CNT];
 // Function(s)
 //****************************************************************************
 
-//Wrapper for the specific serial functions. Useful to keep flexsea_network
+//Wrappers for the specific serial functions. Useful to keep flexsea_network
 //platform independent (for example, we don't need need puts_rs485() for Plan)
+
+//Communication with a slave
 void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length)
 {
-	//...
+	//Execute doesn't have slaves:
+	(void)port;
+	(void)str;
+	(void)length;
 }
 
+//Communication with our master
 void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
 {
-	//...
+	if(port == PORT_485_1)
+	{
+		//Delayed response:
+		#ifdef USE_RS485
+		rs485_reply_ready(str, length);
+		#endif 	//USE_RS485
+	}
+	else if(port == PORT_USB)
+	{
+		#ifdef USE_USB
+		usb_puts(str, length);
+		#endif
+	}
+	else
+	{
+		//Deal with errors here ToDo
+	}
 }
