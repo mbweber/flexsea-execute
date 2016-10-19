@@ -73,6 +73,7 @@ void rs485_putc(uint8 byte)
 //Redirects to the DMA function by default
 void rs485_puts(uint8 *buf, uint32 len)
 {
+	(void)len; //Unused for now
 	rs485_dma_puts(buf);
 }
 
@@ -92,10 +93,8 @@ void rs485_isr_puts(uint8 *buf, uint32 len)
 	//Can we store all the bytes we want to send?
 	if((UART_2_TXBUFFERSIZE - UART_2_GetTxBufferSize()) < len)
 	{
-		//EXP5_Write(1);
 		//Buffer is overflowing, flush it:
 		UART_2_ClearTxBuffer();
-		//EXP5_Write(0);
 	}	
 	
 	//Sends the bytes:
@@ -123,8 +122,7 @@ void rs485_dma_puts(uint8 *buf)
 	UART_2_ClearTxBuffer();		//Clear any old data
 	
 	//ToDo Test - extra delay
-	CyDelayUs(10);
-	
+	CyDelayUs(10);	
 	
 	NOT_RE_Write(1);			//Disable Receiver
 	CyDelayUs(1);				//Wait (ToDo optimize/eliminate)
@@ -238,7 +236,7 @@ void t2_oneshot_test(void)
 	}
 }
 	
-volatile uint8 uart_tmp_buf[RX_BUF_LEN];
+uint8_t uart_tmp_buf[RX_BUF_LEN];
 void get_uart_data(void)
 {
 	uint32 uart_buf_size = 0, i = 0;
@@ -270,6 +268,22 @@ void get_uart_data(void)
 	}		
 }
 
+void rs485_reply_ready(uint8_t *buf, uint32_t len)
+{
+	uint8 i = 0;
+	
+	reply_ready_len = len;
+	reply_ready_timestamp = t1_time_share;
+	
+	//Save in reply buf:
+	for(i = 0; i<len; i++)
+	{
+		reply_ready_buf[i] = buf[i];
+	}
+	
+	reply_ready_flag = 1;	
+}
+
 //****************************************************************************
 // Private Function(s)
 //****************************************************************************
@@ -279,10 +293,6 @@ uint8 DMA_3_Chan;
 uint8 DMA_3_TD[1];
 static void init_dma_3(void)
 {
-	/* Variable declarations for DMA_3 */
-	/* Move these variable declarations to the top of the function */
-
-	/* DMA Configuration for DMA_3 */
 	#define DMA_3_BYTES_PER_BURST 		1
 	#define DMA_3_REQUEST_PER_BURST 	1
 	#define DMA_3_SRC_BASE 				(CYDEV_PERIPH_BASE)
@@ -300,7 +310,6 @@ static void init_dma_3(void)
 //DMA4: UART TX (RS-485)
 static void init_dma_4(void)
 {
-	/* DMA Configuration for DMA_4 */
 	#define DMA_4_BYTES_PER_BURST 		1
 	#define DMA_4_REQUEST_PER_BURST 	1
 	#define DMA_4_SRC_BASE 				(CYDEV_SRAM_BASE)

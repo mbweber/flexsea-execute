@@ -37,19 +37,13 @@
 //****************************************************************************
 
 #include <stdint.h>	
-//#include "../../flexsea-comm/inc/flexsea.h"
-
 	
 //****************************************************************************
 // Prototype(s):
 //****************************************************************************
 
-void flexsea_send_serial_slave(unsigned char port, unsigned char *str, unsigned char length);
-void flexsea_send_serial_master(unsigned char port, unsigned char *str, unsigned char length);
-void flexsea_clear_slave_read_buffer(void);
-void build_slave_payload(unsigned char base_addr);
-unsigned char flexsea_prepare_rs485_tx_buffer(void);
-void rs485_reply_ready(uint8_t *buf, uint32_t len);
+void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length);
+void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
 
 //****************************************************************************
 // Definition(s):

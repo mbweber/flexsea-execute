@@ -81,7 +81,7 @@ void isr_t2_Interrupt_InterruptCallback()
 //General ADC - we get here after 8 samples have been taken
 void isr_sar1_dma_Interrupt_InterruptCallback()
 {
-	static unsigned char ch = 0;
+	static uint8_t ch = 0;
 	int i = 0;
 	
 	//Stop conversion

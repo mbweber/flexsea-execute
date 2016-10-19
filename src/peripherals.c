@@ -166,9 +166,6 @@ void init_peripherals(void)
 	gui_fsm_flag = ENABLED;
 	#endif	//(RUNTIME_FSM == ENABLED)
 	
-	//Start with an empty buffer
-	flexsea_clear_slave_read_buffer();
-	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	//Start converting:
 	ADC_SAR_2_StartConvert();
@@ -194,7 +191,7 @@ void init_angle_timer(void)
     Timer_angleread_Start();
 }
 
-
+//ToDo: Luke, can we remove this?
 //update the number of counts since the last time the angle sensor was read
 /*
 void update_counts_since_last_ang_read(void)
@@ -271,6 +268,7 @@ void init_as504x(struct as504x_s *as504x, int sf)
     as504x->samplefreq = sf;
 }
 
+//ToDo: Luke, can we remove this?
 //update all of the angle variables
 /*
 void update_as5047(int32 ang)

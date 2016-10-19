@@ -45,6 +45,7 @@ int global_variable_3 = 0;
 int global_variable_4 = 0;
 int global_variable_5 = 0;
 int global_variable_6 = 0;
+//TODO: what's that? move/clean
 //****************************************************************************
 
 //****************************************************************************
@@ -76,7 +77,7 @@ int main(void)
     EX15_Write(1);
     CyDelay(1);
     EX15_Write(0);
-    
+    //TODO: make that a function
 
 	//Main loop
 	while(1)

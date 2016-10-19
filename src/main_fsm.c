@@ -217,7 +217,8 @@ void main_fsm_case_9(void)
 void main_fsm_10kHz(void)
 {    
 	uint8 i = 0;
-	unsigned char result = 0;
+	uint8_t result = 0;
+	uint8_t info[2] = {0,0};
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	    //send command to read the as5047 angle
@@ -229,7 +230,7 @@ void main_fsm_10kHz(void)
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 	
 	//RS-485 Byte Input
-	#ifdef USE_RS485			
+	#ifdef USE_RS485	
 
 	//Data received via DMA
 	if(data_ready_485)
@@ -266,13 +267,15 @@ void main_fsm_10kHz(void)
 		cmd_ready_485 = 0;
 		
 		//Cheap trick to get first line	//ToDo: support more than 1
+		//ToDo: use memcpy
 		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 		{
 			tmp_rx_command_485[i] = rx_command_485[0][i];
 		}
 		
-		//payload_parse_str() calls the functions (if valid)
-		result = payload_parse_str(tmp_rx_command_485);
+		//payload_parse_str() calls the functions (if valid)<
+		info[0] = PORT_485_1;
+		result = payload_parse_str(tmp_rx_command_485, info);
 		
 		//LED:
 		if(result == PARSE_SUCCESSFUL)
@@ -309,7 +312,8 @@ void main_fsm_10kHz(void)
 		}
 		
 		//payload_parse_str() calls the functions (if valid)
-		result = payload_parse_str(tmp_rx_command_usb);
+		info[0] = PORT_USB;
+		result = payload_parse_str(tmp_rx_command_usb, info);
 		
 		//LED:
 		if(result == PARSE_SUCCESSFUL)

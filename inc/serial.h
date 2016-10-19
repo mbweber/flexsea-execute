@@ -50,6 +50,7 @@ void rs485_dma_puts(uint8 *buf);
 void test_uart_dma_xmit(void);
 void t2_oneshot_test(void);
 void get_uart_data(void);
+void rs485_reply_ready(uint8_t *buf, uint32_t len);
 
 //****************************************************************************
 // Shared Variable(s):

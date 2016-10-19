@@ -193,7 +193,7 @@ void power_on(void)
 	CyDelay(250);
 }
 
-void set_led_rgb(unsigned char r, unsigned char g, unsigned char b)
+void set_led_rgb(uint8_t r, uint8_t g, uint8_t b)
 {
 	//No fading, we use 1 or 0 for now. Flipping the sign so x = 1 means ON
 

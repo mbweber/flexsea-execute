@@ -148,9 +148,11 @@ int32 refresh_enc_display(void)
 void qei_write(int32 enc)
 {
 	#ifdef USE_QEI
-	//encoder.count = enc;
-	QuadDec_1_SetCounter(enc);
-	//Note: the read uses CTRL_ENC_FCT(), be careful about what you write!
+		//encoder.count = enc;
+		QuadDec_1_SetCounter(enc);
+		//Note: the read uses CTRL_ENC_FCT(), be careful about what you write!
+	#else
+		(void)enc;
 	#endif
 }
 
@@ -159,7 +161,7 @@ int32 qei_read(void)
 	int32 retval = 0;
 	
 	#ifdef USE_QEI
-	retval = QuadDec_1_GetCounter();
+		retval = QuadDec_1_GetCounter();
 	#endif
 	
 	return retval;

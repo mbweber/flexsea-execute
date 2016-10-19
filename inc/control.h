@@ -48,7 +48,7 @@ extern volatile struct in_control_s in_control;
 // Prototype(s):
 //****************************************************************************	
 
-void control_strategy(unsigned char strat);
+void control_strategy(uint8_t strat);
 void init_ctrl_data_structure(void);
 int32 motor_position_pid(int32 wanted_pos, int32 actual_pos);
 int32 motor_position_pid_ff_1(int32 wanted_pos, int32 actual_pos, int32 ff);

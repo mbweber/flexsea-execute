@@ -53,7 +53,7 @@ int debug_var = 0;
 //****************************************************************************
 
 //Use this function to change the control strategy
-void control_strategy(unsigned char strat)
+void control_strategy(uint8_t strat)
 {
 	//Are we already using this controller?
 	if(ctrl.active_ctrl == strat)
