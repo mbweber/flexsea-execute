@@ -1,0 +1,1 @@
+'Faxecute' is a PSoC project that will emulate a FlexSEA-Execute 0.2 board, on a $10 CY8CKIT-059 development board. Use this to test the Plan-GUI if you do not have an Execute handy.
