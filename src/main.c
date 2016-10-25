@@ -56,6 +56,9 @@ int main(void)
 {
 	int ang = 0;
 	
+	//Unit tests:
+	//flexsea_system_test(); //(WiP)
+	
 	//Power on delay with LEDs
 	power_on();	     
 	

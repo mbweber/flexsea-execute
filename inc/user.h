@@ -31,7 +31,7 @@
 /*Important: we reached a point where we couldn't support all configurations
   without changing the TopDesign (we ran out of ressources). You might have
   to select a different TopDesign file than the one included by default (check
-  the folded, there is more than one included) */
+  the folder, there is more than one included) */
 
 #ifndef INC_USER_H
 #define INC_USER_H
