@@ -122,7 +122,7 @@ void test_code_blocking(void)
 	//as5047_test_code_blocking();
 	//as5048b_test_code_blocking();
 	//rgbLedRefresh_testcode_blocking();
-	compress6chTestCodeBlocking();
+	//compress6chTestCodeBlocking();
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=	
 }
 
@@ -143,129 +143,52 @@ void test_code_non_blocking(void)
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=		
 }
 
+//If the Header isn't in [0] we 'unwrap' the array and save it in 'new_array'
+//Note: this function used to be in the flexsea-comm stack, but only Execute was 
+//using it. I think that the circular buffers will render it useless (ToDo)
+uint8_t unwrap_buffer(uint8_t *array, uint8_t *new_array, uint32_t len)
+{
+	uint8_t i = 0, j = 0, retval = 0, idx = 0;
+
+	if(array[0] != HEADER)	//Quick check
+	{
+		for(i = 1; i < len; i++)
+		{
+			if(array[i] == HEADER)
+			{
+				//We found the header
+				idx = i;
+				for(j = 0; j < len; j++)
+				{
+					new_array[j] = array[idx];
+					idx++;
+					idx %= len;
+				}
+
+				retval = i;
+				break;
+			}
+		}
+	}
+	else
+	{
+		//No need to unwrap, copy & exit
+		for(i = 0; i < len; i++)
+		{
+			//new_array = array
+			new_array[i] = array[i];
+		}
+		retval = 0;
+	}
+
+	return retval;
+}
+
 //****************************************************************************
 // Private Function(s)
 //****************************************************************************
 
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
 
 //****************************************************************************
 // Deprecated Function(s)
 //****************************************************************************
-
-//Important: this code relies on external pins that are mapped to other functions!
-//rewrite or delete
-
-//How long does it take to run X function? Use this code and a scope to find out.
-void timing_test_blocking(void)
-{
-	//Disable Global Interrupts
-    CyGlobalIntDisable; 
-	
-	while(1)
-	{
-		//Synch sequence
-		/*
-		EXP9_Write(1);
-		EXP8_Write(0);
-		EXP8_Write(1);
-		EXP8_Write(0);
-		EXP8_Write(1);
-		EXP8_Write(0);
-		*/
-		
-		CyDelayUs(SDELAY);
-		
-		//Motor current PID
-		//EXP8_Write(1);
-		motor_current_pid(ctrl.current.setpoint_val, ctrl.current.actual_val);
-		//EXP8_Write(0);
-		
-		//Motor current PID #2
-		//EXP8_Write(1);
-		motor_current_pid_2(ctrl.current.setpoint_val, ctrl.current.actual_val);
-		//EXP8_Write(0);
-		
-		//Exit sequence:
-		//EXP9_Write(0);
-		CyDelayUs(10*SDELAY);
-		
-		/*
-		
-		//SAR ADC filter
-		EXP8_Write(1);
-		filter_adc();
-		EXP8_Write(0);
-		
-		//DelSig ADC filter
-		EXP8_Write(1);
-		strain_filter_dma();
-		EXP8_Write(0);
-		
-		//Unpack payload (no data in the buffer)
-		EXP8_Write(1);
-		unpack_payload_485_1();
-		EXP8_Write(0);
-		
-		//Exit sequence:
-		EXP9_Write(0);
-		CyDelayUs(10*SDELAY);
-		*/
-		
-		/*
-		//Position controller
-		EXP8_Write(1);
-		motor_position_pid(ctrl.position.setpoint_val, ctrl.position.actual_val);
-		EXP8_Write(0);
-		
-		CyDelayUs(SDELAY);
-		
-		//Impedance controller:
-		EXP8_Write(1);
-		motor_impedance_encoder(ctrl.impedance.setpoint_val, ctrl.impedance.actual_val);
-		EXP8_Write(0);
-		
-		CyDelayUs(SDELAY);
-		
-		//RGB LED UI:
-		EXP8_Write(1);
-		rgb_led_ui(1, 1, 1, 1);
-		EXP8_Write(0);
-
-		//Exit sequence:
-		EXP9_Write(0);
-		CyDelayUs(10*SDELAY);
-		*/
-		
-		/*
-		filter_adc();
-		
-		strain_filter_dma();
-		*/
-		
-		/*
-		unpack_payload_485_1();
-	
-		//Valid communication from RS-485 #1?
-		if(cmd_ready_485_1 != 0)
-		{
-			cmd_ready_485_1 = 0;
-			
-			//Cheap trick to get first line	//ToDo: support more than 1
-			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
-			{
-				tmp_rx_command_485_1[i] = rx_command_485_1[0][i];
-			}
-			
-			//payload_parse_str() calls the functions (if valid)
-			result = payload_parse_str(tmp_rx_command_485_1);
-			
-			//LED:
-			new_cmd_led = 1;
-		}
-		*/
-	}
-	
-}
