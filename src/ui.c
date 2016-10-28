@@ -209,6 +209,10 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 	static uint8_t latch_err_l2 = 0, flash_red = 0, comm_blue = 0;
 	uint8_t r = 0, g = 0, b = 0;
 	int8 rgbStatus = 0;
+	
+	//Unused for now:
+	(void)cnt_err_l0;
+	(void)cnt_err_l1;
 
 	//Set variable for the flashing red light:
 	if(cnt_flash < UI_RED_FLASH_ON)

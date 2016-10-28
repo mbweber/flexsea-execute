@@ -54,8 +54,6 @@ int global_variable_6 = 0;
 
 int main(void)
 {
-	int ang = 0;
-	
 	//Unit tests:
 	//flexsea_system_test(); //(WiP)
 	

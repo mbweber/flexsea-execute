@@ -239,8 +239,7 @@ void load_eeprom_to_angles(void)
 //ang goes from 0 to 16384
 void fill_comm_tables(int32 ang)
 {
-    uint16 val = 0;
-	int32 pwm_timer = 0, shift = 0, t_shift = 0, tt_shift = 0;
+	int32 shift = 0;
     volatile int32 period = 0, rel_ang;
     int32 six_period = 0;
     int exit_flag = 0;

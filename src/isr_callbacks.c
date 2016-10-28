@@ -112,11 +112,11 @@ void isr_sar1_dma_Interrupt_InterruptCallback()
 
 //Current sensing:
 void isr_sar2_dma_Interrupt_InterruptCallback()
-{
+{	
+	#if(MOTOR_COMMUT == COMMUT_BLOCK)
+		
 	volatile int32 adc_sum = 0;
 	volatile int32 adc_avg = 0;
-	
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
 		
 	//Read last ADC value
 	adc_sum = (int32)(adc_dma_array[0] + adc_dma_array[1] + adc_dma_array[2] + \

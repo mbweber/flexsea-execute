@@ -122,9 +122,10 @@ void init_motor(void)
 void motor_open_speed_1(int16 pwm_duty)
 {
 	int16 pdc = 0;
-	uint16 tmp = 0;
 
     #if (MOTOR_COMMUT == COMMUT_BLOCK)
+		
+		uint16 tmp = 0;
     
          //Clip PWM to valid range
     	if(pwm_duty >= MAX_PWM)

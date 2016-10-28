@@ -61,7 +61,7 @@
 #include "mem_angle.h"	
 #include "i2t-current-limit.h"
 #include "demo.h"
-#include "user.h"	//Contains all the user_x.h includes
+#include "../flexsea-user/inc/user-ex.h"
 #include "flexsea_board.h"
 #include "../flexsea-system/inc/flexsea_system.h"
 #include "../flexsea-comm/inc/flexsea.h"
