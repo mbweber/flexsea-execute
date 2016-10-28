@@ -191,25 +191,6 @@ void init_angle_timer(void)
     Timer_angleread_Start();
 }
 
-//ToDo: Luke, can we remove this?
-//update the number of counts since the last time the angle sensor was read
-/*
-void update_counts_since_last_ang_read(void)
-{
-    angtimer_read = Timer_angleread_ReadCounter(); 
-    
-    if (angtimer_read>last_angtimer_read+20000)
-    {
-        counts_since_last_ang_read =  counts_since_last_ang_read + last_angtimer_read+65000-angtimer_read;
-    }
-    else
-    {
-        counts_since_last_ang_read = counts_since_last_ang_read + last_angtimer_read-angtimer_read;
-    }
-    last_angtimer_read = angtimer_read;
-}
-*/
-
 //update the number of counts since the last time the angle sensor was read
 void update_counts_since_last_ang_read(struct as504x_s *as504x)
 {
@@ -238,15 +219,18 @@ void reset_ang_counter(struct as504x_s *as504x)
 void init_as504x(struct as504x_s *as504x, int sf)
 {
 	init_angsense(&as504x->raw);
-	init_angsense(&as504x->filt);
+    init_angsense(&as504x->filt);
+    
+   
+	
 
-	as504x->samplefreq = sf;
-	as504x->last_angtimer_read = 0;
-	as504x->counts_since_last_ang_read = 0;
-	as504x->last_ang_read_period = 0;
-	as504x->ang_abs_clks = 0; 
-	as504x->ang_comp_clks = 0;
-	as504x->num_rot = 0; 
+    as504x->samplefreq = sf;
+    as504x->last_angtimer_read = 0;
+    as504x->counts_since_last_ang_read = 0;
+    as504x->last_ang_read_period = 0;
+    as504x->ang_abs_clks = 0; 
+    as504x->ang_comp_clks = 0;
+    as504x->num_rot = 0; 
 }
 
 void init_angsense(struct angsense_s *as)
@@ -271,6 +255,8 @@ int error_flag = 0;
 //update all of the angle variables
 void update_as504x(int32_t ang, struct as504x_s *as504x)
 {  
+    static int64_t raw_ang, raw_vel, raw_ctrl_vel;
+    
     //determine if the encoder has rotated past 0/16383 point and in what direction
     if (ang-as504x->ang_abs_clks<-5000)
     {
@@ -284,45 +270,35 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     //assign latest raw angle value
     as504x->ang_abs_clks = ang;
     
-    //calculate the continuous value of the encoder 
+    //shift the ang values accept the last two, which will be shifted in the filter function
     int ii;
-    for (ii=10;ii>0;ii--)
+    for (ii=10;ii>1;ii--)
         as504x->raw.angs_clks[ii] = as504x->raw.angs_clks[ii-1];
-    as504x->raw.angs_clks[0] = (as504x->num_rot<<14)+as504x->ang_abs_clks;    
+        
+    raw_ang = (as504x->num_rot<<14)+as504x->ang_abs_clks;    
     
     //calculate the simple difference velocity
-    as504x->raw.vels_cpms[1] = as504x->raw.vels_cpms[0];
-    as504x->raw.vels_ctrl_cpms[1] = as504x->raw.vels_ctrl_cpms[0];
-    as504x->raw.vels_cpms[0] = (as504x->raw.angs_clks[0]-as504x->raw.angs_clks[10]); //clicks per ms
-    as504x->raw.vels_ctrl_cpms[0] = as504x->raw.vels_cpms[0]*10;
+    raw_vel = (as504x->raw.angs_clks[0]-as504x->raw.angs_clks[10]); //clicks per ms
+    raw_ctrl_vel = as504x->raw.vels_cpms[0]*10;
     
-    if (as504x->raw.vels_cpms[0]==0)
-    {
-        error_flag++;
-    }
-    
-    //calculate the filtered values and update the filtered arrays
-    as504x->filt.vels_cpms[1] = as504x->filt.vels_cpms[0];
-    as504x->filt.vels_ctrl_cpms[1] = as504x->filt.vels_ctrl_cpms[0];
-    as504x->filt.angs_clks[1] = as504x->filt.angs_clks[0];  
    
     if (as504x->samplefreq == 10000)
     {
-        as504x->filt.vel_cpms = filt_array_10khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20);
-        as504x->filt.vel_ctrl_cpms = filt_array_10khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10);
-        as504x->filt.ang_clks = filt_array_10khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20);
+        as504x->filt.vel_cpms = filt_array_10khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
+        as504x->filt.vel_ctrl_cpms = filt_array_10khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
+        as504x->filt.ang_clks = filt_array_10khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
     }
     else if (as504x->samplefreq == 250)
     {
-        as504x->filt.vel_cpms = filt_array_250hz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20);
-        as504x->filt.vel_ctrl_cpms = filt_array_250hz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10);
-        as504x->filt.ang_clks = filt_array_250hz(as504x->raw.angs_clks, as504x->filt.angs_clks,20);
+        as504x->filt.vel_cpms = filt_array_250hz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
+        as504x->filt.vel_ctrl_cpms = filt_array_250hz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
+        as504x->filt.ang_clks = filt_array_250hz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
     }
     else if (as504x->samplefreq == 1000)
     {
-        as504x->filt.vel_cpms = filt_array_1khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20);
-        as504x->filt.vel_ctrl_cpms = filt_array_1khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10);
-        as504x->filt.ang_clks = filt_array_1khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20);
+        as504x->filt.vel_cpms = filt_array_1khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
+        as504x->filt.vel_ctrl_cpms = filt_array_1khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
+        as504x->filt.ang_clks = filt_array_1khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
     }    
     
     //calculate the derived angular terms

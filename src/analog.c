@@ -221,6 +221,7 @@ void current_rms_1(void)
     //the current is divided by (3)^.5 so that a user can multiply the current by the common line-to-line motor constant
     calculating_current_flag = 1;
     static int phase_a_current, phase_b_current, phase_c_current;
+    static int64_t raw_current;
     
     int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
     int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
@@ -240,15 +241,12 @@ void current_rms_1(void)
     }
     calculating_current_flag = 0;
 
-
-    //shift raw and filtered current arrays
-    motor_currents[1] = motor_currents[0];
-    motor_currents_filt[1] = motor_currents_filt[0]; 
-    motor_currents[0] = (phase_a_current+phase_b_current+phase_c_current);
+    
+    raw_current = (phase_a_current+phase_b_current+phase_c_current);
     
     //calculate the new filtered current 
     //the filter outputs raw values x 1024 in order to maintain precision
-    ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20); // mAmps where I * the line-to-line motor constant = torque 
+    ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20,raw_current); // mAmps where I * the line-to-line motor constant = torque 
 }
 
 //update the current measurement buffer
@@ -275,8 +273,13 @@ int64_t bs_250[50] = {813,1607,2382,3139,3879,4603,5311,6005,6684,7351,8004,8645
 
 //Filters raw signal at cut_off frequency if sampled at 10 kHz
 //filt is 1024 x raw in order to maintain precision
-int32_t filt_array_10khz(int64_t * raw, int64_t * filt, int cut_off)
+//this function also shifts the arrays
+int32_t filt_array_10khz(int64_t * raw, int64_t * filt, int cut_off, int64_t new_raw)
 {  
+    
+    filt[1] = filt[0];
+    raw[1] = raw[0];
+    raw[0] = new_raw;
     //ensure the cut-off frequency is inbetween 1 and 50 Hz
     if (cut_off<1)
     cut_off = 1;
@@ -290,8 +293,11 @@ int32_t filt_array_10khz(int64_t * raw, int64_t * filt, int cut_off)
 //Filters raw signal at cut_off frequency if sampled at 1 kHz
 //filt is 32 x raw in order to maintain precision
 //returns the filtered value at the correct scaling
-int32_t filt_array_1khz(int64_t * raw, int64_t * filt, int cut_off)
+int32_t filt_array_1khz(int64_t * raw, int64_t * filt, int cut_off, int64_t new_raw)
 {  
+    filt[1] = filt[0];
+    raw[1] = raw[0];
+    raw[0] = new_raw;
     //ensure the cut-off frequency is inbetween 1 and 50 Hz
     if (cut_off<1)
     cut_off = 1;
@@ -305,8 +311,11 @@ int32_t filt_array_1khz(int64_t * raw, int64_t * filt, int cut_off)
 //Filters raw signal at cut_off frequency if sampled at 250 Hz
 //filt is 8 x raw in order to maintain precision
 //returns the filtered value at the correct scaling
-int32_t filt_array_250hz(int64_t * raw, int64_t * filt, int cut_off)
+int32_t filt_array_250hz(int64_t * raw, int64_t * filt, int cut_off, int64_t new_raw)
 {  
+    filt[1] = filt[0];
+    raw[1] = raw[0];
+    raw[0] = new_raw;
     //ensure the cut-off frequency is inbetween 1 and 50 Hz
     if (cut_off<1)
     cut_off = 1;
@@ -327,3 +336,4 @@ int get_median(int a, int b, int c)
     
     return c;
 }
+
