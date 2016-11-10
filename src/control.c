@@ -344,7 +344,6 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	int32 sign = 0;
 	int32 uint_wanted_curr = 0;
 	int32 motor_current = 0;
-	int32 shifted_measured_curr = 0;
 	
 	//Clip out of range values
 	if(wanted_curr >= CURRENT_POS_LIMIT)
@@ -379,6 +378,8 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	//This is our setpoint.
 	
 	#if(MOTOR_COMMUT == COMMUT_BLOCK)
+	
+	int32 shifted_measured_curr = 0;
 		
 	//From ADC value to motor current:
 	shifted_measured_curr = measured_curr + CURRENT_ZERO;
