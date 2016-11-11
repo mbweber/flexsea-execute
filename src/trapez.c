@@ -58,7 +58,7 @@ long long sign = 0;
 
 int use_smooth = 0, no_trap = 0;
 long long no_trap_pos = 0;
-long long smooth_A = 0, smooth_pos_i = 0, smooth_pos_f = 0, smooth_max_steps = 0;
+long long smooth_A = 0, smooth_pos_i = 0, smooth_pos_f = 0, smooth_max_steps = 0, smooth_t = 0;
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************
@@ -75,9 +75,7 @@ static long long trapez_compute_params(long long pos_i, long long pos_f, \
 long long trapez_gen_motion_1(long long pos_i, long long pos_f, \
 								long long spd_max, long long a)
 {
-    ctrl.position.trap_t=0;
-    ctrl.impedance.trap_t=0;
-    
+    smooth_t = 0;  
     use_smooth = 0;
     no_trap = 0;
     
@@ -181,16 +179,16 @@ long long trapez_get_pos(long long max_steps)
 
     //At this point all the parameters are computed, we can get the 3 plots
 
-    
+    smooth_t++;
     if (use_smooth)
     {
-        if (ctrl.position.trap_t<=smooth_max_steps/2)
+        if (smooth_t<=smooth_max_steps/2)
         {
-            position = smooth_A*ctrl.position.trap_t*ctrl.position.trap_t/smooth_max_steps/smooth_max_steps+smooth_pos_i;
+            position = smooth_A*smooth_t*smooth_t/smooth_max_steps/smooth_max_steps+smooth_pos_i;
         }
-        else if (ctrl.position.trap_t<=smooth_max_steps)
+        else if (smooth_t<=smooth_max_steps)
         {
-            position = smooth_pos_f - smooth_A*(smooth_max_steps-ctrl.position.trap_t)*(smooth_max_steps-ctrl.position.trap_t)/smooth_max_steps/smooth_max_steps;
+            position = smooth_pos_f - smooth_A*(smooth_max_steps-smooth_t)*(smooth_max_steps-smooth_t)/smooth_max_steps/smooth_max_steps;
         }
         else
         {
