@@ -1,3 +1,21 @@
+#General:
+
+*~
+*.bak
+*.o
+*.a
+*.user
+
+#PSoC:
+
+*.cycdx
+*.cyfit
+*.rpt
+*.svd
+*.lst
+
+#Very specific:
+
 execute_1_0.cydsn/CortexM3/
 execute_1_0.cydsn/codegentemp/
 execute_1_0.cydsn/Generated_Source/
