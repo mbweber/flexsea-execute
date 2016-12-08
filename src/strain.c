@@ -161,9 +161,10 @@ uint16 strain_filter_dma(void)
 uint8_t compressAndSplit6ch(uint8_t *buf, uint16_t ch0, uint16_t ch1, uint16_t ch2, \
                             uint16_t ch3, uint16_t ch4, uint16_t ch5)
 {
-    uint8_t tmp0 = 0, tmp1 = 0;
+    //uint8_t tmp0 = 0, tmp1 = 0;
     uint16_t tmp[6] = {0,0,0,0,0,0};
     uint16_t combo[5] = {0,0,0,0,0};
+	uint16_t index = 0;
 
     //Compress to 12bits
     tmp[0] = (ch0 >> 4) & 0x0FFF;
@@ -187,21 +188,12 @@ uint8_t compressAndSplit6ch(uint8_t *buf, uint16_t ch0, uint16_t ch1, uint16_t c
     combo[3] = (tmp[4] << 4) | ((tmp[5] >> 8) & 0xFF);
     combo[4] = (tmp[5] & 0xFF);
 
-
     //Stock in uint8_t buffer:
-    uint16_to_bytes((uint16_t)combo[0], &tmp0, &tmp1);
-    *(buf) = tmp0;
-    *(buf+1) = tmp1;
-    uint16_to_bytes((uint16_t)combo[1], &tmp0, &tmp1);
-    *(buf+2) = tmp0;
-    *(buf+3) = tmp1;
-    uint16_to_bytes((uint16_t)combo[2], &tmp0, &tmp1);
-    *(buf+4) = tmp0;
-    *(buf+5) = tmp1;
-    uint16_to_bytes((uint16_t)combo[3], &tmp0, &tmp1);
-    *(buf+6) = tmp0;
-    *(buf+7) = tmp1;
-    *(buf+8) = (uint8_t)combo[4];
+	SPLIT_16((uint16_t)combo[0], buf, &index);
+	SPLIT_16((uint16_t)combo[1], buf, &index);
+	SPLIT_16((uint16_t)combo[2], buf, &index);
+	SPLIT_16((uint16_t)combo[3], buf, &index);
+	buf[index++] = (uint8_t)combo[4];
 
     return 0;
 }

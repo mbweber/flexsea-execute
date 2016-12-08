@@ -181,7 +181,7 @@ void main_fsm_case_6(void)
 //Case 7:
 void main_fsm_case_7(void)
 {
-	//...
+	user_fsm();
 }
 
 //Case 8: SAR ADC filtering
