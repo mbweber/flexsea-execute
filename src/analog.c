@@ -19,7 +19,7 @@
 	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
 	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
 	Biomechatronics research group <http://biomech.media.mit.edu/>
-	[Contributors] 
+	[Contributors] Luke Mooney
 *****************************************************************************
 	[This file] analog: ADC configurations, read & filter functions
 *****************************************************************************
@@ -46,7 +46,6 @@
 volatile uint16 adc1_res[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_dbuf[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_res_filtered[ADC1_CHANNELS];
-
 
 int calculating_current_flag = 0;
 
@@ -227,23 +226,28 @@ void current_rms_1(void)
     int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
     int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
     
+    
+    //the sum of current squareds that produces heat
+    motortb.ex1[0] = (((phase_a_median-CURRENT_ZERO)*(phase_a_median-CURRENT_ZERO)+
+                    (phase_b_median-CURRENT_ZERO)*(phase_b_median-CURRENT_ZERO)+
+                    (phase_c_median-CURRENT_ZERO)*(phase_c_median-CURRENT_ZERO)))/41; //100 x Amps^2 = 15.6^2 * 100 / 10^6
+  
     if (measure_motor_resistance)
     {
         phase_a_current = (int)((phase_a_median-CURRENT_ZERO))*16; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-        phase_b_current = -(int)((phase_b_median-CURRENT_ZERO))*16;;
-        phase_c_current = -(int)((phase_c_median-CURRENT_ZERO))*16;;
+        phase_b_current = -(int)((phase_b_median-CURRENT_ZERO))*16;
+        phase_c_current = -(int)((phase_c_median-CURRENT_ZERO))*16;
+        raw_current = (phase_a_current+phase_b_current+phase_c_current);
     }
     else
     {
-        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO))/106; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO))/106; //units should be mAmps
-        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO))/106;
+        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO)); //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
+        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO)); //units should be mAmps
+        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO));
+        raw_current = (phase_a_current+phase_b_current+phase_c_current)/106;   
     }
     calculating_current_flag = 0;
-
-    
-    raw_current = (phase_a_current+phase_b_current+phase_c_current);
-    
+        
     //calculate the new filtered current 
     //the filter outputs raw values x 1024 in order to maintain precision
     ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20,raw_current); // mAmps where I * the line-to-line motor constant = torque 
@@ -261,7 +265,6 @@ void update_current_arrays(void)
         }
     }    
 }
-
 
 //1st order Butterworth LPF coefficiencts for cutoff frequencies from 1 to 50
 int64_t as_10k[50] = {-65495,-65454,-65413,-65371,-65330,-65289,-65248,-65207,-65166,-65126,-65085,-65044,-65003,-64962,-64921,-64880,-64840,-64799,-64758,-64718,-64677,-64636,-64596,-64555,-64515,-64474,-64434,-64393,-64353,-64312,-64272,-64231,-64191,-64151,-64110,-64070,-64030,-63990,-63949,-63909,-63869,-63829,-63789,-63749,-63709,-63669,-63629,-63589,-63549,-63509};
@@ -326,7 +329,6 @@ int32_t filt_array_250hz(int64_t * raw, int64_t * filt, int cut_off, int64_t new
     return (int32_t)(filt[0]>>3);
 }
 
-
 int get_median(int a, int b, int c)
 {
     if ((a>=b && a<=c) || (a>=c && a<=b))
@@ -336,4 +338,3 @@ int get_median(int a, int b, int c)
     
     return c;
 }
-

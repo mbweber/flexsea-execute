@@ -88,7 +88,7 @@ void compress6chTestCodeBlocking(void);
 
 //Default values (experimental, expected to change)
 #define STRAIN_DEFAULT_OFFSET	125 //0-255
-#define STRAIN_DEFAULT_GAIN		10 //0-255 //0 = gain of 5, 255 = gain of 1000, increases linearly
+#define STRAIN_DEFAULT_GAIN		50 //0-255 //0 = gain of 5, 255 = gain of 1000, increases linearly
                                    //50 = 200
                                    //strain output is 76.294 uV per click
 

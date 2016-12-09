@@ -94,6 +94,15 @@ void control_strategy(uint8_t strat)
 			ctrl.impedance.setpoint_val = refresh_enc_control();
 			steps = trapez_gen_motion_1(ctrl.impedance.setpoint_val, ctrl.impedance.setpoint_val, 1, 1);
 		}
+        
+        if (strat != CTRL_MEASRES)
+        {
+            measure_motor_resistance = 0;
+        }
+        else
+        {
+            measure_motor_resistance = 1;
+        }
 		
 		ctrl.active_ctrl = strat;
 		in_control.controller = ctrl.active_ctrl;

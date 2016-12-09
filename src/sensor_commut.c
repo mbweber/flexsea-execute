@@ -319,12 +319,7 @@ void sensor_sin_commut(int16 ang, int32 pwm)
             PWM_C_Value=0;
         }
         else if (measure_motor_resistance)
-        {
-            if (pwm<0)
-                pwm = -pwm;
-            if (pwm>300)
-                pwm = 300;
-            
+        {   
             bat_volt = ((16*safety_cop.v_vb/3+302)*33)>>7; //battery voltage in mV
             curr_pwm = (bat_volt*bat_volt)/979 - ((bat_volt*170)>>8) + 190;
             
