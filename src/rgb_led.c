@@ -72,9 +72,9 @@ void rgbLedRefresh(void)
 	if(!cnt)
 	{
 		//All ON
-		LED_R_Write(0);
-		LED_G_Write(0);
-		LED_B_Write(0);
+		LED_R_Write(LED_ON);
+		LED_G_Write(LED_ON);
+		LED_B_Write(LED_ON);
 		rON = 1;
 		gON = 1;
 		bON = 1;
@@ -84,19 +84,19 @@ void rgbLedRefresh(void)
 	
 	if(rON && cnt >= rgbPeriodR)
 	{
-		LED_R_Write(1);
+		LED_R_Write(LED_OFF);
 		rON = 0;
 	}
 	
 	if(gON && cnt >= rgbPeriodG)
 	{
-		LED_G_Write(1);
+		LED_G_Write(LED_OFF);
 		gON = 0;
 	}
 	
 	if(bON && cnt >= rgbPeriodB)
 	{
-		LED_B_Write(1);
+		LED_B_Write(LED_OFF);
 		bON = 0;
 	}
 	
@@ -134,6 +134,7 @@ void rgbLedRefresh_testcode_blocking(void)
 	while(1)
 	{		
 		rgbLedSet(0, rgbFade, 0);
+		rgbLedRefresh();
 		CyDelayUs(100);
 		
 		div++;

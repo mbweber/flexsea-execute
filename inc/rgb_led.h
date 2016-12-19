@@ -58,5 +58,24 @@ void rgbLedRefresh_testcode_blocking(void);
 
 #define FADE_PERIOD_MS				1000
 #define FADE_MIDPOINT				(FADE_PERIOD_MS/2)
+#define POSITIVE					1
+#define NEGATIVE					0
+
+//Select polarity:
+#define POLARITY					POSITIVE	//'1' turns the LED ON
+//#define POLARITY					NEGATIVE	//'0' turns the LED ON
+
+//Different constants based on polarity:
+#if(POLARITY == POSITIVE)
+	
+	#define LED_ON					1
+	#define LED_OFF					0
+	
+#else
+	
+	#define LED_ON					0
+	#define LED_OFF					1
+	
+#endif
 
 #endif	//INC_RGBLED_H
