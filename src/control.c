@@ -174,7 +174,7 @@ void init_ctrl_data_structure(void)
 //Motor position controller - non blocking
 int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 {
-	int32 p = 0, i = 0;
+	int32 p = 0, i = 0, d = 0;
 	int32 pwm = 0;
 
 	//Position values:
@@ -184,10 +184,13 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	in_control.setp = ctrl.position.setp;
 	
 	//Errors:
+	ctrl.position.error_prev = ctrl.position.error;
 	ctrl.position.error = ctrl.position.pos - ctrl.position.setp;
 	in_control.error = ctrl.position.error;
 	ctrl.position.error_sum = ctrl.position.error_sum + ctrl.position.error;
-	//ctrl.position.error_dif ToDo
+	ctrl.position.error_dif = (ctrl.position.error_dif << 1) + \
+							6*(ctrl.position.error - ctrl.position.error_prev);
+	ctrl.position.error_dif = ctrl.position.error_dif >> 3;	
 	
 	//Saturate cumulative error
 	if(ctrl.position.error_sum >= MAX_CUMULATIVE_ERROR)
@@ -201,9 +204,12 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	//Integral term
 	i = (ctrl.position.gain.P_KI * ctrl.position.error_sum) / 100;
 	in_control.r[1] = i;
+	//Differential term:
+	d = (ctrl.position.gain.P_KD * ctrl.position.error_dif) / 100;
+	in_control.r[2] = d;
 	
 	//Output
-	pwm = (p + i);		//
+	pwm = (p + i + d);		//
 	
 	//Saturates PWM to low values
 	if(pwm >= POS_PWM_LIMIT)
