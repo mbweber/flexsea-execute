@@ -158,7 +158,7 @@ void main_fsm_case_5(void)
 //Case 6: P & Z controllers, 0 PWM
 void main_fsm_case_6(void)
 {
-	#ifdef USE_TRAPEZ	
+	//#ifdef USE_TRAPEZ	
 	
 	if(ctrl.active_ctrl == CTRL_POSITION)
 	{
@@ -169,7 +169,7 @@ void main_fsm_case_6(void)
         impedance_controller();
 	}
 	
-	#endif	//USE_TRAPEZ
+	//#endif	//USE_TRAPEZ
 	
 	//If no controller is used the PWM should be 0:
 	if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)

@@ -276,7 +276,8 @@ void assign_i2c_data(uint8 *newdata)
 	else if(i2c_last_request == I2C_RQ_AS5048B)
 	{
         reset_ang_counter(&as5048b);
-		update_as504x(((newdata[0]<<6) + (newdata[1]&0x3F)), &as5048b);     
+        tmp = (newdata[0]<<6) + (newdata[1]&0x3F);
+		update_as504x(tmp, &as5048b);     
 	}
 	else if(i2c_last_request == I2C_RQ_EXT_STRAIN)
 	{
