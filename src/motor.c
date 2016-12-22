@@ -44,7 +44,7 @@
 //****************************************************************************
 
 uint8 hall_conv[6] = {5,4,6,2,3,1};
-int32 sine_commut_pwm = 0;
+//int32 sine_commut_pwm = 0; //ToDo remove, now in execute_s
 
 //****************************************************************************
 // Function(s)
@@ -168,7 +168,7 @@ void motor_open_speed_1(int16 pwm_duty)
         
         pdc = pdc*PWM_SIGN;
         
-        sine_commut_pwm = pdc;
+        exec1.sine_commut_pwm = pdc;
     #endif
     
     
@@ -220,7 +220,7 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 	PWM_1_WriteCompare1(pdc);
 	PWM_1_WriteCompare2(PWM2DC(pdc));	//Can't be 0 or the ADC won't trigger
 	#else
-	sine_commut_pwm = pdc;
+	exec1.sine_commut_pwm = pdc;
 	#endif
 }
 

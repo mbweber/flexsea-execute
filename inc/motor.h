@@ -41,7 +41,7 @@
 // Shared variable(s)
 //****************************************************************************
 
-extern int32 sine_commut_pwm;
+//extern int32 sine_commut_pwm; //ToDo remove, now in execute_s
 	
 //****************************************************************************
 // Prototype(s):

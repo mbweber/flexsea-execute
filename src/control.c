@@ -456,7 +456,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	CY_SET_REG16(PWM_1_COMPARE2_LSB_PTR, (uint16)(PWM2DC(curr_pwm)));	//PWM_1_WriteCompare2((uint16)((curr_pwm >> 1) + 1));	
 	//Compare 2 can't be 0 or the ADC won't trigger => that's why I'm adding 1
 	#else
-	sine_commut_pwm = curr_pwm;
+	exec1.sine_commut_pwm = curr_pwm;
 	#endif	//(MOTOR_COMMUT == COMMUT_BLOCK)
 	
 	//ToDo: where's the sign applied???
@@ -499,7 +499,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
     if (curr_pwm < -1023)
     curr_pwm = -1023;
 
-    sine_commut_pwm = PWM_SIGN*curr_pwm;
+    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
         
 	return ctrl.current.error;    
 }
