@@ -62,8 +62,8 @@ void rgbLedRefresh_testcode_blocking(void);
 #define NEGATIVE					0
 
 //Select polarity:
-#define POLARITY					POSITIVE	//'1' turns the LED ON
-//#define POLARITY					NEGATIVE	//'0' turns the LED ON
+//#define POLARITY					POSITIVE	//'1' turns the LED ON
+#define POLARITY					NEGATIVE	//'0' turns the LED ON
 
 //Different constants based on polarity:
 #if(POLARITY == POSITIVE)
