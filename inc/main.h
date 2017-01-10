@@ -65,8 +65,7 @@
 #include "../flexsea-user/inc/user-ex.h"
 #include "../flexsea-system/inc/flexsea_system.h"
 #include "../flexsea-comm/inc/flexsea.h"
-#include "../flexsea-system/test/flexsea-system_test-all.h"
-	
+#include "../flexsea-system/test/flexsea-system_test-all.h"	
 
 //****************************************************************************
 // Shared variable(s)
