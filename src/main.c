@@ -87,7 +87,7 @@ int main(void)
 		{
 			//If the time share slot changed we run the timing FSM. Refer to
 			//timing.xlsx for more details. 't1_new_value' updates at 10kHz,
-			//each slot at 1kHz.			
+			//each slot at 1kHz.		
             
             t1_new_value = 0;            
 			

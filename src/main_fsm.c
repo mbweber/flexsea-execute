@@ -152,15 +152,13 @@ void main_fsm_case_5(void)
 		ctrl.impedance.setpoint_val = trapez_get_pos(steps);	//New setpoint
 	}
 	
-	#endif	//USE_TRAPEZ    
+	#endif	//USE_TRAPEZ
 }
 
 //Case 6: P & Z controllers, 0 PWM
 void main_fsm_case_6(void)
 {
-	//#ifdef USE_TRAPEZ	
-	
-	if(ctrl.active_ctrl == CTRL_POSITION)
+    if(ctrl.active_ctrl == CTRL_POSITION)
 	{
 		motor_position_pid(ctrl.position.setp, ctrl.position.pos);
 	}
@@ -168,11 +166,7 @@ void main_fsm_case_6(void)
 	{
         impedance_controller();
 	}
-	
-	//#endif	//USE_TRAPEZ
-	
-	//If no controller is used the PWM should be 0:
-	if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)
+	else if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)
 	{
 		motor_open_speed_1(0);
 	}
@@ -181,7 +175,7 @@ void main_fsm_case_6(void)
 //Case 7:
 void main_fsm_case_7(void)
 {
-	user_fsm();
+	user_fsm2();
 }
 
 //Case 8: SAR ADC filtering
