@@ -156,7 +156,7 @@ void main_fsm_case_5(void)
 }
 
 //Case 6: P & Z controllers, 0 PWM
-void main_fsm_case_6(void)
+void main_fsm_case_9(void)
 {
     if(ctrl.active_ctrl == CTRL_POSITION)
 	{
@@ -169,6 +169,10 @@ void main_fsm_case_6(void)
 	else if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)
 	{
 		motor_open_speed_1(0);
+	}
+	else if(ctrl.active_ctrl == CTRL_CUSTOM)
+	{
+		user_ctrl();
 	}
 }
 
@@ -189,7 +193,7 @@ void main_fsm_case_8(void)
 }
 
 //Case 9: User functions & 1s timebase	
-void main_fsm_case_9(void)
+void main_fsm_case_6(void)
 {    
 	#ifdef FINDPOLES
         find_poles();

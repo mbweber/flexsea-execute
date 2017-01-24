@@ -109,6 +109,9 @@ void pid_controller_setGains(pid_controller* controller, int32_t KP, int32_t KI,
 int32_t pid_controller_compute(pid_controller* ctrl);
 int32_t pid_controller_compute_ff(pid_controller* ctrl, int32_t feedForward);
 
+int32_t pid_controller_predict(pid_controller* ctrl);
+
+
 // Settings
 #define USE_CONTROL_VALUE_MAX 0x02
 #define USE_ERROR_SUM_MAX 0x04

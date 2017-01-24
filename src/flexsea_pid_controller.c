@@ -96,11 +96,11 @@ void computerErrors(pid_controller* ctrl)
                 multiplying / dividing by 2 for signed integers                 */
         
         //put a low pass on the difference: (3*current + 1*prev) / 4 
-        ctrl->errorDifference = (3*(ctrl->error - ctrl->errorPrevious) + ctrl->errorDifference) >> 2;
+        ctrl->errorDifference = (3*(ctrl->error - ctrl->errorPrevious) + ctrl->errorDifference) / 4;
         
         //Trapezoidal integration (prev + current) / 2
         //could do something fancier if rounding from division introduces too much error
-        ctrl->errorSum += (ctrl->error + ctrl->errorPrevious) >> 1;
+        ctrl->errorSum += (ctrl->error + ctrl->errorPrevious) / 2;
     }
     return;
 }
@@ -110,7 +110,7 @@ int64_t computePidSum(pid_controller* ctrl)
     return \
         (ctrl->error * ctrl->KP +
          ctrl->errorSum * ctrl->KI + 
-         ctrl->errorDifference * ctrl->KD) >> ctrl->resolutionFactor;
+         ctrl->errorDifference * ctrl->KD) / (1 << ctrl->resolutionFactor);
 }
 
 void imposeControlValueMax(pid_controller* ctrl, int64_t* controller_output) 
@@ -187,4 +187,29 @@ int32_t pid_controller_computeWithFeedForward(pid_controller* ctrl, int32_t feed
     return result;
 }
 
+int32_t pid_controller_predict(pid_controller* ctrl) 
+{
+	//int32_t e = ctrl->error, eSum = ctrl->errorSum, eDif = ctrl->e
+	
+    computerErrors(ctrl);
+    
+    //could put this max-out on the product of i*sum
+    if(ctrl->settings & USE_ERROR_SUM_MAX)
+    {
+        ctrl->errorSum = imposeMaxMagnitude(ctrl->errorSum, ctrl->errorSumMax);
+    }
+    
+    int64_t result = computePidSum(ctrl);
+    
+    if(ctrl->settings & USE_CONTROL_VALUE_MAX) 
+    {
+        imposeControlValueMax(ctrl, &result);
+    }
+    if(ctrl->settings & USE_OUTPUT_MAX)
+    {
+        result = imposeMaxMagnitude(result, ctrl->outputMax);
+    }
+ 
+    return result;
+}
 
