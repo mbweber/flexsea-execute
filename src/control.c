@@ -218,7 +218,7 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	if(pwm <= -POS_PWM_LIMIT)
 		pwm = -POS_PWM_LIMIT;
 	
-	motor_open_speed_1(PWM_SIGN*pwm);
+	motor_open_speed_1(pwm);
 	in_control.output = pwm;
 	
 	return ctrl.position.error;
@@ -371,7 +371,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	//Sign extracted from wanted_curr:
 	if(wanted_curr < 0)
 	{
-		sign = (-1)*PWM_SIGN;
+		sign = (-1)*MOTOR_ORIENTATION;
 		#if(MOTOR_COMMUT == COMMUT_BLOCK)
 		MotorDirection_Control = 0;		//MotorDirection_Write(0);
 		#else
@@ -381,7 +381,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	}
 	else
 	{
-		sign = (1)*PWM_SIGN;
+		sign = (1)*MOTOR_ORIENTATION;
 		#if(MOTOR_COMMUT == COMMUT_BLOCK)
 		MotorDirection_Control = 1;		//MotorDirection_Write(1);
 		#else

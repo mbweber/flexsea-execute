@@ -188,7 +188,7 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 		pdc = pwm_duty;
 	
 	//User defined sign:
-	sign = sign * PWM_SIGN;
+	sign = sign * MOTOR_ORIENTATION;
 	
 	//Change direction according to sign
 	if(sign == -1)
