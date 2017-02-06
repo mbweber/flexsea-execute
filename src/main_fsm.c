@@ -172,7 +172,9 @@ void main_fsm_case_9(void)
 	}
 	else if(ctrl.active_ctrl == CTRL_CUSTOM)
 	{
-		user_ctrl();
+		#ifndef FINDPOLES
+			user_ctrl();
+		#endif
 	}
 }
 
