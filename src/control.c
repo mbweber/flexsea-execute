@@ -488,14 +488,14 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
      
 	//Proportional term
-	int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
+	volatile int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
 	//Integral term
-	int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
+	volatile int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
 	//Add differential term here if needed
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
 	
 	//Output
-	int curr_pwm = curr_p + curr_i;
+	volatile int curr_pwm = curr_p + curr_i;
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
@@ -515,6 +515,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 		//Sign extracted from wanted_curr:
 		if(wanted_curr < 0)
 		{
+			curr_pwm = -curr_pwm;
 			MotorDirection_Control = 0;		//MotorDirection_Write(0);
 		}
 		else
@@ -527,11 +528,6 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 			curr_pwm = POS_PWM_LIMIT;
 		if(curr_pwm <= -POS_PWM_LIMIT)
 			curr_pwm = POS_PWM_LIMIT;
-		
-		if(curr_pwm < 0)
-		{
-			curr_pwm = abs(curr_pwm);
-		}
 	
 		//Write duty cycle to PWM module (avoiding double function calls)
 		curr_pwm = PWM1DC(curr_pwm);
