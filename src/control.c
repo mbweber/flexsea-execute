@@ -34,6 +34,9 @@
 
 #include "main.h"
 #include "control.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include <math.h>
 
 //****************************************************************************
 // Variable(s)
@@ -469,6 +472,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 //The sign of 'wanted_curr' will change the rotation direction, not the polarity of the current (I have no control on this)
 inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 {
+	int32_t sign = 0;
     //Clip out of range values
 	//if(wanted_curr >= CURRENT_POS_LIMIT)
 	//	wanted_curr = CURRENT_POS_LIMIT;	
@@ -507,16 +511,28 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 		
 	#if(MOTOR_COMMUT == COMMUT_BLOCK)			
 		
+
+		//Sign extracted from wanted_curr:
+		if(wanted_curr < 0)
+		{
+			MotorDirection_Control = 0;		//MotorDirection_Write(0);
+		}
+		else
+		{
+			MotorDirection_Control = 1;		//MotorDirection_Write(1);
+		}
+		
 		//Saturates PWM
 		if(curr_pwm >= POS_PWM_LIMIT)
 			curr_pwm = POS_PWM_LIMIT;
-		if(curr_pwm <= 0)	//Should not happen
-			curr_pwm = 0;
+		if(curr_pwm <= -POS_PWM_LIMIT)
+			curr_pwm = POS_PWM_LIMIT;
 		
-		//Apply PWM
-		//motor_open_speed_2(curr_pwm, sign);
-		//Integrated to avoid a function call and a double saturation:
-		
+		if(curr_pwm < 0)
+		{
+			curr_pwm = abs(curr_pwm);
+		}
+	
 		//Write duty cycle to PWM module (avoiding double function calls)
 		curr_pwm = PWM1DC(curr_pwm);
 		

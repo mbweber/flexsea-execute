@@ -25,11 +25,13 @@
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2016-09-29 | jfduval | Released under GPL-3.0 release
-	*
+	* 2017-02-06 | jfduval | Modified to support the 2 current sensing
+	* 						 strategies (default & legacy)
 ****************************************************************************/
 
 //Note: this is for the analog functionality of the expansion connector
-// Current sensing and strain gauge amplification are in other files.
+// Current sensing (most of it) and strain gauge amplification are in 
+// other files.
 
 //****************************************************************************
 // Include(s)
@@ -259,16 +261,22 @@ void current_rms_1(void)
 		#endif
 		
 		#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY))
+			
 			hallCurr = Status_Reg_1_Read();
 			phase_a_current = currPhase[hallCurr][2]*(phase_a_median-CURRENT_ZERO);
 	        phase_b_current = currPhase[hallCurr][1]*(phase_b_median-CURRENT_ZERO);
 	        phase_c_current = currPhase[hallCurr][0]*(phase_c_median-CURRENT_ZERO);
-			/*
-			phase_a_current = (int)abs(phase_a_median-CURRENT_ZERO);
-	        phase_b_current = (int)abs(phase_b_median-CURRENT_ZERO);
-	        phase_c_current = (int)abs(phase_c_median-CURRENT_ZERO);
-			*/
-	        raw_current = 9*(phase_a_current+phase_b_current+phase_c_current);
+			
+			//Sign based on motor direction
+			if(MotorDirection_Control == 0)
+			{	
+				raw_current = -9*(phase_a_current+phase_b_current+phase_c_current);
+			}
+			else
+			{
+				raw_current = 9*(phase_a_current+phase_b_current+phase_c_current);
+			}
+	        
 			
 		#endif
     }
