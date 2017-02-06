@@ -68,6 +68,12 @@ void init_motor(void)
 	adc_sar2_dma_config();
 	isr_sar2_dma_Start();
 	
+	#if(CURRENT_SENSING != CS_LEGACY)
+		
+		ADC_SAR_2_IRQ_Enable();
+	
+	#endif
+	
 	#else	//(MOTOR_COMMUT == COMMUT_BLOCK)
 		
 	//Start 3 PWM at 0%  

@@ -34,6 +34,9 @@
 
 #include "main.h"
 #include "control.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include <math.h>
 
 //****************************************************************************
 // Variable(s)
@@ -469,6 +472,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 //The sign of 'wanted_curr' will change the rotation direction, not the polarity of the current (I have no control on this)
 inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 {
+	int32_t sign = 0;
     //Clip out of range values
 	//if(wanted_curr >= CURRENT_POS_LIMIT)
 	//	wanted_curr = CURRENT_POS_LIMIT;	
@@ -484,22 +488,55 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
      
 	//Proportional term
-	int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
+	volatile int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
 	//Integral term
-	int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
+	volatile int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
 	//Add differential term here if needed
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
 	
 	//Output
-	int curr_pwm = curr_p + curr_i;
+	volatile int curr_pwm = curr_p + curr_i;
+	
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
-    //sine_commut_pwm should be from 1024 to -1024
-    if (curr_pwm > 1023)
-    curr_pwm = 1023;
-    if (curr_pwm < -1023)
-    curr_pwm = -1023;
+	    //sine_commut_pwm should be from 1024 to -1024
+	    if (curr_pwm > 1023)
+	    curr_pwm = 1023;
+	    if (curr_pwm < -1023)
+	    curr_pwm = -1023;
 
-    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
+	    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
+	
+	#endif
+		
+	#if(MOTOR_COMMUT == COMMUT_BLOCK)			
+		
+
+		//Sign extracted from wanted_curr:
+		if(wanted_curr < 0)
+		{
+			curr_pwm = -curr_pwm;
+			MotorDirection_Control = 0;		//MotorDirection_Write(0);
+		}
+		else
+		{
+			MotorDirection_Control = 1;		//MotorDirection_Write(1);
+		}
+		
+		//Saturates PWM
+		if(curr_pwm >= POS_PWM_LIMIT)
+			curr_pwm = POS_PWM_LIMIT;
+		if(curr_pwm <= -POS_PWM_LIMIT)
+			curr_pwm = POS_PWM_LIMIT;
+	
+		//Write duty cycle to PWM module (avoiding double function calls)
+		curr_pwm = PWM1DC(curr_pwm);
+		
+		CY_SET_REG16(PWM_1_COMPARE1_LSB_PTR, (uint16)curr_pwm);	
+		CY_SET_REG16(PWM_1_COMPARE2_LSB_PTR, (uint16)(PWM2DC(curr_pwm)));
+		//Compare 2 can't be 0 or the ADC won't trigger => that's why I'm adding 1
+		
+	#endif
         
 	return ctrl.current.error;    
 }
