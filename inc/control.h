@@ -67,7 +67,7 @@ void motor_cancel_damping_test_code_blocking(void);
 //****************************************************************************	
 
 //Position controller
-#define POS_PWM_LIMIT			1920				//96%
+#define POS_PWM_LIMIT			MAX_PWM				//96%
 #define MAX_CUMULATIVE_ERROR	1000
 #define GAIN_P					0					//Default value - will change at runtime
 #define GAIN_I					0					//Idem

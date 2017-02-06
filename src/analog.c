@@ -25,11 +25,13 @@
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2016-09-29 | jfduval | Released under GPL-3.0 release
-	*
+	* 2017-02-06 | jfduval | Modified to support the 2 current sensing
+	* 						 strategies (default & legacy)
 ****************************************************************************/
 
 //Note: this is for the analog functionality of the expansion connector
-// Current sensing and strain gauge amplification are in other files.
+// Current sensing (most of it) and strain gauge amplification are in 
+// other files.
 
 //****************************************************************************
 // Include(s)
@@ -38,6 +40,8 @@
 #include "main.h"
 #include "analog.h"
 #include <stdint.h>
+#include <stdlib.h>
+#include <math.h>
 
 //****************************************************************************
 // Variable(s)
@@ -47,6 +51,8 @@ volatile uint16 adc1_res[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_dbuf[ADC1_CHANNELS][ADC1_BUF_LEN];
 volatile uint16 adc1_res_filtered[ADC1_CHANNELS];
 
+volatile int hallCurr = 0;
+
 int calculating_current_flag = 0;
 
 int16 adc_dma_array[ADC2_BUF_LEN];
@@ -55,6 +61,9 @@ uint16 adc_sar1_dma_array[ADC1_BUF_LEN + 1];
 volatile uint8 amux_ch = 0;
 
 volatile uint8 current_sensing_flag = 0;
+
+int currPhase[8][3] = {{0,0,0}, {1,-1,0}, {-1,0,1}, {0,-1,1}, \
+                       {0,1,-1}, {1,0,-1}, {-1,1,0}, {0,0,0}};
 
 //DMA ADC SAR 1
 uint8 DMA_5_Chan;
@@ -185,23 +194,25 @@ void adc_sar1_dma_config(void)
 //Triggers an ISR after X transfers
 void adc_sar2_dma_config(void)
 {
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
-		
-	//5 transfers per ISR (10 bytes):	
-	DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
-	    HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
-	DMA_1_TD[0] = CyDmaTdAllocate();
-	CyDmaTdSetConfiguration(DMA_1_TD[0], 10, DMA_1_TD[0], DMA_1__TD_TERMOUT_EN | TD_INC_DST_ADR);
+	uint8_t xferLen = 0;
+	
+	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_LEGACY))
+
+		//5 transfers per ISR (10 bytes):	
+		xferLen = 10;	
 	
 	#else
 	
-	//9 transfers per ISR (18 bytes):	
-	DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
-		HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
-	DMA_1_TD[0] = CyDmaTdAllocate();
-	CyDmaTdSetConfiguration(DMA_1_TD[0], ADC2_BUF_LEN*2, DMA_1_TD[0], DMA_1__TD_TERMOUT_EN | TD_INC_DST_ADR);
+		//9 transfers per ISR (18 bytes):	
+		xferLen = ADC2_BUF_LEN*2;
 	
 	#endif
+	
+	//X transfers per ISR (2X bytes):	
+	DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
+	    HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
+	DMA_1_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_1_TD[0], xferLen, DMA_1_TD[0], DMA_1__TD_TERMOUT_EN | TD_INC_DST_ADR);
 
 	CyDmaTdSetAddress(DMA_1_TD[0], LO16((uint32)ADC_SAR_2_SAR_WRK0_PTR), LO16((uint32)adc_dma_array));
 	CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
@@ -212,8 +223,7 @@ void adc_sar2_dma_config(void)
 int64_t motor_currents[2] = {0,0};
 int64_t motor_currents_filt[2] = {0,0};
 void current_rms_1(void)
-{
-	
+{	
     //the current measurements are separated into phases in order to assign the angle dependent motor constant to each phase
     //Current measurements -> 15.6 mAmps per IU
     //the line-to-line motor constant (what is usually given) needs to be divided by (3)^.5 for a sin wound motor and 2 for a trap wound motor
@@ -241,10 +251,34 @@ void current_rms_1(void)
     }
     else
     {
-        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO)); //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO)); //units should be mAmps
-        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO));
-        raw_current = (phase_a_current+phase_b_current+phase_c_current)/106;   
+		#if(MOTOR_COMMUT == COMMUT_SINE)
+		
+	        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO)); //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
+	        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO)); //units should be mAmps
+	        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO));
+	        raw_current = (phase_a_current+phase_b_current+phase_c_current)/106;   
+		
+		#endif
+		
+		#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY))
+			
+			hallCurr = Status_Reg_1_Read();
+			phase_a_current = currPhase[hallCurr][2]*(phase_a_median-CURRENT_ZERO);
+	        phase_b_current = currPhase[hallCurr][1]*(phase_b_median-CURRENT_ZERO);
+	        phase_c_current = currPhase[hallCurr][0]*(phase_c_median-CURRENT_ZERO);
+			
+			//Sign based on motor direction
+			if(MotorDirection_Control == 0)
+			{	
+				raw_current = -9*(phase_a_current+phase_b_current+phase_c_current);
+			}
+			else
+			{
+				raw_current = 9*(phase_a_current+phase_b_current+phase_c_current);
+			}
+	        
+			
+		#endif
     }
     calculating_current_flag = 0;
         

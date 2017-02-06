@@ -325,8 +325,9 @@ void main_fsm_10kHz(void)
 	
 	#endif	//USE_COMM 
 	
-	#if(MOTOR_COMMUT == COMMUT_SINE)                       
-
+	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
+		(MOTOR_COMMUT == COMMUT_SINE))
+		
 		current_rms_1();	//update the motor current
 		
     	if((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
@@ -334,7 +335,11 @@ void main_fsm_10kHz(void)
     		//Current controller
     		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_val);
     	}
-    	
+		
+	#endif
+	
+	#if(MOTOR_COMMUT == COMMUT_SINE)                    
+
         //wait until the 2nd ISR callback lifts spi_read_flag 
         int tt = 0;
         while (!spi_read_flag || tt>10)

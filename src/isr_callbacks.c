@@ -113,28 +113,28 @@ void isr_sar1_dma_Interrupt_InterruptCallback()
 //Current sensing:
 void isr_sar2_dma_Interrupt_InterruptCallback()
 {	
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
+	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_LEGACY))
 		
-	volatile int32 adc_sum = 0;
-	volatile int32 adc_avg = 0;
+		volatile int32 adc_sum = 0;
+		volatile int32 adc_avg = 0;
+			
+		//Read last ADC value
+		adc_sum = (int32)(adc_dma_array[0] + adc_dma_array[1] + adc_dma_array[2] + \
+					adc_dma_array[3] + adc_dma_array[4]);
+		adc_avg = (adc_sum / 5);
 		
-	//Read last ADC value
-	adc_sum = (int32)(adc_dma_array[0] + adc_dma_array[1] + adc_dma_array[2] + \
-				adc_dma_array[3] + adc_dma_array[4]);
-	adc_avg = (adc_sum / 5);
-	
-	ctrl.current.actual_val = (int32)(adc_avg - CURRENT_ZERO);	
-	//Used by the current controller, 0 centered.
-		
-	if((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
-	{
-		//Current controller
-		motor_current_pid_2(ctrl.current.setpoint_val, ctrl.current.actual_val);
-	}
+		ctrl.current.actual_val = (int32)(adc_avg - CURRENT_ZERO);	
+		//Used by the current controller, 0 centered.
+			
+		if((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
+		{
+			//Current controller
+			motor_current_pid_2(ctrl.current.setpoint_val, ctrl.current.actual_val);
+		}
 	
 	#else
 		
-    update_current_arrays();
+    	update_current_arrays();
 		
 	#endif
 }
