@@ -38,6 +38,7 @@
 #include "main.h"
 #include "peripherals.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
@@ -57,6 +58,8 @@ int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 //****************************************************************************
 // Function(s)
 //****************************************************************************
+
+void init_exec_structures();
 
 //Initialize and enables all the peripherals
 void init_peripherals(void)
@@ -87,6 +90,8 @@ void init_peripherals(void)
 	//Clutch:
 	init_pwro();
 	
+	init_exec_structures();
+
 	//Hall sensor for commutation?
 	#if(ENC_COMMUT == ENC_HALL)
 		Use_Hall_Write(HALL_PHYSICAL);	//Use Hall sensors (Expansion connector)
@@ -191,6 +196,12 @@ void init_angle_timer(void)
     Timer_angleread_Start();
 }
 
+void init_exec_structures()
+{
+	exec1.enc_ang = &(as5047.signed_ang);
+	exec1.enc_ang_vel = &(as5047.signed_ang_vel);
+}
+
 //update the number of counts since the last time the angle sensor was read
 void update_counts_since_last_ang_read(struct as504x_s *as504x)
 {
@@ -221,8 +232,6 @@ void init_as504x(struct as504x_s *as504x, int sf)
 	init_angsense(&as504x->raw);
     init_angsense(&as504x->filt);
     
-   
-	
 
     as504x->samplefreq = sf;
     as504x->last_angtimer_read = 0;
@@ -309,7 +318,10 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     as504x->raw.vel_rpm = (as504x->raw.vel_cpms*366)/100;
     as504x->filt.ang_deg = (as504x->filt.ang_clks*360)>>14;
     as504x->filt.vel_rpm = (as504x->filt.vel_cpms*366)/100;   
-    
+
+	as504x->signed_ang = -1 * raw_ang * MOTOR_ORIENTATION;
+	as504x->signed_ang_vel = -1 * as504x->filt.vel_cpms * MOTOR_ORIENTATION;
+
     //update the 1 MHz counts from the last angle read
     update_counts_since_last_ang_read(as504x);
     

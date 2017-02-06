@@ -38,6 +38,7 @@
 #include "main.h"
 #include "motor.h"
 #include "analog.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
@@ -166,12 +167,10 @@ void motor_open_speed_1(int16 pwm_duty)
     	else
     		pdc = pwm_duty;
         
-        pdc = pdc*PWM_SIGN;
+        //pdc = pdc*PWM_SIGN;
         
-        exec1.sine_commut_pwm = pdc;
+        exec1.sine_commut_pwm = MOTOR_ORIENTATION*pdc;
     #endif
-    
-    
 }
 
 //Controls motor PWM duty cycle

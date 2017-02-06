@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "main_fsm.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
@@ -181,7 +182,7 @@ void main_fsm_case_6(void)
 //Case 7:
 void main_fsm_case_7(void)
 {
-	user_fsm();
+	//user_fsm();
 }
 
 //Case 8: SAR ADC filtering

@@ -38,6 +38,7 @@
 
 #include "main.h"
 #include "cyapicallbacks.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Public Function(s)

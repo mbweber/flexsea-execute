@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "control.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
@@ -185,7 +186,7 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	
 	//Errors:
 	ctrl.position.error_prev = ctrl.position.error;
-	ctrl.position.error = ctrl.position.pos - ctrl.position.setp;
+	ctrl.position.error = ctrl.position.setp - ctrl.position.pos;
 	in_control.error = ctrl.position.error;
 	ctrl.position.error_sum = ctrl.position.error_sum + ctrl.position.error;
 	ctrl.position.error_dif = (ctrl.position.error_dif << 1) + \
@@ -456,7 +457,7 @@ inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr)
 	CY_SET_REG16(PWM_1_COMPARE2_LSB_PTR, (uint16)(PWM2DC(curr_pwm)));	//PWM_1_WriteCompare2((uint16)((curr_pwm >> 1) + 1));	
 	//Compare 2 can't be 0 or the ADC won't trigger => that's why I'm adding 1
 	#else
-	exec1.sine_commut_pwm = curr_pwm;
+	exec1.sine_commut_pwm = MOTOR_ORIENTATION * curr_pwm;
 	#endif	//(MOTOR_COMMUT == COMMUT_BLOCK)
 	
 	//ToDo: where's the sign applied???
@@ -482,14 +483,14 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 		ctrl.current.error_sum = MAX_CUMULATIVE_ERROR;
 	if(ctrl.current.error_sum <= -MAX_CUMULATIVE_ERROR)
 		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
-     
+
 	//Proportional term
 	int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
 	//Integral term
 	int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
 	//Add differential term here if needed
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
-	
+
 	//Output
 	int curr_pwm = curr_p + curr_i;
 
@@ -499,7 +500,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
     if (curr_pwm < -1023)
     curr_pwm = -1023;
 
-    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
+    exec1.sine_commut_pwm = MOTOR_ORIENTATION*curr_pwm;
         
 	return ctrl.current.error;    
 }
@@ -582,10 +583,10 @@ void impedance_controller(void)
     int32 spring_torq; 
     int32 damping_torq;
 
-    spring_torq = ((ctrl.impedance.actual_val-ctrl.impedance.setpoint_val)*ctrl.impedance.gain.g0)>>4;
-    damping_torq = ((ctrl.impedance.actual_vel)*ctrl.impedance.gain.g1);
+    spring_torq = ((ctrl.impedance.setpoint_val-ctrl.impedance.actual_val)*ctrl.impedance.gain.g0)>>4;
+    damping_torq = (-1*(ctrl.impedance.actual_vel)*ctrl.impedance.gain.g1);
     
-    ctrl.current.setpoint_val = PWM_SIGN*(spring_torq+damping_torq);
+    ctrl.current.setpoint_val = (spring_torq+damping_torq);
 }
 //****************************************************************************
 // Test Function(s) - Use with care!
