@@ -125,6 +125,8 @@ uint16 phaseCcoms[2048];
 //run at 1 kHz
 void find_poles(void)
 {
+	#if(MOTOR_COMMUT == COMMUT_SINE)
+		
 	static int32 counter = 0, pausetime = 400, mincomang = MAX_ENC, mincomangindx = -1;
 	uint16 pwmhigh = 200, pwmlow = 0;	
 	static int32 phasecounter = 0;
@@ -221,6 +223,7 @@ void find_poles(void)
             findingpoles = 0;
         }
     }
+	#endif
 }
 
 void load_eeprom_to_angles(void)
@@ -303,7 +306,8 @@ uint16_t pwm_non_linear[1911] = {90,97,104,112,121,127,133,137,140,143,145,147,1
 //ang should be from 0 to 2048
 void sensor_sin_commut(int16 ang, int32 pwm)
 {
-    
+    #if(MOTOR_COMMUT == COMMUT_SINE)
+		
     static uint16 PWM_A_Value;
     static uint16 PWM_B_Value;
     static uint16 PWM_C_Value;
@@ -356,6 +360,8 @@ void sensor_sin_commut(int16 ang, int32 pwm)
         PWM_C_WriteCompare1(PWM_C_Value); 
         
     }    
+	
+	#endif
 }
 
 //****************************************************************************

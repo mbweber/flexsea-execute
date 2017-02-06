@@ -1,6 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0" xmlns="http://cypress.com/xsd/cysem">
-  <Instances count="142">
+  <Instances count="144">
+    <Instance guid="008480f0-ed39-4d68-917a-2e1d9f575b11" name="Clock_6" component="cy_clock_v2_20">
+      <Parameter name="CheckTolerance">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Clock_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>2</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>20</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="desired_freq">
+        <Value>5.12</Value>
+      </Parameter>
+      <Parameter name="desired_freq_unit">
+        <Value>6</Value>
+      </Parameter>
+      <Parameter name="divisor">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="EnableDigitalDomainOutput">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="FractDividerDenominator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerNumerator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerUsed">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>Clock_6</Value>
+      </Parameter>
+      <Parameter name="is_direct">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="is_divider">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="is_freq">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="minus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="ph_align_clock_id">
+        <Value />
+      </Parameter>
+      <Parameter name="ph_align_clock_name">
+        <Value />
+      </Parameter>
+      <Parameter name="plus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="source_clock_id">
+        <Value>75C2148C-3656-4d8a-846D-0CAE99AB6FF7</Value>
+      </Parameter>
+      <Parameter name="source_clock_name">
+        <Value>BUS_CLK</Value>
+      </Parameter>
+      <Parameter name="SyncWithBusClk">
+        <Value>true</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="02f2cf2c-2c7a-49df-9246-7a3435c21be3" name="SCL_1" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -1261,39 +1345,6 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="0eb3a349-0797-4fdb-971d-68e19165945d" name="Sync_1" component="cy_sync_v1_0">
-      <Parameter name="CY_CONST_CONFIG">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Sync_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_REMOVE">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_SUPPRESS_API_GEN">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
-      </Parameter>
-      <Parameter name="INSTANCE_NAME">
-        <Value>Sync_1</Value>
-      </Parameter>
-      <Parameter name="SignalWidth">
-        <Value>1</Value>
-      </Parameter>
-    </Instance>
     <Instance guid="107442a4-08ad-45db-b05a-410492fa43d4" name="cy_constant_5" component="cy_constant_v1_0">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -2443,6 +2494,39 @@
       </Parameter>
       <Parameter name="UsePaOutRst">
         <Value>false</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="1f7b49a1-58dc-4e68-9682-01a899d51330" name="BasicCounter_1" component="BasicCounter_v1_0">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>BasicCounter_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>BasicCounter_1</Value>
+      </Parameter>
+      <Parameter name="Width">
+        <Value>2</Value>
       </Parameter>
     </Instance>
     <Instance guid="2094d79d-dfcd-40e8-b7b8-dba77d849484" name="cy_constant_1" component="cy_constant_v1_0">
@@ -6107,8 +6191,8 @@
     </Instance>
     <Instance guid="673b1d84-3ae6-49e8-a12c-03e2772cb6b8" name="ADC_SAR_2" component="ADC_SAR_v3_0">
       <Parameter name="ADC_Clock">
-        <Value>0</Value>
-        <Expression>External</Expression>
+        <Value>1</Value>
+        <Expression>Internal</Expression>
       </Parameter>
       <Parameter name="ADC_Input_Range">
         <Value>1</Value>
@@ -6126,8 +6210,8 @@
         <Value>12</Value>
       </Parameter>
       <Parameter name="ADC_SampleMode">
-        <Value>2</Value>
-        <Expression>Hardware_Trigger</Expression>
+        <Value>0</Value>
+        <Expression>Free_Running</Expression>
       </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -6155,7 +6239,7 @@
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_next_out">
-        <Value>false</Value>
+        <Value>true</Value>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>ADC_SAR_2</Value>
@@ -6167,7 +6251,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="Sample_Rate">
-        <Value>740741</Value>
+        <Value>100000</Value>
       </Parameter>
     </Instance>
     <Instance guid="68dd70f4-3431-4e17-adba-aef1fc7dbef3" name="PWM_1" component="PWM_v3_30">
@@ -8865,6 +8949,80 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="8e2c8adb-1585-4f20-a8e6-808600a98443" name="Status_Reg_1" component="CyStatusReg_v1_90">
+      <Parameter name="Bit0Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit1Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit2Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit3Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit4Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit5Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit6Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="Bit7Mode">
+        <Value>0</Value>
+        <Expression>Transparent</Expression>
+      </Parameter>
+      <Parameter name="BusDisplay">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Status_Reg_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>90</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>Status_Reg_1</Value>
+      </Parameter>
+      <Parameter name="Interrupt">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="MaskValue">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="NumInputs">
+        <Value>3</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="9051cd53-2999-453c-b286-769c43e00395" name="Em_EEPROM_1" component="Em_EEPROM_v1_10">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -9419,90 +9577,6 @@
       </Parameter>
       <Parameter name="UsePaOutRst">
         <Value>false</Value>
-      </Parameter>
-    </Instance>
-    <Instance guid="9a92efcc-7e00-4edf-aa52-e6f8716f6279" name="ADC_CLK" component="cy_clock_v2_20">
-      <Parameter name="CheckTolerance">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_CONST_CONFIG">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_REMOVE">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_SUPPRESS_API_GEN">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
-      </Parameter>
-      <Parameter name="desired_freq">
-        <Value>16</Value>
-      </Parameter>
-      <Parameter name="desired_freq_unit">
-        <Value>6</Value>
-      </Parameter>
-      <Parameter name="divisor">
-        <Value>6</Value>
-      </Parameter>
-      <Parameter name="EnableDigitalDomainOutput">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="FractDividerDenominator">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="FractDividerNumerator">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="FractDividerUsed">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="INSTANCE_NAME">
-        <Value>ADC_CLK</Value>
-      </Parameter>
-      <Parameter name="is_direct">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="is_divider">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="is_freq">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="minus_tolerance">
-        <Value>5</Value>
-      </Parameter>
-      <Parameter name="ph_align_clock_id">
-        <Value />
-      </Parameter>
-      <Parameter name="ph_align_clock_name">
-        <Value />
-      </Parameter>
-      <Parameter name="plus_tolerance">
-        <Value>5</Value>
-      </Parameter>
-      <Parameter name="source_clock_id">
-        <Value>61737EF6-3B74-48f9-8B91-F7473A442AE7</Value>
-      </Parameter>
-      <Parameter name="source_clock_name">
-        <Value>MASTER_CLK</Value>
-      </Parameter>
-      <Parameter name="SyncWithBusClk">
-        <Value>true</Value>
       </Parameter>
     </Instance>
     <Instance guid="9ac49a9e-3a20-468b-a331-7d42984e50f0" name="SDA_0" component="cy_pins_v2_20">
@@ -17739,6 +17813,45 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="eda4107f-addb-4291-8c81-25db693c1313" name="cy_constant_15" component="cy_constant_v1_0">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>cy_constant_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="DisplayAsHex">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>cy_constant_15</Value>
+      </Parameter>
+      <Parameter name="Value">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="Width">
+        <Value>1</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="f4943eea-8816-449d-b24c-3f3285ba6337" name="DE3" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -18624,10 +18737,10 @@
       </Parameter>
     </Instance>
   </Instances>
-  <Signals count="289">
-    <Signal name="currmux[1:0]" type="Digital" terminalCount="3">
-      <Terminal name="LUT_4Q_PWM.out6" type="Instance Digital Output" />
-      <Terminal name="LUT_4Q_PWM.out7" type="Instance Digital Output" />
+  <Signals count="300">
+    <Signal name="mywire_1[1:0]" type="Digital" terminalCount="3">
+      <Terminal name="BasicCounter_1.cnt[1:0]" type="Instance Digital Output" />
+      <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
       <Terminal name="AMuxHw_1.selectorBus[1:0]" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_12" type="Digital" terminalCount="2">
@@ -18739,9 +18852,9 @@
       <Terminal name="AMux_1.AinTerm4" type="Instance Analog InOut" />
       <Terminal name="MV3.analog_0" type="Instance Analog InOut" />
     </Signal>
-    <Signal name="Net_559" type="Digital" terminalCount="2">
-      <Terminal name="Sync_1.s_out" type="Instance Digital Output" />
-      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
+    <Signal name="Net_455" type="Digital" terminalCount="2">
+      <Terminal name="BasicCounter_1.en" type="Instance Digital Input" />
+      <Terminal name="cy_constant_15.val" type="Instance Digital Output" />
     </Signal>
     <Signal name="Net_573" type="Digital" terminalCount="2">
       <Terminal name="PWM_1.clock" type="Instance Digital Input" />
@@ -18755,22 +18868,18 @@
       <Terminal name="VDAC8_1.vOut" type="Instance Analog InOut" />
       <Terminal name="Opamp_1.Vplus" type="Instance Analog InOut" />
     </Signal>
-    <Signal name="Net_674" type="Digital" terminalCount="2">
+    <Signal name="Net_674" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.pwm2" type="Instance Digital Output" />
-      <Terminal name="Sync_1.s_in" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_691" type="Digital" terminalCount="3">
-      <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />
-      <Terminal name="Sync_1.clock" type="Instance Digital Input" />
-      <Terminal name="ADC_CLK.clock_out" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_693" type="Digital" terminalCount="2">
+    <Signal name="Net_693" type="Digital" terminalCount="3">
       <Terminal name="LUT_4Q_PWM.in1" type="Instance Digital Input" />
       <Terminal name="LUT_HALL_DIR.out1" type="Instance Digital Output" />
+      <Terminal name="Status_Reg_1.status_1" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_694" type="Digital" terminalCount="2">
+    <Signal name="Net_694" type="Digital" terminalCount="3">
       <Terminal name="LUT_4Q_PWM.in2" type="Instance Digital Input" />
       <Terminal name="LUT_HALL_DIR.out2" type="Instance Digital Output" />
+      <Terminal name="Status_Reg_1.status_2" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_701" type="Digital" terminalCount="2">
       <Terminal name="PWM_1.reset" type="Instance Digital Input" />
@@ -18837,9 +18946,10 @@
       <Terminal name="LUT_4Q_PWM.out0" type="Instance Digital Output" />
       <Terminal name="PWMH1.y_0" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_971" type="Digital" terminalCount="2">
+    <Signal name="Net_971" type="Digital" terminalCount="3">
       <Terminal name="LUT_4Q_PWM.in0" type="Instance Digital Input" />
       <Terminal name="LUT_HALL_DIR.out0" type="Instance Digital Output" />
+      <Terminal name="Status_Reg_1.status_0" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_986" type="Digital" terminalCount="2">
       <Terminal name="MotorDirection.control_0" type="Instance Digital Output" />
@@ -18878,15 +18988,6 @@
       <Terminal name="AOP_OUT.analog_0" type="Instance Analog InOut" />
       <Terminal name="Opamp_1.Vout" type="Instance Analog InOut" />
       <Terminal name="ADC_SAR_2.vplus" type="Instance Analog InOut" />
-    </Signal>
-    <Signal name="Net_1281" type="Digital" terminalCount="2">
-      <Terminal name="Coast_Brake.control_0" type="Instance Digital Output" />
-      <Terminal name="and_1.term0" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_1289" type="Digital" terminalCount="3">
-      <Terminal name="EdgeDetect_2.d" type="Instance Digital Input" />
-      <Terminal name="and_1.gateOut" type="Instance Digital Output" />
-      <Terminal name="LUT_4Q_PWM.in3" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_1290" type="Digital" terminalCount="2">
       <Terminal name="LUT_4Q_PWM.clock" type="Instance Digital Input" />
@@ -19332,6 +19433,10 @@
       <Terminal name="AMuxHw_1.AinTerm2" type="Instance Analog InOut" />
       <Terminal name="CS3.analog_0" type="Instance Analog InOut" />
     </Signal>
+    <Signal name="Net_9110" type="Digital" terminalCount="2">
+      <Terminal name="BasicCounter_1.clock" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_2.eos" type="Instance Digital Output" />
+    </Signal>
     <Signal name="Net_11083" type="Analog" terminalCount="2">
       <Terminal name="AMux_1.AinTerm5" type="Instance Analog InOut" />
       <Terminal name="vRef_1.vout" type="Instance Analog InOut" />
@@ -19430,182 +19535,225 @@
       <Terminal name="Timer_angleread.clock" type="Instance Digital Input" />
       <Terminal name="timer_clock.clock_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12328" type="Digital" terminalCount="1">
+    <Signal name="Net_12567" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_1" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12329" type="Digital" terminalCount="1">
+    <Signal name="Net_12568" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_2" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12330" type="Digital" terminalCount="1">
+    <Signal name="Net_12569" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_3" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12331" type="Digital" terminalCount="1">
+    <Signal name="Net_12570" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_4" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12332" type="Digital" terminalCount="1">
+    <Signal name="Net_12571" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_5" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12333" type="Digital" terminalCount="1">
+    <Signal name="Net_12572" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_6" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12334" type="Digital" terminalCount="1">
+    <Signal name="Net_12573" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.control_7" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12335" type="Digital" terminalCount="1">
+    <Signal name="Net_12574" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.clock" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12336" type="Digital" terminalCount="1">
+    <Signal name="Net_12575" type="Digital" terminalCount="1">
       <Terminal name="MotorDirection.reset" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12337" type="Analog" terminalCount="1">
+    <Signal name="Net_12576" type="Analog" terminalCount="1">
       <Terminal name="ADC_SAR_2.vminus" type="Instance Analog InOut" />
     </Signal>
-    <Signal name="Net_12338" type="Analog" terminalCount="1">
+    <Signal name="Net_12577" type="Analog" terminalCount="1">
       <Terminal name="ADC_SAR_2.vdac_ref" type="Instance Analog InOut" />
     </Signal>
-    <Signal name="Net_12339" type="Digital" terminalCount="1">
-      <Terminal name="ADC_SAR_2.eos" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12340" type="Digital" terminalCount="1">
+    <Signal name="Net_12579" type="Digital" terminalCount="1">
       <Terminal name="VDAC8_1.strobe" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12341[7:0]" type="Digital" terminalCount="1">
+    <Signal name="Net_12580[7:0]" type="Digital" terminalCount="1">
       <Terminal name="VDAC8_1.data[7:0]" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12344" type="Digital" terminalCount="1">
+    <Signal name="Net_12583" type="Digital" terminalCount="1">
       <Terminal name="DMA_1.trq" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12345" type="Digital" terminalCount="1">
+    <Signal name="Net_12584" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.out3" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12346" type="Digital" terminalCount="1">
+    <Signal name="Net_12585" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.out4" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12347" type="Digital" terminalCount="1">
+    <Signal name="Net_12586" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.out5" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12348" type="Digital" terminalCount="1">
+    <Signal name="Net_12587" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.out6" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12349" type="Digital" terminalCount="1">
+    <Signal name="Net_12588" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.out7" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12350" type="Digital" terminalCount="1">
+    <Signal name="Net_12589" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.in4" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12351" type="Digital" terminalCount="1">
+    <Signal name="Net_12590" type="Digital" terminalCount="1">
       <Terminal name="LUT_HALL_DIR.clock" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12353" type="Digital" terminalCount="1">
+    <Signal name="Net_12592" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_1" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12354" type="Digital" terminalCount="1">
+    <Signal name="Net_12593" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_2" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12355" type="Digital" terminalCount="1">
+    <Signal name="Net_12594" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_3" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12356" type="Digital" terminalCount="1">
+    <Signal name="Net_12595" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_4" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12357" type="Digital" terminalCount="1">
+    <Signal name="Net_12596" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_5" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12358" type="Digital" terminalCount="1">
+    <Signal name="Net_12597" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_6" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12359" type="Digital" terminalCount="1">
+    <Signal name="Net_12598" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.control_7" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12360" type="Digital" terminalCount="1">
+    <Signal name="Net_12599" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.clock" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12361" type="Digital" terminalCount="1">
+    <Signal name="Net_12600" type="Digital" terminalCount="1">
       <Terminal name="Coast_Brake.reset" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12362" type="Digital" terminalCount="1">
+    <Signal name="Net_12601" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.control_3" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12363" type="Digital" terminalCount="1">
+    <Signal name="Net_12602" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.control_4" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12364" type="Digital" terminalCount="1">
+    <Signal name="Net_12603" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.control_5" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12365" type="Digital" terminalCount="1">
+    <Signal name="Net_12604" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.control_6" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12366" type="Digital" terminalCount="1">
+    <Signal name="Net_12605" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.control_7" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12367" type="Digital" terminalCount="1">
+    <Signal name="Net_12606" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.clock" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12368" type="Digital" terminalCount="1">
+    <Signal name="Net_12607" type="Digital" terminalCount="1">
       <Terminal name="Virtual_Hall.reset" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12369" type="Digital" terminalCount="1">
+    <Signal name="Net_12608" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_1" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12370" type="Digital" terminalCount="1">
+    <Signal name="Net_12609" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_2" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12371" type="Digital" terminalCount="1">
+    <Signal name="Net_12610" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_3" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12372" type="Digital" terminalCount="1">
+    <Signal name="Net_12611" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_4" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12373" type="Digital" terminalCount="1">
+    <Signal name="Net_12612" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_5" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12374" type="Digital" terminalCount="1">
+    <Signal name="Net_12613" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_6" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12375" type="Digital" terminalCount="1">
+    <Signal name="Net_12614" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.control_7" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12376" type="Digital" terminalCount="1">
+    <Signal name="Net_12615" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.clock" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12377" type="Digital" terminalCount="1">
+    <Signal name="Net_12616" type="Digital" terminalCount="1">
       <Terminal name="Use_Hall.reset" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12546" type="Digital" terminalCount="1">
+    <Signal name="Net_12702" type="Digital" terminalCount="1">
+      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12788" type="Digital" terminalCount="1">
+      <Terminal name="LUT_4Q_PWM.out6" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12789" type="Digital" terminalCount="1">
+      <Terminal name="LUT_4Q_PWM.out7" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12838" type="Digital" terminalCount="1">
+      <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13464" type="Digital" terminalCount="2">
+      <Terminal name="Coast_Brake.control_0" type="Instance Digital Output" />
+      <Terminal name="and_1.term0" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13490" type="Digital" terminalCount="3">
+      <Terminal name="EdgeDetect_2.d" type="Instance Digital Input" />
+      <Terminal name="and_1.gateOut" type="Instance Digital Output" />
+      <Terminal name="LUT_4Q_PWM.in3" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13659" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_3" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13660" type="Digital" terminalCount="2">
+      <Terminal name="Status_Reg_1.clock" type="Instance Digital Input" />
+      <Terminal name="Clock_6.clock_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13661" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_4" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13662" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_5" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13663" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_6" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13664" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.intr" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13665[7:0]" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_bus[7:0]" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13677" type="Digital" terminalCount="1">
+      <Terminal name="Status_Reg_1.status_7" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13806" type="Digital" terminalCount="1">
       <Terminal name="Clock_3.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12547" type="Digital" terminalCount="1">
-      <Terminal name="ADC_CLK.dig_domain_out" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12548" type="Digital" terminalCount="1">
+    <Signal name="Net_13807" type="Digital" terminalCount="1">
       <Terminal name="Clock_5.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12549" type="Digital" terminalCount="1">
+    <Signal name="Net_13808" type="Digital" terminalCount="1">
       <Terminal name="Clock_2.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12550" type="Digital" terminalCount="1">
+    <Signal name="Net_13809" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.tc" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12551" type="Digital" terminalCount="1">
+    <Signal name="Net_13810" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.pwm1" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12552" type="Digital" terminalCount="1">
+    <Signal name="Net_13811" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.interrupt" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_12553" type="Digital" terminalCount="1">
+    <Signal name="Net_13812" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.capture" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12554" type="Digital" terminalCount="1">
+    <Signal name="Net_13813" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.kill" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12555" type="Digital" terminalCount="1">
+    <Signal name="Net_13814" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.trigger" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12556" type="Digital" terminalCount="1">
+    <Signal name="Net_13815" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.cmp_sel" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_12557" type="Digital" terminalCount="1">
+    <Signal name="Net_13816" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.pwm" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13817" type="Digital" terminalCount="1">
+      <Terminal name="Clock_6.dig_domain_out" type="Instance Digital Output" />
     </Signal>
   </Signals>
   <Properties>

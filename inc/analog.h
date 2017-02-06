@@ -93,6 +93,7 @@ extern int16 adc_dma_array_buf[ADC2_BUF_LEN];
 extern uint16 adc_sar1_dma_array[ADC1_BUF_LEN + 1];
 extern volatile uint8 amux_ch;
 extern volatile uint8 current_sensing_flag;
+extern volatile hallCurr;
 
 //****************************************************************************
 // Structure(s):

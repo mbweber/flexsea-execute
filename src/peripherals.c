@@ -166,13 +166,19 @@ void init_peripherals(void)
 	gui_fsm_flag = ENABLED;
 	#endif	//(RUNTIME_FSM == ENABLED)
 	
-	#if(MOTOR_COMMUT == COMMUT_SINE) 
-	//Start converting:
-	ADC_SAR_2_StartConvert();
+	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
+		(MOTOR_COMMUT == COMMUT_SINE))
+		
+		//Start converting:
+		ADC_SAR_2_StartConvert();
+		
+	#endif
 	
-	//Initialize structures:
-	init_as504x(&as5047,10000); //10 is the sampling frequency in Hz
-	init_as504x(&as5048b,250); //1 is the sampling frequency in Hz
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
+	
+		//Initialize structures:
+		init_as504x(&as5047,10000); //10 is the sampling frequency in Hz
+		init_as504x(&as5048b,250); //1 is the sampling frequency in Hz
 	
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 }

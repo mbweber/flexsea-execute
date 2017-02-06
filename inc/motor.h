@@ -63,9 +63,9 @@ void motor_stepper_test_runtime(int div);
 //****************************************************************************
 
 //PWM limits
-#define MAX_PWM					970					//970 is 97% of 1000
+#define MAX_PWM					770					//
 #define MIN_PWM					-MAX_PWM
-#define P1_DEADTIME				30					//Make sure that it matches the hardware setting!
+#define P1_DEADTIME				40					//Make sure that it matches the hardware setting!
 #define PWM1DC(x)				MAX(x, (P1_DEADTIME+2))
 #define PWM2DC(x)				MAX(((x - P1_DEADTIME)>>1), 10)
 	

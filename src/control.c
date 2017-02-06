@@ -492,14 +492,39 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	
 	//Output
 	int curr_pwm = curr_p + curr_i;
+	
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
-    //sine_commut_pwm should be from 1024 to -1024
-    if (curr_pwm > 1023)
-    curr_pwm = 1023;
-    if (curr_pwm < -1023)
-    curr_pwm = -1023;
+	    //sine_commut_pwm should be from 1024 to -1024
+	    if (curr_pwm > 1023)
+	    curr_pwm = 1023;
+	    if (curr_pwm < -1023)
+	    curr_pwm = -1023;
 
-    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
+	    exec1.sine_commut_pwm = PWM_SIGN*curr_pwm;
+	
+	#endif
+		
+	#if(MOTOR_COMMUT == COMMUT_BLOCK)			
+		
+		//Saturates PWM
+		if(curr_pwm >= POS_PWM_LIMIT)
+			curr_pwm = POS_PWM_LIMIT;
+		if(curr_pwm <= 0)	//Should not happen
+			curr_pwm = 0;
+		
+		//Apply PWM
+		//motor_open_speed_2(curr_pwm, sign);
+		//Integrated to avoid a function call and a double saturation:
+		
+		//Write duty cycle to PWM module (avoiding double function calls)
+		curr_pwm = PWM1DC(curr_pwm);
+		
+		CY_SET_REG16(PWM_1_COMPARE1_LSB_PTR, (uint16)curr_pwm);	
+		CY_SET_REG16(PWM_1_COMPARE2_LSB_PTR, (uint16)(PWM2DC(curr_pwm)));
+		//Compare 2 can't be 0 or the ADC won't trigger => that's why I'm adding 1
+		
+	#endif
         
 	return ctrl.current.error;    
 }
