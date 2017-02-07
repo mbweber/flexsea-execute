@@ -66,6 +66,8 @@ int main(void)
 	//Initialize all the peripherals
 	init_peripherals();
 	
+	initializeGlobalStructs();
+	
 	//Test code, use with care. Normal code might NOT run when enabled!
 	//test_code_blocking();
 	//test_code_non_blocking();

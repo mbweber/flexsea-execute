@@ -35,7 +35,8 @@
 #include "main.h"
 #include "main_fsm.h"
 #include "ext_input.h"
-
+#include "flexsea_global_structs.h"
+#include "calibration_tools.h"
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -161,6 +162,13 @@ void main_fsm_case_6(void)
 {
 	//#ifdef USE_TRAPEZ	
 	
+	// If we are running a calibration test, all controllers should be disabled anyways.
+	// Also we should be in CTRL_NONE, but that should be handled elsewhere
+	if(calibrationFlags != 0)
+	{
+		return;
+	}
+	
 	if(ctrl.active_ctrl == CTRL_POSITION)
 	{
 		motor_position_pid(ctrl.position.setp, ctrl.position.pos);
@@ -173,7 +181,7 @@ void main_fsm_case_6(void)
 	//#endif	//USE_TRAPEZ
 	
 	//If no controller is used the PWM should be 0:
-	if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)
+	if(ctrl.active_ctrl == CTRL_NONE)
 	{
 		motor_open_speed_1(0);
 	}
@@ -181,9 +189,7 @@ void main_fsm_case_6(void)
 
 //Case 7:
 void main_fsm_case_7(void)
-{
-	//user_fsm();
-}
+{}
 
 //Case 8: SAR ADC filtering
 void main_fsm_case_8(void)
@@ -198,11 +204,20 @@ void main_fsm_case_8(void)
 //Case 9: User functions & 1s timebase	
 void main_fsm_case_9(void)
 {    
-	#ifdef FINDPOLES
-        find_poles();
-    #elif (RUNTIME_FSM == ENABLED)
-	    user_fsm();
-	#endif //RUNTIME_FSM == ENABLED	
+	if(calibrationFlags & CALIBRATION_FIND_POLES)
+	{
+		find_poles();
+		if(!findingpoles)
+		{
+			calibrationFlags = 0;
+		}
+	}
+	else
+	{
+		#if(RUNTIME_FSM == ENABLED)
+			user__fsm();
+		#endif
+	}
     
 	//1s timebase:
 	if(timebase_1s())
@@ -331,7 +346,7 @@ void main_fsm_10kHz(void)
 		
 		current_rms_1();	//update the motor current
 		
-    	if((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
+    	if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
     	{
     		//Current controller
     		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_val);
