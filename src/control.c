@@ -35,7 +35,7 @@
 #include "main.h"
 #include "control.h"
 #include "ext_input.h"
-
+#include "calibration_tools.h"
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -57,7 +57,8 @@ int debug_var = 0;
 void control_strategy(uint8_t strat)
 {
 	//Are we already using this controller?
-	if(ctrl.active_ctrl == strat)
+	//Are we currently running a calibration routine?
+	if(calibrationFlags || ctrl.active_ctrl == strat)
 	{
 		//Yes. Nothing to do, exit.
 		return;
