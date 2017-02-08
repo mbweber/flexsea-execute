@@ -46,8 +46,9 @@ uint16 safety_delay = 0;
 uint8 new_cmd_led = 0;
 uint8_t tmp_rx_command_485[PAYLOAD_BUF_LEN];
 uint8_t tmp_rx_command_usb[PAYLOAD_BUF_LEN];
+uint8_t tmp_rx_command_wireless[PAYLOAD_BUF_LEN];
 uint8 toggle_wdclk = 0;	
-uint8 cmd_ready_485 = 0, cmd_ready_usb = 0;	
+uint8 cmd_ready_485 = 0, cmd_ready_usb = 0, cmd_ready_wireless = 0;	
 int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 
@@ -258,6 +259,19 @@ void main_fsm_10kHz(void)
 		
 	#endif	//USE_RS485
 	
+	//Bluetooth Byte Input
+	#ifdef USE_BLUETOOTH	
+
+	//Data received via DMA
+	if(data_ready_wireless)
+	{
+		data_ready_wireless = 0;
+		//Got new data in, try to decode
+		cmd_ready_wireless = unpack_payload_wireless();
+	}
+		
+	#endif	//USE_BLUETOOTH
+	
 	//USB Byte Input
 	#ifdef USE_USB			
 
@@ -338,6 +352,37 @@ void main_fsm_10kHz(void)
 			new_cmd_led = 1;
 		}
 	}
+	
+	#ifdef USE_BLUETOOTH
+	
+		//Valid communication from Bluetooth?
+		if(cmd_ready_wireless != 0)
+		{
+			cmd_ready_wireless = 0;
+			
+			//Cheap trick to get first line	//ToDo: support more than 1
+			//ToDo: use memcpy
+			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+			{
+				tmp_rx_command_wireless[i] = rx_command_wireless[0][i];
+			}
+			
+			//payload_parse_str() calls the functions (if valid)
+			info[0] = PORT_WIRELESS;
+			result = payload_parse_str(tmp_rx_command_wireless, info);
+			
+			//LED:
+			if(result == PARSE_SUCCESSFUL)
+			{
+				//Green LED only if the ID matched and the command was known
+				new_cmd_led = 1;
+			}
+			
+			//Test ToDo remove
+			//CyDmaClearPendingDrq(DMA_3_Chan);
+		}
+	
+	#endif
 	
 	#endif	//USE_COMM 
 	

@@ -58,6 +58,9 @@ void rs485_reply_ready(uint8_t *buf, uint32_t len);
 
 extern uint8 uart_dma_rx_buf[96];
 extern uint8 uart_dma_tx_buf[96];
+extern uint8 uart_dma_rx_buf_unwrapped[96];
+extern uint8 uart_dma_bt_rx_buf[96];
+extern uint8 uart_dma_bt_rx_buf_unwrapped[96];
 
 extern uint8 reply_ready_buf[96];
 extern uint8 reply_ready_flag;

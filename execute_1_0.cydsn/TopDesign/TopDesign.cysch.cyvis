@@ -11722,13 +11722,13 @@ Boston, MA 02129
       <Point2 x="684" y="306" />
     </Wire>
   </Page>
-  <Page index="4" name="Comm" enabled="true" shapeCount="66">
+  <Page index="4" name="Comm" enabled="true" shapeCount="72">
     <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_0">
-      <Location x="720" y="332.1273" />
+      <Location x="744" y="470.1273" />
       <Size width="72" height="57.87265" />
       <SubShapes>
         <Rectangle>
-          <Location x="720" y="354" />
+          <Location x="744" y="492" />
           <Size width="72" height="36" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -11738,7 +11738,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Rectangle>
-          <Location x="720" y="342" />
+          <Location x="744" y="480" />
           <Size width="72" height="12" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -11748,7 +11748,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="739.6187" y="343.9654" />
+          <Location x="763.6187" y="481.9654" />
           <Text>USBFS</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -11757,7 +11757,7 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Annotation>
-          <Location x="732.0269" y="332.1273" />
+          <Location x="756.0269" y="470.1273" />
           <Text>USBUART_1</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -11767,7 +11767,7 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Image>
-          <Location x="732.4999" y="357.125" />
+          <Location x="756.4999" y="495.125" />
           <Size width="52.5" height="25.87503" />
           <ImageChecksum value="09928263405f05c5ca9a3c30672d1ee0" />
         </Image>
@@ -13665,7 +13665,7 @@ Boston, MA 02129
       <Point2 x="594" y="372" />
     </Wire>
     <Annotation shapeName="Shape_1021" zorder="72">
-      <Location x="713.9999" y="311.9999" />
+      <Location x="737.9999" y="449.9999" />
       <Size width="90" height="12" />
       <Text>USB:</Text>
       <Fill>
@@ -13675,7 +13675,7 @@ Boston, MA 02129
       <TextAlignment value="TopLeft" />
     </Annotation>
     <Rectangle shapeName="Shape_1022" zorder="1">
-      <Location x="708" y="306" />
+      <Location x="732" y="444" />
       <Size width="96" height="96" />
       <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
         <SolidBrush color="0, 0, 0" />
@@ -13947,7 +13947,7 @@ Boston, MA 02129
     </Annotation>
     <Rectangle shapeName="Shape_1733" zorder="0">
       <Location x="708" y="150" />
-      <Size width="234" height="150" />
+      <Size width="234" height="210" />
       <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
         <SolidBrush color="0, 0, 0" />
       </Outline>
@@ -13955,6 +13955,137 @@ Boston, MA 02129
         <SolidBrush color="255, 255, 255" />
       </Fill>
     </Rectangle>
+    <Instance shapeName="Shape_2677" zorder="88" guid="f18424d6-ccd2-487c-b26a-2e25388249dd" name="isr_dma_uart_bt_rx" component="cy_isr_v1_70">
+      <Location x="720.4053" y="325" />
+      <Size width="116.5947" height="10" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="810" y="325" />
+          <Size width="18" height="10" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </Rectangle>
+        <Terminal name="isr_dma_uart_bt_rx.int_signal" type="Instance Digital Input">
+          <Location x="834" y="330" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="720.4053" y="326.0605" />
+          <Text>isr_dma_uart_bt_rx</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <ClosedShape>
+          <Point x="824.9938" y="333.0002" />
+          <Point x="821.0342" y="330.7693" />
+          <Point x="821.0342" y="332.0242" />
+          <Point x="817.6745" y="329.7934" />
+          <Point x="817.6745" y="331.0482" />
+          <Point x="812.9949" y="327.0049" />
+          <Point x="813.015" y="327.0049" />
+          <Point x="817.0945" y="329.2357" />
+          <Point x="817.0745" y="329.2357" />
+          <Point x="817.0745" y="327.9808" />
+          <Point x="820.4342" y="330.2116" />
+          <Point x="820.4342" y="328.9568" />
+          <Point x="824.9938" y="333.0002" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="255, 255, 0" />
+          </Fill>
+        </ClosedShape>
+      </SubShapes>
+    </Instance>
+    <Instance shapeName="Shape_2678" zorder="89" guid="bafacbd5-99af-40dd-b507-3db1f0f5c115" name="DMA_6" component="cy_dma_v1_70">
+      <Location x="843" y="295.7105" />
+      <Size width="60" height="58.28952" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="852" y="318" />
+          <Size width="42" height="36" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </Rectangle>
+        <Rectangle>
+          <Location x="852" y="306" />
+          <Size width="42" height="12" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="255, 192, 203" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="852" y="306" />
+          <Size width="42" height="13" />
+          <Text>DMA</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopCenter" />
+        </Annotation>
+        <Annotation>
+          <Location x="852.3522" y="295.7105" />
+          <Text>DMA_6</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+        <Terminal name="DMA_6.drq" type="Instance Digital Input">
+          <Location x="900" y="330" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="877.7865" y="324.6589" />
+          <Text>drq</Text>
+          <TextAlignment value="MiddleRight" />
+        </Annotation>
+        <Terminal name="DMA_6.nrq" type="Instance Digital Output">
+          <Location x="846" y="330" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="854.722" y="326.3473" />
+          <Text>nrq</Text>
+          <TextAlignment value="MiddleLeft" />
+        </Annotation>
+      </SubShapes>
+    </Instance>
+    <Wire shapeName="Shape_2679" zorder="90" effectiveName="Net_12403" type="Digital">
+      <Point1 x="834" y="330" />
+      <Point2 x="846" y="330" />
+    </Wire>
+    <Wire shapeName="Shape_2680" zorder="92" effectiveName="Net_12401" type="Digital">
+      <Point1 x="864" y="246" />
+      <Point2 x="912" y="246" />
+    </Wire>
+    <Wire shapeName="Shape_2681" zorder="94" effectiveName="Net_12401" type="Digital">
+      <Point1 x="912" y="246" />
+      <Point2 x="912" y="330" />
+    </Wire>
+    <Wire shapeName="Shape_2684" zorder="96" effectiveName="Net_12401" type="Digital">
+      <Point1 x="900" y="330" />
+      <Point2 x="912" y="330" />
+    </Wire>
   </Page>
   <Page index="5" name="Sensors &amp; External" enabled="true" shapeCount="82">
     <Instance shapeName="Shape_6" zorder="61" guid="56b3df0f-35d1-494d-b64d-b12b26ae4477" name="EX4" component="cy_pins_v2_20">
