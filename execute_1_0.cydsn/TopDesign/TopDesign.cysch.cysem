@@ -10364,7 +10364,7 @@
         <Value>0</Value>
       </Parameter>
       <Parameter name="BaudRate">
-        <Value>57600</Value>
+        <Value>230400</Value>
       </Parameter>
       <Parameter name="BreakBitsRX">
         <Value>13</Value>
