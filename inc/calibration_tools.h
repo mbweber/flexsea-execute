@@ -1,6 +1,6 @@
 /****************************************************************************
 	[Project] FlexSEA: Flexible & Scalable Electronics Architecture
-	[Sub-project] 'flexsea-execute' Advanced Motion Controller
+	[Sub-project] 'flexsea-execute' System commands & functions
 	Copyright (C) 2016 Dephy, Inc. <http://dephy.com/>
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,14 +17,14 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************
 	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
-	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
+	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab
 	Biomechatronics research group <http://biomech.media.mit.edu/>
-	[Contributors] 
+	[Contributors]
 *****************************************************************************
-	[This file] calibration_tools: Definitions for calibration tools, global memory for managing calibration tools
+	[This file] calibration_tools: functionality & logic tracking the state of calibration procedures
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
-	* 2016-09-29 | jfduval | Released under GPL-3.0 release
+	* 2017-02-07 | dweisdorf | Initial GPL-3.0 release
 	*
 ****************************************************************************/
 	
