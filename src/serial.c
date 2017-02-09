@@ -43,9 +43,8 @@ uint8 uart_dma_rx_buf[96];	//ToDo #define
 uint8 uart_dma_rx_buf_unwrapped[96];
 uint8 uart_dma_tx_buf[96];
 uint8 uart_dma_bt_rx_buf[96];
+uint8 uart_dma_bt_tx_buf[96] __attribute__ ((aligned(32)));
 uint8 uart_dma_bt_rx_buf_unwrapped[96];
-uint8 DMA_4_Chan;
-uint8 DMA_4_TD[1];
 volatile int8_t tx_cnt = 0;
 
 uint8 reply_ready_buf[96];
@@ -53,13 +52,24 @@ uint8 reply_ready_flag = 0;
 uint8 reply_ready_len = 0;
 uint8 reply_ready_timestamp = 0;
 
+//DMA:
+uint8 DMA_3_Chan;
+uint8 DMA_3_TD[1];
+uint8 DMA_4_Chan;
+uint8 DMA_4_TD[1];
+uint8 DMA_6_Chan;
+uint8 DMA_6_TD[1];
+uint8 DMA_7_Chan;
+uint8 DMA_7_TD[1];
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************
 
-static void init_dma_3(void);
-static void init_dma_4(void);
-static void init_dma_6(void);
+static void init_dma_3(void);	//RS-485 RX
+static void init_dma_4(void);	//RS-485 TX
+static void init_dma_6(void);	//Bluetooth RX
+static void init_dma_7(void);	//Bluetooth TX
 
 //****************************************************************************
 // Public Function(s)
@@ -79,6 +89,14 @@ void rs485_puts(uint8 *buf, uint32 len)
 {
 	(void)len; //Unused for now
 	rs485_dma_puts(buf);
+}
+
+//Wrapper for the 'puts' function, used to avoid modifying all the code.
+//Redirects to the DMA function by default
+void bt_puts(uint8 *buf, uint32 len)
+{
+	(void)len; //Unused for now
+	bt_dma_puts(buf);
 }
 
 //Sends a string of characters to the UART. ISR based, UART needs a big FIFO buffer.
@@ -146,6 +164,52 @@ void rs485_dma_puts(uint8 *buf)
 	//DMA will take it from here, go to CY_ISR(isr_dma_uart_tx_Interrupt) for the end
 }
 
+//Transmit serial data with DMA
+//The DMA transfer is for 48 bytes, by configuration. ToDo: this isn't clean
+void bt_dma_puts(uint8 *buf)
+{
+	int i = 0;
+	static int filled = 0;
+	
+	UART_BT_DMA_XMIT_Write(0);	//No transmission
+	UART_1_ClearTxBuffer();		//Clear any old data
+	
+	//ToDo Test - extra delay
+	CyDelayUs(10);	
+	
+	if(!filled)
+	{
+		/*
+		//Sends the bytes:
+		for(i = 0; i < 48; i++)
+		{
+			uart_dma_bt_tx_buf[i] = buf[i];
+		}	//ToDo replace by memcpy
+		*/
+		memset(uart_dma_bt_tx_buf, 0, 48);
+		uart_dma_bt_tx_buf[0] = 'a';
+		uart_dma_bt_tx_buf[1] = 'b';
+		uart_dma_bt_tx_buf[2] = 'c';
+		uart_dma_bt_tx_buf[3] = 'd';
+		uart_dma_bt_tx_buf[4] = 'e';
+		uart_dma_bt_tx_buf[5] = 'f';
+		uart_dma_bt_tx_buf[6] = 'g';
+		uart_dma_bt_tx_buf[7] = 'h';
+		uart_dma_bt_tx_buf[8] = 'i';
+		uart_dma_bt_tx_buf[9] = 'j';
+		uart_dma_bt_tx_buf[10] = 'k';
+		uart_dma_bt_tx_buf[11] = 'l';
+		uart_dma_bt_tx_buf[12] = 'm';
+		filled = 1;
+	}
+	
+	//Enable channel and UART TX ISR line:
+	CyDmaChEnable(DMA_7_Chan, 1);
+	UART_BT_DMA_XMIT_Write(1);	//Allow transmission
+	
+	//DMA will take it from here, go to CY_ISR(isr_dma_uart_tx_Interrupt) for the end
+}
+
 void init_rs485(void)
 {
 	#ifdef USE_RS485
@@ -193,8 +257,11 @@ void init_bluetooth(void)
 	UART_1_Enable();
 	UART_1_Start();
 	
-	init_dma_6();
+	init_dma_6();				//DMA, Reception
 	isr_dma_uart_bt_rx_Start();
+	
+	init_dma_7();				//DMA, Transmission
+	isr_dma_uart_bt_tx_Start();
 	
 	#endif //USE_BLUETOOTH
 }
@@ -294,8 +361,6 @@ void rs485_reply_ready(uint8_t *buf, uint32_t len)
 //****************************************************************************
 
 //DMA3: UART RX (RS-485)
-uint8 DMA_3_Chan;
-uint8 DMA_3_TD[1];
 static void init_dma_3(void)
 {
 	#define DMA_3_BYTES_PER_BURST 		1
@@ -330,8 +395,6 @@ static void init_dma_4(void)
 }
 
 //DMA6: UART RX (Bluetooth)
-uint8 DMA_6_Chan;
-uint8 DMA_6_TD[1];
 static void init_dma_6(void)
 {
 	#define DMA_6_BYTES_PER_BURST 		1
@@ -346,4 +409,21 @@ static void init_dma_6(void)
 	CyDmaTdSetAddress(DMA_6_TD[0], LO16((uint32)UART_1_RXDATA_PTR), LO16((uint32)uart_dma_bt_rx_buf));
 	CyDmaChSetInitialTd(DMA_6_Chan, DMA_6_TD[0]);
 	CyDmaChEnable(DMA_6_Chan, 1);
+}
+
+//DMA7: UART TX (Bluetooth)
+static void init_dma_7(void)
+{
+	#define DMA_7_BYTES_PER_BURST 		1
+	#define DMA_7_REQUEST_PER_BURST 	1
+	#define DMA_7_SRC_BASE 				(CYDEV_SRAM_BASE)
+	#define DMA_7_DST_BASE 				(CYDEV_PERIPH_BASE)
+	
+	DMA_7_Chan = DMA_7_DmaInitialize(DMA_7_BYTES_PER_BURST, DMA_7_REQUEST_PER_BURST, 
+	    HI16(DMA_7_SRC_BASE), HI16(DMA_7_DST_BASE));
+	DMA_7_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_7_TD[0], 48, CY_DMA_DISABLE_TD, TD_TERMIN_EN | DMA_7__TD_TERMOUT_EN | TD_INC_SRC_ADR | TD_AUTO_EXEC_NEXT);
+	CyDmaTdSetAddress(DMA_7_TD[0], LO16((uint32)uart_dma_bt_tx_buf), LO16((uint32)UART_1_TXDATA_PTR));
+	CyDmaChSetInitialTd(DMA_7_Chan, DMA_7_TD[0]);
+	CyDmaChEnable(DMA_7_Chan, 1);
 }

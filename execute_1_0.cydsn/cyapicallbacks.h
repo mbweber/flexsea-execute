@@ -39,6 +39,7 @@
 	#define isr_dma_uart_rx_INTERRUPT_INTERRUPT_CALLBACK
 	#define isr_dma_uart_tx_INTERRUPT_INTERRUPT_CALLBACK
 	#define isr_dma_uart_bt_rx_INTERRUPT_INTERRUPT_CALLBACK
+	#define isr_dma_uart_bt_tx_INTERRUPT_INTERRUPT_CALLBACK
 	#define isr_delsig_INTERRUPT_INTERRUPT_CALLBACK
 	#define ADC_SAR_1_ISR_INTERRUPT_CALLBACK
 	#define isr_spi_tx_INTERRUPT_INTERRUPT_CALLBACK
@@ -51,6 +52,7 @@
 	void isr_dma_uart_rx_Interrupt_InterruptCallback();
 	void isr_dma_uart_tx_Interrupt_InterruptCallback();
 	void isr_dma_uart_bt_rx_Interrupt_InterruptCallback();
+	void isr_dma_uart_bt_tx_Interrupt_InterruptCallback();
 	void isr_delsig_Interrupt_InterruptCallback();
 	void ADC_SAR_1_ISR_InterruptCallback();
 	void isr_spi_tx_Interrupt_InterruptCallback();
