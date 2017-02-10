@@ -162,11 +162,6 @@ void isr_dma_uart_bt_rx_Interrupt_InterruptCallback()
 	data_ready_wireless++;
 }
 
-void isr_dma_uart_bt_tx_Interrupt_InterruptCallback()
-{
-	//Nothing for now	
-}
-
 void isr_delsig_Interrupt_InterruptCallback()
 {
 	ADC_DelSig_1_StopConvert();

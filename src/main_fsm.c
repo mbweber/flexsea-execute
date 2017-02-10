@@ -53,7 +53,7 @@ int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 
 //***Test Code - ToDo Remove ***
-uint8_t myStr[48] = "abcdefghijklmnopqrstuvwxyz1234567890ABCD";
+//uint8_t myStr[48] = "abcdefghijklmnopqrstuvwxyz1234567890ABCD";
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -230,7 +230,7 @@ void main_fsm_case_9(void)
 		//...
 		
 		//***Test Code - ToDo Remove ***
-		bt_dma_puts(myStr);
+		//bt_puts(myStr, 48);
 	} 
 }
 
