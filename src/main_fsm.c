@@ -52,6 +52,9 @@ uint8 cmd_ready_485 = 0, cmd_ready_usb = 0, cmd_ready_wireless = 0;
 int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 
+//***Test Code - ToDo Remove ***
+//uint8_t myStr[48] = "abcdefghijklmnopqrstuvwxyz1234567890ABCD";
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************	
@@ -225,6 +228,9 @@ void main_fsm_case_9(void)
 	{
 		//Insert code that needs to run every second here
 		//...
+		
+		//***Test Code - ToDo Remove ***
+		//bt_puts(myStr, 48);
 	} 
 }
 

@@ -10407,7 +10407,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="EnIntTXInterrupt">
-        <Value>false</Value>
+        <Value>true</Value>
       </Parameter>
       <Parameter name="FlowControl">
         <Value>0</Value>
@@ -10417,7 +10417,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="HwTXEnSignal">
-        <Value>true</Value>
+        <Value>false</Value>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>UART_1</Value>
@@ -10429,7 +10429,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="InterruptOnTXFifoEmpty">
-        <Value>false</Value>
+        <Value>true</Value>
       </Parameter>
       <Parameter name="InterruptOnTXFifoFull">
         <Value>false</Value>
@@ -10491,7 +10491,7 @@
         <Value>true</Value>
       </Parameter>
       <Parameter name="TXBufferSize">
-        <Value>4</Value>
+        <Value>48</Value>
       </Parameter>
       <Parameter name="TXEnable">
         <Value>true</Value>
@@ -15537,7 +15537,7 @@
         <Value />
       </Parameter>
       <Parameter name="PinTypes">
-        <Value>0000</Value>
+        <Value>0001</Value>
       </Parameter>
       <Parameter name="PowerOnResetState">
         <Value>4</Value>
@@ -19348,9 +19348,6 @@
       <Terminal name="UART_1.reset" type="Instance Digital Input" />
       <Terminal name="cy_constant_1.val" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_11173" type="Digital" terminalCount="1">
-      <Terminal name="UART_1.tx_interrupt" type="Instance Digital Output" />
-    </Signal>
     <Signal name="Net_11175" type="Digital" terminalCount="1">
       <Terminal name="UART_1.tx_data" type="Instance Digital Output" />
     </Signal>
@@ -19580,6 +19577,9 @@
     <Signal name="Net_12403" type="Digital" terminalCount="2">
       <Terminal name="isr_dma_uart_bt_rx.int_signal" type="Instance Digital Input" />
       <Terminal name="DMA_6.nrq" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12424" type="Digital" terminalCount="1">
+      <Terminal name="UART_1.tx_interrupt" type="Instance Digital Output" />
     </Signal>
   </Signals>
   <Properties>
