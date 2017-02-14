@@ -124,12 +124,58 @@ void init_motor(void)
 	#endif	//MOTOR_TYPE == MOTOR_BRUSHED	
 }
 
-//Controls motor PWM duty cycle
-//Sign of 'pwm_duty' determines rotation direction
-void motor_open_speed_1(int16 pwm_duty)
+//TODO: rename to setMotorVoltage, or smthng like that
+// takes as an argument the voltage to set the motor to, in milliVolts
+// applies a PWM to the motor, considering the nonlinear relationship between PWM and motor voltage
+// also accounts for the linear relationship between motor voltage & battery voltage
+void motor_open_speed_1(int16 voltageToApply)
 {
-	int16 pdc = 0;
+	const int32_t MAX_VOLTAGE = 30000;
+	const int32_t MAX_PWM_ALLOWED = 1024;
+	const uint16_t BATT_VOLT_READING_AT_34V = 143;
+	const uint16_t BATT_VOLT_READING_AT_17V = 30;
+	
+	//store voltage in an int32, we are gonna save resolution by magnifying intermediate values by like 1000
+	int32_t v = (int32_t)voltageToApply;
+	
+	//impose a max magnitude on user input voltage
+	v = (v > MAX_VOLTAGE) ? MAX_VOLTAGE : v;
+	v = (v < -1*MAX_VOLTAGE) ? -1*MAX_VOLTAGE : v;
+	
+	int32_t pwmToApply = 0;
+	
+	//only set a pwm if we have a legal/valid battery voltage
+	if(BATT_VOLT_READING_AT_17V < safety_cop.v_vb && safety_cop.v_vb < BATT_VOLT_READING_AT_34V)
+	{	
+		/* 	To see where all the magic numbers are coming from, check out the document titled
+			'LinearizationOfPwmMapping.docx' 
+		 	should be found somewhere on the team drive
+		*/
+		
+		//voltage divided by battery voltage, units = 10*mV per V
+		int32_t effortScaled = (100000 * v) / (1764 * safety_cop.v_vb + 99906);
 
+		//PWM has a nonlinear mapping to voltage
+		//here we apply the inverse non linear mapping ( approximated ), to balance the effect
+		if(effortScaled < -34)
+		{
+			//1.53 * e - 35.382, scaled up 1000, e already been scaled 10 however
+			pwmToApply = (153 * effortScaled - 35382);
+		}
+		else if(effortScaled < 34)
+		{
+			//11.45 * e, scaled up 1000, e already been scaled 10 however
+			pwmToApply = (1145 * effortScaled);
+		}
+		else
+		{
+			//1.53 * e + 35.382, scaled up 1000, e already been scaled 10 however
+			pwmToApply = (153 * effortScaled + 35382);
+		}
+		
+		pwmToApply = pwmToApply / 1000;
+	}
+	
     #if (MOTOR_COMMUT == COMMUT_BLOCK)
 		
 		uint16 tmp = 0;
@@ -166,16 +212,13 @@ void motor_open_speed_1(int16 pwm_duty)
     	PWM_1_WriteCompare2(PWM2DC(tmp));	//Can't be 0 or the ADC won't trigger
         
     #else
-        if(pwm_duty >= 1024)
-    		pdc = 1024;
-    	else if(pwm_duty <= -1024)
-    		pdc = -1024;
-    	else
-    		pdc = pwm_duty;
+		
+        if(pwmToApply >= MAX_PWM_ALLOWED)
+    		pwmToApply = MAX_PWM_ALLOWED;
+    	else if(pwmToApply <= -1*MAX_PWM_ALLOWED)
+    		pwmToApply = -1*MAX_PWM_ALLOWED;
         
-        //pdc = pdc*PWM_SIGN;
-        
-        exec1.sine_commut_pwm = MOTOR_ORIENTATION*pdc;
+        exec1.sine_commut_pwm = MOTOR_ORIENTATION*(int16_t)(pwmToApply);
     #endif
 }
 
