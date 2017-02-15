@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0" xmlns="http://cypress.com/xsd/cysem">
-  <Instances count="132">
+  <Instances count="134">
     <Instance guid="02f2cf2c-2c7a-49df-9246-7a3435c21be3" name="SCL_1" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -10364,7 +10364,7 @@
         <Value>0</Value>
       </Parameter>
       <Parameter name="BaudRate">
-        <Value>57600</Value>
+        <Value>230400</Value>
       </Parameter>
       <Parameter name="BreakBitsRX">
         <Value>13</Value>
@@ -10407,7 +10407,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="EnIntTXInterrupt">
-        <Value>false</Value>
+        <Value>true</Value>
       </Parameter>
       <Parameter name="FlowControl">
         <Value>0</Value>
@@ -10417,7 +10417,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="HwTXEnSignal">
-        <Value>true</Value>
+        <Value>false</Value>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>UART_1</Value>
@@ -10429,7 +10429,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="InterruptOnTXFifoEmpty">
-        <Value>false</Value>
+        <Value>true</Value>
       </Parameter>
       <Parameter name="InterruptOnTXFifoFull">
         <Value>false</Value>
@@ -10491,7 +10491,7 @@
         <Value>true</Value>
       </Parameter>
       <Parameter name="TXBufferSize">
-        <Value>4</Value>
+        <Value>48</Value>
       </Parameter>
       <Parameter name="TXEnable">
         <Value>true</Value>
@@ -12029,6 +12029,46 @@
       </Parameter>
       <Parameter name="UseInterrupt">
         <Value>false</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="bafacbd5-99af-40dd-b507-3db1f0f5c115" name="DMA_6" component="cy_dma_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>DMA_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="hw_request_enabled">
+        <Value>true</Value>
+        <Expression>True</Expression>
+      </Parameter>
+      <Parameter name="hw_request_type">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="hw_termination_enabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>DMA_6</Value>
       </Parameter>
     </Instance>
     <Instance guid="bd34cfdc-600d-46bd-a26f-683e07b881f3" name="PWM_4" component="PWM_v3_30">
@@ -15497,7 +15537,7 @@
         <Value />
       </Parameter>
       <Parameter name="PinTypes">
-        <Value>0000</Value>
+        <Value>0001</Value>
       </Parameter>
       <Parameter name="PowerOnResetState">
         <Value>4</Value>
@@ -17839,6 +17879,40 @@
         <Value>220k</Value>
       </Parameter>
     </Instance>
+    <Instance guid="f18424d6-ccd2-487c-b26a-2e25388249dd" name="isr_dma_uart_bt_rx" component="cy_isr_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>isr_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>isr_dma_uart_bt_rx</Value>
+      </Parameter>
+      <Parameter name="InterruptType">
+        <Value>0</Value>
+        <Expression>DERIVED</Expression>
+      </Parameter>
+    </Instance>
     <Instance guid="f4943eea-8816-449d-b24c-3f3285ba6337" name="DE3" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -18644,7 +18718,7 @@
       </Parameter>
     </Instance>
   </Instances>
-  <Signals count="254">
+  <Signals count="256">
     <Signal name="mywire_1[1:0]" type="Digital" terminalCount="3">
       <Terminal name="BasicCounter_1.cnt[1:0]" type="Instance Digital Output" />
       <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
@@ -19274,12 +19348,6 @@
       <Terminal name="UART_1.reset" type="Instance Digital Input" />
       <Terminal name="cy_constant_1.val" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_11173" type="Digital" terminalCount="1">
-      <Terminal name="UART_1.tx_interrupt" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_11174" type="Digital" terminalCount="1">
-      <Terminal name="UART_1.rx_interrupt" type="Instance Digital Output" />
-    </Signal>
     <Signal name="Net_11175" type="Digital" terminalCount="1">
       <Terminal name="UART_1.tx_data" type="Instance Digital Output" />
     </Signal>
@@ -19498,6 +19566,20 @@
     <Signal name="Net_12318" type="Analog" terminalCount="2">
       <Terminal name="AMuxHw_1.AinTerm1" type="Instance Analog InOut" />
       <Terminal name="CS1.analog_0" type="Instance Analog InOut" />
+    </Signal>
+    <Signal name="Net_12401" type="Digital" terminalCount="2">
+      <Terminal name="DMA_6.drq" type="Instance Digital Input" />
+      <Terminal name="UART_1.rx_interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12402" type="Digital" terminalCount="1">
+      <Terminal name="DMA_6.trq" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12403" type="Digital" terminalCount="2">
+      <Terminal name="isr_dma_uart_bt_rx.int_signal" type="Instance Digital Input" />
+      <Terminal name="DMA_6.nrq" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12424" type="Digital" terminalCount="1">
+      <Terminal name="UART_1.tx_interrupt" type="Instance Digital Output" />
     </Signal>
   </Signals>
   <Properties>

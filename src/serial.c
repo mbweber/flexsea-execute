@@ -40,9 +40,10 @@
 //****************************************************************************
 
 uint8 uart_dma_rx_buf[96];	//ToDo #define
+uint8 uart_dma_rx_buf_unwrapped[96];
 uint8 uart_dma_tx_buf[96];
-uint8 DMA_4_Chan;
-uint8 DMA_4_TD[1];
+uint8 uart_dma_bt_rx_buf[96];
+uint8 uart_dma_bt_rx_buf_unwrapped[96];
 volatile int8_t tx_cnt = 0;
 
 uint8 reply_ready_buf[96];
@@ -50,12 +51,23 @@ uint8 reply_ready_flag = 0;
 uint8 reply_ready_len = 0;
 uint8 reply_ready_timestamp = 0;
 
+//DMA:
+uint8 DMA_3_Chan;
+uint8 DMA_3_TD[1];
+uint8 DMA_4_Chan;
+uint8 DMA_4_TD[1];
+uint8 DMA_6_Chan;
+uint8 DMA_6_TD[1];
+uint8 DMA_7_Chan;
+uint8 DMA_7_TD[1];
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************
 
-static void init_dma_3(void);
-static void init_dma_4(void);
+static void init_dma_3(void);	//RS-485 RX
+static void init_dma_4(void);	//RS-485 TX
+static void init_dma_6(void);	//Bluetooth RX
 
 //****************************************************************************
 // Public Function(s)
@@ -75,6 +87,13 @@ void rs485_puts(uint8 *buf, uint32 len)
 {
 	(void)len; //Unused for now
 	rs485_dma_puts(buf);
+}
+
+//Wrapper for the 'puts' function, used to avoid modifying all the code.
+//Redirects to the DMA function by default
+void bt_puts(uint8 *buf, uint32 len)
+{
+	UART_1_PutArray(buf, len);
 }
 
 //Sends a string of characters to the UART. ISR based, UART needs a big FIFO buffer.
@@ -144,29 +163,12 @@ void rs485_dma_puts(uint8 *buf)
 
 void init_rs485(void)
 {
-	#ifdef USE_RS485
-		
-	//Exocute uses a wireless transmitter. We need 3V3 IOs and a low baudrate:
-	#if(ACTIVE_PROJECT == PROJECT_EXOCUTE)
-	
-		/*
-	C8M_SetDividerValue(40);	//2MHz UART clock (250k)
-	VDAC8_2_Start();			//
-	VDAC8_2_SetValue(207);		//207 = 3.3V (8 bits 0-4.08V)
-		*/
-		//For now we use wired:
-		
+	#ifdef USE_RS485		
+
 	C8M_SetDividerValue(5);		//16MHz UART clock (2M)
-	
-	#else
-		
-	C8M_SetDividerValue(5);		//16MHz UART clock (2M)
-	
-	#endif
-		
 	UART_2_Init();
 	UART_2_Enable();
-	UART_2_Start();		
+	UART_2_Start();	
 	init_dma_3();				//DMA, Reception
 	isr_dma_uart_rx_Start();
 	init_dma_4();				//DMA, Transmission
@@ -188,8 +190,9 @@ void init_bluetooth(void)
 	UART_1_Init();
 	UART_1_Enable();
 	UART_1_Start();
-	
-	//***ToDo*** DMA & ISR
+
+	init_dma_6();				//DMA, Reception
+	isr_dma_uart_bt_rx_Start();
 	
 	#endif //USE_BLUETOOTH
 }
@@ -289,8 +292,6 @@ void rs485_reply_ready(uint8_t *buf, uint32_t len)
 //****************************************************************************
 
 //DMA3: UART RX (RS-485)
-uint8 DMA_3_Chan;
-uint8 DMA_3_TD[1];
 static void init_dma_3(void)
 {
 	#define DMA_3_BYTES_PER_BURST 		1
@@ -322,4 +323,21 @@ static void init_dma_4(void)
 	CyDmaTdSetAddress(DMA_4_TD[0], LO16((uint32)uart_dma_tx_buf), LO16((uint32)UART_2_TXDATA_PTR));
 	CyDmaChSetInitialTd(DMA_4_Chan, DMA_4_TD[0]);
 	CyDmaChEnable(DMA_4_Chan, 1);
+}
+
+//DMA6: UART RX (Bluetooth)
+static void init_dma_6(void)
+{
+	#define DMA_6_BYTES_PER_BURST 		1
+	#define DMA_6_REQUEST_PER_BURST 	1
+	#define DMA_6_SRC_BASE 				(CYDEV_PERIPH_BASE)
+	#define DMA_6_DST_BASE 				(CYDEV_SRAM_BASE)
+
+	DMA_6_Chan = DMA_6_DmaInitialize(DMA_6_BYTES_PER_BURST, DMA_6_REQUEST_PER_BURST, 
+	    HI16(DMA_6_SRC_BASE), HI16(DMA_6_DST_BASE));
+	DMA_6_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_6_TD[0], 48, DMA_6_TD[0], DMA_6__TD_TERMOUT_EN | TD_INC_DST_ADR);
+	CyDmaTdSetAddress(DMA_6_TD[0], LO16((uint32)UART_1_RXDATA_PTR), LO16((uint32)uart_dma_bt_rx_buf));
+	CyDmaChSetInitialTd(DMA_6_Chan, DMA_6_TD[0]);
+	CyDmaChEnable(DMA_6_Chan, 1);
 }

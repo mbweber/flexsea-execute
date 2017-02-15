@@ -44,11 +44,14 @@
 // Variable(s)
 //****************************************************************************
 
+//ToDo: why do we have UART buffers here?! Remove once tested
+/*
 uint8 uart_dma_rx_buf[96];	//ToDo #define
 uint8 uart_dma_rx_buf_unwrapped[96];
 uint8 uart_dma_tx_buf[96];
 uint8 DMA_4_Chan;
 uint8 DMA_4_TD[1];
+*/
 uint8 gui_fsm_flag = DISABLED;
 
 //int32 last_ang_read_period;
@@ -58,8 +61,6 @@ int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 //****************************************************************************
 // Function(s)
 //****************************************************************************
-
-void init_exec_structures();
 
 //Initialize and enables all the peripherals
 void init_peripherals(void)
@@ -89,8 +90,6 @@ void init_peripherals(void)
 	
 	//Clutch:
 	init_pwro();
-	
-	init_exec_structures();
 
 	//Hall sensor for commutation?
 	#if(ENC_COMMUT == ENC_HALL)
@@ -200,12 +199,6 @@ void init_tb_timers(void)
 void init_angle_timer(void)
 {
     Timer_angleread_Start();
-}
-
-void init_exec_structures()
-{
-	exec1.enc_ang = &(as5047.signed_ang);
-	exec1.enc_ang_vel = &(as5047.signed_ang_vel);
 }
 
 //update the number of counts since the last time the angle sensor was read

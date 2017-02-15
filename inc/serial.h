@@ -47,6 +47,7 @@ void rs485_putc(uint8 byte);
 void rs485_puts(uint8 *buf, uint32 len);
 void rs485_isr_puts(uint8 *buf, uint32 len);
 void rs485_dma_puts(uint8 *buf);
+void bt_puts(uint8 *buf, uint32 len);
 void test_uart_dma_xmit(void);
 void t2_oneshot_test(void);
 void get_uart_data(void);
@@ -58,6 +59,9 @@ void rs485_reply_ready(uint8_t *buf, uint32_t len);
 
 extern uint8 uart_dma_rx_buf[96];
 extern uint8 uart_dma_tx_buf[96];
+extern uint8 uart_dma_rx_buf_unwrapped[96];
+extern uint8 uart_dma_bt_rx_buf[96];
+extern uint8 uart_dma_bt_rx_buf_unwrapped[96];
 
 extern uint8 reply_ready_buf[96];
 extern uint8 reply_ready_flag;

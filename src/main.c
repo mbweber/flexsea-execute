@@ -36,6 +36,7 @@
 
 #include "main.h"
 #include "cyapicallbacks.h"
+#include "calibration_tools.h"
 
 //****************************************************************************
 // Variable(s)
@@ -65,6 +66,12 @@ int main(void)
 
 	//Initialize all the peripherals
 	init_peripherals();
+	
+	initializeGlobalStructs();
+
+	#ifdef FINDPOLES
+		calibrationFlags |= CALIBRATION_FIND_POLES;
+	#endif
 	
 	//Test code, use with care. Normal code might NOT run when enabled!
 	//test_code_blocking();

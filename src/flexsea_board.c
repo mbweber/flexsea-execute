@@ -79,6 +79,13 @@ void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
 		usb_puts(str, length);
 		#endif
 	}
+	else if(port == PORT_WIRELESS)
+	{
+		//Delayed response:
+		#ifdef USE_BLUETOOTH
+		bt_puts(str, length);
+		#endif 	//USE_BLUETOOTH
+	}
 	else
 	{
 		//Deal with errors here ToDo

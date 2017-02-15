@@ -127,14 +127,12 @@ void find_poles(void)
 {
 	#if(MOTOR_COMMUT == COMMUT_SINE)
 		
-	static int32 counter = 0, pausetime = 400, mincomang = MAX_ENC, mincomangindx = -1;
-	uint16 pwmhigh = 200, pwmlow = 0;	
+	static int32 counter = 0, mincomang = MAX_ENC, mincomangindx = -1;
+	const uint16 pwmhigh = 200, pwmlow = 0, pausetime = 400;	
 	static int32 phasecounter = 0;
-	static int32 phase = 0, numsteps = 0;
-    
-    numsteps = NUMPOLES + 5;
+	static int32 phase = 0, numsteps = NUMPOLES + 5;
 	
-	counter++;	
+	counter++;
 	if(counter >= pausetime)
 	{ 
         counter = 0;
@@ -145,7 +143,8 @@ void find_poles(void)
     
     if (phasecounter <= numsteps)
     {
-        findingpoles = 1;
+		findingpoles = 1;
+		
 		switch (phase)
 		{
 			case 0:
@@ -218,9 +217,22 @@ void find_poles(void)
             anglemap[126] = initpole;
             anglemap[127] = 1;
             
+			#ifdef USE_EEPROM
+			
             save_angles_to_eeprom(anglemap);
             load_eeprom_to_angles();     
-            findingpoles = 0;
+			
+			#endif
+			
+			#ifndef FINDPOLES
+			phasecounter = 0;
+			phase = 0;
+			counter = 0;
+			mincomang = MAX_ENC;
+			mincomangindx = -1;
+			#endif // FINDPOLES 
+			
+			findingpoles = 0;
         }
     }
 	#endif
