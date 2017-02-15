@@ -38,16 +38,20 @@
 #include "main.h"
 #include "peripherals.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
+//ToDo: why do we have UART buffers here?! Remove once tested
+/*
 uint8 uart_dma_rx_buf[96];	//ToDo #define
 uint8 uart_dma_rx_buf_unwrapped[96];
 uint8 uart_dma_tx_buf[96];
 uint8 DMA_4_Chan;
 uint8 DMA_4_TD[1];
+*/
 uint8 gui_fsm_flag = DISABLED;
 
 //int32 last_ang_read_period;
@@ -86,7 +90,7 @@ void init_peripherals(void)
 	
 	//Clutch:
 	init_pwro();
-	
+
 	//Hall sensor for commutation?
 	#if(ENC_COMMUT == ENC_HALL)
 		Use_Hall_Write(HALL_PHYSICAL);	//Use Hall sensors (Expansion connector)
@@ -227,8 +231,6 @@ void init_as504x(struct as504x_s *as504x, int sf)
 	init_angsense(&as504x->raw);
     init_angsense(&as504x->filt);
     
-   
-	
 
     as504x->samplefreq = sf;
     as504x->last_angtimer_read = 0;
@@ -315,7 +317,10 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     as504x->raw.vel_rpm = (as504x->raw.vel_cpms*366)/100;
     as504x->filt.ang_deg = (as504x->filt.ang_clks*360)>>14;
     as504x->filt.vel_rpm = (as504x->filt.vel_cpms*366)/100;   
-    
+
+	as504x->signed_ang = -1 * raw_ang * MOTOR_ORIENTATION;
+	as504x->signed_ang_vel = -1 * as504x->filt.vel_cpms * MOTOR_ORIENTATION;
+
     //update the 1 MHz counts from the last angle read
     update_counts_since_last_ang_read(as504x);
     

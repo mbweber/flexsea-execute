@@ -34,7 +34,9 @@
 
 #include "main.h"
 #include "main_fsm.h"
-
+#include "ext_input.h"
+#include "flexsea_global_structs.h"
+#include "calibration_tools.h"
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -44,10 +46,14 @@ uint16 safety_delay = 0;
 uint8 new_cmd_led = 0;
 uint8_t tmp_rx_command_485[PAYLOAD_BUF_LEN];
 uint8_t tmp_rx_command_usb[PAYLOAD_BUF_LEN];
+uint8_t tmp_rx_command_wireless[PAYLOAD_BUF_LEN];
 uint8 toggle_wdclk = 0;	
-uint8 cmd_ready_485 = 0, cmd_ready_usb = 0;	
+uint8 cmd_ready_485 = 0, cmd_ready_usb = 0, cmd_ready_wireless = 0;	
 int steps = 0, current_step = 0;
 int spi_read_flag = 0;
+
+//***Test Code - ToDo Remove ***
+//uint8_t myStr[48] = "abcdefghijklmnopqrstuvwxyz1234567890ABCD";
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -158,7 +164,16 @@ void main_fsm_case_5(void)
 //Case 6: P & Z controllers, 0 PWM
 void main_fsm_case_9(void)
 {
-    if(ctrl.active_ctrl == CTRL_POSITION)
+	//#ifdef USE_TRAPEZ	
+	
+	// If we are running a calibration test, all controllers should be disabled anyways.
+	// Also we should be in CTRL_NONE, but that should be handled elsewhere
+	if(calibrationFlags != 0)
+	{
+		return;
+	}
+	
+	if(ctrl.active_ctrl == CTRL_POSITION)
 	{
 		motor_position_pid(ctrl.position.setp, ctrl.position.pos);
 	}
@@ -166,7 +181,11 @@ void main_fsm_case_9(void)
 	{
         impedance_controller();
 	}
-	else if(ctrl.active_ctrl == CTRL_NONE && findingpoles == 0)
+	
+	//#endif	//USE_TRAPEZ
+	
+	//If no controller is used the PWM should be 0:
+	if(ctrl.active_ctrl == CTRL_NONE)
 	{
 		motor_open_speed_1(0);
 	}
@@ -197,17 +216,29 @@ void main_fsm_case_8(void)
 //Case 9: User functions & 1s timebase	
 void main_fsm_case_6(void)
 {    
-	#ifdef FINDPOLES
-        find_poles();
-    #elif (RUNTIME_FSM == ENABLED)
-	    user_fsm();
-	#endif //RUNTIME_FSM == ENABLED	
+	if(calibrationFlags & CALIBRATION_FIND_POLES)
+	{
+		find_poles();
+		if(!findingpoles)
+		{
+			calibrationFlags = 0;
+		}
+	}
+	else
+	{
+		#if(RUNTIME_FSM == ENABLED)
+			user__fsm();
+		#endif
+	}
     
 	//1s timebase:
 	if(timebase_1s())
 	{
 		//Insert code that needs to run every second here
 		//...
+		
+		//***Test Code - ToDo Remove ***
+		//bt_puts(myStr, 48);
 	} 
 }
 
@@ -241,6 +272,19 @@ void main_fsm_10kHz(void)
 	}
 		
 	#endif	//USE_RS485
+	
+	//Bluetooth Byte Input
+	#ifdef USE_BLUETOOTH	
+
+	//Data received via DMA
+	if(data_ready_wireless)
+	{
+		data_ready_wireless = 0;
+		//Got new data in, try to decode
+		cmd_ready_wireless = unpack_payload_wireless();
+	}
+		
+	#endif	//USE_BLUETOOTH
 	
 	//USB Byte Input
 	#ifdef USE_USB			
@@ -323,6 +367,37 @@ void main_fsm_10kHz(void)
 		}
 	}
 	
+	#ifdef USE_BLUETOOTH
+	
+		//Valid communication from Bluetooth?
+		if(cmd_ready_wireless != 0)
+		{
+			cmd_ready_wireless = 0;
+			
+			//Cheap trick to get first line	//ToDo: support more than 1
+			//ToDo: use memcpy
+			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+			{
+				tmp_rx_command_wireless[i] = rx_command_wireless[0][i];
+			}
+			
+			//payload_parse_str() calls the functions (if valid)
+			info[0] = PORT_WIRELESS;
+			result = payload_parse_str(tmp_rx_command_wireless, info);
+			
+			//LED:
+			if(result == PARSE_SUCCESSFUL)
+			{
+				//Green LED only if the ID matched and the command was known
+				new_cmd_led = 1;
+			}
+			
+			//Test ToDo remove
+			//CyDmaClearPendingDrq(DMA_3_Chan);
+		}
+	
+	#endif
+	
 	#endif	//USE_COMM 
 	
 	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
@@ -330,7 +405,7 @@ void main_fsm_10kHz(void)
 		
 		current_rms_1();	//update the motor current
 		
-    	if((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
+    	if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
     	{
     		//Current controller
     		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_val);

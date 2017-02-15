@@ -34,7 +34,7 @@
 
 #include "main.h"
 #include "i2c.h"
-
+#include "ext_input.h"
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -151,7 +151,7 @@ int i2c0_read(uint8 slave_addr, uint8 reg_addr, uint8 *pdata, uint16 length)
 	}
 	
 	//Store data:
-	assign_i2c_data(&i2c_0_r_buf);
+	assign_i2c_data(i2c_0_r_buf);
 	
 	//Clear status:
 	//I2C_0_MasterClearStatus();

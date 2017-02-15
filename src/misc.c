@@ -53,6 +53,7 @@ volatile uint8 adc_delsig_flag = 0;
 
 //UART:
 volatile uint8 data_ready_485 = 0;
+volatile uint8 data_ready_wireless = 0;
 
 //USB:
 volatile uint8 data_ready_usb = 0;

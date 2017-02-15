@@ -56,9 +56,12 @@ void init_angsense(struct angsense_s *as);
 // Shared Variable(s):
 //****************************************************************************
 
+//ToDo: why do we have UART buffers here?! Remove once tested
+/*
 extern uint8 uart_dma_rx_buf[96];
 extern uint8 uart_dma_rx_buf_unwrapped[96];
 extern uint8 uart_dma_tx_buf[96];
+*/
 extern uint8 gui_fsm_flag;
 
 //****************************************************************************

@@ -84,6 +84,7 @@ void init_qei(void)
 
 //Updates the structure with the latest encoder value
 //Only deals with the Controller encoder (no commutation)
+
 int32 refresh_enc_control(void)
 {
     //Count: actual, last, difference
@@ -94,23 +95,15 @@ int32 refresh_enc_control(void)
 	#elif(ENC_CONTROL == ENC_ANALOG)
 		encoder.count = get_analog_pos();	
 	#elif(ENC_CONTROL == ENC_AS5047)
-		exec1.enc_control_ang = CTRL_ENC_FCT(as5047.raw.ang_clks);
-        exec1.enc_control_vel = CTRL_ENC_VEL_FCT(as5047.filt.vel_ctrl_cpms);
-        exec1.enc_motor = exec1.enc_control_ang;
-        exec1.enc_joint = as5048b.raw.ang_clks;
-        ctrl.impedance.actual_val = exec1.enc_control_ang;
-        ctrl.impedance.actual_vel = exec1.enc_control_vel;
-        ctrl.position.pos = exec1.enc_control_ang;
-        return exec1.enc_control_ang;
+		ctrl.impedance.actual_val = *exec1.enc_ang;
+		ctrl.impedance.actual_vel = *exec1.enc_ang_vel;
+		ctrl.position.pos = *exec1.enc_ang;
+		return *(exec1.enc_ang);
 	#elif(ENC_CONTROL == ENC_AS5048B)
-		exec1.enc_control_ang = CTRL_ENC_FCT(as5048b.raw.ang_clks);
-        exec1.enc_control_vel = CTRL_ENC_VEL_FCT(as5048b.filt.vel_ctrl_cpms);
-        exec1.enc_motor = as5047b.raw.ang_clks;
-        exec1.enc_joint = exec1.enc_control_ang;
-        ctrl.impedance.actual_val = exec1.enc_control_ang;
-        ctrl.impedance.actual_vel = exec1.enc_control_vel;
-        ctrl.position.pos = exec1.enc_control_ang;
-        return exec1.enc_control_ang;
+		ctrl.impedance.actual_val = *(exec1.enc_ang);
+		ctrl.impedance.actual_vel = *(exec1.enc_ang_vel);
+		ctrl.position.pos = *(exec1.enc_ang);
+		return *(exec1.enc_ang);
     #elif(ENC_CONTROL == ENC_CUSTOM)
 		encoder.count = CTRL_ENC_FCT(get_enc_custom());
 	#endif
@@ -123,27 +116,8 @@ int32 refresh_enc_control(void)
 	
 	return encoder.count;
 }
-//Warning: encoder.count seems to be interpreted as a uint... casting (int32) before using it works.
 
-//Encoder displayed in the GUI
-int32 refresh_enc_display(void)
-{
-	int32 tmp_enc = 0;
-	
-	#if(ENC_DISPLAY == ENC_QUADRATURE)
-		tmp_enc = CTRL_ENC_FCT(QuadDec_1_GetCounter());
-	#elif(ENC_DISPLAY == ENC_ANALOG)
-		tmp_enc = get_analog_pos();
-	#elif(ENC_DISPLAY == ENC_AS5047)
-		tmp_enc = CTRL_ENC_FCT(as5047.raw.ang_clks);
-	#elif(ENC_DISPLAY == ENC_AS5048B)
-		tmp_enc = CTRL_ENC_FCT(as5048b.raw.ang_clks);
-    #elif(ENC_CONTROL == ENC_CUSTOM)
-		tmp_enc = CTRL_ENC_FCT(get_enc_custom());
-	#endif
-	
-	return tmp_enc;
-}
+//Warning: encoder.count seems to be interpreted as a uint... casting (int32) before using it works.
 
 void qei_write(int32 enc)
 {

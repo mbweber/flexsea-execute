@@ -75,21 +75,24 @@ void csea_knee_up_down_test_demo(void)
 	LED_G_Write(1);
 	LED_B_Write(1);
 	
+	int32_t lastEncoderCount;
+	int32_t encoderCount = *exec1.enc_ang;
+	int32_t encoderCountDif;
 	while(1)
 	{		
 		//Refresh encoder data:
-		encoder.count_last = encoder.count;	
-		encoder.count = refresh_enc_control();
-		encoder.count_dif = encoder.count - encoder.count_last;
+		lastEncoderCount = encoderCount;
+		encoderCount = *exec1.enc_ang;
+		encoderCountDif = encoderCount - lastEncoderCount;
 		
 		ctrl.position.setp = trapez_get_pos(steps);	//New setpoint
-		ctrl.position.pos = encoder.count;			//Current pos
+		ctrl.position.pos = encoderCount;			//Current pos
 		
 		//PID:
 		//motor_position_pid(ctrl.position.setp, ctrl.position.pos);
 		
 		//PID + Feed Forward:
-		angle = (double)(((encoder.count - CSEA_DOWN)) / TICK_TO_ANGLE);
+		angle = (double)(((encoderCount - CSEA_DOWN)) / TICK_TO_ANGLE);
 		force = 100*sin((angle*3.14)/180);
 		force_int = (int32)force;
 		ff = -sign*(force_int * FF_GAIN)/10;
@@ -100,7 +103,7 @@ void csea_knee_up_down_test_demo(void)
 		//motor_position_pid_ff_1(ctrl.position.pos, ctrl.position.pos, ff);	//Test only
 		
 		//At power-up the knee is low:
-		low = encoder.count;
+		low = encoderCount;
 		
 		//There are 4 possible states:
 		switch(state)
@@ -135,11 +138,11 @@ void csea_knee_up_down_test_demo(void)
 				
 				sign = 1;	//FF
 				
-				if((encoder.count > (CSEA_UP - MARGIN)) && (encoder.count < (CSEA_UP + MARGIN)))
+				if((encoderCount > (CSEA_UP - MARGIN)) && (encoderCount < (CSEA_UP + MARGIN)))
 				{
 					//We have reached our target, we can go to the next step
 					traj_calculated = 0;
-					up = encoder.count;
+					up = encoderCount;
 					state = 2;
 				}
 				
@@ -176,11 +179,11 @@ void csea_knee_up_down_test_demo(void)
 				
 				sign = 1;	//FF
 				
-				if((encoder.count > (CSEA_DOWN - MARGIN)) && (encoder.count < (CSEA_DOWN + MARGIN)))
+				if((encoderCount > (CSEA_DOWN - MARGIN)) && (encoderCount < (CSEA_DOWN + MARGIN)))
 				{
 					//We have reached our target, we can go to the next step
 					traj_calculated = 0;
-					low = encoder.count;
+					low = encoderCount;
 					state = 0;
 				}		
 				
