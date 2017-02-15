@@ -39,6 +39,7 @@
 
 #include "main.h"
 #include "analog.h"
+#include "ext_input.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <math.h>
@@ -241,7 +242,7 @@ void current_rms_1(void)
     motortb.ex1[0] = (((phase_a_median-CURRENT_ZERO)*(phase_a_median-CURRENT_ZERO)+
                     (phase_b_median-CURRENT_ZERO)*(phase_b_median-CURRENT_ZERO)+
                     (phase_c_median-CURRENT_ZERO)*(phase_c_median-CURRENT_ZERO)))/41; //100 x Amps^2 = 15.6^2 * 100 / 10^6
-  
+
     if (measure_motor_resistance)
     {
         phase_a_current = (int)((phase_a_median-CURRENT_ZERO))*16; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
@@ -281,10 +282,10 @@ void current_rms_1(void)
 		#endif
     }
     calculating_current_flag = 0;
-        
-    //calculate the new filtered current 
+
+    //calculate the new filtered current
     //the filter outputs raw values x 1024 in order to maintain precision
-    ctrl.current.actual_val = PWM_SIGN*filt_array_10khz(motor_currents,motor_currents_filt,20,raw_current); // mAmps where I * the line-to-line motor constant = torque 
+    ctrl.current.actual_val = MOTOR_ORIENTATION*filt_array_10khz(motor_currents,motor_currents_filt,20,raw_current); // mAmps where I * the line-to-line motor constant = torque 
 }
 
 //update the current measurement buffer

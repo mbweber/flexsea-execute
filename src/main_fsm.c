@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "main_fsm.h"
+#include "ext_input.h"
 
 //****************************************************************************
 // Variable(s)
