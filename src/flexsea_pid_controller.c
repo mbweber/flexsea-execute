@@ -82,7 +82,7 @@ void pid_controller_setGains(pid_controller* controller, int32_t KP, int32_t KI,
 
 void computerErrors(pid_controller* ctrl) 
 {
-    ctrl->error = (ctrl->controlValue) - (ctrl->setpoint);
+    ctrl->error = (ctrl->setpoint) - (ctrl->controlValue);
     
     //Compute difference, but not on the first time
     if(ctrl->firstTime) 
