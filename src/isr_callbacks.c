@@ -36,6 +36,7 @@
 // Include(s)
 //****************************************************************************
 
+#include <flexsea_comm.h>
 #include "main.h"
 #include "cyapicallbacks.h"
 #include "ext_input.h"

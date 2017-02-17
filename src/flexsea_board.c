@@ -33,6 +33,8 @@
 // Include(s)
 //****************************************************************************
 
+//#include <fm_uart.h>
+#include <flexsea_comm.h>
 #include "main.h"
 #include "flexsea_board.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
@@ -55,6 +57,46 @@ uint8 board_sub2_id[SLAVE_BUS_2_CNT];
 //platform independent (for example, we don't need need puts_rs485() for Plan)
 
 //Communication with a slave
+
+void flexsea_send_serial_slave(PacketWrapper* p)
+{
+	(void) p;
+}
+
+void flexsea_send_serial_master(PacketWrapper* p)
+{
+	Port port = p->port;
+	uint8_t *str = p->packed;
+	uint8_t length = COMM_STR_BUF_LEN;
+	
+	if(port == PORT_RS485_1)
+	{
+		//Delayed response:
+		#ifdef USE_RS485
+		rs485_reply_ready(str, length);
+		#endif 	//USE_RS485
+	}
+	else if(port == PORT_USB)
+	{
+		#ifdef USE_USB
+		usb_puts(str, length);
+		#endif
+	}
+	else if(port == PORT_WIRELESS)
+	{
+		//Delayed response:
+		#ifdef USE_BLUETOOTH
+		bt_puts(str, length);
+		#endif 	//USE_BLUETOOTH
+	}
+	else
+	{
+		//Deal with errors here ToDo
+	}	
+	
+	fm_pool_free_block(p);
+}
+/*
 void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length)
 {
 	//Execute doesn't have slaves:
@@ -66,7 +108,7 @@ void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length)
 //Communication with our master
 void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
 {
-	if(port == PORT_485_1)
+	if(port == PORT_RS485_1)
 	{
 		//Delayed response:
 		#ifdef USE_RS485
@@ -91,3 +133,4 @@ void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
 		//Deal with errors here ToDo
 	}
 }
+*/

@@ -37,13 +37,8 @@
 //****************************************************************************
 
 #include <stdint.h>	
-	
-//****************************************************************************
-// Prototype(s):
-//****************************************************************************
-
-void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length);
-void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
+#include <flexsea.h>
+//#include <flexsea_comm.h>
 
 //****************************************************************************
 // Definition(s):
@@ -78,26 +73,15 @@ void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
 #define ENABLE_FLEXSEA_BUF_3		//Radio-module
 //#define ENABLE_FLEXSEA_BUF_4		//In the future: battery board?
 
-//Overload buffer & function names (for user convenience):
+//****************************************************************************
+// Prototype(s):
+//****************************************************************************
+void flexsea_send_serial_slave(PacketWrapper* p);
+void flexsea_send_serial_master(PacketWrapper* p);
 
-#define comm_str_485_1					comm_str_1
-#define unpack_payload_485				unpack_payload_1
-#define rx_command_485					rx_command_1
-#define update_rx_buf_byte_485			update_rx_buf_byte_1
-#define update_rx_buf_array_485			update_rx_buf_array_1
-
-#define comm_str_usb					comm_str_2
-#define unpack_payload_usb				unpack_payload_2
-#define rx_command_usb					rx_command_2
-#define update_rx_buf_byte_usb			update_rx_buf_byte_2
-#define update_rx_buf_array_usb			update_rx_buf_array_2
-
-#define comm_str_wireless				comm_str_3
-#define unpack_payload_wireless			unpack_payload_3
-#define rx_command_wireless				rx_command_3
-#define update_rx_buf_byte_wireless		update_rx_buf_byte_3
-#define update_rx_buf_array_wireless	update_rx_buf_array_3
-
+//void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length);
+//void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
+	
 //===============
 //</FlexSEA User>
 

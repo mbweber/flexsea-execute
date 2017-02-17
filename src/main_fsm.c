@@ -32,6 +32,8 @@
 // Include(s)
 //****************************************************************************
 
+#include <flexsea_comm.h>
+#include <flexsea_payload.h>
 #include "main.h"
 #include "main_fsm.h"
 #include "ext_input.h"
@@ -218,9 +220,7 @@ void main_fsm_case_9(void)
 	}
 	else
 	{
-		#if(RUNTIME_FSM == ENABLED)
-			user__fsm();
-		#endif
+			user_fsm();
 	}
     
 	//1s timebase:
@@ -304,14 +304,13 @@ void main_fsm_10kHz(void)
 		
 		//Cheap trick to get first line	//ToDo: support more than 1
 		//ToDo: use memcpy
+		PacketWrapper wrapper;
+		wrapper.port = PORT_RS485_1;
 		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 		{
-			tmp_rx_command_485[i] = rx_command_485[0][i];
+			wrapper.unpaked[i] = rx_command_485[i];
 		}
-		
-		//payload_parse_str() calls the functions (if valid)<
-		info[0] = PORT_485_1;
-		result = payload_parse_str(tmp_rx_command_485, info);
+		result = payload_parse_str(&wrapper);
 		
 		//LED:
 		if(result == PARSE_SUCCESSFUL)
@@ -341,15 +340,24 @@ void main_fsm_10kHz(void)
 	{
 		cmd_ready_usb = 0;
 		
+		PacketWrapper wrapper;
+		wrapper.port = PORT_USB;
+		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+		{
+			wrapper.unpaked[i] = rx_command_usb[i];
+		}
+		result = payload_parse_str(&wrapper);
+		
+		/*
 		//Cheap trick to get first line	//ToDo: support more than 1
 		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 		{
-			tmp_rx_command_usb[i] = rx_command_usb[0][i];
+			tmp_rx_command_usb[i] = rx_command_usb[i];
 		}
-		
 		//payload_parse_str() calls the functions (if valid)
 		info[0] = PORT_USB;
 		result = payload_parse_str(tmp_rx_command_usb, info);
+		*/
 		
 		//LED:
 		if(result == PARSE_SUCCESSFUL)
@@ -366,16 +374,26 @@ void main_fsm_10kHz(void)
 		{
 			cmd_ready_wireless = 0;
 			
+			PacketWrapper wrapper;
+			wrapper.port = PORT_WIRELESS;
+			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+			{
+				wrapper.unpaked[i] = rx_command_wireless[i];
+			}
+			result = payload_parse_str(&wrapper);		
+			
+			/*
 			//Cheap trick to get first line	//ToDo: support more than 1
 			//ToDo: use memcpy
 			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 			{
-				tmp_rx_command_wireless[i] = rx_command_wireless[0][i];
+				tmp_rx_command_wireless[i] = rx_command_wireless[i];
 			}
 			
 			//payload_parse_str() calls the functions (if valid)
 			info[0] = PORT_WIRELESS;
 			result = payload_parse_str(tmp_rx_command_wireless, info);
+			*/
 			
 			//LED:
 			if(result == PARSE_SUCCESSFUL)
