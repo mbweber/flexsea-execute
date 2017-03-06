@@ -266,8 +266,8 @@ void get_uart_data(void)
 		
 		//...then mass update rx_buf:
 		update_rx_buf_array_485(uart_tmp_buf, uart_buf_size+1);
-		
-		data_ready_485++;
+		commPeriph[PORT_RS485_1].rx.bytesReadyFlag++;
+		//data_ready_485++;
 	}		
 }
 

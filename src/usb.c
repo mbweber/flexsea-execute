@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "usb.h"
+#include <flexsea_comm.h>
 
 //****************************************************************************
 // Variable(s)
@@ -87,8 +88,8 @@ void get_usb_data(void)
 		{
 			//Store all bytes in rx buf:			
 			update_rx_buf_array_usb(buffer, count+1);
-		
-			data_ready_usb++;
+			commPeriph[PORT_USB].rx.bytesReadyFlag = 1;
+			//data_ready_usb++;
 		}
     } 	
 }
