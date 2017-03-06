@@ -61,8 +61,9 @@ int main(void)
 	//Power on delay with LEDs
 	power_on();	     
 	
-	//Prepare FlexSEA Stack:
+	//Prepare FlexSEA Stack & communication:
     init_flexsea_payload_ptr();
+	initLocalComm();
 
 	//Initialize all the peripherals
 	init_peripherals();

@@ -252,51 +252,19 @@ void main_fsm_10kHz(void)
 		//set encoder reader timer to 0  
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 	
-	//RS-485 Byte Input
-	#ifdef USE_RS485	
-
-	//Data received via DMA
-	if(data_ready_485)
-	{
-		data_ready_485 = 0;
-		//Got new data in, try to decode
-		cmd_ready_485 = unpack_payload_485();
-	}
-		
-	#endif	//USE_RS485
-	
-	//Bluetooth Byte Input
-	#ifdef USE_BLUETOOTH	
-
-	//Data received via DMA
-	if(data_ready_wireless)
-	{
-		data_ready_wireless = 0;
-		//Got new data in, try to decode
-		cmd_ready_wireless = unpack_payload_wireless();
-	}
-		
-	#endif	//USE_BLUETOOTH
-	
-	//USB Byte Input
-	#ifdef USE_USB			
-
-	get_usb_data();
-	
-	if(data_ready_usb)
-	{
-		data_ready_usb = 0;
-		//Got new data in, try to decode
-		cmd_ready_usb = unpack_payload_usb();
-		
-		eL1 = 1;
-	}
-
-	#endif	//USE_USB
+	//Did we receive new bytes from a master?
+	flexsea_receive_from_master();
 	
 	//FlexSEA Network Communication
 	#ifdef USE_COMM
 		
+	//Did we receive new bytes from a master?
+	flexsea_receive_from_master();
+	
+	//Did we receive new commands? Can we parse them?
+	parseMasterCommands(&new_cmd_led);
+	
+		/*
 	//Valid communication from RS-485?
 	if(cmd_ready_485 != 0)
 	{
@@ -306,11 +274,11 @@ void main_fsm_10kHz(void)
 		//ToDo: use memcpy
 		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 		{
-			tmp_rx_command_485[i] = rx_command_485[0][i];
+			tmp_rx_command_485[i] = rx_command_485[i];
 		}
 		
-		//payload_parse_str() calls the functions (if valid)<
-		info[0] = PORT_485_1;
+		//payload_parse_str() calls the functions (if valid)
+		info[0] = PORT_RS485_1;
 		result = payload_parse_str(tmp_rx_command_485, info);
 		
 		//LED:
@@ -323,6 +291,7 @@ void main_fsm_10kHz(void)
 		//Test ToDo remove
 		CyDmaClearPendingDrq(DMA_3_Chan);
 	}
+		*/
 	
 	//Time to reply - RS-485?
 	if(reply_ready_flag)
@@ -336,6 +305,7 @@ void main_fsm_10kHz(void)
 		}		
 	}
 
+	/*
 	//Valid communication from USB?
 	if(cmd_ready_usb != 0)
 	{
@@ -344,7 +314,7 @@ void main_fsm_10kHz(void)
 		//Cheap trick to get first line	//ToDo: support more than 1
 		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 		{
-			tmp_rx_command_usb[i] = rx_command_usb[0][i];
+			tmp_rx_command_usb[i] = rx_command_usb[i];
 		}
 		
 		//payload_parse_str() calls the functions (if valid)
@@ -358,6 +328,7 @@ void main_fsm_10kHz(void)
 			new_cmd_led = 1;
 		}
 	}
+	*/
 	
 	#ifdef USE_BLUETOOTH
 	
@@ -370,7 +341,7 @@ void main_fsm_10kHz(void)
 			//ToDo: use memcpy
 			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
 			{
-				tmp_rx_command_wireless[i] = rx_command_wireless[0][i];
+				tmp_rx_command_wireless[i] = rx_command_wireless[i];
 			}
 			
 			//payload_parse_str() calls the functions (if valid)

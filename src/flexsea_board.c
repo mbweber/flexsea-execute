@@ -36,6 +36,8 @@
 #include "main.h"
 #include "flexsea_board.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
+#include <flexsea_comm.h>
+#include <flexsea_payload.h>
 
 //****************************************************************************
 // Variable(s)
@@ -55,18 +57,20 @@ uint8 board_sub2_id[SLAVE_BUS_2_CNT];
 //platform independent (for example, we don't need need puts_rs485() for Plan)
 
 //Communication with a slave
-void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length)
+void flexsea_send_serial_slave(PacketWrapper* p)
 {
 	//Execute doesn't have slaves:
-	(void)port;
-	(void)str;
-	(void)length;
+	(void)p;
 }
 
 //Communication with our master
-void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
+void flexsea_send_serial_master(PacketWrapper* p)
 {
-	if(port == PORT_485_1)
+	Port port = p->destinationPort;
+	uint8_t *str = p->packed;
+	uint16_t length = COMM_STR_BUF_LEN;
+	
+	if(port == PORT_RS485_1)
 	{
 		//Delayed response:
 		#ifdef USE_RS485
@@ -90,4 +94,26 @@ void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length)
 	{
 		//Deal with errors here ToDo
 	}
+}
+
+void flexsea_receive_from_master(void)
+{
+	#ifdef USE_USB			
+
+		get_usb_data();
+		tryUnpacking(&commPeriph[PORT_USB], &packet[PORT_USB][INBOUND]);
+		
+	#endif
+
+	#ifdef USE_RS485
+		
+		tryUnpacking(&commPeriph[PORT_RS485_1], &packet[PORT_RS485_1][INBOUND]);
+		
+	#endif
+
+	#ifdef USE_BLUETOOTH
+		
+		tryUnpacking(&commPeriph[PORT_WIRELESS], &packet[PORT_WIRELESS][INBOUND]);
+		
+	#endif
 }

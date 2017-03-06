@@ -35,6 +35,7 @@
 // Include(s)
 //****************************************************************************
 
+#include <flexsea_comm.h>
 #include "main.h"
 #include "misc.h"
 

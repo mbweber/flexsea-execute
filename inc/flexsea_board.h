@@ -36,14 +36,16 @@
 // Include(s)
 //****************************************************************************
 
-#include <stdint.h>	
+#include <stdint.h>
+#include <flexsea.h>
 	
 //****************************************************************************
 // Prototype(s):
 //****************************************************************************
 
-void flexsea_send_serial_slave(uint8_t port, uint8_t *str, uint8_t length);
-void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
+void flexsea_send_serial_slave(PacketWrapper* p);
+void flexsea_send_serial_master(PacketWrapper* p);
+void flexsea_receive_from_master(void);
 
 //****************************************************************************
 // Definition(s):
@@ -79,6 +81,8 @@ void flexsea_send_serial_master(uint8_t port, uint8_t *str, uint8_t length);
 //#define ENABLE_FLEXSEA_BUF_4		//In the future: battery board?
 
 //Overload buffer & function names (for user convenience):
+
+#include <flexsea_comm.h>
 
 #define comm_str_485_1					comm_str_1
 #define unpack_payload_485				unpack_payload_1
