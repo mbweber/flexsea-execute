@@ -37,6 +37,7 @@
 #include "ext_input.h"
 #include "flexsea_global_structs.h"
 #include "calibration_tools.h"
+
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -44,11 +45,7 @@
 uint8 eL0 = 0, eL1 = 0, eL2 = 0;
 uint16 safety_delay = 0;
 uint8 new_cmd_led = 0;
-uint8_t tmp_rx_command_485[PAYLOAD_BUF_LEN];
-uint8_t tmp_rx_command_usb[PAYLOAD_BUF_LEN];
-uint8_t tmp_rx_command_wireless[PAYLOAD_BUF_LEN];
 uint8 toggle_wdclk = 0;	
-uint8 cmd_ready_485 = 0, cmd_ready_usb = 0, cmd_ready_wireless = 0;	
 int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 
@@ -233,18 +230,15 @@ void main_fsm_case_9(void)
 
 void main_fsm_10kHz(void)
 {    
-	uint8 i = 0;
-	uint8_t result = 0;
-	uint8_t info[2] = {0,0};
-	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	    //send command to read the as5047 angle
 	    #if(ENC_COMMUT == ENC_AS5047)
-			as5047_read_single_isr(AS5047_REG_ANGLECOM);	//Start reading, result via ISR  
+			//Start reading, result via ISR 
+			as5047_read_single_isr(AS5047_REG_ANGLECOM); 
 		#endif //ENC_AS5047
 	       
 		//set encoder reader timer to 0  
-	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
+	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 	
 	//Did we receive new bytes from a master?
 	flexsea_receive_from_master();
@@ -302,6 +296,7 @@ void main_fsm_10kHz(void)
         update_as504x(as5047_angle, &as5047);
         
         sensor_sin_commut(as5047.ang_comp_clks>>3, exec1.sine_commut_pwm);
+		
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 	
 	//RGB LED:
