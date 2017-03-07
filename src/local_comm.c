@@ -78,6 +78,7 @@ void parseMasterCommands(uint8_t *new_cmd)
 		commPeriph[PORT_RS485_1].rx.unpackedPacketsAvailable = 0;
 		parseResult = payload_parse_str(&packet[PORT_RS485_1][INBOUND]);
 		newCmdLed += (parseResult == PARSE_SUCCESSFUL) ? 1 : 0;
+		CyDmaClearPendingDrq(DMA_3_Chan);
 	}
 
 	//USB
