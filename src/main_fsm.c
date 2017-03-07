@@ -254,19 +254,6 @@ void mainFSM10kHz(void)
 		
 		//Time to reply - RS-485?
 		sendMasterDelayedResponse();
-		
-		//Time to reply - RS-485? ***ToDo update to new stack!!!********
-		/*
-		if(reply_ready_flag)
-		{
-			//We never replied in the same time slot:
-			if(t1_time_share == reply_ready_timestamp)
-			{
-				rs485_puts(reply_ready_buf, reply_ready_len);		
-				reply_ready_flag = 0;
-			}		
-		}
-		*/
 	
 	#endif	//USE_COMM 
 	

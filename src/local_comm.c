@@ -100,7 +100,7 @@ void parseMasterCommands(uint8_t *new_cmd)
 	if(newCmdLed > 0) {*new_cmd = 1;}
 }
 
-//
+//Call this to send any pending delayed reply on RS-485
 void sendMasterDelayedResponse(void)
 {
 	Port port = PORT_RS485_1;
