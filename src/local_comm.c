@@ -100,6 +100,26 @@ void parseMasterCommands(uint8_t *new_cmd)
 	if(newCmdLed > 0) {*new_cmd = 1;}
 }
 
+//
+void sendMasterDelayedResponse(void)
+{
+	Port port = PORT_RS485_1;
+	
+	if(commPeriph[port].tx.packetReady == 1)
+	{
+		//We never replied in the same time slot:
+		if(t1_time_share == commPeriph[port].tx.timeStamp)
+		{
+			//rs485_puts(reply_ready_buf, reply_ready_len);
+			rs485_puts(packet[port][OUTBOUND].packed, \
+						packet[port][OUTBOUND].numb);
+			
+			//Drop flag
+			commPeriph[port].tx.packetReady = 0;
+		}		
+	}
+}
+
 //****************************************************************************
 // Private Function(s)
 //****************************************************************************

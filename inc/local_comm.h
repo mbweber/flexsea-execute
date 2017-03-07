@@ -35,6 +35,7 @@
 // Include(s)
 //****************************************************************************
 
+#include <stdint.h>
 
 //***************************************************************************
 // Shared variable(s)
@@ -48,6 +49,7 @@
 
 void initLocalComm(void);
 void parseMasterCommands(uint8_t *new_cmd);
+void sendMasterDelayedResponse(void);
 
 //****************************************************************************
 // Definition(s):

@@ -36,6 +36,7 @@
 //****************************************************************************
 	
 #include "main.h"
+#include <flexsea.h>
 	
 //****************************************************************************
 // Public Function Prototype(s):
@@ -46,7 +47,7 @@ void init_bluetooth(void);
 void rs485_putc(uint8 byte);
 void rs485_puts(uint8 *buf, uint32 len);
 void bt_puts(uint8 *buf, uint32 len);
-void rs485_reply_ready(uint8_t *buf, uint32_t len);
+void rs485DelayedTransmit(PacketWrapper* p);
 void test_uart_dma_xmit(void);
 
 //****************************************************************************
@@ -59,16 +60,13 @@ extern uint8 uart_dma_rx_buf_unwrapped[96];
 extern uint8 uart_dma_bt_rx_buf[96];
 extern uint8 uart_dma_bt_rx_buf_unwrapped[96];
 
-extern uint8 reply_ready_buf[96];
-extern uint8 reply_ready_flag;
-extern uint8 reply_ready_len;
-extern uint8 reply_ready_timestamp;
-
 extern uint8 DMA_3_Chan;
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
-	
+
+#define REPLY_DELAY		3	//How many FSM states do we wait for?
+
 #endif	//INC_SERIAL_H
 	

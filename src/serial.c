@@ -46,13 +46,6 @@ uint8 uart_dma_tx_buf[96];
 uint8 uart_dma_bt_rx_buf[96];
 uint8 uart_dma_bt_rx_buf_unwrapped[96];
 volatile int8_t tx_cnt = 0;
-
-//ToDo Eliminate:
-uint8 reply_ready_buf[96];
-uint8 reply_ready_flag = 0;
-uint8 reply_ready_len = 0;
-uint8 reply_ready_timestamp = 0;
-
 uint8_t uart_tmp_buf[RX_BUF_LEN];
 
 //DMA:
@@ -154,16 +147,17 @@ void init_bluetooth(void)
 	#endif //USE_BLUETOOTH
 }
 
-//ToDo: not super clean, and not using the new conventions
-void rs485_reply_ready(uint8_t *buf, uint32_t len)
+//We have a packet ready, but we want to wait a little while before sending it
+void rs485DelayedTransmit(PacketWrapper* p)
 {
-	reply_ready_len = len;
-	reply_ready_timestamp = (t1_time_share + 3) % 10;
-	
-	//Save in reply buf:
-	memcpy(reply_ready_buf, buf, len);
-	
-	reply_ready_flag = 1;	
+	if(p->destinationPort == PORT_RS485_1)
+	{
+		//packet[PORT_RS485_1][OUTBOUND] should already be filled
+		
+		commPeriph[PORT_RS485_1].tx.packetReady = 1;
+		//Get reply timestamp from main FSM:
+		commPeriph[PORT_RS485_1].tx.timeStamp = (t1_time_share + REPLY_DELAY) % 10;
+	}
 }
 
 //****************************************************************************

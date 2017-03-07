@@ -74,20 +74,26 @@ void flexsea_send_serial_master(PacketWrapper* p)
 	{
 		//Delayed response:
 		#ifdef USE_RS485
-		rs485_reply_ready(str, length);
+			
+			rs485DelayedTransmit(p);
+		
 		#endif 	//USE_RS485
 	}
 	else if(port == PORT_USB)
 	{
 		#ifdef USE_USB
-		usb_puts(str, length);
+			
+			usb_puts(str, length);
+			
 		#endif
 	}
 	else if(port == PORT_WIRELESS)
 	{
 		//Delayed response:
 		#ifdef USE_BLUETOOTH
-		bt_puts(str, length);
+			
+			bt_puts(str, length);
+			
 		#endif 	//USE_BLUETOOTH
 	}
 	else

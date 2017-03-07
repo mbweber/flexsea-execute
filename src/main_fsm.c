@@ -222,7 +222,7 @@ void mainFSM9(void)
 	//1s timebase:
 	if(timebase_1s())
 	{
-		//Insert code that needs to run every second here
+		//Tries to connect to USB:
 		usbRuntimeConnect();
 	} 
 }
@@ -231,7 +231,8 @@ void mainFSM9(void)
 //================
 
 void mainFSM10kHz(void)
-{    
+{
+	//Encoder, sine commutation:
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	    //send command to read the as5047 angle
 	    #if(ENC_COMMUT == ENC_AS5047)
@@ -242,9 +243,6 @@ void mainFSM10kHz(void)
 		//set encoder reader timer to 0  
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 	
-	//Did we receive new bytes from a master?
-	flexsea_receive_from_master();
-	
 	//FlexSEA Network Communication
 	#ifdef USE_COMM
 		
@@ -254,7 +252,11 @@ void mainFSM10kHz(void)
 		//Did we receive new commands? Can we parse them?
 		parseMasterCommands(&new_cmd_led);
 		
+		//Time to reply - RS-485?
+		sendMasterDelayedResponse();
+		
 		//Time to reply - RS-485? ***ToDo update to new stack!!!********
+		/*
 		if(reply_ready_flag)
 		{
 			//We never replied in the same time slot:
@@ -264,6 +266,7 @@ void mainFSM10kHz(void)
 				reply_ready_flag = 0;
 			}		
 		}
+		*/
 	
 	#endif	//USE_COMM 
 	
