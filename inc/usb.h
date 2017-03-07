@@ -48,6 +48,7 @@ void send_usb_int16(int16 payload);
 void send_usb_int32(int payload);
 void get_usb_data(void);
 void usb_puts(uint8 *buf, uint32 len);
+void usbRuntimeConnect(void);
 
 uint8 usb_echo_blocking(void);
 

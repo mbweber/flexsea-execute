@@ -221,7 +221,7 @@ void main_fsm_case_9(void)
 	if(timebase_1s())
 	{
 		//Insert code that needs to run every second here
-		//...
+		usbRuntimeConnect();
 	} 
 }
 

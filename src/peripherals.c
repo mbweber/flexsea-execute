@@ -44,18 +44,8 @@
 // Variable(s)
 //****************************************************************************
 
-//ToDo: why do we have UART buffers here?! Remove once tested
-/*
-uint8 uart_dma_rx_buf[96];	//ToDo #define
-uint8 uart_dma_rx_buf_unwrapped[96];
-uint8 uart_dma_tx_buf[96];
-uint8 DMA_4_Chan;
-uint8 DMA_4_TD[1];
-*/
 uint8 gui_fsm_flag = DISABLED;
 
-//int32 last_ang_read_period;
-//int32 counts_since_last_ang_read;
 int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 
 //****************************************************************************

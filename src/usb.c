@@ -41,6 +41,7 @@
 //****************************************************************************
 
 uint8 buffer[RX_BUF_LEN];
+uint8_t usbConnected = 0;
 
 //****************************************************************************
 // Function(s)
@@ -69,12 +70,27 @@ uint8 init_usb(void)
 	if(flag)	
 	{
 	    //Enumeration is done, enable OUT endpoint for receive data from Host
-	    USBUART_1_CDC_Init();	
+	    USBUART_1_CDC_Init();
+		usbConnected = 1;
 		return 1;		//Success
 	}
 	
 	return 0;	//Timeout	
 }
+
+//Call this function periodically to see if USB is ready to be connected.
+void usbRuntimeConnect(void)
+{
+	//Skip if it's already working:
+	if(usbConnected) {return;}
+	
+	if(USBUART_1_GetConfiguration())
+	{
+		//Enumeration is done, enable OUT endpoint for receive data from Host
+	    USBUART_1_CDC_Init();
+		usbConnected = 1;
+	}
+}	
 
 void get_usb_data(void)
 {
