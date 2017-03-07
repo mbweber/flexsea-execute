@@ -61,6 +61,7 @@ void test_code_non_blocking(void);
 uint8 timebase_1s(void);
 uint8 timebase_100ms(void);
 uint8_t unwrap_buffer(uint8_t *array, uint8_t *new_array, uint32_t len);
+void bootManage(void);
 
 //****************************************************************************
 // Definition(s):

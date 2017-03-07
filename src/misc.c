@@ -179,6 +179,15 @@ uint8_t unwrap_buffer(uint8_t *array, uint8_t *new_array, uint32_t len)
 	return retval;
 }
 
+//Boot Manage for setups that include it
+void bootManage(void)
+{
+	EX15_Write(1);
+	CyDelay(1);
+	EX15_Write(0);
+}
+
+
 //****************************************************************************
 // Private Function(s)
 //****************************************************************************

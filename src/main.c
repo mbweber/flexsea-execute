@@ -42,15 +42,18 @@
 // Variable(s)
 //****************************************************************************
 
+//Map fsm case to an index:
+void (*fsmCases[10])(void) = {&main_fsm_case_0, &main_fsm_case_1, \
+			&main_fsm_case_2, &main_fsm_case_3, &main_fsm_case_4, \
+			&main_fsm_case_5, &main_fsm_case_6, &main_fsm_case_7, \
+			&main_fsm_case_8, &main_fsm_case_9};
+
 //****************************************************************************
 // Function(s)
 //****************************************************************************
 
 int main(void)
 {
-	//Unit tests:
-	//flexsea_system_test(); //(WiP)
-	
 	//Power on delay with LEDs
 	power_on();	     
 	
@@ -76,11 +79,8 @@ int main(void)
 	init_user();
     
     //Turn on manage
-    EX15_Write(1);
-    CyDelay(1);
-    EX15_Write(0);
-    //TODO: make that a function
-
+   	bootManage();
+	
 	//Main loop
 	while(1)
 	{
@@ -93,41 +93,7 @@ int main(void)
             t1_new_value = 0;            
 			
 			//Timing FSM:
-			switch(t1_time_share)
-			{
-				case 0:                    
-					main_fsm_case_0();	
-					break;				
-				case 1:       
-					main_fsm_case_1();	
-					break;				
-				case 2:
-					main_fsm_case_2();
-					break;
-				case 3:				
-					main_fsm_case_3();					
-					break;
-				case 4:
-					main_fsm_case_4();			
-					break;				
-				case 5:
-					main_fsm_case_5();			
-					break;					
-				case 6:
-					main_fsm_case_6();						
-					break;				
-				case 7:					
-					main_fsm_case_7();	
-					break;				
-				case 8:
-					main_fsm_case_8();					
-					break;
-				case 9:
-					main_fsm_case_9();	
-					break;				
-				default:
-					break;
-			}
+			fsmCases[t1_time_share]();
 			
 			//Increment value, limits to 0-9
         	t1_time_share++;
