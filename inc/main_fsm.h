@@ -49,19 +49,19 @@ extern int spi_read_flag;
 // Public Function Prototype(s):
 //****************************************************************************
 
-void main_fsm_case_0(void);
-void main_fsm_case_1(void);
-void main_fsm_case_2(void);
-void main_fsm_case_3(void);
-void main_fsm_case_4(void);
-void main_fsm_case_5(void);
-void main_fsm_case_6(void);
-void main_fsm_case_7(void);
-void main_fsm_case_8(void);
-void main_fsm_case_9(void);
+void mainFSM0(void);
+void mainFSM1(void);
+void mainFSM2(void);
+void mainFSM3(void);
+void mainFSM4(void);
+void mainFSM5(void);
+void mainFSM6(void);
+void mainFSM7(void);
+void mainFSM8(void);
+void mainFSM9(void);
 
-void main_fsm_10kHz(void);
-void main_fsm_asynchronous(void);
+void mainFSM10kHz(void);
+void mainFSMasynchronous(void);
 
 //****************************************************************************
 // Definition(s):

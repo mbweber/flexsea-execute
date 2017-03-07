@@ -43,10 +43,8 @@
 //****************************************************************************
 
 //Map fsm case to an index:
-void (*fsmCases[10])(void) = {&main_fsm_case_0, &main_fsm_case_1, \
-			&main_fsm_case_2, &main_fsm_case_3, &main_fsm_case_4, \
-			&main_fsm_case_5, &main_fsm_case_6, &main_fsm_case_7, \
-			&main_fsm_case_8, &main_fsm_case_9};
+void (*fsmCases[10])(void) = {&mainFSM0, &mainFSM1, &mainFSM2, &mainFSM3, \
+			&mainFSM4, &mainFSM5, &mainFSM6, &mainFSM7,	&mainFSM8, &mainFSM9};
 
 //****************************************************************************
 // Function(s)
@@ -101,12 +99,12 @@ int main(void)
 			
 			//The code below is executed every 100us, after the previous slot. 
 			//Keep it short! (<10us if possible)
-			main_fsm_10kHz();         
+			mainFSM10kHz();         
 		}
 		else
 		{
 			//Asynchronous code goes here.
-			main_fsm_asynchronous();			
+			mainFSMasynchronous();			
 		}
 	}
 }

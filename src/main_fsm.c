@@ -61,13 +61,13 @@ int spi_read_flag = 0;
 //================
 
 //Case 0: I2C_0
-void main_fsm_case_0(void)
+void mainFSM0(void)
 {
 	i2c_0_fsm();
 }
 
 //Case 1: I2C_1
-void main_fsm_case_1(void)
+void mainFSM1(void)
 {
 	//Read from Safety Co-Processor
 	#ifdef USE_I2C_1
@@ -78,7 +78,7 @@ void main_fsm_case_1(void)
 }
 
 //Case 2: some safety features & 100ms timebase
-void main_fsm_case_2(void)
+void mainFSM2(void)
 {
 	#ifdef USE_I2T_LIMIT
 	//Sample current (I2t limit):
@@ -96,7 +96,7 @@ void main_fsm_case_2(void)
 }
 
 //Case 3: Strain Gauge DelSig ADC, SAR ADC
-void main_fsm_case_3(void)
+void mainFSM3(void)
 {
 	#ifdef USE_STRAIN
 	//Start a new conversion
@@ -108,7 +108,7 @@ void main_fsm_case_3(void)
 }
 
 //Case 4: User Interface
-void main_fsm_case_4(void)
+void mainFSM4(void)
 {
 	//Alive LED
 	alive_led();
@@ -136,7 +136,7 @@ void main_fsm_case_4(void)
 }
 
 //Case 5: Position sensors & Position setpoint
-void main_fsm_case_5(void)
+void mainFSM5(void)
 {
 	//Refresh encoder readings (ENC_CONTROL only)
 	refresh_enc_control();
@@ -156,7 +156,7 @@ void main_fsm_case_5(void)
 }
 
 //Case 6: P & Z controllers, 0 PWM
-void main_fsm_case_6(void)
+void mainFSM6(void)
 {
 	//#ifdef USE_TRAPEZ	
 	
@@ -186,11 +186,13 @@ void main_fsm_case_6(void)
 }
 
 //Case 7:
-void main_fsm_case_7(void)
-{}
+void mainFSM7(void)
+{
+	//...
+}
 
 //Case 8: SAR ADC filtering
-void main_fsm_case_8(void)
+void mainFSM8(void)
 {
 	if(adc_sar1_flag)
 	{
@@ -200,7 +202,7 @@ void main_fsm_case_8(void)
 }
 
 //Case 9: User functions & 1s timebase	
-void main_fsm_case_9(void)
+void mainFSM9(void)
 {    
 	if(calibrationFlags & CALIBRATION_FIND_POLES)
 	{
@@ -228,7 +230,7 @@ void main_fsm_case_9(void)
 //10kHz time slot:
 //================
 
-void main_fsm_10kHz(void)
+void mainFSM10kHz(void)
 {    
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	    //send command to read the as5047 angle
@@ -306,7 +308,7 @@ void main_fsm_10kHz(void)
 //Asynchronous time slots:
 //========================
 
-void main_fsm_asynchronous(void)
+void mainFSMasynchronous(void)
 {
 	//WatchDog Clock (Safety-CoP)
 	toggle_wdclk ^= 1;
