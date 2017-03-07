@@ -293,9 +293,8 @@ void main_fsm_10kHz(void)
 		//We never replied in the same time slot:
 		if(t1_time_share == reply_ready_timestamp)
 		{
+			rs485_puts(reply_ready_buf, reply_ready_len);		
 			reply_ready_flag = 0;
-			//CyDelay(1);	//TODO REMOVE!!!!!!!!
-			rs485_puts(reply_ready_buf, reply_ready_len);			
 		}		
 	}
 

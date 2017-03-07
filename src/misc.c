@@ -52,13 +52,6 @@ int32 angle_read_counter = 0, last_angle_read_gap = 0;
 uint8 adc_sar1_flag = 0;
 volatile uint8 adc_delsig_flag = 0;
 
-//UART:
-//volatile uint8 data_ready_485 = 0;
-//volatile uint8 data_ready_wireless = 0;
-
-//USB:
-//volatile uint8 data_ready_usb = 0;
-
 //AS5047 Magnetic Encoder:
 uint16 last_as5047_word = 0;
 

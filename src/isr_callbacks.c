@@ -146,7 +146,6 @@ void isr_dma_uart_rx_Interrupt_InterruptCallback()
 	unwrap_buffer(uart_dma_rx_buf, uart_dma_rx_buf_unwrapped, 48);
 	update_rx_buf_array_485(uart_dma_rx_buf_unwrapped, 48);		//ToDo shouldn't be harcoded. Buffer name?
 	commPeriph[PORT_RS485_1].rx.bytesReadyFlag++;
-	//data_ready_485++;
 }
 
 void isr_dma_uart_tx_Interrupt_InterruptCallback()
@@ -161,7 +160,6 @@ void isr_dma_uart_bt_rx_Interrupt_InterruptCallback()
 	unwrap_buffer(uart_dma_bt_rx_buf, uart_dma_bt_rx_buf_unwrapped, 48);
 	update_rx_buf_array_wireless(uart_dma_bt_rx_buf_unwrapped, 48);		//ToDo shouldn't be harcoded. Buffer name?
 	commPeriph[PORT_WIRELESS].rx.bytesReadyFlag++;
-	//data_ready_wireless++;
 }
 
 void isr_delsig_Interrupt_InterruptCallback()
