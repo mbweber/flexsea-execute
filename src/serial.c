@@ -271,18 +271,14 @@ void get_uart_data(void)
 	}		
 }
 
+//ToDo: not super clean, and not using the new conventions
 void rs485_reply_ready(uint8_t *buf, uint32_t len)
 {
-	uint8 i = 0;
-	
 	reply_ready_len = len;
-	reply_ready_timestamp = t1_time_share;
+	reply_ready_timestamp = (t1_time_share + 3) % 10;
 	
 	//Save in reply buf:
-	for(i = 0; i<len; i++)
-	{
-		reply_ready_buf[i] = buf[i];
-	}
+	memcpy(reply_ready_buf, buf, len);
 	
 	reply_ready_flag = 1;	
 }

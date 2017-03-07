@@ -208,7 +208,7 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 	static uint32_t cnt_comm = UI_COMM_TIMEOUT, cnt_err_l0 = 0, cnt_err_l1 = 0, cnt_flash = 0;
 	static uint8_t latch_err_l2 = 0, flash_red = 0, comm_blue = 0;
 	uint8_t r = 0, g = 0, b = 0;
-	int8 rgbStatus = 0;
+	int8_t rgbStatus = 0;
 	
 	//Unused for now:
 	(void)cnt_err_l0;
@@ -237,17 +237,8 @@ void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm
 		cnt_comm = UI_COMM_TIMEOUT;
 	}
 
-	if(cnt_comm > 0)
-		cnt_comm--;
-
-	if(!cnt_comm)
-	{
-		comm_blue = 1;
-	}
-	else
-	{
-		comm_blue = 0;
-	}
+	if(cnt_comm > 0) {cnt_comm--;}
+	comm_blue = (cnt_comm == 0) ? 1 : 0;
 
 	//From the highest priority to the lowest:
 	//=======================================

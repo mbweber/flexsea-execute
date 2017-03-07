@@ -65,20 +65,12 @@
 #include "../flexsea-user/inc/user-ex.h"
 #include "../flexsea-system/inc/flexsea_system.h"
 #include "../flexsea-comm/inc/flexsea.h"
-#include "../flexsea-system/test/flexsea-system_test-all.h"
-	
+#include "../flexsea-system/test/flexsea-system_test-all.h"	
 
 //****************************************************************************
 // Shared variable(s)
 //****************************************************************************
 
-extern int global_variable_1;
-extern int global_variable_2;
-extern int global_variable_3;
-extern int global_variable_4;
-extern int global_variable_5;
-extern int global_variable_6;
-	
 //****************************************************************************
 // Prototype(s):
 //****************************************************************************

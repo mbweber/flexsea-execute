@@ -40,13 +40,6 @@
 
 //****************************************************************************
 // Variable(s)
-int global_variable_1 = 0;
-int global_variable_2 = 0;
-int global_variable_3 = 0;
-int global_variable_4 = 0;
-int global_variable_5 = 0;
-int global_variable_6 = 0;
-//TODO: what's that? move/clean
 //****************************************************************************
 
 //****************************************************************************

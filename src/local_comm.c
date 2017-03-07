@@ -53,13 +53,13 @@
 void initLocalComm(void)
 {
 	//Default state:
-	initCommPeriph(&commPeriph[PORT_RS485_1], PORT_RS485_1, SLAVE, rx_buf_1, \
+	initCommPeriph(&commPeriph[PORT_RS485_1], PORT_RS485_1, MASTER, rx_buf_1, \
 			comm_str_1, rx_command_1, &packet[PORT_RS485_1][INBOUND], \
 			&packet[PORT_RS485_1][OUTBOUND]);
 	initCommPeriph(&commPeriph[PORT_USB], PORT_USB, MASTER, rx_buf_2, \
 			comm_str_2, rx_command_2, &packet[PORT_USB][INBOUND], \
 			&packet[PORT_USB][OUTBOUND]);
-	initCommPeriph(&commPeriph[PORT_WIRELESS], PORT_WIRELESS, SLAVE, rx_buf_3, \
+	initCommPeriph(&commPeriph[PORT_WIRELESS], PORT_WIRELESS, MASTER, rx_buf_3, \
 			comm_str_3, rx_command_3, &packet[PORT_WIRELESS][INBOUND], \
 			&packet[PORT_WIRELESS][OUTBOUND]);
 
@@ -70,33 +70,33 @@ void initLocalComm(void)
 //Did we receive new commands? Can we parse them?
 void parseMasterCommands(uint8_t *new_cmd)
 {
-	uint8_t newCmdLed = 0;
+	uint8_t parseResult = 0, newCmdLed = 0;
 	
 	//RS-485
 	if(commPeriph[PORT_RS485_1].rx.unpackedPacketsAvailable > 0)
 	{
 		commPeriph[PORT_RS485_1].rx.unpackedPacketsAvailable = 0;
-		payload_parse_str(&packet[PORT_RS485_1][INBOUND]);
-		newCmdLed = 1;
+		parseResult = payload_parse_str(&packet[PORT_RS485_1][INBOUND]);
+		newCmdLed += (parseResult == PARSE_SUCCESSFUL) ? 1 : 0;
 	}
 
 	//USB
 	if(commPeriph[PORT_USB].rx.unpackedPacketsAvailable > 0)
 	{
 		commPeriph[PORT_USB].rx.unpackedPacketsAvailable = 0;
-		payload_parse_str(&packet[PORT_USB][INBOUND]);
-		newCmdLed = 1;
+		parseResult = payload_parse_str(&packet[PORT_USB][INBOUND]);
+		newCmdLed += (parseResult == PARSE_SUCCESSFUL) ? 1 : 0;
 	}
 
 	//Wireless
 	if(commPeriph[PORT_WIRELESS].rx.unpackedPacketsAvailable > 0)
 	{
 		commPeriph[PORT_WIRELESS].rx.unpackedPacketsAvailable = 0;
-		payload_parse_str(&packet[PORT_WIRELESS][INBOUND]);
-		newCmdLed = 1;
+		parseResult = payload_parse_str(&packet[PORT_WIRELESS][INBOUND]);
+		newCmdLed += (parseResult == PARSE_SUCCESSFUL) ? 1 : 0;
 	}
 
-	*new_cmd = newCmdLed;
+	if(newCmdLed > 0) {*new_cmd = 1;}
 }
 
 //****************************************************************************
