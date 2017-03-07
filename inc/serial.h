@@ -45,13 +45,9 @@ void init_rs485(void);
 void init_bluetooth(void);
 void rs485_putc(uint8 byte);
 void rs485_puts(uint8 *buf, uint32 len);
-void rs485_isr_puts(uint8 *buf, uint32 len);
-void rs485_dma_puts(uint8 *buf);
 void bt_puts(uint8 *buf, uint32 len);
-void test_uart_dma_xmit(void);
-void t2_oneshot_test(void);
-void get_uart_data(void);
 void rs485_reply_ready(uint8_t *buf, uint32_t len);
+void test_uart_dma_xmit(void);
 
 //****************************************************************************
 // Shared Variable(s):

@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "serial.h"
+#include <string.h>
 
 //****************************************************************************
 // Variable(s)
@@ -46,10 +47,13 @@ uint8 uart_dma_bt_rx_buf[96];
 uint8 uart_dma_bt_rx_buf_unwrapped[96];
 volatile int8_t tx_cnt = 0;
 
+//ToDo Eliminate:
 uint8 reply_ready_buf[96];
 uint8 reply_ready_flag = 0;
 uint8 reply_ready_len = 0;
 uint8 reply_ready_timestamp = 0;
+
+uint8_t uart_tmp_buf[RX_BUF_LEN];
 
 //DMA:
 uint8 DMA_3_Chan;
@@ -73,86 +77,24 @@ static void init_dma_6(void);	//Bluetooth RX
 // Public Function(s)
 //****************************************************************************
 
-//Sends a single character to the UART
-void rs485_putc(uint8 byte)
-{
-	NOT_RE_Write(1);			//Disable Receiver
-	UART_2_PutChar(byte);		//Send byte
-	//NOT_RE_Write(0);			//Enable Receiver
-}
-
-//Wrapper for the 'puts' function, used to avoid modifying all the code.
-//Redirects to the DMA function by default
+//Transmit serial data with DMA
+//The DMA transfer is for 48 bytes, by configuration. ToDo: this isn't clean
 void rs485_puts(uint8 *buf, uint32 len)
 {
 	(void)len; //Unused for now
-	rs485_dma_puts(buf);
-}
-
-//Wrapper for the 'puts' function, used to avoid modifying all the code.
-//Redirects to the DMA function by default
-void bt_puts(uint8 *buf, uint32 len)
-{
-	UART_1_PutArray(buf, len);
-}
-
-//Sends a string of characters to the UART. ISR based, UART needs a big FIFO buffer.
-//ToDo test, optimize/remove fixed delays
-void rs485_isr_puts(uint8 *buf, uint32 len)
-{
-	uint32_t i = 0;
-	
-	NOT_RE_Write(1);				//Disable Receiver
-	CyDelayUs(1);					//Wait (ToDo optimize/eliminate)
-	//UART_2_ClearTxBuffer();			//Flush the TX buffer
-	DE_Write(1);
-	CyDelayUs(1);
-	tx_cnt = len;
-	
-	//Can we store all the bytes we want to send?
-	if((UART_2_TXBUFFERSIZE - UART_2_GetTxBufferSize()) < len)
-	{
-		//Buffer is overflowing, flush it:
-		UART_2_ClearTxBuffer();
-	}	
-	
-	//Sends the bytes:
-	for(i = 0; i < len; i++)
-	{
-		UART_2_PutChar(buf[i]);
-	}	
-	
-	//Wait till they get out
-	CyDelayUs(150);					//Wait (ToDo optimize/eliminate)
-		
-	//Back to normal, enable Receiver disable emitter
-	DE_Write(0);
-	CyDelayUs(1);
-	NOT_RE_Write(0);				
-}
-
-//Transmit serial data with DMA
-//The DMA transfer is for 48 bytes, by configuration. ToDo: this isn't clean
-void rs485_dma_puts(uint8 *buf)
-{
-	int i = 0;
 	
 	UART_DMA_XMIT_Write(0);		//No transmission
 	UART_2_ClearTxBuffer();		//Clear any old data
 	
-	//ToDo Test - extra delay
-	CyDelayUs(10);	
-	
+	CyDelayUs(1);
 	NOT_RE_Write(1);			//Disable Receiver
-	CyDelayUs(1);				//Wait (ToDo optimize/eliminate)
+	CyDelayUs(1);
 	DE_Write(1);				//Enable Receiver
-	CyDelayUs(1);				//Wait (ToDo optimize/eliminate)
+	CyDelayUs(1);
+	//Note: these small delays matter, keep them
 	
-	//Sends the bytes:
-	for(i = 0; i < 48; i++)
-	{
-		uart_dma_tx_buf[i] = buf[i];
-	}
+	//Copy the bytes:
+	memcpy(uart_dma_tx_buf, buf, COMM_STR_BUF_LEN);
 	
 	//Enable channel and UART TX ISR line:
 	CyDmaChEnable(DMA_4_Chan, 1);
@@ -161,6 +103,20 @@ void rs485_dma_puts(uint8 *buf)
 	//DMA will take it from here, go to CY_ISR(isr_dma_uart_tx_Interrupt) for the end
 }
 
+//Sends a single character to the UART
+void rs485_putc(uint8 byte)
+{
+	NOT_RE_Write(1);			//Disable Receiver
+	UART_2_PutChar(byte);		//Send byte
+}
+
+//Bluetooth puts:
+void bt_puts(uint8 *buf, uint32 len)
+{
+	UART_1_PutArray(buf, len);
+}
+
+//Init UART and transceivers
 void init_rs485(void)
 {
 	#ifdef USE_RS485		
@@ -183,6 +139,7 @@ void init_rs485(void)
 	#endif	//USE_RS485
 }
 
+//Init UART and DMA
 void init_bluetooth(void)
 {
 	#ifdef USE_BLUETOOTH
@@ -196,6 +153,22 @@ void init_bluetooth(void)
 	
 	#endif //USE_BLUETOOTH
 }
+
+//ToDo: not super clean, and not using the new conventions
+void rs485_reply_ready(uint8_t *buf, uint32_t len)
+{
+	reply_ready_len = len;
+	reply_ready_timestamp = (t1_time_share + 3) % 10;
+	
+	//Save in reply buf:
+	memcpy(reply_ready_buf, buf, len);
+	
+	reply_ready_flag = 1;	
+}
+
+//****************************************************************************
+// Test Function(s)
+//****************************************************************************
 
 void test_uart_dma_xmit(void)
 {
@@ -224,63 +197,6 @@ void test_uart_dma_xmit(void)
 		UART_DMA_XMIT_Write(1);	//Allow transmission
 		CyDelay(1000);	//Wait 10ms
 	}
-}
-
-//Confirms that my timer is running in 10us one-shot mode
-void t2_oneshot_test(void)
-{
-	while(1)
-	{
-		T2_RESET_Write(0);
-		//EXP10_Write(1);
-		Timer_2_Start();
-		//ISR will take it from here...
-		CyDelay(1);		//1ms period
-	}
-}
-	
-uint8_t uart_tmp_buf[RX_BUF_LEN];
-void get_uart_data(void)
-{
-	uint32 uart_buf_size = 0, i = 0;
-	uint16 tmp = 0;
-	//uint16 status = 0;
-	
-	uart_buf_size = UART_2_GetRxBufferSize();
-	if(uart_buf_size > 0)
-	{
-		for(i = 0; i < uart_buf_size; i++)
-		{
-			//It's a shame but there is no gets function
-			//uart_tmp_buf[i] = UART_2_GetChar();	//Get as many bytes as possible...
-			tmp = UART_2_GetByte() & 0xFF;
-			uart_tmp_buf[i] = (uint8)tmp;
-			
-			/*status = (tmp & 0xFF00)>>8;
-			if(!status)
-				uart_tmp_buf[i] = (uint8)tmp;
-			else
-				break;
-			*/
-		}
-		
-		//...then mass update rx_buf:
-		update_rx_buf_array_485(uart_tmp_buf, uart_buf_size+1);
-		commPeriph[PORT_RS485_1].rx.bytesReadyFlag++;
-		//data_ready_485++;
-	}		
-}
-
-//ToDo: not super clean, and not using the new conventions
-void rs485_reply_ready(uint8_t *buf, uint32_t len)
-{
-	reply_ready_len = len;
-	reply_ready_timestamp = (t1_time_share + 3) % 10;
-	
-	//Save in reply buf:
-	memcpy(reply_ready_buf, buf, len);
-	
-	reply_ready_flag = 1;	
 }
 
 //****************************************************************************
