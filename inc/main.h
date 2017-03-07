@@ -59,7 +59,6 @@
 #include "gen_waveform.h"
 #include "mem_angle.h"	
 #include "i2t-current-limit.h"
-#include "demo.h"
 #include "flexsea_board.h"
 #include "local_comm.h"
 #include "../flexsea-user/inc/user-ex.h"

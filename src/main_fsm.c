@@ -252,107 +252,22 @@ void main_fsm_10kHz(void)
 	//FlexSEA Network Communication
 	#ifdef USE_COMM
 		
-	//Did we receive new bytes from a master?
-	flexsea_receive_from_master();
-	
-	//Did we receive new commands? Can we parse them?
-	parseMasterCommands(&new_cmd_led);
-	
-		/*
-	//Valid communication from RS-485?
-	if(cmd_ready_485 != 0)
-	{
-		cmd_ready_485 = 0;
+		//Did we receive new bytes from a master?
+		flexsea_receive_from_master();
 		
-		//Cheap trick to get first line	//ToDo: support more than 1
-		//ToDo: use memcpy
-		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+		//Did we receive new commands? Can we parse them?
+		parseMasterCommands(&new_cmd_led);
+		
+		//Time to reply - RS-485? ***ToDo update to new stack!!!********
+		if(reply_ready_flag)
 		{
-			tmp_rx_command_485[i] = rx_command_485[i];
-		}
-		
-		//payload_parse_str() calls the functions (if valid)
-		info[0] = PORT_RS485_1;
-		result = payload_parse_str(tmp_rx_command_485, info);
-		
-		//LED:
-		if(result == PARSE_SUCCESSFUL)
-		{
-			//Green LED only if the ID matched and the command was known
-			new_cmd_led = 1;
-		}
-		
-		//Test ToDo remove
-		CyDmaClearPendingDrq(DMA_3_Chan);
-	}
-		*/
-	
-	//Time to reply - RS-485? ***ToDo update to new stack!!!********
-	if(reply_ready_flag)
-	{
-		//We never replied in the same time slot:
-		if(t1_time_share == reply_ready_timestamp)
-		{
-			rs485_puts(reply_ready_buf, reply_ready_len);		
-			reply_ready_flag = 0;
-		}		
-	}
-
-	/*
-	//Valid communication from USB?
-	if(cmd_ready_usb != 0)
-	{
-		cmd_ready_usb = 0;
-		
-		//Cheap trick to get first line	//ToDo: support more than 1
-		for(i = 0; i < PAYLOAD_BUF_LEN; i++)
-		{
-			tmp_rx_command_usb[i] = rx_command_usb[i];
-		}
-		
-		//payload_parse_str() calls the functions (if valid)
-		info[0] = PORT_USB;
-		result = payload_parse_str(tmp_rx_command_usb, info);
-		
-		//LED:
-		if(result == PARSE_SUCCESSFUL)
-		{
-			//Green LED only if the ID matched and the command was known
-			new_cmd_led = 1;
-		}
-	}
-	*/
-	
-	#ifdef USE_BLUETOOTH
-	
-		//Valid communication from Bluetooth?
-		if(cmd_ready_wireless != 0)
-		{
-			cmd_ready_wireless = 0;
-			
-			//Cheap trick to get first line	//ToDo: support more than 1
-			//ToDo: use memcpy
-			for(i = 0; i < PAYLOAD_BUF_LEN; i++)
+			//We never replied in the same time slot:
+			if(t1_time_share == reply_ready_timestamp)
 			{
-				tmp_rx_command_wireless[i] = rx_command_wireless[i];
-			}
-			
-			//payload_parse_str() calls the functions (if valid)
-			info[0] = PORT_WIRELESS;
-			result = payload_parse_str(tmp_rx_command_wireless, info);
-			
-			//LED:
-			if(result == PARSE_SUCCESSFUL)
-			{
-				//Green LED only if the ID matched and the command was known
-				new_cmd_led = 1;
-			}
-			
-			//Test ToDo remove
-			//CyDmaClearPendingDrq(DMA_3_Chan);
+				rs485_puts(reply_ready_buf, reply_ready_len);		
+				reply_ready_flag = 0;
+			}		
 		}
-	
-	#endif
 	
 	#endif	//USE_COMM 
 	
