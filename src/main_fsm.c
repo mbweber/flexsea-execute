@@ -37,6 +37,7 @@
 #include "ext_input.h"
 #include "flexsea_global_structs.h"
 #include "calibration_tools.h"
+#include "flexsea_cmd_stream.h"
 
 //****************************************************************************
 // Variable(s)
@@ -152,7 +153,7 @@ void mainFSM5(void)
 		ctrl.impedance.setpoint_val = trapez_get_pos(steps);	//New setpoint
 	}
 	
-	#endif	//USE_TRAPEZ    
+	#endif	//USE_TRAPEZ  
 }
 
 //Case 6: P & Z controllers, 0 PWM
@@ -188,7 +189,20 @@ void mainFSM6(void)
 //Case 7:
 void mainFSM7(void)
 {
-	//...
+	static int sinceLastStreamSend = 0;
+	if(isStreaming)
+	{
+		if(!sinceLastStreamSend)
+		{
+			//hopefully this works ok
+			uint8_t cp_str[256] = {0};
+			cp_str[P_XID] = streamReceiver;
+			uint8_t info[2] = {PORT_USB,PORT_USB}; 
+			(*flexsea_payload_ptr[streamCmd][RX_PTYPE_READ]) (cp_str, info);			
+		}
+		sinceLastStreamSend++;
+		sinceLastStreamSend%=streamPeriod;
+	}
 }
 
 //Case 8: SAR ADC filtering
@@ -215,7 +229,7 @@ void mainFSM9(void)
 	else
 	{
 		#if(RUNTIME_FSM == ENABLED)
-			user__fsm();
+			user_fsm();
 		#endif
 	}
     
