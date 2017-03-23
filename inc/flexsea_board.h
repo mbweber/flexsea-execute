@@ -38,6 +38,7 @@
 
 #include <stdint.h>
 #include <flexsea.h>
+#include <flexsea_comm.h>
 	
 //****************************************************************************
 // Prototype(s):
@@ -86,8 +87,6 @@ uint8_t getSlaveCnt(uint8_t sub);
 //#define ENABLE_FLEXSEA_BUF_4		//In the future: battery board?
 
 //Overload buffer & function names (for user convenience):
-
-#include <flexsea_comm.h>
 
 #define comm_str_485_1					comm_str_1
 #define unpack_payload_485				unpack_payload_1
