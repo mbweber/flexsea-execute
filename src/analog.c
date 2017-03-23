@@ -43,6 +43,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <math.h>
+#include <flexsea_user_structs.h>
 
 //****************************************************************************
 // Variable(s)

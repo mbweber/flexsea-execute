@@ -46,6 +46,11 @@
 void flexsea_send_serial_slave(PacketWrapper* p);
 void flexsea_send_serial_master(PacketWrapper* p);
 void flexsea_receive_from_master(void);
+uint8_t getBoardID(void);
+void setBoardID(uint8_t bid);
+uint8_t getBoardUpID(void);
+uint8_t getBoardSubID(uint8_t sub, uint8_t idx);
+uint8_t getSlaveCnt(uint8_t sub);
 
 //****************************************************************************
 // Definition(s):
@@ -54,11 +59,11 @@ void flexsea_receive_from_master(void);
 //<FlexSEA User>
 //==============
 
-//Board type - un-comment only one!
-//Make sure it matches with board_id!
+//Board type: define as a global symbol. List of options:
+//(and make sure it matches with board_id!)
 //#define BOARD_TYPE_FLEXSEA_PLAN
 //#define BOARD_TYPE_FLEXSEA_MANAGE
-#define BOARD_TYPE_FLEXSEA_EXECUTE
+//#define BOARD_TYPE_FLEXSEA_EXECUTE
 
 //How many slave busses?
 #define COMM_SLAVE_BUS				2
@@ -112,10 +117,5 @@ void flexsea_receive_from_master(void);
 //****************************************************************************
 // Shared variable(s)
 //****************************************************************************
-
-extern uint8_t board_id;
-extern uint8_t board_up_id;
-extern uint8_t board_sub1_id[SLAVE_BUS_1_CNT];
-extern uint8_t board_sub2_id[SLAVE_BUS_2_CNT];
 
 #endif	//INC_FLEXSEA_BOARD_H
