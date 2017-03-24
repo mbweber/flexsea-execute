@@ -36,7 +36,6 @@
 #include "control.h"
 #include "motor.h"
 #include "ext_input.h"
-#include "main_fsm.h"
 #include "user-ex.h"
 #include "calibration_tools.h"
 #include "sensor_commut.h"

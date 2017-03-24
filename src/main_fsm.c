@@ -64,7 +64,6 @@ uint8_t eL0 = 0, eL1 = 0, eL2 = 0;
 uint16 safety_delay = 0;
 uint8_t new_cmd_led = 0;
 uint8_t toggle_wdclk = 0;	
-int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 
 //****************************************************************************
