@@ -34,6 +34,7 @@
 
 #include "main.h"
 #include "gen_waveform.h"
+#include "control.h"
 
 //****************************************************************************
 // Variable(s)
@@ -49,11 +50,11 @@
 // Public Function(s)
 //****************************************************************************
 
-uint16 output_sine(void)
+uint16_t output_sine(void)
 {
 	static double angle = 0;
 	static double ret = 0;
-	uint8 output = 0;
+	uint8_t output = 0;
 	
 	//if(t1_new_value == 1)
 	{	
@@ -64,7 +65,7 @@ uint16 output_sine(void)
 			angle = 0;
 		ret = sin(angle) + 1;
 		
-		output = (uint8)(ret*127);
+		output = (uint8_t)(ret*127);
 		
 		//Output on DAC:
 		//VDAC8_2_SetValue(output);
@@ -75,11 +76,11 @@ uint16 output_sine(void)
 	return output;
 }
 
-uint16 output_arb(void)
+uint16_t output_arb(void)
 {
 	static double angle = 0;
 	static double ret = 0;
-	static uint8 output = 0;
+	static uint8_t output = 0;
 	static int16 i = 0;
 	
 	i++;
@@ -113,7 +114,7 @@ uint16 output_arb(void)
 			i = 0;
 		}
 		ret = sin(angle) + 1;		
-		output = (uint8)(ret*127);
+		output = (uint8_t)(ret*127);
 	}
 	
 	//Output on DAC:
@@ -126,7 +127,7 @@ uint16 output_arb(void)
 
 //Current/thermal test. 5A average, 20A pulses
 //100ms every second.
-uint16 output_step(void)
+uint16_t output_step(void)
 {
 	static int16 i = 0;
 	uint16 output = 0;

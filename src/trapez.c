@@ -35,13 +35,9 @@
 //Comment the next line to use in your application:
 //#define DEBUGGING_OUTPUT
 
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <math.h>
-#include "trapez.h"
 #include "main.h"
-
+#include <stdlib.h>
+#include "trapez.h"
 
 //****************************************************************************
 // Local variable(s)

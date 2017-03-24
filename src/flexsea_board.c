@@ -36,6 +36,10 @@
 #include "main.h"
 #include "flexsea_board.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
+#include "user-ex.h"
+#include "local_comm.h"
+#include "serial.h"
+#include "usb.h"
 #include <flexsea_comm.h>
 #include <flexsea_payload.h>
 
@@ -44,10 +48,10 @@
 //****************************************************************************
 
 //Board ID (this board) - pick from Board list in flexsea_system.h
-uint8 board_id = FLEXSEA_EXECUTE_1;	//Can be modified in in user.c/h!
-uint8 board_up_id = FLEXSEA_MANAGE_1;
-uint8 board_sub1_id[SLAVE_BUS_1_CNT];
-uint8 board_sub2_id[SLAVE_BUS_2_CNT];
+uint8_t board_id = FLEXSEA_EXECUTE_1;	//Can be modified in in user.c/h!
+uint8_t board_up_id = FLEXSEA_MANAGE_1;
+uint8_t board_sub1_id[SLAVE_BUS_1_CNT];
+uint8_t board_sub2_id[SLAVE_BUS_2_CNT];
 
 //****************************************************************************
 // Function(s)

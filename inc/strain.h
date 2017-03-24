@@ -36,6 +36,7 @@
 //****************************************************************************
 	
 #include "main.h"
+#include "flexsea_global_structs.h"
 
 //****************************************************************************
 // Shared variable(s)
@@ -51,16 +52,16 @@ extern volatile uint16 adc_delsig_dma_array[8];
 //****************************************************************************
 
 void init_strain(void);
-void strain_config(uint8 offs, uint8 gain);
+void strain_config(uint8_t offs, uint8_t gain);
 uint16 strain_read(void);
 uint16 strain_filter(void);
 void strain_test_blocking(void);
 void dma_2_config(void);
 uint16 strain_filter_dma(void);
 
-uint8 compressAndSplit6ch(uint8 *buf, uint16 ch0, uint16 ch1, uint16 ch2, \
+uint8_t compressAndSplit6ch(uint8_t *buf, uint16 ch0, uint16 ch1, uint16 ch2, \
 							uint16 ch3, uint16 ch4, uint16 ch5);
-void unpackCompressed6ch(uint8 *buf, uint16 *v0, uint16 *v1, uint16 *v2, \
+void unpackCompressed6ch(uint8_t *buf, uint16 *v0, uint16 *v1, uint16 *v2, \
 							uint16 *v3, uint16 *v4, uint16 *v5);
 void compress6chTestCodeBlocking(void);
 
@@ -68,7 +69,7 @@ void compress6chTestCodeBlocking(void);
 // Definition(s):
 //****************************************************************************
 
-//I²C Addresses - 7bits convention
+//Iï¿½C Addresses - 7bits convention
 #define I2C_POT_ADDR			0b0101000
 
 //MCP4661

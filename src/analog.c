@@ -39,10 +39,10 @@
 
 #include "main.h"
 #include "analog.h"
+#include "control.h"
+#include "sensor_commut.h"
 #include "ext_input.h"
-#include <stdint.h>
-#include <stdlib.h>
-#include <math.h>
+#include "user-ex.h"
 #include <flexsea_user_structs.h>
 
 //****************************************************************************
@@ -60,20 +60,20 @@ int calculating_current_flag = 0;
 int16 adc_dma_array[ADC2_BUF_LEN];
 int16 adc_dma_array_buf[ADC2_BUF_LEN];
 uint16 adc_sar1_dma_array[ADC1_BUF_LEN + 1];
-volatile uint8 amux_ch = 0;
+volatile uint8_t amux_ch = 0;
 
-volatile uint8 current_sensing_flag = 0;
+volatile uint8_t current_sensing_flag = 0;
 
 int currPhase[8][3] = {{0,0,0}, {1,-1,0}, {-1,0,1}, {0,-1,1}, \
                        {0,1,-1}, {1,0,-1}, {-1,1,0}, {0,0,0}};
 
 //DMA ADC SAR 1
-uint8 DMA_5_Chan;
-uint8 DMA_5_TD[1];
+uint8_t DMA_5_Chan;
+uint8_t DMA_5_TD[1];
 
 //DMA ADC SAR 2 (Current sensing)
-uint8 DMA_1_Chan;
-uint8 DMA_1_TD[1];
+uint8_t DMA_1_Chan;
+uint8_t DMA_1_TD[1];
 
 //****************************************************************************
 // Function(s)
@@ -110,7 +110,7 @@ uint16 adc_avg8(uint16 new_data)
 {
 	uint32 sum = 0;
 	static uint16 adc_avg_buf[8] = {0,0,0,0,0,0,0,0};
-	static uint8 cnt = 0;
+	static uint8_t cnt = 0;
 	uint16 avg = 0;
 	
 	//Shift buffer and sum 7/8 terms
@@ -131,7 +131,7 @@ uint16 adc_avg8(uint16 new_data)
 //Filters the ADC buffer
 void filter_sar_adc(void)
 {
-	uint8 i = 0, j = 0;
+	uint8_t i = 0, j = 0;
 	uint32 adc_sum = 0;
 	
 	//For each channel:
@@ -167,7 +167,7 @@ void double_buffer_adc(void)
 }
 
 //Returns one filtered value
-int16 read_analog(uint8 ch)
+int16 read_analog(uint8_t ch)
 {
 	if(ch < ADC1_CHANNELS)
 	{

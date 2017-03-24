@@ -36,35 +36,9 @@
 //****************************************************************************
 
 #include <project.h>
-#include <DieTemp_1.h>
 #include <math.h>
-#include "stdio.h"
-#include "main_fsm.h"
-#include "serial.h"
-#include "i2c.h"
-#include "motor.h"
-#include "misc.h"
-#include "ui.h"
-#include "rgb_led.h"
-#include "trapez.h"
-#include "imu.h"
-#include "analog.h"
-#include "usb.h"
-#include "strain.h"
-#include "safety.h"
-#include "peripherals.h"
-#include "control.h"
-#include "sensor_commut.h"
-#include "ext_output.h"
-#include "gen_waveform.h"
-#include "mem_angle.h"	
-#include "i2t-current-limit.h"
-#include "flexsea_board.h"
-#include "local_comm.h"
-#include "../flexsea-user/inc/user-ex.h"
-#include "../flexsea-system/inc/flexsea_system.h"
-#include "../flexsea-comm/inc/flexsea.h"
-#include "../flexsea-system/test/flexsea-system_test-all.h"	
+#include <stdio.h>
+#include <stdint.h>
 
 //****************************************************************************
 // Shared variable(s)
@@ -83,6 +57,5 @@ int main(void);
 #if defined (__GNUC__)
     asm (".global _printf_float");
 #endif
-
 
 #endif // MAIN_H_

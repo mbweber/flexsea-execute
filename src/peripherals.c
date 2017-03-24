@@ -37,14 +37,25 @@
 
 #include "main.h"
 #include "peripherals.h"
+#include "motor.h"
+#include "control.h"
+#include "analog.h"
+#include "serial.h"
+#include "ext_output.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
 #include "ext_input.h"
+#include "user-ex.h"
+#include "i2c.h"
+#include "imu.h"
+#include "strain.h"
+#include "ui.h"
+#include "usb.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 gui_fsm_flag = DISABLED;
+uint8_t gui_fsm_flag = DISABLED;
 
 int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 

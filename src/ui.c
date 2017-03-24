@@ -35,14 +35,16 @@
 
 #include "main.h"
 #include "ui.h"
+#include "rgb_led.h"
+#include "user-ex.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
 //MinM RGB:
-uint8 minm_rgb_color = 0, last_minm_rgb_color = 0;
-uint8 minm_i2c_buf[MINM_BUF_SIZE];
+uint8_t minm_rgb_color = 0, last_minm_rgb_color = 0;
+uint8_t minm_i2c_buf[MINM_BUF_SIZE];
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -53,9 +55,9 @@ uint8 minm_i2c_buf[MINM_BUF_SIZE];
 // Public Function(s)
 //****************************************************************************
 
-void i2c_init_minm(uint8 color)
+void i2c_init_minm(uint8_t color)
 {
-	uint8 r = 0, g = 0, b = 0;
+	uint8_t r = 0, g = 0, b = 0;
 	
 	minm_i2c_buf[0] = MINM_STOP_SCRIPT;
 	minm_i2c_buf[1] = 0;
@@ -63,7 +65,7 @@ void i2c_init_minm(uint8 color)
 	//Stop script:
 	I2C_0_MasterClearStatus();
 	//I2C_0_MasterClearWriteBuf();
-    I2C_0_MasterWriteBuf(I2C_SLAVE_ADDR_MINM, (uint8 *) minm_i2c_buf,
+    I2C_0_MasterWriteBuf(I2C_SLAVE_ADDR_MINM, (uint8_t *) minm_i2c_buf,
                              4, I2C_0_MODE_COMPLETE_XFER);
 	
 	CyDelay(50);
@@ -80,7 +82,7 @@ void i2c_init_minm(uint8 color)
 }
 
 //Write to MinM RGB LED
-void i2c_write_minm_rgb(uint8 cmd, uint8 r, uint8 g, uint8 b)
+void i2c_write_minm_rgb(uint8_t cmd, uint8_t r, uint8_t g, uint8_t b)
 {	
 	// Write data to the slave : address pointer
 	minm_i2c_buf[0] = cmd;
@@ -90,7 +92,7 @@ void i2c_write_minm_rgb(uint8 cmd, uint8 r, uint8 g, uint8 b)
 	
 	I2C_0_MasterClearStatus();
 	//I2C_0_MasterClearWriteBuf();
-    I2C_0_MasterWriteBuf(I2C_SLAVE_ADDR_MINM, (uint8 *) minm_i2c_buf,
+    I2C_0_MasterWriteBuf(I2C_SLAVE_ADDR_MINM, (uint8_t *) minm_i2c_buf,
                              4, I2C_0_MODE_COMPLETE_XFER);
 
 	//ISR will take it from here...
@@ -99,7 +101,7 @@ void i2c_write_minm_rgb(uint8 cmd, uint8 r, uint8 g, uint8 b)
 }
 
 //One byte encodes the colors: 0 = Off, 1 = Red, 2 = Green, 3 = Blue, 4 = White
-void minm_byte_to_rgb(uint8 byte, uint8 *r, uint8 *g, uint8 *b)
+void minm_byte_to_rgb(uint8_t byte, uint8_t *r, uint8_t *g, uint8_t *b)
 {
 	switch(byte)
 	{
@@ -126,10 +128,10 @@ void minm_byte_to_rgb(uint8 byte, uint8 *r, uint8 *g, uint8 *b)
 
 //Updates the MinM LED if the color changed, otherwise does noting.
 //Returns 0 when nothing changed (no I2C transfer), 1 when it's using the bus
-uint8 update_minm_rgb(void)
+uint8_t update_minm_rgb(void)
 {
-	uint8 retval = 0;
-	static uint8 r = 0, g = 0, b = 0;
+	uint8_t retval = 0;
+	static uint8_t r = 0, g = 0, b = 0;
 	
 	#ifdef USE_I2C_0
 	
@@ -168,7 +170,7 @@ void minm_test_code(void)
 
 void alive_led(void)
 {
-	static uint8 toggle0 = 1, count0 = 0;
+	static uint8_t toggle0 = 1, count0 = 0;
 	
 	//Fast blinking - Alive LED
 	count0++;

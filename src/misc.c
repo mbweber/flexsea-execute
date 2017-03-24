@@ -35,22 +35,24 @@
 // Include(s)
 //****************************************************************************
 
-#include <flexsea_comm.h>
 #include "main.h"
 #include "misc.h"
+#include "mem_angle.h"
+#include "user-ex.h"
+#include <flexsea_comm.h>
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
 //Timers:
-volatile uint8 t1_100us_flag = 0;
-volatile uint8 t1_time_share = 0, t1_new_value = 0;
+volatile uint8_t t1_100us_flag = 0;
+volatile uint8_t t1_time_share = 0, t1_new_value = 0;
 int32 angle_read_counter = 0, last_angle_read_gap = 0;
 
 //ADC:
-uint8 adc_sar1_flag = 0;
-volatile uint8 adc_delsig_flag = 0;
+uint8_t adc_sar1_flag = 0;
+volatile uint8_t adc_delsig_flag = 0;
 
 //AS5047 Magnetic Encoder:
 uint16 last_as5047_word = 0;
@@ -65,7 +67,7 @@ uint16 last_as5047_word = 0;
 //****************************************************************************
 
 //Call this function in the 1kHz FSM. It will return 1 every second.
-uint8 timebase_1s(void)
+uint8_t timebase_1s(void)
 {
 	static uint16 time = 0;
 	
@@ -80,7 +82,7 @@ uint8 timebase_1s(void)
 }
 
 //Call this function in the 1kHz FSM. It will return 1 every 100ms.
-uint8 timebase_100ms(void)
+uint8_t timebase_100ms(void)
 {
 	static uint16 time = 0;
 	

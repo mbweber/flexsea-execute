@@ -39,10 +39,10 @@
 // Variable(s)
 //****************************************************************************
 
-uint8 rgbFade = 0;
+uint8_t rgbFade = 0;
 
 //RGB LED:
-uint8 rgbPeriodR = 0, rgbPeriodG = 0, rgbPeriodB = 0;
+uint8_t rgbPeriodR = 0, rgbPeriodG = 0, rgbPeriodB = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -54,7 +54,7 @@ uint8 rgbPeriodR = 0, rgbPeriodG = 0, rgbPeriodB = 0;
 //****************************************************************************
 
 //Use this to set a new value
-void rgbLedSet(uint8 r, uint8 g, uint8 b)
+void rgbLedSet(uint8_t r, uint8_t g, uint8_t b)
 {
 	rgbPeriodR = r;
 	rgbPeriodG = g;
@@ -65,8 +65,8 @@ void rgbLedSet(uint8 r, uint8 g, uint8 b)
 //Call this function at 10kHz
 void rgbLedRefresh(void)
 {
-	static uint8 cnt = 0;
-	static uint8 rON = 0, gON = 0, bON = 0;
+	static uint8_t cnt = 0;
+	static uint8_t rON = 0, gON = 0, bON = 0;
 	
 	//New cycle?
 	if(!cnt)
@@ -105,7 +105,7 @@ void rgbLedRefresh(void)
 }
 
 //Accessor
-uint8 rgbLedGetFade(void)
+uint8_t rgbLedGetFade(void)
 {
 	return rgbFade;
 }
@@ -113,7 +113,7 @@ uint8 rgbLedGetFade(void)
 //Call this function every ms. It will update the rgbFade variable.
 void rgbLedRefreshFade(void)
 {
-	static uint16 fade = 0, val = 0;
+	static uint16_t fade = 0, val = 0;
 
 	val++;
 	val %= FADE_PERIOD_MS;
@@ -123,13 +123,13 @@ void rgbLedRefreshFade(void)
 	else
 		fade = val;
 	
-	rgbFade = (uint8) (fade>>1 & 0xFF);
+	rgbFade = (uint8_t) (fade>>1 & 0xFF);
 }
 
 //Test code
 void rgbLedRefresh_testcode_blocking(void)
 {
-	uint8 div = 0;
+	uint8_t div = 0;
 	
 	while(1)
 	{		

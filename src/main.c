@@ -35,6 +35,12 @@
 //****************************************************************************
 
 #include "main.h"
+#include "misc.h"
+#include "ui.h"
+#include "local_comm.h"
+#include "peripherals.h"
+#include "main_fsm.h"
+#include "user-ex.h"
 #include "cyapicallbacks.h"
 #include "calibration_tools.h"
 

@@ -33,20 +33,37 @@
 //****************************************************************************
 
 #include "main.h"
+#include "i2c.h"
 #include "main_fsm.h"
+#include "misc.h"
+#include "ui.h"
+#include "motor.h"
+#include "peripherals.h"
+#include "analog.h"
+#include "control.h"
+#include "sensor_commut.h"
+#include "usb.h"
+#include "safety.h"
 #include "ext_input.h"
 #include "flexsea_global_structs.h"
 #include "calibration_tools.h"
 #include "flexsea_cmd_stream.h"
+#include "flexsea.h"
+#include "trapez.h"
+#include "i2t-current-limit.h"
+#include "flexsea_board.h"
+#include "local_comm.h"
+#include "strain.h"
+#include "user-ex.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 eL0 = 0, eL1 = 0, eL2 = 0;
+uint8_t eL0 = 0, eL1 = 0, eL2 = 0;
 uint16 safety_delay = 0;
-uint8 new_cmd_led = 0;
-uint8 toggle_wdclk = 0;	
+uint8_t new_cmd_led = 0;
+uint8_t toggle_wdclk = 0;	
 int steps = 0, current_step = 0;
 int spi_read_flag = 0;
 

@@ -39,7 +39,7 @@
 // Variable(s)
 //****************************************************************************
 
-uint8 clutch_pwm = 0;
+uint8_t clutch_pwm = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -59,21 +59,21 @@ void init_pwro(void)
 }
 
 //PWM, power output
-void pwro_output(uint8 value)
+void pwro_output(uint8_t value)
 {
 	clutch_pwm = value;
 	PWM_4_WriteCompare(clutch_pwm);
 }
 
 //Returns the PWM value of the power output
-uint8 read_pwro(void)
+uint8_t read_pwro(void)
 {
 	return clutch_pwm;
 }
 
 void test_pwro_output_blocking(void)
 {
-	uint8 pwm = 0;
+	uint8_t pwm = 0;
 	
 	while(1)
 	{

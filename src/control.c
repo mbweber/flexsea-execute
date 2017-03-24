@@ -34,11 +34,16 @@
 
 #include "main.h"
 #include "control.h"
-#include <stdint.h>
-#include <stdlib.h>
-#include <math.h>
+#include "motor.h"
 #include "ext_input.h"
+#include "main_fsm.h"
+#include "user-ex.h"
 #include "calibration_tools.h"
+#include "sensor_commut.h"
+#include "trapez.h"
+#include "flexsea_global_structs.h"
+#include "gen_waveform.h"
+
 //****************************************************************************
 // Variable(s)
 //****************************************************************************

@@ -34,6 +34,8 @@
 
 #include "main.h"
 #include "local_comm.h"
+#include "serial.h"
+#include "misc.h"
 #include <flexsea_payload.h>
 #include <flexsea_board.h>
 
