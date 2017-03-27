@@ -69,7 +69,7 @@ void motor_cancel_damping_test_code_blocking(void);
 
 //Position controller
 #define POS_PWM_LIMIT			MAX_PWM				//96%
-#define MAX_CUMULATIVE_ERROR	1000
+#define MAX_CUMULATIVE_ERROR	10000
 #define GAIN_P					0					//Default value - will change at runtime
 #define GAIN_I					0					//Idem
 #define GAIN_D					0					//Idem
@@ -79,6 +79,7 @@ void motor_cancel_damping_test_code_blocking(void);
 #define CURRENT_SPAN			((int32)1850)		//Variation from zero (technically, that's SPAN/2)
 #define CURRENT_POS_LIMIT		CURRENT_SPAN
 #define CURRENT_NEG_LIMIT		(-CURRENT_SPAN)
+#define MAX_CUM_CURRENT_ERROR	7000000
 
 //Impedance controller
 #define B1 						2898195LL 			// 3rd order Butterworth filter numerator constants

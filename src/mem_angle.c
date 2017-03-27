@@ -43,6 +43,9 @@ const uint8_t flash_angle_array_0[FLASH_MAX_DATAPOINTS] __attribute__((section("
 //const uint8_t flash_angle_array_0[FLASH_MAX_DATAPOINTS] = {0,0,0};
 const uint8_t flash_angle_array_1[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
 const uint8_t flash_angle_array_2[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
+//Test code:
+uint16 test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
+uint16 test_w_data2[TEST_DATA_LEN2], test_r_data2[TEST_DATA_LEN2];
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -65,23 +68,39 @@ void init_eeprom(void)
 }	
 
 //Saves an angle table to EEPROM - use that when calibrating
-void save_angles_to_eeprom(uint16_t *new_angles)
+void save_angles_to_eeprom(uint16_t *new_angles, eepromTable table)
 {
-	uint8_t row_cnt = 0, word_cnt = 0;
+	uint16_t row_cnt = 0, word_cnt = 0;
 	uint8_t ang_in_bytes[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	cystatus status = CYRET_UNKNOWN;
 	uint16_t new_word = 0;
+	uint16_t rowStart = 0, rowLim = 0;
+	
+	//Load info for table:
+	switch(table)
+	{
+		case COMMUTATION:
+			rowStart = EE_ANGLE_COMM_START;
+			rowLim = EE_ANGLE_COMM_START + EE_ANGLE_COMM_LEN;
+			break;
+		case JOINT:
+			rowStart = EE_ANGLE_JOINT_START;
+			rowLim = EE_ANGLE_JOINT_START + EE_ANGLE_JOINT_LEN;
+			break;
+		default:
+			return;	//Error, quit function
+	}
 	
 	//Update temperature reading:
 	EEPROM_1_UpdateTemperature();
 	
 	//One row at the time:
-	for(row_cnt = 0; row_cnt < EE_ANGLE_MAX_ROW; row_cnt++)
+	for(row_cnt = rowStart; row_cnt < rowLim; row_cnt++)
 	{
-		//From 8x uint16_t to 16x uint8_t:
+		//From 8x uint16 to 16x uint8:
 		for(word_cnt = 0; word_cnt < 8; word_cnt++)
 		{
-			new_word = new_angles[(EE_ROW_LEN_WORD * row_cnt) + word_cnt];			
+			new_word = new_angles[(EE_ROW_LEN_WORD * (row_cnt - rowStart)) + word_cnt];			
 			ang_in_bytes[word_cnt << 1] = (new_word & 0xFF00) >> 8;	//MSB
 			ang_in_bytes[(word_cnt << 1) + 1] = (new_word & 0xFF);	//LSB
 		}
@@ -93,27 +112,48 @@ void save_angles_to_eeprom(uint16_t *new_angles)
 }
 
 //Reads an angle table from EEPROM - use that for normal operation
-void load_angles_from_eeprom(uint16_t *ee_angles)
+void load_angles_from_eeprom(uint16_t *ee_angles, eepromTable table)
 {
 	uint16_t cnt = 0;
 	uint16_t msb = 0, lsb = 0;
+	uint16_t wordStart = 0, wordLim = 0;
 	
-	for(cnt = 0; cnt < (EE_SIZE_BYTES/2); cnt++)
+	//Load info for table:
+	switch(table)
+	{
+		case COMMUTATION:
+			wordStart = EE_ANGLE_COMM_START * EE_ROW_LEN_WORD;
+			wordLim = wordStart + (EE_ANGLE_COMM_LEN * EE_ROW_LEN_WORD);
+			break;
+		case JOINT:
+			wordStart = EE_ANGLE_JOINT_START * EE_ROW_LEN_WORD;
+			wordLim = wordStart + (EE_ANGLE_JOINT_LEN * EE_ROW_LEN_WORD);
+			break;
+		default:
+			return;	//Error, quit function
+	}
+	
+	for(cnt = wordStart; cnt < wordLim; cnt++)
 	{
 		//Get word from 2 bytes:
 		msb = (EEPROM_1_ReadByte(cnt << 1) << 8) & 0xFF00;
 		lsb = EEPROM_1_ReadByte((cnt << 1) + 1) & 0x00FF;
-		ee_angles[cnt] = msb | lsb;
+		ee_angles[cnt-wordStart] = msb | lsb;
 	}
 }
 
 //Writes human-readable data, and read it back
 void test_angle_eeprom(void)
-{
-	uint16_t test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
-	uint16_t cnt = 0;
-	uint16_t val = 0;
-	volatile uint16_t error_cnt = 0;
+{	
+	uint16 cnt = 0;
+	uint16 val = 0;
+	volatile uint16 error_cnt = 0;
+	
+	//Init peripheral:
+	init_eeprom();
+	
+	//First test, commutation table:
+	//==============================
 	
 	//Fill tables:
 	for(cnt = 0; cnt < TEST_DATA_LEN; cnt++)
@@ -127,10 +167,10 @@ void test_angle_eeprom(void)
 	}
 	
 	//Save it:
-	save_angles_to_eeprom(test_w_data);
+	save_angles_to_eeprom(test_w_data, COMMUTATION);
 	
 	//And read it back:
-	load_angles_from_eeprom(test_r_data);
+	load_angles_from_eeprom(test_r_data, COMMUTATION);
 	
 	//Compare:
 	for(cnt = 0; cnt < TEST_DATA_LEN; cnt++)
@@ -140,6 +180,53 @@ void test_angle_eeprom(void)
 			error_cnt++;
 		}		
 	}
+	
+	//Second test, joint table:
+	//==============================
+	
+	error_cnt = 0;
+	//Fill tables:
+	val = 0;
+	for(cnt = 0; cnt < TEST_DATA_LEN2; cnt++)
+	{
+		//'Write' table:
+		test_w_data2[cnt] = val;
+		val = val + DATA_INC2;
+		
+		//'Read' table - all zeros
+		test_r_data2[cnt] = 0;
+	}
+	
+	//Save it:
+	save_angles_to_eeprom(test_w_data2, JOINT);
+	
+	//And read it back:
+	load_angles_from_eeprom(test_r_data2, JOINT);
+	
+	//Compare:
+	for(cnt = 0; cnt < TEST_DATA_LEN2; cnt++)
+	{
+		if(test_w_data2[cnt] != test_r_data2[cnt])
+		{
+			error_cnt++;
+		}		
+	}
+	/*
+	//Third test, read commutation again, make sure it didn't change:
+	//===============================================================
+	error_cnt = 0;
+	//Read:
+	load_angles_from_eeprom(test_r_data, COMMUTATION);
+	
+	//Compare:
+	for(cnt = 0; cnt < TEST_DATA_LEN; cnt++)
+	{
+		if(test_w_data[cnt] != test_r_data[cnt])
+		{
+			error_cnt++;
+		}		
+	}
+	*/
 }
 
 //======

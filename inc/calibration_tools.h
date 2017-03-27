@@ -46,4 +46,4 @@ inline uint8_t isRunningCalibrationProcedure();
 inline uint8_t isLegalCalibrationProcedure(uint8_t procedure);
 	
 #endif	//CALIBRATION_TOOLS_H
-	
+

@@ -69,7 +69,7 @@ void compress6chTestCodeBlocking(void);
 // Definition(s):
 //****************************************************************************
 
-//I�C Addresses - 7bits convention
+//I2C Addresses - 7bits convention
 #define I2C_POT_ADDR			0b0101000
 
 //MCP4661

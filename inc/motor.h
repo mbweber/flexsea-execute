@@ -40,15 +40,13 @@
 //****************************************************************************
 // Shared variable(s)
 //****************************************************************************
-
-//extern int32 sine_commut_pwm; //ToDo remove, now in execute_s
 	
 //****************************************************************************
 // Prototype(s):
 //****************************************************************************
 
 void init_motor(void);	
-void motor_open_speed_1(int16 pwm_duty);
+void motor_open_speed_1(int32 pwm_duty);
 void motor_open_speed_2(int16 pwm_duty, int sign);
 
 void motor_fixed_pwm_test_code_blocking(int spd);
@@ -58,16 +56,25 @@ void motor_stepper_test_blocking_1(int spd);
 void motor_stepper_test_init(int spd);
 void motor_stepper_test_runtime(int div);
 
+void initDmaPwmCompare(void);
+void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c);
+
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
 //PWM limits
-#define MAX_PWM					970					//970 is 97% of 1000
-#define MIN_PWM					-MAX_PWM
-#define P1_DEADTIME				30					//Make sure that it matches the hardware setting!
-#define PWM1DC(x)				MAX(x, (P1_DEADTIME+2))
-#define PWM2DC(x)				MAX(((x - P1_DEADTIME)>>1), 10)
+#define MAX_PWM						1000
+#define MIN_PWM						-MAX_PWM
+#define P1_DEADTIME					30					//Make sure that it matches the hardware setting!
+#define PWM1DC(x)					MAX(x, (P1_DEADTIME+2))
+#define PWM2DC(x)					MAX(((x - P1_DEADTIME)>>1), 10)
+
+//Common definitions, DMA_Px:
+#define DMA_PX_BYTES_PER_BURST 		2
+#define DMA_PX_REQUEST_PER_BURST 	1
+#define DMA_PX_SRC_BASE 			(CYDEV_SRAM_BASE)
+#define DMA_PX_DST_BASE 			(CYDEV_PERIPH_BASE)
 	
 //****************************************************************************
 // Structure(s)

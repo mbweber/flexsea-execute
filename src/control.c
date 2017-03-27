@@ -91,6 +91,7 @@ void control_strategy(uint8_t strat)
 		ctrl.current.gain.I_KI = 0;
 		ctrl.current.gain.I_KD = 0;
 		ctrl.current.setpoint_val = 0;
+        ctrl.current.error_sum = 0;
 		
 		//To avoid a huge startup error on the Position-based controllers:
 		if(strat == CTRL_POSITION)
@@ -180,6 +181,10 @@ void init_ctrl_data_structure(void)
 	ctrl.current.error_dif = 0;
 }
 
+//ToDo move:
+#define MAX_ERR_SUM	400000
+#define PWM_SAT		30000	
+
 //Motor position controller - non blocking
 int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 {
@@ -202,10 +207,10 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	ctrl.position.error_dif = ctrl.position.error_dif >> 3;	
 	
 	//Saturate cumulative error
-	if(ctrl.position.error_sum >= MAX_CUMULATIVE_ERROR)
-		ctrl.position.error_sum = MAX_CUMULATIVE_ERROR;
-	if(ctrl.position.error_sum <= -MAX_CUMULATIVE_ERROR)
-		ctrl.position.error_sum = -MAX_CUMULATIVE_ERROR;
+	if(ctrl.position.error_sum >= MAX_ERR_SUM)
+		ctrl.position.error_sum = MAX_ERR_SUM;
+	if(ctrl.position.error_sum <= -MAX_ERR_SUM)
+		ctrl.position.error_sum = -MAX_ERR_SUM;
 	
 	//Proportional term
 	p = (ctrl.position.gain.P_KP * ctrl.position.error) / 100;
@@ -221,10 +226,10 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	pwm = (p + i + d);		//
 	
 	//Saturates PWM to low values
-	if(pwm >= POS_PWM_LIMIT)
-		pwm = POS_PWM_LIMIT;
-	if(pwm <= -POS_PWM_LIMIT)
-		pwm = -POS_PWM_LIMIT;
+	if(pwm >= PWM_SAT)
+		pwm = PWM_SAT;
+	if(pwm <= -PWM_SAT)
+		pwm = -PWM_SAT;
 	
 	motor_open_speed_1(pwm);
 	in_control.output = pwm;
@@ -485,33 +490,36 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	
 	//Error and integral of errors:
 	ctrl.current.error = (wanted_curr - measured_curr);					//Actual error
-	ctrl.current.error_sum = ctrl.current.error_sum + ctrl.current.error;	//Cumulative error
+	ctrl.current.error_sum = ctrl.current.error_sum + ctrl.current.gain.I_KI*ctrl.current.error;	//Cumulative error
 	
 	//Saturate cumulative error
-	if(ctrl.current.error_sum >= MAX_CUMULATIVE_ERROR)
-		ctrl.current.error_sum = MAX_CUMULATIVE_ERROR;
-	if(ctrl.current.error_sum <= -MAX_CUMULATIVE_ERROR)
-		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
+	if(ctrl.current.error_sum >= MAX_CUM_CURRENT_ERROR)
+		ctrl.current.error_sum = MAX_CUM_CURRENT_ERROR;
+	if(ctrl.current.error_sum <= -MAX_CUM_CURRENT_ERROR)
+		ctrl.current.error_sum = -MAX_CUM_CURRENT_ERROR;	
 
 	//Proportional term
-	volatile int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
+	volatile int32 curr_p = (int) ((ctrl.current.gain.I_KP * ctrl.current.error)>>8);
 	//Integral term
-	volatile int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
+	volatile int32 curr_i = (int)((ctrl.current.error_sum)>>8);
 	//Add differential term here if needed
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
 
 	//Output
-	volatile int curr_pwm = curr_p + curr_i;
+	volatile int32 curr_pwm = curr_p + curr_i+(*exec1.enc_ang_vel)*366/10*0+((wanted_curr*8)/43);
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
+        /*
 	    //sine_commut_pwm should be from 1024 to -1024
 	    if (curr_pwm > 1023)
 	    curr_pwm = 1023;
 	    if (curr_pwm < -1023)
 	    curr_pwm = -1023;
-
 	    exec1.sine_commut_pwm = MOTOR_ORIENTATION*curr_pwm;
+        */
+        
+        motor_open_speed_1(curr_pwm);
 	
 	#endif
 		

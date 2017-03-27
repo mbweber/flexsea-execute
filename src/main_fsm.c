@@ -219,6 +219,9 @@ void mainFSM7(void)
 		sinceLastStreamSend++;
 		sinceLastStreamSend%=streamPeriod;
 	}
+
+	//Encoder velocity estimation:
+	update_as504x_vel(&as5047);
 }
 
 //Case 8: SAR ADC filtering
@@ -261,18 +264,7 @@ void mainFSM9(void)
 //================
 
 void mainFSM10kHz(void)
-{
-	//Encoder, sine commutation:
-	#if(MOTOR_COMMUT == COMMUT_SINE) 
-	    //send command to read the as5047 angle
-	    #if(ENC_COMMUT == ENC_AS5047)
-			//Start reading, result via ISR 
-			as5047_read_single_isr(AS5047_REG_ANGLECOM); 
-		#endif //ENC_AS5047
-	       
-		//set encoder reader timer to 0  
-	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
-	
+{		
 	//FlexSEA Network Communication
 	#ifdef USE_COMM
 		
@@ -290,36 +282,20 @@ void mainFSM10kHz(void)
 	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
 		(MOTOR_COMMUT == COMMUT_SINE))
 		
-		current_rms_1();	//update the motor current
+		//current_rms_1();	//update the motor current
 		
     	if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
     	{
     		//Current controller
     		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_val);
     	}
+        else
+        {
+            ctrl.current.error_sum =0;
+        }
 		
 	#endif
-	
-	#if(MOTOR_COMMUT == COMMUT_SINE)                    
 
-        //wait until the 2nd ISR callback lifts spi_read_flag 
-        int tt = 0;
-        while (!spi_read_flag || tt>10)
-        {
-            tt++;
-            CyDelayUs(1);
-        }
-        reset_ang_counter(&as5047); //reset the counter from the last time an angle was read
-        
-        //read as5047 encoder data from memory
-        spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
-        as5047_angle = (spidata_miso[spi_isr_state] & 0x3FFF);
-        spi_read_flag = 0;
-        update_as504x(as5047_angle, &as5047);
-        
-        sensor_sin_commut(as5047.ang_comp_clks>>3, exec1.sine_commut_pwm);
-		
-	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 	
 	//RGB LED:
 	rgbLedRefresh();
@@ -333,6 +309,42 @@ void mainFSMasynchronous(void)
 	//WatchDog Clock (Safety-CoP)
 	toggle_wdclk ^= 1;
 	WDCLK_Write(toggle_wdclk);
+}
+
+//20kHz time slot:
+//================
+void mainFSM20kHz(void)
+{
+    /*
+	#if(MOTOR_COMMUT == COMMUT_SINE)        
+        //send command to read the as5047 angle
+		//EX3_Write(1);
+        //EX2_Write(1);
+        as5047_read_single_isr(AS5047_REG_ANGLECOM);	//Start reading, result via ISR  
+        
+        //wait until the 2nd ISR callback lifts spi_read_flag 
+        
+        static int tt = 0;
+        tt = 0;
+        while (!spi_read_flag || tt<10)
+        {
+            tt++;
+            //CyDelayUs(1);
+        }        
+        //if (tt<=100){reset_ang_counter(&as5047);}//reset the counter from the last time an angle was read
+        
+        
+        //read as5047 encoder data from memory
+        spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
+        as5047_angle = (spidata_miso[spi_isr_state] & 0x3FFF);
+        spi_read_flag = 0;
+        
+        //EX2_Write(0);
+        //update_as504x_ang(as5047_angle, &as5047);
+    
+        //sensor_sin_commut(as5047.ang_comp_clks>>3, exec1.sine_commut_pwm);
+    #endif	//(MOTOR_COMMUT == COMMUT_SINE)
+    */
 }
 
 //****************************************************************************

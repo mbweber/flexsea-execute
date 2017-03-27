@@ -69,4 +69,3 @@ extern uint8_t DMA_3_Chan;
 #define REPLY_DELAY		3	//How many FSM states do we wait for?
 
 #endif	//INC_SERIAL_H
-	

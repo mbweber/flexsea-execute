@@ -158,4 +158,4 @@ void get_as5048b_position(void);
 
 	
 #endif	//INC_EXT_IN_H
-	
+

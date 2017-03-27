@@ -67,6 +67,10 @@ volatile uint8_t current_sensing_flag = 0;
 int currPhase[8][3] = {{0,0,0}, {1,-1,0}, {-1,0,1}, {0,-1,1}, \
                        {0,1,-1}, {1,0,-1}, {-1,1,0}, {0,0,0}};
 
+int32_t phase_a_zero = 0;
+int32_t phase_b_zero = 0;
+int32_t phase_c_zero = 0;
+
 //DMA ADC SAR 1
 uint8_t DMA_5_Chan;
 uint8_t DMA_5_TD[1];
@@ -206,7 +210,8 @@ void adc_sar2_dma_config(void)
 	#else
 	
 		//9 transfers per ISR (18 bytes):	
-		xferLen = ADC2_BUF_LEN*2;
+		//xferLen = ADC2_BUF_LEN*2;
+		xferLen = 6;	//3 samples
 	
 	#endif
 	
@@ -224,42 +229,70 @@ void adc_sar2_dma_config(void)
 //Calculates the motor current
 int64_t motor_currents[2] = {0,0};
 int64_t motor_currents_filt[2] = {0,0};
-void current_rms_1(void)
-{	
-    //the current measurements are separated into phases in order to assign the angle dependent motor constant to each phase
-    //Current measurements -> 15.6 mAmps per IU
+//update the current measurement buffer
+void update_current_arrays(void)
+{
+
+	adc_dma_array_buf[0] = adc_dma_array[0];
+	adc_dma_array_buf[1] = adc_dma_array[1];
+    adc_dma_array_buf[2] = adc_dma_array[2];       
+
+    
+        //the current measurements are separated into phases in order to assign the angle dependent motor constant to each phase
+    //Current measurements -> 16.16 mAmps per IU
     //the line-to-line motor constant (what is usually given) needs to be divided by (3)^.5 for a sin wound motor and 2 for a trap wound motor
     //the current is divided by (3)^.5 so that a user can multiply the current by the common line-to-line motor constant
-    calculating_current_flag = 1;
-    static int phase_a_current, phase_b_current, phase_c_current;
+
+    static int32_t phase_a_current, phase_b_current, phase_c_current;
     static int64_t raw_current;
+    static int32_t phase_a_raw, phase_b_raw, phase_c_raw; 
     
-    int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
-    int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
-    int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
-    
-    
-    //the sum of current squareds that produces heat
-    motortb.ex1[0] = (((phase_a_median-CURRENT_ZERO)*(phase_a_median-CURRENT_ZERO)+
-                    (phase_b_median-CURRENT_ZERO)*(phase_b_median-CURRENT_ZERO)+
-                    (phase_c_median-CURRENT_ZERO)*(phase_c_median-CURRENT_ZERO)))/41; //100 x Amps^2 = 15.6^2 * 100 / 10^6
+    /*
+    if (PWM_A_Value==PWM_B_Value && PWM_A_Value == PWM_C_Value)
+    {
+        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);  
+        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
+        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero); 
+    }
+    else if (PWM_A_Value<= PWM_B_Value && PWM_A_Value<= PWM_C_Value)
+    { 
+        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
+        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero);
+        phase_a_raw = -phase_b_raw-phase_c_raw; 
+    }
+    else if (PWM_B_Value<= PWM_A_Value && PWM_B_Value<= PWM_C_Value)
+    {
+        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);   
+        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero);
+        phase_b_raw = -phase_a_raw-phase_c_raw; 
+    }
+    else
+    {
+        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);   
+        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
+        phase_c_raw = -phase_b_raw-phase_a_raw;         
+    }
+    */
+    phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);  
+    phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
+    phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero); 
+
 
     if (measure_motor_resistance)
     {
-        phase_a_current = (int)((phase_a_median-CURRENT_ZERO))*16; //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-        phase_b_current = -(int)((phase_b_median-CURRENT_ZERO))*16;
-        phase_c_current = -(int)((phase_c_median-CURRENT_ZERO))*16;
-        raw_current = (phase_a_current+phase_b_current+phase_c_current);
+        phase_a_current = (int)((phase_a_raw)); 
+        phase_b_current = -(int)((phase_b_raw));
+        phase_c_current = -(int)((phase_c_raw));
+        raw_current = (phase_a_current+phase_b_current+phase_c_current)*16;
     }
     else
     {
 		#if(MOTOR_COMMUT == COMMUT_SINE)
-		
-	        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks>>3])-955)*(phase_a_median-CURRENT_ZERO)); //(15.6 mAmps/IU) / (955 sin amplitude) / 3^.5  = 0.0094 = 1/106
-	        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks>>3])-955)*(phase_b_median-CURRENT_ZERO)); //units should be mAmps
-	        phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks>>3])-955)*(phase_c_median-CURRENT_ZERO));
-	        raw_current = (phase_a_current+phase_b_current+phase_c_current)/106;   
-		
+	        phase_a_current = ((int)(((int)phaseAcoms[as5047.ang_comp_clks_for_cur>>3]))*(phase_a_raw)); //(16.16 mAmps/IU) / (485 sin amplitude) / 3^.5 =  1/52
+	        phase_b_current = ((int)(((int)phaseBcoms[as5047.ang_comp_clks_for_cur>>3]))*(phase_b_raw)); //units should be mAmps	        
+            phase_c_current = ((int)(((int)phaseCcoms[as5047.ang_comp_clks_for_cur>>3]))*(phase_c_raw));
+	        raw_current = (phase_a_current+phase_b_current+phase_c_current);
+            raw_current = (raw_current<0)?((raw_current-26)/52):((raw_current+26)/52);
 		#endif
 		
 		#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY))
@@ -282,24 +315,33 @@ void current_rms_1(void)
 			
 		#endif
     }
-    calculating_current_flag = 0;
 
     //calculate the new filtered current
     //the filter outputs raw values x 1024 in order to maintain precision
-    ctrl.current.actual_val = MOTOR_ORIENTATION*filt_array_10khz(motor_currents,motor_currents_filt,20,raw_current); // mAmps where I * the line-to-line motor constant = torque 
+    ctrl.current.actual_val = MOTOR_ORIENTATION*filt_array_10khz(motor_currents,motor_currents_filt,40,raw_current); // mAmps where I * the line-to-line motor constant = torque 
+    //ctrl.current.actual_val = MOTOR_ORIENTATION*raw_current; // mAmps where I * the line-to-line motor constant = torque 
 }
 
-//update the current measurement buffer
-void update_current_arrays(void)
+void set_current_zero()
 {
-    int ii;
-    if (calculating_current_flag == 0)
-    {
-        for (ii = 0; ii<ADC2_BUF_LEN;ii++)
-        {
-            adc_dma_array_buf[ii] = adc_dma_array[ii];
-        }
-    }    
+    static int32_t ii =0;
+    static int32_t a_sum = 0, b_sum = 0, c_sum = 0;
+    
+    ii++;
+    a_sum += (int32_t)adc_dma_array_buf[2];
+    b_sum += (int32_t)adc_dma_array_buf[0];
+    c_sum += (int32_t)adc_dma_array_buf[1];    
+    
+    phase_a_zero = (a_sum+ii/2)/ii;
+    phase_b_zero = (b_sum+ii/2)/ii;
+    phase_c_zero = (c_sum+ii/2)/ii;    
+}
+
+void get_phase_currents(int32_t * phase_curs)
+{       
+    phase_curs[0] = (adc_dma_array_buf[2]-phase_a_zero)*16;   
+    phase_curs[1] = (adc_dma_array_buf[0]-phase_b_zero)*16;
+    phase_curs[2] = (adc_dma_array_buf[1]-phase_c_zero)*16;    
 }
 
 //1st order Butterworth LPF coefficiencts for cutoff frequencies from 1 to 50
@@ -373,4 +415,27 @@ int get_median(int a, int b, int c)
     return b;
     
     return c;
+}
+
+//Filters raw signal at cut_off frequency if sampled at 1 kHz
+//filt is 32 x raw in order to maintain precision
+//returns the filtered value at the correct scaling
+void filt_array_1khz_struct(struct filtvar_s *fv, int cut_off)
+{  
+    fv->filts[1] = fv->filts[0];
+    fv->raws[1] = fv->raws[0];
+    fv->raws[0] = fv->raw;
+    //ensure the cut-off frequency is inbetween 1 and 50 Hz
+    if (cut_off<1)
+    cut_off = 1;
+    else if (cut_off>50)
+    cut_off = 50;
+    
+    fv->filts[0] = (bs_1k[cut_off-1]*(fv->raws[1]+fv->raws[0])-as_1k[cut_off-1]*fv->filts[1])>>15;   
+    fv->filt = (int32_t)(fv->filts[0]>>5);
+}
+
+void adc_sar2_dma_reinit(void)
+{
+CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
 }

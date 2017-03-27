@@ -43,6 +43,7 @@
 //****************************************************************************
 	
 extern volatile uint8_t t1_100us_flag;
+extern volatile uint8 t1_50us_flag;
 extern volatile uint8_t t1_time_share, t1_new_value;
 	
 extern uint8_t adc_sar1_flag;	
@@ -70,4 +71,3 @@ void bootManage(void);
 #define SDELAY	5
 	
 #endif	//INC_MISC_H
-	

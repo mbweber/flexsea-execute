@@ -36,6 +36,7 @@
 //****************************************************************************	
 	
 #include "main.h"
+#include <flexsea_user_structs.h>
 		
 //****************************************************************************
 // Prototype(s):
@@ -50,10 +51,14 @@ void adc_sar2_dma_config(void);
 void double_buffer_adc(void);
 void current_rms_1(void);
 void update_current_arrays(void);
+void set_current_zero(void);
+void get_phase_currents(int32_t *);
 int32_t filt_array_10khz(int64_t *,int64_t *,int,int64_t);
 int32_t filt_array_1khz(int64_t *,int64_t *,int,int64_t);
 int32_t filt_array_250hz(int64_t *,int64_t *,int,int64_t);
 int get_median(int, int, int);
+void filt_array_1khz_struct(struct filtvar_s *, int);
+void adc_sar2_dma_reinit(void);
 
 //****************************************************************************
 // Definition(s):
@@ -100,4 +105,3 @@ extern volatile int hallCurr;
 //****************************************************************************
 
 #endif	//INC_ANALOG_H
-	

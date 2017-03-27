@@ -60,6 +60,7 @@ void mainFSM8(void);
 void mainFSM9(void);
 
 void mainFSM10kHz(void);
+void mainFSM20kHz(void);
 void mainFSMasynchronous(void);
 
 //****************************************************************************
@@ -70,6 +71,5 @@ void mainFSMasynchronous(void);
 //****************************************************************************
 // Structure(s)
 //****************************************************************************
-
 
 #endif	//INC_MAIN_FSM_H

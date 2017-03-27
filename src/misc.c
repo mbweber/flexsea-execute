@@ -47,8 +47,9 @@
 
 //Timers:
 volatile uint8_t t1_100us_flag = 0;
+volatile uint8 t1_50us_flag = 0;
 volatile uint8_t t1_time_share = 0, t1_new_value = 0;
-int32 angle_read_counter = 0, last_angle_read_gap = 0;
+int32_t angle_read_counter = 0, last_angle_read_gap = 0;
 
 //ADC:
 uint8_t adc_sar1_flag = 0;
@@ -136,7 +137,7 @@ void test_code_non_blocking(void)
 	//motor_fixed_pwm_test_code_non_blocking(125);
 	//pwro_output(245);	
 	//test_angle_eeprom();
-	test_angle_flash();
+	//test_angle_flash();
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=		
 }
 
