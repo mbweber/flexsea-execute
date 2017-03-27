@@ -49,14 +49,14 @@
 volatile uint8_t t1_100us_flag = 0;
 volatile uint8 t1_50us_flag = 0;
 volatile uint8_t t1_time_share = 0, t1_new_value = 0;
-int32_t angle_read_counter = 0, last_angle_read_gap = 0;
+//int32_t angle_read_counter = 0, last_angle_read_gap = 0;
 
 //ADC:
 uint8_t adc_sar1_flag = 0;
 volatile uint8_t adc_delsig_flag = 0;
 
 //AS5047 Magnetic Encoder:
-uint16 last_as5047_word = 0;
+//uint16 last_as5047_word = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):

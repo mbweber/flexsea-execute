@@ -37,6 +37,7 @@
 #include "ext_input.h"
 #include "safety.h"
 #include "mem_angle.h"
+#include "motor.h"
 #include "user-ex.h"
 
 //****************************************************************************
