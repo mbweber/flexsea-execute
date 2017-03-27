@@ -38,7 +38,8 @@
 #include "ext_input.h"
 #include "user-ex.h"
 #include "ext_input.h"
-#include "peripherals.h"
+//#include "peripherals.h"
+#include "mag_encoders.h"
 #include "flexsea_global_structs.h"
 
 //****************************************************************************

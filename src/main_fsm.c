@@ -54,6 +54,7 @@
 #include "flexsea_board.h"
 #include "local_comm.h"
 #include "strain.h"
+#include "mag_encoders.h"
 #include "user-ex.h"
 
 //****************************************************************************

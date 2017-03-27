@@ -21,37 +21,47 @@
 	Biomechatronics research group <http://biomech.media.mit.edu/>
 	[Contributors] Luke Mooney
 *****************************************************************************
-	[This file] peripherals: code for the general peripheral modules
+	[This file] mag_encoders: AS504x Magnetic Encoders
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2016-09-29 | jfduval | Released under GPL-3.0 release
 	*
 ****************************************************************************/
-	
-#ifndef INC_PERIPH_H
-#define INC_PERIPH_H
+
+#ifndef INC_MAG_ENCODERS_H
+#define INC_MAG_ENCODERS_H
 
 //****************************************************************************
 // Include(s)
 //****************************************************************************
-	
+
 #include "main.h"
-	
+//#include "../../flexsea-system/inc/flexsea_system.h"
+#include "flexsea_global_structs.h"
+
 //****************************************************************************
 // Public Function Prototype(s):
 //****************************************************************************
 
-void init_peripherals(void);
-void init_tb_timers(void);
+void init_angle_timer(void);
+
+void update_counts_since_last_ang_read(struct as504x_s *as504x);
+void reset_ang_counter(struct as504x_s *);
+void init_angsense(struct angsense_s *as);
+void init_as504x(struct as504x_s *as504x);
+
+void update_as504x(int32_t ang, struct as504x_s *as504x);
+void update_as504x_ang(int32_t ang, struct as504x_s *as504x);
+void update_as504x_vel(struct as504x_s *as504x);
+
 
 //****************************************************************************
 // Shared Variable(s):
 //****************************************************************************
 
-extern uint8_t gui_fsm_flag;
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
-	
-#endif	//INC_PERIPH_H
+
+#endif	//INC_MAG_ENCODERS_H
