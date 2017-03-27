@@ -45,6 +45,7 @@
 #include "flexsea_board.h"
 #include "flexsea_buffers.h"
 #include "ext_input.h"
+#include "main_fsm.h"
 #include "user-ex.h"
 
 //****************************************************************************
