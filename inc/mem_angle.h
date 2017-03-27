@@ -65,8 +65,8 @@ void load_angles_from_eeprom(uint16 *ee_angles);
 void test_angle_eeprom(void);
 
 void init_flash(void);
-void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8 arr);
-void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8 arr);
+void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8_t arr);
+void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8_t arr);
 void test_angle_flash(void);
 
 //****************************************************************************

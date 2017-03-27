@@ -41,7 +41,6 @@
 // Shared variable(s)
 //****************************************************************************
 
-extern int steps;
 extern uint16 angle;
 extern int spi_read_flag;
 

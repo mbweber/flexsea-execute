@@ -54,4 +54,10 @@ void trapez_gen_smooth_motion_1(long long,long long,long long);
 #define SPD_FACTOR          	10000		//Scaling for integer
 #define ACC_FACTOR          	10000
 
+//****************************************************************************
+// Shared Variable(s):
+//****************************************************************************
+
+extern int32_t steps;
+
 #endif // TRAPEZ_H_

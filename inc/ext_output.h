@@ -46,8 +46,8 @@
 //****************************************************************************
 
 void init_pwro(void);
-void pwro_output(uint8 value);
-uint8 read_pwro(void);
+void pwro_output(uint8_t value);
+uint8_t read_pwro(void);
 void test_pwro_output_blocking(void);
 
 //****************************************************************************

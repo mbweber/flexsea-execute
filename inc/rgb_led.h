@@ -46,10 +46,10 @@
 // Public Function Prototype(s):
 //****************************************************************************
 
-void rgbLedSet(uint8 r, uint8 g, uint8 b);
+void rgbLedSet(uint8_t r, uint8_t g, uint8_t b);
 void rgbLedRefresh(void);
 void rgbLedRefreshFade(void);
-uint8 rgbLedGetFade(void);
+uint8_t rgbLedGetFade(void);
 void rgbLedRefresh_testcode_blocking(void);
 
 //****************************************************************************

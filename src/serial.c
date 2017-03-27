@@ -35,28 +35,31 @@
 #include "main.h"
 #include "serial.h"
 #include <string.h>
+#include "misc.h"
+#include "flexsea_comm.h"
+#include "user-ex.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 uart_dma_rx_buf[96];	//ToDo #define
-uint8 uart_dma_rx_buf_unwrapped[96];
-uint8 uart_dma_tx_buf[96];
-uint8 uart_dma_bt_rx_buf[96];
-uint8 uart_dma_bt_rx_buf_unwrapped[96];
+uint8_t uart_dma_rx_buf[96];	//ToDo #define
+uint8_t uart_dma_rx_buf_unwrapped[96];
+uint8_t uart_dma_tx_buf[96];
+uint8_t uart_dma_bt_rx_buf[96];
+uint8_t uart_dma_bt_rx_buf_unwrapped[96];
 volatile int8_t tx_cnt = 0;
 uint8_t uart_tmp_buf[RX_BUF_LEN];
 
 //DMA:
-uint8 DMA_3_Chan;
-uint8 DMA_3_TD[1];
-uint8 DMA_4_Chan;
-uint8 DMA_4_TD[1];
-uint8 DMA_6_Chan;
-uint8 DMA_6_TD[1];
-uint8 DMA_7_Chan;
-uint8 DMA_7_TD[1];
+uint8_t DMA_3_Chan;
+uint8_t DMA_3_TD[1];
+uint8_t DMA_4_Chan;
+uint8_t DMA_4_TD[1];
+uint8_t DMA_6_Chan;
+uint8_t DMA_6_TD[1];
+uint8_t DMA_7_Chan;
+uint8_t DMA_7_TD[1];
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -72,7 +75,7 @@ static void init_dma_6(void);	//Bluetooth RX
 
 //Transmit serial data with DMA
 //The DMA transfer is for 48 bytes, by configuration. ToDo: this isn't clean
-void rs485_puts(uint8 *buf, uint32 len)
+void rs485_puts(uint8_t *buf, uint32 len)
 {
 	(void)len; //Unused for now
 	
@@ -97,14 +100,14 @@ void rs485_puts(uint8 *buf, uint32 len)
 }
 
 //Sends a single character to the UART
-void rs485_putc(uint8 byte)
+void rs485_putc(uint8_t byte)
 {
 	NOT_RE_Write(1);			//Disable Receiver
 	UART_2_PutChar(byte);		//Send byte
 }
 
 //Bluetooth puts:
-void bt_puts(uint8 *buf, uint32 len)
+void bt_puts(uint8_t *buf, uint32 len)
 {
 	UART_1_PutArray(buf, len);
 }
@@ -167,7 +170,7 @@ void rs485DelayedTransmit(PacketWrapper* p)
 void test_uart_dma_xmit(void)
 {
 	int i = 0;
-	uint8 databuffer[48];
+	uint8_t databuffer[48];
 	
 	//Prepare data
 	for(i = 0; i < 48; i++)

@@ -41,14 +41,14 @@
 // Public Function Prototype(s):
 //****************************************************************************
 
-void i2t_sample(int32 lastCurrentRead);
-int i2t_compute(void);
+void i2t_sample(int32_t lastCurrentRead);
+int32_t i2t_compute(void);
 
 //****************************************************************************
 // Shared variable(s)
 //****************************************************************************
 
-extern uint8 currentLimit;
+extern uint8_t currentLimit;
 
 //****************************************************************************
 // Definition(s):

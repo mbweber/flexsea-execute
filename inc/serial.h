@@ -44,9 +44,9 @@
 
 void init_rs485(void);
 void init_bluetooth(void);
-void rs485_putc(uint8 byte);
-void rs485_puts(uint8 *buf, uint32 len);
-void bt_puts(uint8 *buf, uint32 len);
+void rs485_putc(uint8_t byte);
+void rs485_puts(uint8_t *buf, uint32 len);
+void bt_puts(uint8_t *buf, uint32 len);
 void rs485DelayedTransmit(PacketWrapper* p);
 void test_uart_dma_xmit(void);
 
@@ -54,13 +54,13 @@ void test_uart_dma_xmit(void);
 // Shared Variable(s):
 //****************************************************************************
 
-extern uint8 uart_dma_rx_buf[96];
-extern uint8 uart_dma_tx_buf[96];
-extern uint8 uart_dma_rx_buf_unwrapped[96];
-extern uint8 uart_dma_bt_rx_buf[96];
-extern uint8 uart_dma_bt_rx_buf_unwrapped[96];
+extern uint8_t uart_dma_rx_buf[96];
+extern uint8_t uart_dma_tx_buf[96];
+extern uint8_t uart_dma_rx_buf_unwrapped[96];
+extern uint8_t uart_dma_bt_rx_buf[96];
+extern uint8_t uart_dma_bt_rx_buf_unwrapped[96];
 
-extern uint8 DMA_3_Chan;
+extern uint8_t DMA_3_Chan;
 
 //****************************************************************************
 // Definition(s):

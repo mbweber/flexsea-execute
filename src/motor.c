@@ -37,15 +37,20 @@
 
 #include "main.h"
 #include "motor.h"
+#include "control.h"
 #include "analog.h"
 #include "ext_input.h"
+#include "safety.h"
+#include "user-ex.h"
+#include "flexsea_global_structs.h"
+#include "flexsea_sys_def.h"
+#include "gen_waveform.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 hall_conv[6] = {5,4,6,2,3,1};
-//int32 sine_commut_pwm = 0; //ToDo remove, now in execute_s
+uint8_t hall_conv[6] = {5,4,6,2,3,1};
 
 //****************************************************************************
 // Function(s)
@@ -279,7 +284,7 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 //Sends a constant PWM. Blocking.
 void motor_fixed_pwm_test_code_blocking(int spd)
 {
-	uint8 toggle_wdclk = 0;	
+	uint8_t toggle_wdclk = 0;	
 	
 	ctrl.active_ctrl = CTRL_OPEN;	
 	#if (MOTOR_COMMUT == COMMUT_BLOCK)
@@ -337,7 +342,7 @@ void test_pwm_pulse_blocking(void)
 //Use before main while() as a basic test
 void motor_stepper_test_blocking_1(int spd)
 {
-	uint8 hall_code_0 = 0, hall_code = 0;
+	uint8_t hall_code_0 = 0, hall_code = 0;
 	
 	ctrl.active_ctrl = CTRL_OPEN;
 	#if (MOTOR_COMMUT == COMMUT_BLOCK)
@@ -379,7 +384,7 @@ void motor_stepper_test_runtime(int div)
 	//Call this function at 1ms intervals. The divider will
 	//allow longer delays between steps.
 	
-	static uint8 hall_code_0 = 0, hall_code = 0;
+	static uint8_t hall_code_0 = 0, hall_code = 0;
 	static int delay_cnt = 0;
 	
 	delay_cnt++;

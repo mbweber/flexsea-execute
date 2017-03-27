@@ -39,10 +39,10 @@
 // Variable(s)
 //****************************************************************************
 
-const uint8 flash_angle_array_0[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
-//const uint8 flash_angle_array_0[FLASH_MAX_DATAPOINTS] = {0,0,0};
-const uint8 flash_angle_array_1[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
-const uint8 flash_angle_array_2[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
+const uint8_t flash_angle_array_0[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
+//const uint8_t flash_angle_array_0[FLASH_MAX_DATAPOINTS] = {0,0,0};
+const uint8_t flash_angle_array_1[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
+const uint8_t flash_angle_array_2[FLASH_MAX_DATAPOINTS] __attribute__((section(".angletables")));// = {0,0,0};
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -65,12 +65,12 @@ void init_eeprom(void)
 }	
 
 //Saves an angle table to EEPROM - use that when calibrating
-void save_angles_to_eeprom(uint16 *new_angles)
+void save_angles_to_eeprom(uint16_t *new_angles)
 {
-	uint8 row_cnt = 0, word_cnt = 0;
-	uint8 ang_in_bytes[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	uint8_t row_cnt = 0, word_cnt = 0;
+	uint8_t ang_in_bytes[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	cystatus status = CYRET_UNKNOWN;
-	uint16 new_word = 0;
+	uint16_t new_word = 0;
 	
 	//Update temperature reading:
 	EEPROM_1_UpdateTemperature();
@@ -78,7 +78,7 @@ void save_angles_to_eeprom(uint16 *new_angles)
 	//One row at the time:
 	for(row_cnt = 0; row_cnt < EE_ANGLE_MAX_ROW; row_cnt++)
 	{
-		//From 8x uint16 to 16x uint8:
+		//From 8x uint16_t to 16x uint8_t:
 		for(word_cnt = 0; word_cnt < 8; word_cnt++)
 		{
 			new_word = new_angles[(EE_ROW_LEN_WORD * row_cnt) + word_cnt];			
@@ -93,10 +93,10 @@ void save_angles_to_eeprom(uint16 *new_angles)
 }
 
 //Reads an angle table from EEPROM - use that for normal operation
-void load_angles_from_eeprom(uint16 *ee_angles)
+void load_angles_from_eeprom(uint16_t *ee_angles)
 {
-	uint16 cnt = 0;
-	uint16 msb = 0, lsb = 0;
+	uint16_t cnt = 0;
+	uint16_t msb = 0, lsb = 0;
 	
 	for(cnt = 0; cnt < (EE_SIZE_BYTES/2); cnt++)
 	{
@@ -110,10 +110,10 @@ void load_angles_from_eeprom(uint16 *ee_angles)
 //Writes human-readable data, and read it back
 void test_angle_eeprom(void)
 {
-	uint16 test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
-	uint16 cnt = 0;
-	uint16 val = 0;
-	volatile uint16 error_cnt = 0;
+	uint16_t test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
+	uint16_t cnt = 0;
+	uint16_t val = 0;
+	volatile uint16_t error_cnt = 0;
 	
 	//Fill tables:
 	for(cnt = 0; cnt < TEST_DATA_LEN; cnt++)
@@ -154,11 +154,11 @@ void init_flash(void)
 //Saves an angle table to FLASH - use that when calibrating
 //'datapoints' indicated the number of words. It has to be smaller than 
 //'FLASH_MAX_DATAPOINTS'. arr is 0, 1 or 2.
-void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8 arr)
+void save_angles_to_flash(uint16_t *new_angles, uint16_t datapoints, uint8_t arr)
 {
 	cystatus status = CYRET_UNKNOWN;
-	uint8 tmp_buf_bytes[2*FLASH_MAX_DATAPOINTS];
-	const uint8 *flashPtr;
+	uint8_t tmp_buf_bytes[2*FLASH_MAX_DATAPOINTS];
+	const uint8_t *flashPtr;
 	int i = 0;
 	
 	//Assign pointer to array:
@@ -198,11 +198,11 @@ void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8 arr)
 }
 
 //Reads an angle table from FLASH - use that for normal operation
-void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8 arr)
+void load_angles_from_flash(uint16_t *ee_angles, uint16_t datapoints, uint8_t arr)
 {
-	uint16 cnt = 0;
-	uint16 msb = 0, lsb = 0;
-	volatile const uint8 *flashPtr;
+	uint16_t cnt = 0;
+	uint16_t msb = 0, lsb = 0;
+	volatile const uint8_t *flashPtr;
 	
 	//Assign pointer to array:
 	switch(arr)
@@ -233,10 +233,10 @@ void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8 arr)
 //Writes human-readable data, and read it back
 void test_angle_flash(void)
 {
-	uint16 test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
-	uint16 cnt = 0;
-	uint16 val = 0;
-	volatile uint16 error_cnt = 0;
+	uint16_t test_w_data[TEST_DATA_LEN], test_r_data[TEST_DATA_LEN];
+	uint16_t cnt = 0;
+	uint16_t val = 0;
+	volatile uint16_t error_cnt = 0;
 	
 	//Fill tables:
 	for(cnt = 0; cnt < TEST_DATA_LEN; cnt++)

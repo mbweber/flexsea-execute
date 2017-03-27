@@ -34,13 +34,14 @@
 
 #include "main.h"
 #include "usb.h"
+#include "flexsea_board.h"
 #include <flexsea_comm.h>
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 buffer[RX_BUF_LEN];
+uint8_t buffer[RX_BUF_LEN];
 uint8_t usbConnected = 0;
 
 //****************************************************************************
@@ -49,7 +50,7 @@ uint8_t usbConnected = 0;
 
 //Initialize the USB peripheral
 //Returns 0 is success, 1 if timeout (happens when the cable is unplugged)
-uint8 init_usb(void)
+uint8_t init_usb(void)
 {
 	uint16 cnt = 0, flag = 0;
 	
@@ -110,27 +111,27 @@ void get_usb_data(void)
 }
 
 //1 byte through USB - ho headers, raw data
-void send_usb_int8(char payload)
+void send_usb_int8_t(char payload)
 {
 	char8 tmp[16]; 
 	tmp[0] = (payload & 0xFF);
 	
 	//Make sure that the peripheral is ready
 	while(USBUART_1_CDCIsReady() == 0u);	//ToDo Add timeout!
-	USBUART_1_PutData((const uint8*)tmp, 1);
+	USBUART_1_PutData((const uint8_t*)tmp, 1);
 
 	return;
 }
 
 //1 byte through USB - ho headers, raw data
-void send_usb_uint8(uint8 payload)
+void send_usb_uint8_t(uint8_t payload)
 {
-	uint8 tmp[16]; 
+	uint8_t tmp[16]; 
 	tmp[0] = (payload & 0xFF);
 	
 	//Make sure that the peripheral is ready
 	while(USBUART_1_CDCIsReady() == 0u);	//ToDo Add timeout!
-	USBUART_1_PutData((const uint8*)tmp, 1);
+	USBUART_1_PutData((const uint8_t*)tmp, 1);
 
 	return;
 }
@@ -144,13 +145,13 @@ void send_usb_int16(int16 payload)
 	
 	//MSB first
 	tmp = (payload >> 8) & 0xFF;
-	packet[1] = (uint8) tmp;
+	packet[1] = (uint8_t) tmp;
 	tmp = (payload) & 0xFF;
-	packet[0] = (uint8) tmp;
+	packet[0] = (uint8_t) tmp;
 	
 	//Make sure that the peripheral is ready
 	while(USBUART_1_CDCIsReady() == 0u);	//ToDo Add timeout!
-	USBUART_1_PutData((const uint8*)packet, 2);
+	USBUART_1_PutData((const uint8_t*)packet, 2);
 
 	return;
 }
@@ -163,26 +164,26 @@ void send_usb_int32(int payload)
 	
 	//MSB first
 	tmp = (payload >> 24) & 0xFF;
-	packet[0] = (uint8) tmp;
+	packet[0] = (uint8_t) tmp;
 	tmp = (payload >> 16) & 0xFF;
-	packet[1] = (uint8) tmp;
+	packet[1] = (uint8_t) tmp;
 	tmp = (payload >> 8) & 0xFF;
-	packet[2] = (uint8) tmp;
+	packet[2] = (uint8_t) tmp;
 	tmp = (payload) & 0xFF;
-	packet[3] = (uint8) tmp;
+	packet[3] = (uint8_t) tmp;
 	
 	//Make sure that the peripheral is ready
 	while(USBUART_1_CDCIsReady() == 0u);	//ToDo Add timeout!
-	USBUART_1_PutData((const uint8*)packet, 4);
+	USBUART_1_PutData((const uint8_t*)packet, 4);
 
 	return;
 }
 
 //Sends a fixed length packet over USB. Discarded if USB isn't ready.
-void usb_puts(uint8 *buf, uint32 len)
+void usb_puts(uint8_t *buf, uint32 len)
 {
 	if(USBUART_1_CDCIsReady() != 0)
-		USBUART_1_PutData(( const uint8*)buf, len);
+		USBUART_1_PutData(( const uint8_t*)buf, len);
 }
 
 //****************************************************************************
@@ -190,7 +191,7 @@ void usb_puts(uint8 *buf, uint32 len)
 //****************************************************************************
 
 //Returns chars to PC. ToDo: make it non-blocking!
-uint8 usb_echo_blocking(void)
+uint8_t usb_echo_blocking(void)
 {
 	static 	int16 count = 0;
 	uint16 i = 0;
@@ -225,7 +226,7 @@ uint8 usb_echo_blocking(void)
 //Send 4 uint16 to the terminal
 int16 send_usb_packet(uint16 word1, uint16 word2, uint16 word3, uint16 word4)
 {
-	static uint8 cnt = 0;
+	static uint8_t cnt = 0;
 	char8 packet[18];
 
 	cnt++;
@@ -251,7 +252,7 @@ int16 send_usb_packet(uint16 word1, uint16 word2, uint16 word3, uint16 word4)
 	
 	//Make sure that the peripheral is ready
 	while(USBUART_1_CDCIsReady() == 0u);	//ToDo Add timeout!
-	USBUART_1_PutData((const uint8*)packet, 18);
+	USBUART_1_PutData((const uint8_t*)packet, 18);
 
 	return 0;
 }
