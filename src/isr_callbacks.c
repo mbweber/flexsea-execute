@@ -47,7 +47,6 @@
 #include "flexsea_buffers.h"
 #include "mag_encoders.h"
 #include "sensor_commut.h"
-#include "main_fsm.h"
 #include "user-ex.h"
 
 //****************************************************************************

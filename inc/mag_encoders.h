@@ -69,7 +69,8 @@ extern volatile uint8_t spi_isr_state;
 extern uint16 spidata_miso[];
 extern uint16 spidata_mosi2[];
 extern uint16 as5047_angle;
-volatile uint16 as5047_empty_read;
+extern int32_t spi_read_flag;
+extern volatile uint16 as5047_empty_read;
 
 //****************************************************************************
 // Definition(s):
