@@ -67,8 +67,6 @@ void init_as5047(void);
 //uint16 as5047_read_single(uint16 reg);
 uint16 as5047_read_single_isr(uint16 reg);
 
-void as5047_test_code_blocking(void);
-
 int strain_6ch_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
 void strain_amp_6ch_test_code_blocking(void);
 void strain_6ch_bytes_to_words(uint8_t *buf);

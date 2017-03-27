@@ -244,12 +244,6 @@ static uint16 add_even_parity_msb(uint16 word)
 // Test Function(s) - Use with care!
 //****************************************************************************
 
-void as5047_test_code_blocking(void)
-{
-	//Test code isn't compatible with new ISR-based function.
-	//Write a new version if needed.
-}
-
 void strain_amp_6ch_test_code_blocking(void)
 {
 	while(1)

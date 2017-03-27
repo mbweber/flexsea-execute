@@ -227,24 +227,6 @@ void reset_ang_counter(struct as504x_s *as504x)
     as504x->counts_since_last_ang_read = 0;
 }
 
-/*
-//Initialize encoder structures
-void init_as504x(struct as504x_s *as504x, int sf)
-{
-	init_angsense(&as504x->raw);
-    init_angsense(&as504x->filt);
-    
-
-    as504x->samplefreq = sf;
-    as504x->last_angtimer_read = 0;
-    as504x->counts_since_last_ang_read = 0;
-    as504x->last_ang_read_period = 0;
-    as504x->ang_abs_clks = 0; 
-    as504x->ang_comp_clks = 0;
-    as504x->num_rot = 0; 
-}
-*/
-
 //Initialize encoder structures
 void init_as504x(struct as504x_s *as504x)
 {
@@ -267,9 +249,7 @@ void init_as504x(struct as504x_s *as504x)
     as504x->last_angtimer_read = 0;
     as504x->counts_since_last_ang_read = 0;
     as504x->last_ang_read_period = 0;
-
 }
-
 
 void init_angsense(struct angsense_s *as)
 {
