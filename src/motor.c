@@ -44,7 +44,6 @@
 #include "user-ex.h"
 #include "flexsea_global_structs.h"
 #include "flexsea_sys_def.h"
-#include "gen_waveform.h"
 #include "mem_angle.h"
 #include "sensor_commut.h"
 
@@ -275,129 +274,6 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 	#endif
 }
 
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
-
-//Sends a constant PWM. Blocking.
-void motor_fixed_pwm_test_code_blocking(int spd)
-{
-	uint8_t toggle_wdclk = 0;	
-	
-	ctrl.active_ctrl = CTRL_OPEN;	
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(spd);
-	
-	while(1)
-	{	
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		//WatchDog Clock (Safety-CoP)
-		toggle_wdclk ^= 1;
-		WDCLK_Write(toggle_wdclk);
-		
-		refresh_enc_control();
-	}
-}
-
-//Sends a constant PWM. Non-Blocking.
-void motor_fixed_pwm_test_code_non_blocking(int spd)
-{
-	ctrl.active_ctrl = CTRL_OPEN;	
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(spd);	
-}
-
-//Use this to send PWM pulses in open speed mode
-void test_pwm_pulse_blocking(void)
-{
-	uint16 val = 0;
-	
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(0);	
-	
-	while(1)
-	{	
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		val = output_step();
-		motor_open_speed_1(val);
-	}
-}
-
-//Use before main while() as a basic test
-void motor_stepper_test_blocking_1(int spd)
-{
-	uint8_t hall_code_0 = 0, hall_code = 0;
-	
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(spd);
-	
-	while(1)
-	{
-		hall_code_0++;
-		hall_code_0 %= 6;
-		hall_code = hall_conv[hall_code_0];
-		
-		#if (MOTOR_COMMUT == COMMUT_BLOCK)
-		Virtual_Hall_Write(hall_code);
-		#endif
-		
-		LED_R_Write(hall_code & 0x01);
-		LED_G_Write((hall_code & 0x02)>>1);
-		LED_B_Write((hall_code & 0x04)>>2);
-		
-		CyDelay(10);
-	}
-}
-
-//To test with the full stack, use this init...
-void motor_stepper_test_init(int spd)
-{
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);
-	#endif
-	motor_open_speed_1(spd);	
-}
-
-//...and this runtime function
-void motor_stepper_test_runtime(int div)
-{
-	//Call this function at 1ms intervals. The divider will
-	//allow longer delays between steps.
-	
-	static uint8_t hall_code_0 = 0, hall_code = 0;
-	static int delay_cnt = 0;
-	
-	delay_cnt++;
-	if(delay_cnt >= div)
-	{
-		delay_cnt = 0;
-	
-		hall_code_0++;
-		hall_code_0 %= 6;
-		hall_code = hall_conv[hall_code_0];
-		
-		//Hall_Write(hall_code);	//ToDo Enable
-	}	
-}
-
 //PWM Compare1 registers are set via DMA, not via the API function calls:
 void initDmaPwmCompare(void)
 {
@@ -438,4 +314,43 @@ void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c)
 	myPWMcompareA = a;
 	myPWMcompareB = b;
 	myPWMcompareC = c;
+}
+
+//****************************************************************************
+// Test Function(s) - Use with care!
+//****************************************************************************
+
+//Sends a constant PWM. Blocking.
+void motor_fixed_pwm_test_code_blocking(int spd)
+{
+	uint8_t toggle_wdclk = 0;	
+	
+	ctrl.active_ctrl = CTRL_OPEN;	
+	#if (MOTOR_COMMUT == COMMUT_BLOCK)
+	Coast_Brake_Write(1);	//Brake
+	#endif
+	motor_open_speed_1(spd);
+	
+	while(1)
+	{	
+		LED_R_Write(EX1_Read());
+		LED_G_Write(EX2_Read());
+		LED_B_Write(EX3_Read());
+		
+		//WatchDog Clock (Safety-CoP)
+		toggle_wdclk ^= 1;
+		WDCLK_Write(toggle_wdclk);
+		
+		refresh_enc_control();
+	}
+}
+
+//Sends a constant PWM. Non-Blocking.
+void motor_fixed_pwm_test_code_non_blocking(int spd)
+{
+	ctrl.active_ctrl = CTRL_OPEN;	
+	#if (MOTOR_COMMUT == COMMUT_BLOCK)
+	Coast_Brake_Write(1);	//Brake
+	#endif
+	motor_open_speed_1(spd);	
 }

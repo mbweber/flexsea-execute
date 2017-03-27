@@ -52,10 +52,6 @@ void motor_open_speed_2(int16 pwm_duty, int sign);
 void motor_fixed_pwm_test_code_blocking(int spd);
 void motor_fixed_pwm_test_code_non_blocking(int spd);
 
-void motor_stepper_test_blocking_1(int spd);
-void motor_stepper_test_init(int spd);
-void motor_stepper_test_runtime(int div);
-
 void initDmaPwmCompare(void);
 void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c);
 

@@ -41,7 +41,6 @@
 #include "sensor_commut.h"
 #include "trapez.h"
 #include "flexsea_global_structs.h"
-#include "gen_waveform.h"
 
 //****************************************************************************
 // Variable(s)
@@ -635,81 +634,6 @@ void impedance_controller(void)
     
     ctrl.current.setpoint_val = (spring_torq+damping_torq);
 }
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
-
-//Use this to test the current controller
-void test_current_tracking_blocking(void)
-{
-	init_sine_gen();
-	ctrl.active_ctrl = CTRL_CURRENT;
-	ctrl.current.gain.I_KP = 30;
-	ctrl.current.gain.I_KI = 25;
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	
-	uint16 val = 0;
-	while(1)
-	{
-		//val = output_sine();
-		//val = output_arb();		
-		//ctrl.current.setpoint_val = val*2 + 125;
-		
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		val = 200;	//output_step();
-		ctrl.current.setpoint_val = val;
-	}
-}
-
-//Can we cancel the damping by changing the Hall direction based on the encoder? Yes.
-void motor_cancel_damping_test_code_blocking(void)
-{
-	ctrl.active_ctrl = CTRL_OPEN;	
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(0);
-	
-	while(1)
-	{	
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		//Refresh encoder data:
-		encoder.count_last = encoder.count;	
-		encoder.count = refresh_enc_control();
-		encoder.count_dif = encoder.count - encoder.count_last;
-		
-		//Act based on the sign:
-		if(encoder.count_dif >= 0)
-		{
-			#if(MOTOR_COMMUT == COMMUT_BLOCK)
-			MotorDirection_Write(0);
-			#else
-				//ToDo 
-			#endif
-		}
-		else
-		{
-			#if(MOTOR_COMMUT == COMMUT_BLOCK)
-			MotorDirection_Write(1);
-			#else
-				//ToDo
-			#endif
-		}		
-		
-		//Loop delay (otherwise we don't get a good difference)
-		CyDelay(10);
-	}
-}
 
 //in_control.combined = [CTRL2:0][MOT_DIR][PWM]
 void in_control_combine(void)
@@ -732,3 +656,7 @@ void in_control_get_pwm_dir(void)
 	in_control.mot_dir = 0;
 	#endif	//#if(MOTOR_COMMUT == COMMUT_BLOCK)
 }
+
+//****************************************************************************
+// Test Function(s) - Use with care!
+//****************************************************************************

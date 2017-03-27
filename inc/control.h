@@ -61,8 +61,6 @@ void impedance_controller();
 void in_control_combine(void);
 void in_control_get_pwm_dir(void);
 
-void motor_cancel_damping_test_code_blocking(void);
-
 //****************************************************************************
 // Definition(s):
 //****************************************************************************	
