@@ -35,7 +35,7 @@
 #include "current_sensing.h"
 #include "control.h"
 #include "sensor_commut.h"
-#include "ext_input.h"
+#include "mag_encoders.h"
 #include "filters.h"
 #include "user-ex.h"
 

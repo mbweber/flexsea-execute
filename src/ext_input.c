@@ -44,34 +44,12 @@
 // Variable(s)
 //****************************************************************************
 
-//Encoders:
+//QEI encoder:
 struct enc_s encoder;
-struct as504x_s as5047, as5048b;
-
-//Magnetic encoder, AS5047:
-uint16 spidata_mosi[WORDS_IN_FRAME] = {0,0,0,0,0,0,0};
-uint16 spidata_miso[WORDS_IN_FRAME] = {0,0,0,0,0,0,0};
-uint16 spidata_mosi2[WORDS_IN_FRAME];
-uint8_t spistatus = 0;
-uint16 angleunc = 0;
-uint16 as5047_angle = 0;
-volatile uint8_t spi_isr_state = 0;
-volatile uint16 as5047_empty_read = 0;
-
-//Magnetic encoder, AS5048B:
-uint8_t as5048b_bytes[10] = {0,0,0,0,0,0,0,0,0,0};
-uint8_t as5048b_agc = 0, as5048b_diag = 0;
-uint16 as5048b_mag = 0, as5048b_angle = 0;
 
 //6-ch Strain Amplifier:
 uint16 ext_strain[6] = {0,0,0,0,0,0};
 uint8_t ext_strain_bytes[12];
-
-//****************************************************************************
-// Private Function Prototype(s):
-//****************************************************************************	
-
-static uint16 add_even_parity_msb(uint16 word);
 
 //****************************************************************************
 // Public Function(s)
@@ -146,43 +124,6 @@ int32 qei_read(void)
 	return retval;
 }
 
-void init_as5047(void)
-{
-	#ifdef USE_AS5047
-		
-	//Init SPIM module:
-    SPIM_1_Start();
-	
-	//Word used to read:
-	as5047_empty_read = add_even_parity_msb(AS5047_READ | AS5047_REG_NOP);
-	
-	//Interrupts:
-	SPIM_1_SetTxInterruptMode(SPIM_1_INT_ON_BYTE_COMP);
-	
-	//Interrupt (TX):
-	isr_spi_tx_Start();
-	#endif	//USE_AS5047
-}
-
-uint16 as5047_read_single_isr(uint16 reg)
-{
-	#ifdef USE_AS5047
-		
-	//Prepare TX:
-	spidata_mosi2[0] = add_even_parity_msb(AS5047_READ | reg);	//1st byte (reg addr)
-	spi_isr_state = 0;
-	SPIM_1_WriteTxData(spidata_mosi2[0]);	
-	
-	//(Rest done via ISR)
-	#else
-		
-	(void)reg;
-	
-	#endif	//USE_AS5047
-
-	return 0;
-}
-
 //Reassembles the bytes we read in words
 void strain_6ch_bytes_to_words(uint8_t *buf)
 {
@@ -201,12 +142,6 @@ void get_6ch_strain(void)
 	i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 9);
 }
 
-//Get latest readings from the AS5048B position sensor
-void get_as5048b_position(void) 
-{
-	i2c0_read(I2C_ADDR_AS5048B, AD5048B_REG_ANGLE_H, as5048b_bytes, 2);
-}
-
 //Converts from ADC reading to position
 int16 get_analog_pos(void)
 {
@@ -215,29 +150,6 @@ int16 get_analog_pos(void)
 	#else
 		return 0;
 	#endif
-}
-
-//****************************************************************************
-// Private Function(s)
-//****************************************************************************
-
-//When writing to the AS5047, MSB has to be an Even parity bit
-static uint16 add_even_parity_msb(uint16 word)
-{
-	uint16 ret = 0;
-	
-	//__builtin_parity() returns 0 for even, 1 for odd
-	// MSB = 1 when it's odd
-	if(__builtin_parity((int)word))
-	{
-		ret = (word | PARITY_1);
-	}
-	else
-	{
-		ret = (word & PARITY_0);
-	}
-	
-	return ret;
 }
 
 //****************************************************************************
@@ -250,21 +162,6 @@ void strain_amp_6ch_test_code_blocking(void)
 	{
 		i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 12);
 		strain_6ch_bytes_to_words(ext_strain_bytes);
-		CyDelay(100);
-	}
-}
-
-void as5048b_test_code_blocking(void)
-{
-	while(1)
-	{
-		i2c0_read(I2C_ADDR_AS5048B, AD5048B_REG_AGC, as5048b_bytes, 6);
-		
-		as5048b_agc = as5048b_bytes[0];
-		as5048b_diag = as5048b_bytes[1] & 0x0F;
-		as5048b_mag = (as5048b_bytes[2]<<6) + (as5048b_bytes[3]&0x3F); 
-		as5048b_angle = (as5048b_bytes[4]<<6) + (as5048b_bytes[5]&0x3F);
-		
 		CyDelay(100);
 	}
 }

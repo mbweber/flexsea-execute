@@ -34,7 +34,7 @@
 
 #include "main.h"
 #include "sensor_commut.h"
-#include "ext_input.h"
+#include "mag_encoders.h"
 #include "safety.h"
 #include "mem_angle.h"
 #include "motor.h"
