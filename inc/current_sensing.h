@@ -19,64 +19,66 @@
 	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
 	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
 	Biomechatronics research group <http://biomech.media.mit.edu/>
-	[Contributors] 
+	[Contributors] Luke Mooney
 *****************************************************************************
-	[This file] analog: ADC configurations, read & filter functions
+	[This file] current_sensing: ADC configurations, read & filter functions
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
-	* 2016-09-29 | jfduval | Released under GPL-3.0 release
-	*
+	* 2017-03-27 | jfduval | Released under GPL-3.0 release
 ****************************************************************************/
-	
-#ifndef INC_ANALOG_H
-#define INC_ANALOG_H
+
+#ifndef INC_CURRENT_SENSING_H
+#define INC_CURRENT_SENSING_H
 
 //****************************************************************************
 // Include(s)
 //****************************************************************************	
-	
+
 #include "main.h"
 #include <flexsea_user_structs.h>
-		
+
 //****************************************************************************
 // Prototype(s):
 //****************************************************************************
 
-void init_analog(void);
-uint16 adc_avg8(uint16 new_data);
-void filter_sar_adc(void);
-int16 read_analog(uint8_t ch);
-void adc_sar1_dma_config(void);
+void initCurrentSensing(void);
 void adc_sar2_dma_config(void);
-void double_buffer_adc(void);
+void current_rms_1(void);
+void update_current_arrays(void);
+void set_current_zero(void);
+void get_phase_currents(int32_t *);
+void adc_sar2_dma_reinit(void);
+int32_t filt_array_10khz(int64_t *,int64_t *,int,int64_t);
+int32_t filt_array_1khz(int64_t *,int64_t *,int,int64_t);
+int32_t filt_array_250hz(int64_t *,int64_t *,int,int64_t);
+int get_median(int, int, int);
+void filt_array_1khz_struct(struct filtvar_s *, int);
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
-//General ADC:
-#define ADC1_CHANNELS				6
-#define ADC1_BUF_LEN				8
-#define ADC1_SHIFT					3
-//Shift is used for averaging, match with BUF_LEN
+//Motor current ADC:
+#define ADC2_BUF_LEN				9
+#define ADC2_BUF_LEN_3RD	        3
 
-//DMA ADC SAR 1 (General)
-#define DMA_5_BYTES_PER_BURST 		2
-#define DMA_5_REQUEST_PER_BURST 	1
-#define DMA_5_SRC_BASE 				(CYDEV_PERIPH_BASE)
-#define DMA_5_DST_BASE 				(CYDEV_SRAM_BASE)
+//DMA ADC SAR 2
+#define DMA_1_BYTES_PER_BURST 		2
+#define DMA_1_REQUEST_PER_BURST 	1
+#define DMA_1_SRC_BASE 				(CYDEV_PERIPH_BASE)
+#define DMA_1_DST_BASE 				(CYDEV_SRAM_BASE)
 
 //****************************************************************************
 // Shared variable(s)
 //****************************************************************************	
-	
-volatile extern uint16 adc1_res[ADC1_CHANNELS][ADC1_BUF_LEN];
-volatile extern uint16 adc1_res_filtered[ADC1_CHANNELS];
-volatile extern uint16 adc1_dbuf[ADC1_CHANNELS][ADC1_BUF_LEN];
-extern uint16 adc_sar1_dma_array[ADC1_BUF_LEN + 1];
+
+extern int16 adc_dma_array[ADC2_BUF_LEN];
+extern int16 adc_dma_array_buf[ADC2_BUF_LEN];
+extern volatile uint8_t current_sensing_flag;
+extern volatile int hallCurr;
 
 //****************************************************************************
 // Structure(s):
 //****************************************************************************
 
-#endif	//INC_ANALOG_H
+#endif	//INC_CURRENT_SENSING_H

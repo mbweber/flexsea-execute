@@ -40,6 +40,7 @@
 #include "cyapicallbacks.h"
 #include "misc.h"
 #include "analog.h"
+#include "current_sensing.h"
 #include "control.h"
 #include "serial.h"
 #include "flexsea_board.h"

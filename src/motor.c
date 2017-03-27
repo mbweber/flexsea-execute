@@ -38,7 +38,7 @@
 #include "main.h"
 #include "motor.h"
 #include "control.h"
-#include "analog.h"
+#include "current_sensing.h"
 #include "ext_input.h"
 #include "safety.h"
 #include "user-ex.h"
@@ -71,10 +71,7 @@ void init_motor(void)
 	//Default is Brake mode:
 	Coast_Brake_Write(1);
 	
-	//ADC2: Motor current
-	ADC_SAR_2_Start();
-	adc_sar2_dma_config();
-	isr_sar2_dma_Start();
+	initCurrentSensing();
 	
 	#if(CURRENT_SENSING != CS_LEGACY)
 		
@@ -84,24 +81,7 @@ void init_motor(void)
 	
 	#else	//(MOTOR_COMMUT == COMMUT_BLOCK)
 	
-    //VDAC8: OpAmp VREF
-	VDAC8_1_Start();
-	
-	//Analog amplifiers & multiplexer(s):
-	Opamp_1_Start();    
-        
-    //ADC2: Motor current
-	ADC_SAR_2_Start();	
-	ADC_SAR_2_IRQ_Enable();
-	
-	Counter_1_Start();
-    Counter_1_WriteCompare(2);
-	Counter_1_Enable();
-	CyDelay(1);
-	
-	adc_sar2_dma_config();
-	isr_sar2_dma_Start();    
-    CyDelay(1);    
+    initCurrentSensing();  
         
 	//Start 3 PWM at 0%  
 	PWM_A_Start();
