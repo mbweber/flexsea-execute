@@ -39,11 +39,6 @@
 
 #include "main.h"
 #include "analog.h"
-//#include "control.h"
-//#include "sensor_commut.h"
-//#include "ext_input.h"
-//#include "user-ex.h"
-//#include <flexsea_user_structs.h>
 
 //****************************************************************************
 // Variable(s)

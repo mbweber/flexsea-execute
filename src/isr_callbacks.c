@@ -45,10 +45,8 @@
 #include "serial.h"
 #include "flexsea_board.h"
 #include "flexsea_buffers.h"
-//#include "peripherals.h"
 #include "mag_encoders.h"
 #include "sensor_commut.h"
-#include "ext_input.h"
 #include "main_fsm.h"
 #include "user-ex.h"
 

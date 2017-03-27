@@ -37,9 +37,9 @@
 
 #include "main.h"
 #include "misc.h"
-#include "mem_angle.h"
 #include "user-ex.h"
 #include <flexsea_comm.h>
+//(Add #include as needed when running test code)
 
 //****************************************************************************
 // Variable(s)

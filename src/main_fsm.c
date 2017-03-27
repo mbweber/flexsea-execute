@@ -292,7 +292,7 @@ void mainFSM10kHz(void)
     	}
         else
         {
-            ctrl.current.error_sum =0;
+            ctrl.current.error_sum = 0;
         }
 		
 	#endif

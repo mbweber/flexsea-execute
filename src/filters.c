@@ -33,7 +33,6 @@
 
 #include "main.h"
 #include "filters.h"
-#include "ext_input.h"
 #include <flexsea_user_structs.h>
 
 //****************************************************************************

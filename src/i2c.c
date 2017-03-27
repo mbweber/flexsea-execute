@@ -37,8 +37,7 @@
 #include "imu.h"
 #include "ext_input.h"
 #include "user-ex.h"
-#include "ext_input.h"
-//#include "peripherals.h"
+//#include "ext_input.h"
 #include "mag_encoders.h"
 #include "flexsea_global_structs.h"
 
@@ -296,12 +295,3 @@ void assign_i2c_data(uint8_t *newdata)
 		}
 	}	
 }
-
-//****************************************************************************
-// Private Function(s)
-//****************************************************************************
-
-
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
