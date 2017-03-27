@@ -52,9 +52,6 @@ volatile struct ctrl_s ctrl;
 //In Control tool:
 volatile struct in_control_s in_control;
 
-//Impedance loop
-int debug_var = 0;
-
 //****************************************************************************
 // Function(s)
 //****************************************************************************
@@ -179,10 +176,6 @@ void init_ctrl_data_structure(void)
 	ctrl.current.error_sum = 0;
 	ctrl.current.error_dif = 0;
 }
-
-//ToDo move:
-#define MAX_ERR_SUM	400000
-#define PWM_SAT		30000	
 
 //Motor position controller - non blocking
 int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
@@ -601,7 +594,6 @@ int motor_impedance_encoder(int wanted_pos, int new_enc_count)
 	//debug_var = current_vel;
 
  	filt_vel = (57*enc_t0)/220 + (73*enc_tm1)/660 - enc_tm2/264 - (37*enc_tm3)/440 - (43*enc_tm4)/330 - (47*enc_tm5)/330 - (53*enc_tm6)/440 - (17*enc_tm7)/264 + (17*enc_tm8)/660 + (3*enc_tm9)/20; // Derivative method that estimates best fit second order polynomial and calcualtes the derivative numerically for t = 0
- 	debug_var = filt_vel;
 	
  	i_b = ctrl.impedance.gain.Z_B * (filt_vel >> 5);
 	i_b += modifier;
@@ -656,7 +648,3 @@ void in_control_get_pwm_dir(void)
 	in_control.mot_dir = 0;
 	#endif	//#if(MOTOR_COMMUT == COMMUT_BLOCK)
 }
-
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************

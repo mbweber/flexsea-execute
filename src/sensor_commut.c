@@ -51,6 +51,14 @@ uint16 temp_anglemap[128];
 uint8_t measure_motor_resistance = 0;
 int i2t_flag = 0;
 
+int16_t phaseAcoms[2048];
+int16_t phaseBcoms[2048]; 
+int16_t phaseCcoms[2048];
+
+uint16 PWM_A_Value;
+uint16 PWM_B_Value;
+uint16 PWM_C_Value;
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************	
@@ -76,10 +84,6 @@ int get_sin_profile(double t, double period)
     //sum_freq = (fund_freq+third_freq)/0.8662;
     //return (int)sum_freq+sin_amp;
 }
-
-int16_t phaseAcoms[2048];
-int16_t phaseBcoms[2048]; 
-int16_t phaseCcoms[2048];   
 
 //run at 1 kHz
 void find_poles(void)
@@ -258,10 +262,6 @@ void fill_comm_tables(int32 ang)
 
 //ang is the current angle of the motor, pwm ranges from -1024 to 1024
 //ang should be from 0 to 2048
-
-uint16 PWM_A_Value;
-uint16 PWM_B_Value;
-uint16 PWM_C_Value;
 
 void sensor_sin_commut(int16 ang, int32 pwm)
 {

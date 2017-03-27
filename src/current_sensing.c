@@ -62,6 +62,9 @@ int32_t phase_c_zero = 0;
 uint8_t DMA_1_Chan;
 uint8_t DMA_1_TD[1];
 
+int64_t motor_currents[2] = {0,0};
+int64_t motor_currents_filt[2] = {0,0};
+
 //****************************************************************************
 // Function(s)
 //****************************************************************************
@@ -118,8 +121,7 @@ void adc_sar2_dma_config(void)
 	
 	#else
 	
-		//9 transfers per ISR (18 bytes):	
-		//xferLen = ADC2_BUF_LEN*2;
+		//3 transfers per ISR (6 bytes):	
 		xferLen = 6;	//3 samples
 	
 	#endif
@@ -135,13 +137,9 @@ void adc_sar2_dma_config(void)
 	CyDmaChEnable(DMA_1_Chan, 1);
 }
 
-//Calculates the motor current
-int64_t motor_currents[2] = {0,0};
-int64_t motor_currents_filt[2] = {0,0};
 //update the current measurement buffer
 void update_current_arrays(void)
 {
-
 	adc_dma_array_buf[0] = adc_dma_array[0];
 	adc_dma_array_buf[1] = adc_dma_array[1];
     adc_dma_array_buf[2] = adc_dma_array[2];
@@ -155,36 +153,9 @@ void update_current_arrays(void)
     static int64_t raw_current;
     static int32_t phase_a_raw, phase_b_raw, phase_c_raw; 
     
-    /*
-    if (PWM_A_Value==PWM_B_Value && PWM_A_Value == PWM_C_Value)
-    {
-        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);  
-        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
-        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero); 
-    }
-    else if (PWM_A_Value<= PWM_B_Value && PWM_A_Value<= PWM_C_Value)
-    { 
-        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
-        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero);
-        phase_a_raw = -phase_b_raw-phase_c_raw; 
-    }
-    else if (PWM_B_Value<= PWM_A_Value && PWM_B_Value<= PWM_C_Value)
-    {
-        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);   
-        phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero);
-        phase_b_raw = -phase_a_raw-phase_c_raw; 
-    }
-    else
-    {
-        phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);   
-        phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
-        phase_c_raw = -phase_b_raw-phase_a_raw;         
-    }
-    */
     phase_a_raw = (adc_dma_array_buf[2]-phase_a_zero);  
     phase_b_raw = (adc_dma_array_buf[0]-phase_b_zero);
     phase_c_raw = (adc_dma_array_buf[1]-phase_c_zero); 
-
 
     if (measure_motor_resistance)
     {
