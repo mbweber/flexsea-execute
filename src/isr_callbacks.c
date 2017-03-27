@@ -266,12 +266,11 @@ void isr_mot_Interrupt_InterruptCallback()
 {
 	//Encoder, sine commutation:
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
-	    //send command to read the as5047 angle
+
 	    #if(ENC_COMMUT == ENC_AS5047)
 			//Start reading, result via ISR 
 			as5047_read_single_isr(AS5047_REG_ANGLECOM); 
 		#endif //ENC_AS5047
-	       
-		//set encoder reader timer to 0  
+
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 }

@@ -100,8 +100,6 @@ void init_motor(void)
     
     Control_Reg_1_Write(1);
     CyDelay(1);     
-
-    //Control_Reg_2_Write(1);
 	
 	//Angle table can be stored in EEPROM or FLASH:
 	#ifdef USE_EEPROM		
@@ -127,7 +125,7 @@ void init_motor(void)
 	#endif	//MOTOR_TYPE == MOTOR_BRUSHED	
 }
 
-//TODO: rename to setMotorVoltage, or smthng like that
+//TODO: rename to setMotorVoltage, or something like that
 // takes as an argument the voltage to set the motor to, in milliVolts
 // applies a PWM to the motor, considering the nonlinear relationship between PWM and motor voltage
 // also accounts for the linear relationship between motor voltage & battery voltage

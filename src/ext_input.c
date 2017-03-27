@@ -36,7 +36,6 @@
 #include "ext_input.h"
 #include "control.h"
 #include "user-ex.h"
-#include "i2c.h"
 #include "analog.h"
 #include "flexsea_global_structs.h"
 
@@ -46,10 +45,6 @@
 
 //QEI encoder:
 struct enc_s encoder;
-
-//6-ch Strain Amplifier:
-uint16 ext_strain[6] = {0,0,0,0,0,0};
-uint8_t ext_strain_bytes[12];
 
 //****************************************************************************
 // Public Function(s)
@@ -124,24 +119,6 @@ int32 qei_read(void)
 	return retval;
 }
 
-//Reassembles the bytes we read in words
-void strain_6ch_bytes_to_words(uint8_t *buf)
-{
-	ext_strain[0] = ((((uint16)buf[0] << 8) & 0xFF00) | (uint16)buf[1]);
-	ext_strain[1] = ((((uint16)buf[2] << 8) & 0xFF00) | (uint16)buf[3]);
-	ext_strain[2] = ((((uint16)buf[4] << 8) & 0xFF00) | (uint16)buf[5]);
-	ext_strain[3] = ((((uint16)buf[6] << 8) & 0xFF00) | (uint16)buf[7]);
-	ext_strain[4] = ((((uint16)buf[8] << 8) & 0xFF00) | (uint16)buf[9]);
-	ext_strain[5] = ((((uint16)buf[10] << 8) & 0xFF00) | (uint16)buf[11]);
-}
-
-//Get latest readings from the 6-ch strain sensor. Using the Compressed version,
-//9bytes, 12-bits per sensor
-void get_6ch_strain(void) 
-{	
-	i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 9);
-}
-
 //Converts from ADC reading to position
 int16 get_analog_pos(void)
 {
@@ -150,18 +127,4 @@ int16 get_analog_pos(void)
 	#else
 		return 0;
 	#endif
-}
-
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
-
-void strain_amp_6ch_test_code_blocking(void)
-{
-	while(1)
-	{
-		i2c0_read(I2C_SLAVE_ADDR_6CH, MEM_R_CH1_H, ext_strain_bytes, 12);
-		strain_6ch_bytes_to_words(ext_strain_bytes);
-		CyDelay(100);
-	}
 }

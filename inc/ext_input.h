@@ -43,7 +43,6 @@
 //****************************************************************************
 
 extern struct enc_s encoder;	
-extern uint16 ext_strain[6];
 
 //****************************************************************************
 // Public Function Prototype(s):
@@ -56,11 +55,6 @@ int32 refresh_enc_control(void);
 int32 refresh_enc_display(void);
 int16 get_analog_pos(void);
 
-int strain_6ch_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
-void strain_amp_6ch_test_code_blocking(void);
-void strain_6ch_bytes_to_words(uint8_t *buf);
-void get_6ch_strain(void);
-
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
@@ -70,38 +64,6 @@ void get_6ch_strain(void);
 //Sensor commutation
 #define HALL_PHYSICAL			0
 #define HALL_VIRTUAL			1
-
-//6-ch Strain Amplifier:
-//(this has to match what's in amp_6_ch preipherals.h!)
-
-#define I2C_SLAVE_ADDR_6CH		0x66	//I'm assuming this is 7bits
-
-//EZI2C Buffer:
-#define EZI2C_WBUF_SIZE			8
-#define EZI2C_RBUF_SIZE			12
-#define EZI2C_BUF_SIZE			(EZI2C_WBUF_SIZE + EZI2C_RBUF_SIZE)
-
-//EZI2C Shared memory locations:
-#define MEM_W_CONTROL1			0
-#define MEM_W_CONTROL2			1
-#define MEM_W_OFFS_CH1			2
-#define MEM_W_OFFS_CH2			3
-#define MEM_W_OFFS_CH3			4
-#define MEM_W_OFFS_CH4			5
-#define MEM_W_OFFS_CH5			6
-#define MEM_W_OFFS_CH6			7
-#define MEM_R_CH1_H				8
-#define MEM_R_CH1_L				9
-#define MEM_R_CH2_H				10
-#define MEM_R_CH2_L				11
-#define MEM_R_CH3_H				12
-#define MEM_R_CH3_L				13
-#define MEM_R_CH4_H				14
-#define MEM_R_CH4_L				15
-#define MEM_R_CH5_H				16
-#define MEM_R_CH5_L				17
-#define MEM_R_CH6_H				18
-#define MEM_R_CH6_L				19
 
 //****************************************************************************
 // Structure(s)
