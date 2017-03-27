@@ -50,6 +50,7 @@
 #include "strain.h"
 #include "ui.h"
 #include "usb.h"
+#include "filters.h"
 #include "flexsea_global_structs.h"
 
 //****************************************************************************

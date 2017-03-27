@@ -43,6 +43,7 @@
 #include "safety.h"
 #include "user-ex.h"
 #include "flexsea_global_structs.h"
+#include "flexsea_user_structs.h"
 #include "flexsea_sys_def.h"
 #include "mem_angle.h"
 #include "sensor_commut.h"
