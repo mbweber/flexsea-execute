@@ -88,13 +88,7 @@ int main(void)
 	
 	//Main loop
 	while(1)
-	{
-        if(t1_50us_flag)
-		{
-			t1_50us_flag = 0;
-			mainFSM20kHz();
-		}
-                
+	{             
 		if(t1_new_value == 1)
 		{
 			//If the time share slot changed we run the timing FSM. Refer to

@@ -60,7 +60,6 @@ void mainFSM8(void);
 void mainFSM9(void);
 
 void mainFSM10kHz(void);
-void mainFSM20kHz(void);
 void mainFSMasynchronous(void);
 
 //****************************************************************************

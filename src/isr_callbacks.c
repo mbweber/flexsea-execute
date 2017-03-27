@@ -266,17 +266,6 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 //Interrupt triggers when PWM A reloads
 void isr_mot_Interrupt_InterruptCallback()
 {
-	//static uint8_t toggle = 0;
-	//toggle ^= 1;
-	/*
-	static uint32_t counter = 0;
-	if(counter < 2000)
-	{
-		counter++;
-		return;
-	}
-	*/
-	
 	//Encoder, sine commutation:
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	    //send command to read the as5047 angle

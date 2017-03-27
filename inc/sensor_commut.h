@@ -57,14 +57,7 @@ extern uint16 PWM_C_Value;
 // Public Function Prototype(s):
 //****************************************************************************
 
-void motor_spi_block_commutation(int angle);
-void motor_spi_block_commutation_triangletest();
-void motor_spi_findpoles();
 void find_poles(void);
-void find_poles_blocking(void);
-void find_poles2(void);
-void non_blocking_step_test(void);
-void non_blocking_sin_commut(int16 pwm);
 void load_eeprom_to_angles(void);
 void fill_comm_tables(int32);
 void sensor_sin_commut(int16, int32);
