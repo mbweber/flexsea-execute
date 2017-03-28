@@ -45,27 +45,27 @@
 struct scop
 {
 	uint16 v_vb, v_vg, v_3v3;
-	uint8 temperature;
-	uint8 status1, status2;
+	uint8_t temperature;
+	uint8_t status1, status2;
 };
 	
 //****************************************************************************
 // Public Function Prototype(s):
 //****************************************************************************
 
-void decode_psoc4_values(uint8 *psoc4_data);
+void decode_psoc4_values(uint8_t *psoc4_data);
 int16 dietemp_read(void);
-int safety_cop_read(uint8 internal_reg_addr, uint8 *pData, uint16 length);
+int safety_cop_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
 void safety_cop_get_status(void);
 void safety_cop_read_all(void);
-void status_error_codes(uint8 sts1, uint8 sts2, uint8 *l0, uint8 *l1, uint8 *l2);
-void overtemp_error(uint8 *eL1, uint8 *eL2);
+void status_error_codes(uint8_t sts1, uint8_t sts2, uint8_t *l0, uint8_t *l1, uint8_t *l2);
+void overtemp_error(uint8_t *eL1, uint8_t *eL2);
 
 void safety_cop_comm_test_blocking(void);
 void wdclk_test_blocking(void);
-uint8 criticalError(void);
+uint8_t criticalError(void);
 
-uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout);
+uint8_t I2C_1_MasterWriteByteTimeOut(uint8_t theByte, uint32 timeout);
 
 //****************************************************************************
 // Shared Variable(s):

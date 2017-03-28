@@ -34,13 +34,19 @@
 
 #include "main.h"
 #include "i2c.h"
+#include "imu.h"
 #include "ext_input.h"
+#include "user-ex.h"
+#include "ext_input.h"
+#include "peripherals.h"
+#include "flexsea_global_structs.h"
+
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
-uint8 i2c_last_request = 0;
-volatile uint8 i2c_0_r_buf[24];
+uint8_t i2c_last_request = 0;
+volatile uint8_t i2c_0_r_buf[24];
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -53,8 +59,8 @@ volatile uint8 i2c_0_r_buf[24];
 
 void i2c_0_fsm(void)
 {
-	static uint8 i2c_time_share = 0;
-	static uint8 minm_i2c = 0;
+	static uint8_t i2c_time_share = 0;
+	static uint8_t minm_i2c = 0;
 	
 	i2c_time_share++;
 	i2c_time_share %= 4;
@@ -139,9 +145,9 @@ void init_i2c_1(void)
 
 //Manual I2C [Write - Restart - Read n bytes] function
 //Takes around xus (400kHz) to run, then the ISR takes care of everything.
-int i2c0_read(uint8 slave_addr, uint8 reg_addr, uint8 *pdata, uint16 length)
+int i2c0_read(uint8_t slave_addr, uint8_t reg_addr, uint8_t *pdata, uint16 length)
 {
-	uint8 status = 0, i = 0;
+	uint8_t status = 0, i = 0;
 	
 	//Currently having trouble detecting the flags to know when data is ready.
 	//For now I'll transfer the previous buffer.
@@ -172,16 +178,16 @@ int i2c0_read(uint8 slave_addr, uint8 reg_addr, uint8 *pdata, uint16 length)
 	}
 
 	//Repeat start, read then stop (all by ISR):
-	I2C_0_MasterReadBuf(slave_addr, (uint8 *)i2c_0_r_buf, length, (I2C_0_MODE_COMPLETE_XFER | I2C_0_MODE_REPEAT_START));
+	I2C_0_MasterReadBuf(slave_addr, (uint8_t *)i2c_0_r_buf, length, (I2C_0_MODE_COMPLETE_XFER | I2C_0_MODE_REPEAT_START));
 	
 	return 0;
 }
 
 //Simplified version of I2C_0_MasterWriteByte() (single master only) with timeouts
 //timeout is in us
-uint8 I2C_0_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
+uint8_t I2C_0_MasterWriteByteTimeOut(uint8_t theByte, uint32 timeout)
 {
-    uint8 errStatus;
+    uint8_t errStatus;
 	uint32 t = 0;	//For the timeout
 
     errStatus = I2C_0_MSTR_NOT_READY;
@@ -241,7 +247,7 @@ uint8 I2C_0_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
 
 //Associate data with the right structure. We need that because of the way the ISR-based
 //I2C works (we always get data from the last request)
-void assign_i2c_data(uint8 *newdata)
+void assign_i2c_data(uint8_t *newdata)
 {
 	uint16 tmp = 0;
 	

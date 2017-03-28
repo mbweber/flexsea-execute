@@ -43,7 +43,7 @@
 
 extern int findingpoles;
 
-extern uint8 measure_motor_resistance;
+extern uint8_t measure_motor_resistance;
 
 extern uint16 phaseAcoms[2048]; 
 extern uint16 phaseBcoms[2048]; 

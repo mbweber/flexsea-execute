@@ -34,21 +34,25 @@
 
 #include "main.h"
 #include "safety.h"
+#include "peripherals.h"
+#include "motor.h"
+#include "i2t-current-limit.h"
+#include "user-ex.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
 struct scop safety_cop;
-volatile uint8 i2c_1_r_buf[24];
-uint8 safety_cop_data[24] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+volatile uint8_t i2c_1_r_buf[24];
+uint8_t safety_cop_data[24] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 //****************************************************************************
 // Function(s)
 //****************************************************************************
 
 //Update the global variables from the array
-void decode_psoc4_values(uint8 *psoc4_data)
+void decode_psoc4_values(uint8_t *psoc4_data)
 {
 	safety_cop.v_vb = psoc4_data[MEM_R_VB_SNS];
 	safety_cop.v_vg = psoc4_data[MEM_R_VG_SNS];
@@ -72,7 +76,7 @@ int16 dietemp_read(void)
 
 	static cystatus dietemp = 0;
 	int16 temp = 0;	
-	uint8 active_error = 0;
+	uint8_t active_error = 0;
 				
 	//Die temperature too high?
 	dietemp = DieTemp_1_Query(&temp);
@@ -100,9 +104,9 @@ int16 dietemp_read(void)
 
 //Manual I2C [Write - Restart - Read n bytes] function
 //Takes around xus (400kHz) to run, then the ISR takes care of everything.
-int safety_cop_read(uint8 internal_reg_addr, uint8 *pData, uint16 length)
+int safety_cop_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length)
 {
-	uint8 status = 0, i = 0;
+	uint8_t status = 0, i = 0;
 	
 	//Currently having trouble detecting the flags to know when data is ready.
 	//For now I'll transfer the previous buffer.
@@ -130,14 +134,14 @@ int safety_cop_read(uint8 internal_reg_addr, uint8 *pData, uint16 length)
 	}
 
 	//Repeat start, read then stop (all by ISR):
-	I2C_1_MasterReadBuf(SCOP_I2C_ADDR, (uint8 *)i2c_1_r_buf, length, (I2C_1_MODE_COMPLETE_XFER | I2C_1_MODE_REPEAT_START));
+	I2C_1_MasterReadBuf(SCOP_I2C_ADDR, (uint8_t *)i2c_1_r_buf, length, (I2C_1_MODE_COMPLETE_XFER | I2C_1_MODE_REPEAT_START));
 	
 	return 0;
 }
 
 void safety_cop_get_status(void)
 {
-	uint8 tmp_buf[4] = {0,0,0,0};
+	uint8_t tmp_buf[4] = {0,0,0,0};
 	
 	safety_cop_read(MEM_R_STATUS1, tmp_buf, 3);
 }
@@ -146,8 +150,8 @@ void safety_cop_get_status(void)
 //MEM_R_STATUS1, MEM_R_STATUS2, MEM_R_VB_SNS, MEM_R_VG_SNS, MEM_R_5V_SNS, MEM_R_3V3_SNS & MEM_R_TEMPERATURE
 void safety_cop_read_all(void)
 {
-	uint8 tmp_buf[8] = {0,0,0,0,0,0,0,0};
-	uint8 i = 0;
+	uint8_t tmp_buf[8] = {0,0,0,0,0,0,0,0};
+	uint8_t i = 0;
 	
 	safety_cop_read(MEM_R_STATUS1, tmp_buf, 8);
 	
@@ -159,9 +163,9 @@ void safety_cop_read_all(void)
 	decode_psoc4_values(safety_cop_data);
 }
 
-void status_error_codes(uint8 sts1, uint8 sts2, uint8 *l0, uint8 *l1, uint8 *l2)
+void status_error_codes(uint8_t sts1, uint8_t sts2, uint8_t *l0, uint8_t *l1, uint8_t *l2)
 {
-	uint8 tmp_l0 = 0, tmp_l1 = 0, tmp_l2 = 0;
+	uint8_t tmp_l0 = 0, tmp_l1 = 0, tmp_l2 = 0;
 	
 	//L0 is Yellow, L1 is Red and L2 is (latching) flashing Red
 	//STATUS1 = [WDCLK, DISCON, TMPH, TMPL, VBH, VBL, VGH, VGL]
@@ -203,10 +207,10 @@ void status_error_codes(uint8 sts1, uint8 sts2, uint8 *l0, uint8 *l1, uint8 *l2)
 	}
 }
 
-void overtemp_error(uint8 *eL1, uint8 *eL2)
+void overtemp_error(uint8_t *eL1, uint8_t *eL2)
 {
-	uint8 temp_status = 0;
-	static uint8 err_cnt = 0;
+	uint8_t temp_status = 0;
+	static uint8_t err_cnt = 0;
 	temp_status = GET_OVERTEMP_FLAG(safety_cop.status1);
 	
 	if(temp_status == T_WARNING)
@@ -237,9 +241,9 @@ void overtemp_error(uint8 *eL1, uint8 *eL2)
 //ToDo: why is that in safety.c???
 //Simplified version of I2C_1_MasterWriteByte() (single master only) with timeouts
 //timeout is in us
-uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
+uint8_t I2C_1_MasterWriteByteTimeOut(uint8_t theByte, uint32 timeout)
 {
-    uint8 errStatus;
+    uint8_t errStatus;
 	uint32 t = 0;	//For the timeout
 
     errStatus = I2C_1_MSTR_NOT_READY;
@@ -300,9 +304,9 @@ uint8 I2C_1_MasterWriteByteTimeOut(uint8 theByte, uint32 timeout)
 //This function gets called by the lowest-level PWM functions. If it returns an
 //error, it will force the output to a 0% duty cycle. It will apply no power, 
 //and maximum damping to the motor.
-uint8 criticalError(void)
+uint8_t criticalError(void)
 {
-	static uint8 latchedOutput = 0;
+	static uint8_t latchedOutput = 0;
 	
 	//I2t current protection:
 	#ifdef USE_I2T_LIMIT
@@ -331,18 +335,18 @@ void safety_cop_comm_test_blocking(void)
 {
 	//PSoC 4 <=> PSoC 5 I2C Test code
 	
-	uint8 i2c_test_wbuf[9];
-	uint8 i2c_test_rbuf[24];
-	uint8 ledg_state = 0;
+	uint8_t i2c_test_wbuf[9];
+	uint8_t i2c_test_rbuf[24];
+	uint8_t ledg_state = 0;
 	
 	while(1)
 	{
 		//Write to slave:
-		//I2C_1_MasterWriteBuf(0x11, (uint8 *) i2c_test_wbuf, 9, I2C_1_MODE_COMPLETE_XFER);
+		//I2C_1_MasterWriteBuf(0x11, (uint8_t *) i2c_test_wbuf, 9, I2C_1_MODE_COMPLETE_XFER);
 		
 		//Read from slave:
 		i2c_test_wbuf[0] = 0;
-		I2C_1_MasterWriteBuf(SCOP_I2C_ADDR, (uint8 *) i2c_test_wbuf, 1, I2C_1_MODE_COMPLETE_XFER);	//Write offset
+		I2C_1_MasterWriteBuf(SCOP_I2C_ADDR, (uint8_t *) i2c_test_wbuf, 1, I2C_1_MODE_COMPLETE_XFER);	//Write offset
 		CyDelayUs(500);
 		I2C_1_MasterReadBuf(SCOP_I2C_ADDR, i2c_test_rbuf, 24, I2C_1_MODE_COMPLETE_XFER);
 		CyDelayUs(500);
@@ -367,7 +371,7 @@ void safety_cop_comm_test_blocking(void)
 
 void wdclk_test_blocking(void)
 {
-	uint8 toggle_wdclk = 0;
+	uint8_t toggle_wdclk = 0;
 	
 	while(1)
 	{

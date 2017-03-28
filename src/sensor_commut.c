@@ -35,6 +35,10 @@
 #include "main.h"
 #include "sensor_commut.h"
 #include "ext_input.h"
+#include "safety.h"
+#include "mem_angle.h"
+#include "user-ex.h"
+
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
@@ -43,7 +47,7 @@ int findingpoles = 0;
 uint16 initpole = 1;
 uint16 anglemap[128];
 uint16 temp_anglemap[128];
-uint8 measure_motor_resistance = 0;
+uint8_t measure_motor_resistance = 0;
 int i2t_flag = 0;
 
 //****************************************************************************
@@ -373,6 +377,11 @@ void sensor_sin_commut(int16 ang, int32 pwm)
         
     }    
 	
+	#else
+		
+	(void)ang;
+	(void)pwm;
+		
 	#endif
 }
 

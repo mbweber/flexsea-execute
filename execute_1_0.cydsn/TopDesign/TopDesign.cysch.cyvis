@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0" template="Empty (17&quot; x 11&quot;)" xmlns="http://cypress.com/xsd/cyvis">
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0 Update 1" template="Empty (17&quot; x 11&quot;)" xmlns="http://cypress.com/xsd/cyvis">
   <Page index="0" name="Main" enabled="true" shapeCount="4">
     <Annotation shapeName="Shape_861" zorder="0">
       <Location x="486" y="143.9999" />
@@ -20,7 +20,7 @@ jfduval@dephy.com, lmooney@dephy.com
 Dephy, Inc. 
 50 Terminal St, Bldg 2 Unit 520
 Boston, MA 02129
-02/2017]]></Text>
+03/2017]]></Text>
       <Fill>
         <SolidBrush color="0, 0, 0" />
       </Fill>
@@ -13937,8 +13937,8 @@ Boston, MA 02129
       <TextAlignment value="TopLeft" />
     </Annotation>
     <Rectangle shapeName="Shape_1733" zorder="0">
-      <Location x="707.9998" y="149.9999" />
-      <Size width="288.0002" height="192.0002" />
+      <Location x="708" y="150" />
+      <Size width="288" height="192" />
       <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
         <SolidBrush color="0, 0, 0" />
       </Outline>

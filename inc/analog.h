@@ -44,7 +44,7 @@
 void init_analog(void);
 uint16 adc_avg8(uint16 new_data);
 void filter_sar_adc(void);
-int16 read_analog(uint8 ch);
+int16 read_analog(uint8_t ch);
 void adc_sar1_dma_config(void);
 void adc_sar2_dma_config(void);
 void double_buffer_adc(void);
@@ -91,8 +91,8 @@ volatile extern uint16 adc1_dbuf[ADC1_CHANNELS][ADC1_BUF_LEN];
 extern int16 adc_dma_array[ADC2_BUF_LEN];
 extern int16 adc_dma_array_buf[ADC2_BUF_LEN];
 extern uint16 adc_sar1_dma_array[ADC1_BUF_LEN + 1];
-extern volatile uint8 amux_ch;
-extern volatile uint8 current_sensing_flag;
+extern volatile uint8_t amux_ch;
+extern volatile uint8_t current_sensing_flag;
 extern volatile int hallCurr;
 
 //****************************************************************************

@@ -36,6 +36,10 @@
 #include "main.h"
 #include "flexsea_board.h"
 #include "../../flexsea-system/inc/flexsea_system.h"
+#include "user-ex.h"
+#include "local_comm.h"
+#include "serial.h"
+#include "usb.h"
 #include <flexsea_comm.h>
 #include <flexsea_payload.h>
 
@@ -44,10 +48,10 @@
 //****************************************************************************
 
 //Board ID (this board) - pick from Board list in flexsea_system.h
-uint8 board_id = FLEXSEA_EXECUTE_1;	//Can be modified in in user.c/h!
-uint8 board_up_id = FLEXSEA_MANAGE_1;
-uint8 board_sub1_id[SLAVE_BUS_1_CNT];
-uint8 board_sub2_id[SLAVE_BUS_2_CNT];
+uint8_t board_id = FLEXSEA_EXECUTE_1;	//Can be modified in in user.c/h!
+uint8_t board_up_id = FLEXSEA_MANAGE_1;
+uint8_t board_sub1_id[SLAVE_BUS_1_CNT];
+uint8_t board_sub2_id[SLAVE_BUS_2_CNT];
 
 //****************************************************************************
 // Function(s)
@@ -122,4 +126,35 @@ void flexsea_receive_from_master(void)
 		tryUnpacking(&commPeriph[PORT_WIRELESS], &packet[PORT_WIRELESS][INBOUND]);
 		
 	#endif
+}
+
+uint8_t getBoardID(void)
+{
+	return board_id;
+}
+
+void setBoardID(uint8_t bid)
+{
+	board_id = bid;
+}
+
+uint8_t getBoardUpID(void)
+{
+	return board_up_id;
+}
+
+uint8_t getBoardSubID(uint8_t sub, uint8_t idx)
+{
+	if(sub == 0){return board_sub1_id[idx];}
+	else if(sub == 1){return board_sub2_id[idx];}
+
+	return 0;
+}
+
+uint8_t getSlaveCnt(uint8_t sub)
+{
+	if(sub == 0){return SLAVE_BUS_1_CNT;}
+	else if(sub == 1){return SLAVE_BUS_2_CNT;}
+
+	return 0;
 }

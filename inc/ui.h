@@ -41,22 +41,22 @@
 // Shared variable(s)
 //****************************************************************************	
 	
-extern uint8 minm_rgb_color;
+extern uint8_t minm_rgb_color;
 	
 //****************************************************************************
 // Public Function Prototype(s):
 //****************************************************************************
 
-void i2c_init_minm(uint8 color);
-void i2c_write_minm_rgb(uint8 cmd, uint8 r, uint8 g, uint8 b);
-void minm_byte_to_rgb(uint8 byte, uint8 *r, uint8 *g, uint8 *b);
-uint8 update_minm_rgb(void);
+void i2c_init_minm(uint8_t color);
+void i2c_write_minm_rgb(uint8_t cmd, uint8_t r, uint8_t g, uint8_t b);
+void minm_byte_to_rgb(uint8_t byte, uint8_t *r, uint8_t *g, uint8_t *b);
+uint8_t update_minm_rgb(void);
 void minm_test_code(void);
 void alive_led(void);
 void power_on(void);
 void set_led_rgb(uint8_t r, uint8_t g, uint8_t b);
 void rgb_led_ui(uint8_t err_l0, uint8_t err_l1, uint8_t err_l2, uint8_t new_comm);
-void rgbLedSet(uint8 r, uint8 g, uint8 b);
+void rgbLedSet(uint8_t r, uint8_t g, uint8_t b);
 void rgbLedRefresh(void);
 void rgbLedRefreshFade(void);
 void rgbLedRefresh_testcode_blocking(void);

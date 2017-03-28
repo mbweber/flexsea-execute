@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0" xmlns="http://cypress.com/xsd/cysem">
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0 Update 1" xmlns="http://cypress.com/xsd/cysem">
   <Instances count="134">
     <Instance guid="02f2cf2c-2c7a-49df-9246-7a3435c21be3" name="SCL_1" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
@@ -24,7 +24,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -228,7 +228,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -267,7 +267,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -470,7 +470,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -504,7 +504,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -543,7 +543,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -622,7 +622,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
@@ -659,7 +659,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -862,7 +862,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -1065,7 +1065,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -1268,7 +1268,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -1471,7 +1471,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -1674,7 +1674,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -1714,7 +1714,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -1924,7 +1924,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DesiredBitRate">
@@ -2011,7 +2011,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -2214,7 +2214,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -2417,7 +2417,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -2620,7 +2620,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -2727,7 +2727,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
@@ -2857,7 +2857,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -2890,7 +2890,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -3093,7 +3093,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -3132,7 +3132,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -3335,7 +3335,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -3373,7 +3373,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -3407,7 +3407,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -3437,7 +3437,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -3640,7 +3640,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -3680,7 +3680,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -3714,7 +3714,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -3760,7 +3760,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
@@ -3847,7 +3847,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_next_out">
@@ -3912,7 +3912,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_next_out">
@@ -3954,7 +3954,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -4157,7 +4157,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -4363,7 +4363,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -4444,7 +4444,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -4480,7 +4480,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -4684,7 +4684,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -4887,7 +4887,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -5091,7 +5091,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -5125,7 +5125,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -5328,7 +5328,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -5531,7 +5531,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -5734,7 +5734,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -5937,7 +5937,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -5977,7 +5977,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -6016,7 +6016,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -6050,7 +6050,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -6260,7 +6260,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -6301,7 +6301,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -6389,7 +6389,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableWakeup">
@@ -6493,7 +6493,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -6703,7 +6703,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableWakeup">
@@ -6844,7 +6844,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
@@ -6880,7 +6880,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -7099,7 +7099,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
@@ -7289,7 +7289,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_Vref_Vss">
@@ -7395,7 +7395,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -7476,7 +7476,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -7680,7 +7680,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -7883,7 +7883,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -8086,7 +8086,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Gain">
@@ -8166,7 +8166,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
@@ -8202,7 +8202,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -8405,7 +8405,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -8482,7 +8482,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
@@ -8518,7 +8518,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -8721,7 +8721,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -8924,7 +8924,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -9127,7 +9127,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -9157,7 +9157,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -9363,7 +9363,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -9444,7 +9444,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -9647,7 +9647,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -9850,7 +9850,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -10122,7 +10122,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
@@ -10255,7 +10255,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -10296,7 +10296,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Include_In_Netlist">
@@ -10341,7 +10341,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -10400,7 +10400,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnIntRXInterrupt">
@@ -10523,7 +10523,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -10733,7 +10733,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DesiredBitRate">
@@ -10819,7 +10819,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -11022,7 +11022,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -11225,7 +11225,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -11280,7 +11280,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnIntRXInterrupt">
@@ -11406,7 +11406,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -11487,7 +11487,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Gain">
@@ -11532,7 +11532,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -11613,7 +11613,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -11819,7 +11819,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="guid">
@@ -11924,7 +11924,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
@@ -12054,7 +12054,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -12163,7 +12163,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
@@ -12297,7 +12297,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -12602,7 +12602,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeviceDescriptors">
@@ -13942,7 +13942,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -14145,7 +14145,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -14185,7 +14185,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -14388,7 +14388,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -14427,7 +14427,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -14633,7 +14633,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -14714,7 +14714,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Data_Source">
@@ -14766,7 +14766,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
@@ -14806,7 +14806,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -15009,7 +15009,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -15212,7 +15212,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -15415,7 +15415,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -15618,7 +15618,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -15821,7 +15821,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -16023,7 +16023,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -16062,7 +16062,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -16096,7 +16096,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -16299,7 +16299,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -16333,7 +16333,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -16372,7 +16372,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -16575,7 +16575,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -16778,7 +16778,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -16981,7 +16981,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -17184,7 +17184,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -17387,7 +17387,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -17590,7 +17590,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -17621,7 +17621,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -17824,7 +17824,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
@@ -17863,7 +17863,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Include_In_Netlist">
@@ -17902,7 +17902,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -17936,7 +17936,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -18139,7 +18139,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
@@ -18342,7 +18342,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
@@ -18375,7 +18375,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
@@ -18473,7 +18473,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
@@ -18537,7 +18537,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0</Value>
+        <Value>PSoC Creator  4.0 Update 1</Value>
         <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">

@@ -35,13 +35,9 @@
 //Comment the next line to use in your application:
 //#define DEBUGGING_OUTPUT
 
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <math.h>
-#include "trapez.h"
 #include "main.h"
-
+#include <stdlib.h>
+#include "trapez.h"
 
 //****************************************************************************
 // Local variable(s)
@@ -59,6 +55,13 @@ long long sign = 0;
 int use_smooth = 0, no_trap = 0;
 long long no_trap_pos = 0;
 long long smooth_A = 0, smooth_pos_i = 0, smooth_pos_f = 0, smooth_max_steps = 0, smooth_t = 0;
+
+//****************************************************************************
+// Shared Variable(s):
+//****************************************************************************
+
+int32_t steps;
+
 //****************************************************************************
 // Private Function Prototype(s):
 //****************************************************************************

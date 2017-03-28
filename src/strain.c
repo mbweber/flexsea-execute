@@ -34,6 +34,8 @@
 
 #include "main.h"
 #include "strain.h"
+#include "flexsea_global_structs.h"
+#include "flexsea.h"
 
 //****************************************************************************
 // Variable(s)
@@ -77,20 +79,20 @@ void init_strain(void)
 }
 
 //Configure the strain gauge amplifier
-void strain_config(uint8 offs, uint8 gain)
+void strain_config(uint8_t offs, uint8_t gain)
 {
-	uint8 i2c_init_buf[2];
+	uint8_t i2c_init_buf[2];
 	
 	//Offset:
 	i2c_init_buf[0] = STRAIN_OFFSET;
 	i2c_init_buf[1] = offs;		//Offset
-	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8 *) i2c_init_buf, 2, I2C_1_MODE_COMPLETE_XFER);	
+	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8_t *) i2c_init_buf, 2, I2C_1_MODE_COMPLETE_XFER);	
 	CyDelayUs(100);
 	
 	//Second stage gain:
 	i2c_init_buf[0] = STRAIN_GAIN;
 	i2c_init_buf[1] = gain;		//Gain
-	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8 *) i2c_init_buf, 2, I2C_1_MODE_COMPLETE_XFER);
+	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8_t *) i2c_init_buf, 2, I2C_1_MODE_COMPLETE_XFER);
 	CyDelayUs(100);
 }
 
@@ -107,7 +109,7 @@ uint16 strain_read(void)
 uint16 strain_filter(void)
 {
 	uint32 sum = 0;
-	uint8 cnt = 0;
+	uint8_t cnt = 0;
 	uint16 avg = 0;
 	static uint16 vo2_buf[STRAIN_BUF_LEN];
 	
@@ -137,7 +139,7 @@ uint16 strain_filter(void)
 uint16 strain_filter_dma(void)
 {
 	uint32 sum = 0;
-	uint8 cnt = 0;
+	uint8_t cnt = 0;
 	uint16 avg = 0;
 	
 	//Sum all the terms
@@ -232,24 +234,24 @@ void strain_test_blocking(void)
 {
 	//Strain Amplifier test:
 	
-	uint8 i2c_test_wbuf[9];
-	uint8 vr1 = 0;
-	uint8 ledg_state = 0;
+	uint8_t i2c_test_wbuf[9];
+	uint8_t vr1 = 0;
+	uint8_t ledg_state = 0;
 	
 	i2c_test_wbuf[0] = STRAIN_OFFSET;
 	i2c_test_wbuf[1] = 127;	//Offset of ~ V/2
-	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8 *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
+	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8_t *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
 	CyDelay(10);
 	i2c_test_wbuf[0] = STRAIN_GAIN;
 	i2c_test_wbuf[1] = 10;	//Relatively small gain
-	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8 *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
+	I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8_t *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
 	
 	i2c_test_wbuf[0] = STRAIN_OFFSET;
 	while(1)
 	{
 		vr1++;		
 		i2c_test_wbuf[1] = vr1;	//Enable this line to test the offset
-		I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8 *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
+		I2C_1_MasterWriteBuf(I2C_POT_ADDR, (uint8_t *) i2c_test_wbuf, 2, I2C_1_MODE_COMPLETE_XFER);	
 		
 		ledg_state ^= 1;
 		LED_G_Write(ledg_state);
@@ -263,8 +265,8 @@ void dma_2_config(void)
 {
 	/* Variable declarations for DMA_2 */
 	/* Move these variable declarations to the top of the function */
-	uint8 DMA_2_Chan;
-	uint8 DMA_2_TD[1];
+	uint8_t DMA_2_Chan;
+	uint8_t DMA_2_TD[1];
 
 	/* DMA Configuration for DMA_2 */
 	#define DMA_2_BYTES_PER_BURST 2

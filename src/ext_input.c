@@ -34,6 +34,11 @@
 
 #include "main.h"
 #include "ext_input.h"
+#include "control.h"
+#include "user-ex.h"
+#include "i2c.h"
+#include "analog.h"
+#include "flexsea_global_structs.h"
 
 //****************************************************************************
 // Variable(s)
@@ -47,20 +52,20 @@ struct as504x_s as5047, as5048b;
 uint16 spidata_mosi[WORDS_IN_FRAME] = {0,0,0,0,0,0,0};
 uint16 spidata_miso[WORDS_IN_FRAME] = {0,0,0,0,0,0,0};
 uint16 spidata_mosi2[WORDS_IN_FRAME];
-uint8 spistatus = 0;
+uint8_t spistatus = 0;
 uint16 angleunc = 0;
 uint16 as5047_angle = 0;
-volatile uint8 spi_isr_state = 0;
+volatile uint8_t spi_isr_state = 0;
 volatile uint16 as5047_empty_read = 0;
 
 //Magnetic encoder, AS5048B:
-uint8 as5048b_bytes[10] = {0,0,0,0,0,0,0,0,0,0};
-uint8 as5048b_agc = 0, as5048b_diag = 0;
+uint8_t as5048b_bytes[10] = {0,0,0,0,0,0,0,0,0,0};
+uint8_t as5048b_agc = 0, as5048b_diag = 0;
 uint16 as5048b_mag = 0, as5048b_angle = 0;
 
 //6-ch Strain Amplifier:
 uint16 ext_strain[6] = {0,0,0,0,0,0};
-uint8 ext_strain_bytes[12];
+uint8_t ext_strain_bytes[12];
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -169,13 +174,17 @@ uint16 as5047_read_single_isr(uint16 reg)
 	SPIM_1_WriteTxData(spidata_mosi2[0]);	
 	
 	//(Rest done via ISR)
-	#endif //USE_AS5047
+	#else
+		
+	(void)reg;
+	
+	#endif	//USE_AS5047
 
 	return 0;
 }
 
 //Reassembles the bytes we read in words
-void strain_6ch_bytes_to_words(uint8 *buf)
+void strain_6ch_bytes_to_words(uint8_t *buf)
 {
 	ext_strain[0] = ((((uint16)buf[0] << 8) & 0xFF00) | (uint16)buf[1]);
 	ext_strain[1] = ((((uint16)buf[2] << 8) & 0xFF00) | (uint16)buf[3]);

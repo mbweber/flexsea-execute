@@ -36,6 +36,7 @@
 //****************************************************************************
 	
 #include "main.h"
+#include "flexsea_global_structs.h"
 	
 //****************************************************************************
 // Shared variable(s)
@@ -44,7 +45,7 @@
 extern struct enc_s encoder;	
 extern struct as504x_s as5047, as5048b;
 extern uint16 ext_strain[6];
-extern volatile uint8 spi_isr_state;
+extern volatile uint8_t spi_isr_state;
 extern uint16 spidata_miso[];
 extern uint16 spidata_mosi2[];
 extern uint16 as5047_angle;
@@ -68,12 +69,12 @@ uint16 as5047_read_single_isr(uint16 reg);
 
 void as5047_test_code_blocking(void);
 
-int strain_6ch_read(uint8 internal_reg_addr, uint8 *pData, uint16 length);
+int strain_6ch_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
 void strain_amp_6ch_test_code_blocking(void);
-void strain_6ch_bytes_to_words(uint8 *buf);
+void strain_6ch_bytes_to_words(uint8_t *buf);
 void get_6ch_strain(void);
 
-int as5048b_read(uint8 internal_reg_addr, uint8 *pData, uint16 length);
+int as5048b_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
 void as5048b_test_code_blocking(void);
 void get_as5048b_position(void);
 

@@ -38,7 +38,15 @@
 
 #include "main.h"
 #include "cyapicallbacks.h"
+#include "misc.h"
+#include "analog.h"
+#include "control.h"
+#include "serial.h"
+#include "flexsea_board.h"
+#include "flexsea_buffers.h"
 #include "ext_input.h"
+#include "main_fsm.h"
+#include "user-ex.h"
 
 //****************************************************************************
 // Public Function(s)
@@ -179,7 +187,7 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 	#ifdef USE_AS5047
     
 	//static volatile uint16 frame_errors = 0, parity_errors = 0, man_test = 0;
-	volatile uint8 tx_status_isr = 0;
+	volatile uint8_t tx_status_isr = 0;
 	
 	//Read status to clear flag:
 	tx_status_isr = SPIM_1_ReadTxStatus();

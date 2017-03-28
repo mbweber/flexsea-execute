@@ -42,11 +42,11 @@
 // Shared variable(s)
 //****************************************************************************
 	
-extern volatile uint8 t1_100us_flag;
-extern volatile uint8 t1_time_share, t1_new_value;
+extern volatile uint8_t t1_100us_flag;
+extern volatile uint8_t t1_time_share, t1_new_value;
 	
-extern uint8 adc_sar1_flag;	
-extern volatile uint8 adc_delsig_flag;
+extern uint8_t adc_sar1_flag;	
+extern volatile uint8_t adc_delsig_flag;
 
 extern uint16 last_as5047_word;	    
 extern int32 angle_read_counter; 
@@ -58,8 +58,8 @@ extern int32 last_angle_read_gap;
 
 void test_code_blocking(void);	
 void test_code_non_blocking(void);
-uint8 timebase_1s(void);
-uint8 timebase_100ms(void);
+uint8_t timebase_1s(void);
+uint8_t timebase_100ms(void);
 uint8_t unwrap_buffer(uint8_t *array, uint8_t *new_array, uint32_t len);
 void bootManage(void);
 
