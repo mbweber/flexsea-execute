@@ -50,14 +50,14 @@
 #include "strain.h"
 #include "ui.h"
 #include "usb.h"
+#include "mag_encoders.h"
+#include "flexsea_global_structs.h"
 
 //****************************************************************************
 // Variable(s)
 //****************************************************************************
 
 uint8_t gui_fsm_flag = DISABLED;
-
-int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 
 //****************************************************************************
 // Function(s)
@@ -66,6 +66,11 @@ int32 angtimer_read = 65000;//, last_angtimer_read = 65000;
 //Initialize and enables all the peripherals
 void init_peripherals(void)
 {
+    //Magnetic encoder:
+	#ifdef USE_AS5047			
+	init_as5047();
+	#endif //USE_AS5047
+    
 	//Motor control variables & peripherals:
 	init_motor();	
     
@@ -144,14 +149,7 @@ void init_peripherals(void)
 		
 		#endif	//USE_STRAIN
 		
-	#endif	//USE_I2C_1	
-	
-	//Magnetic encoder:
-	#ifdef USE_AS5047		
-	
-	init_as5047();
-	
-	#endif //USE_AS5047
+	#endif	//USE_I2C_1		
 	
 	//Die temperatuire measurement
 	#ifdef USE_DIETEMP	
@@ -175,15 +173,15 @@ void init_peripherals(void)
 		(MOTOR_COMMUT == COMMUT_SINE))
 		
 		//Start converting:
-		ADC_SAR_2_StartConvert();
+		//ADC_SAR_2_StartConvert();
 		
 	#endif
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	
 		//Initialize structures:
-		init_as504x(&as5047,10000); //10 is the sampling frequency in Hz
-		init_as504x(&as5048b,250); //1 is the sampling frequency in Hz
+		init_as504x(&as5047); //10 is the sampling frequency in Hz 
+		//init_as504x(&as5048b,250); //1 is the sampling frequency in Hz
 	
 	#endif	//(MOTOR_COMMUT == COMMUT_SINE) 
 }
@@ -194,137 +192,6 @@ void init_tb_timers(void)
 	//Timer 1: 1ms (LEDs, PID)
 	Timer_1_Init();
 	Timer_1_Start();
+	Timer_1_WritePeriod(4000);	//10kHz
 	isr_t1_Start();
-}
-
-void init_angle_timer(void)
-{
-    Timer_angleread_Start();
-}
-
-//update the number of counts since the last time the angle sensor was read
-void update_counts_since_last_ang_read(struct as504x_s *as504x)
-{
-    angtimer_read = Timer_angleread_ReadCounter(); 
-    
-    if (angtimer_read>as504x->last_angtimer_read+20000)
-    {
-        as504x->counts_since_last_ang_read =  as504x->counts_since_last_ang_read + as504x->last_angtimer_read+65000-angtimer_read;
-    }
-    else
-    {
-        as504x->counts_since_last_ang_read = as504x->counts_since_last_ang_read + as504x->last_angtimer_read-angtimer_read;
-    }
-    as504x->last_angtimer_read = angtimer_read;
-}
-
-//resent the angle read counter and store the the counts between last two readings
-void reset_ang_counter(struct as504x_s *as504x)
-{
-    update_counts_since_last_ang_read(as504x);
-    as504x->last_ang_read_period = as504x->counts_since_last_ang_read-0;
-    as504x->counts_since_last_ang_read = 0;
-}
-
-//Initialize encoder structures
-void init_as504x(struct as504x_s *as504x, int sf)
-{
-	init_angsense(&as504x->raw);
-    init_angsense(&as504x->filt);
-    
-
-    as504x->samplefreq = sf;
-    as504x->last_angtimer_read = 0;
-    as504x->counts_since_last_ang_read = 0;
-    as504x->last_ang_read_period = 0;
-    as504x->ang_abs_clks = 0; 
-    as504x->ang_comp_clks = 0;
-    as504x->num_rot = 0; 
-}
-
-void init_angsense(struct angsense_s *as)
-{
-    int i;
-    for(i = 0; i < 11; i++)
-		as->angs_clks[i] = 0;
-        
-    as->vels_cpms[0] = 0;
-    as->vels_cpms[1] = 0;
-    as->vels_ctrl_cpms[0] = 0;
-    as->vels_ctrl_cpms[1] = 0;
-    
-    as->ang_clks = 0;
-    as->ang_deg = 0;
-    as->vel_cpms = 0;
-    as->vel_ctrl_cpms = 0;
-    as ->vel_rpm = 0;
-}
-
-int error_flag = 0;
-//update all of the angle variables
-void update_as504x(int32_t ang, struct as504x_s *as504x)
-{  
-    static int64_t raw_ang, raw_vel, raw_ctrl_vel;
-    
-    //determine if the encoder has rotated past 0/16383 point and in what direction
-    if (ang-as504x->ang_abs_clks<-5000)
-    {
-        as504x->num_rot++;
-    }
-    else if ((ang-as504x->ang_abs_clks)>5000)
-    {
-        as504x->num_rot--;
-    }
-    
-    //assign latest raw angle value
-    as504x->ang_abs_clks = ang;
-    
-    //shift the ang values accept the last two, which will be shifted in the filter function
-    int ii;
-    for (ii=10;ii>1;ii--)
-        as504x->raw.angs_clks[ii] = as504x->raw.angs_clks[ii-1];
-        
-    raw_ang = (as504x->num_rot<<14)+as504x->ang_abs_clks;    
-    
-    //calculate the simple difference velocity
-    raw_vel = (as504x->raw.angs_clks[0]-as504x->raw.angs_clks[10]); //clicks per ms
-    raw_ctrl_vel = as504x->raw.vels_cpms[0]*10;
-    
-   
-    if (as504x->samplefreq == 10000)
-    {
-        as504x->filt.vel_cpms = filt_array_10khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
-        as504x->filt.vel_ctrl_cpms = filt_array_10khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
-        as504x->filt.ang_clks = filt_array_10khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
-    }
-    else if (as504x->samplefreq == 250)
-    {
-        as504x->filt.vel_cpms = filt_array_250hz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
-        as504x->filt.vel_ctrl_cpms = filt_array_250hz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
-        as504x->filt.ang_clks = filt_array_250hz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
-    }
-    else if (as504x->samplefreq == 1000)
-    {
-        as504x->filt.vel_cpms = filt_array_1khz(as504x->raw.vels_cpms, as504x->filt.vels_cpms,20,raw_vel);
-        as504x->filt.vel_ctrl_cpms = filt_array_1khz(as504x->raw.vels_ctrl_cpms, as504x->filt.vels_ctrl_cpms,10,raw_ctrl_vel);
-        as504x->filt.ang_clks = filt_array_1khz(as504x->raw.angs_clks, as504x->filt.angs_clks,20,raw_ang);
-    }    
-    
-    //calculate the derived angular terms
-    as504x->raw.ang_clks = as504x->raw.angs_clks[0];
-    as504x->raw.ang_deg = (as504x->raw.ang_clks*360)>>14;
-    as504x->raw.vel_cpms = as504x->raw.vels_cpms[0];  
-    as504x->raw.vel_ctrl_cpms = as504x->raw.vel_cpms;
-    as504x->raw.vel_rpm = (as504x->raw.vel_cpms*366)/100;
-    as504x->filt.ang_deg = (as504x->filt.ang_clks*360)>>14;
-    as504x->filt.vel_rpm = (as504x->filt.vel_cpms*366)/100;   
-
-	as504x->signed_ang = -1 * raw_ang * MOTOR_ORIENTATION;
-	as504x->signed_ang_vel = -1 * as504x->filt.vel_cpms * MOTOR_ORIENTATION;
-
-    //update the 1 MHz counts from the last angle read
-    update_counts_since_last_ang_read(as504x);
-    
-    //Update the velocity compensated angle
-    as504x->ang_comp_clks = ((((as504x->counts_since_last_ang_read+90)*(as504x->filt.vel_cpms))/1000+(as504x->ang_abs_clks)+16384)%16384); 
 }

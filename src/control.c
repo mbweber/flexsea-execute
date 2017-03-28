@@ -41,7 +41,6 @@
 #include "sensor_commut.h"
 #include "trapez.h"
 #include "flexsea_global_structs.h"
-#include "gen_waveform.h"
 
 //****************************************************************************
 // Variable(s)
@@ -52,9 +51,6 @@ volatile struct ctrl_s ctrl;
 
 //In Control tool:
 volatile struct in_control_s in_control;
-
-//Impedance loop
-int debug_var = 0;
 
 //****************************************************************************
 // Function(s)
@@ -91,6 +87,7 @@ void control_strategy(uint8_t strat)
 		ctrl.current.gain.I_KI = 0;
 		ctrl.current.gain.I_KD = 0;
 		ctrl.current.setpoint_val = 0;
+        ctrl.current.error_sum = 0;
 		
 		//To avoid a huge startup error on the Position-based controllers:
 		if(strat == CTRL_POSITION)
@@ -202,10 +199,10 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	ctrl.position.error_dif = ctrl.position.error_dif >> 3;	
 	
 	//Saturate cumulative error
-	if(ctrl.position.error_sum >= MAX_CUMULATIVE_ERROR)
-		ctrl.position.error_sum = MAX_CUMULATIVE_ERROR;
-	if(ctrl.position.error_sum <= -MAX_CUMULATIVE_ERROR)
-		ctrl.position.error_sum = -MAX_CUMULATIVE_ERROR;
+	if(ctrl.position.error_sum >= MAX_ERR_SUM)
+		ctrl.position.error_sum = MAX_ERR_SUM;
+	if(ctrl.position.error_sum <= -MAX_ERR_SUM)
+		ctrl.position.error_sum = -MAX_ERR_SUM;
 	
 	//Proportional term
 	p = (ctrl.position.gain.P_KP * ctrl.position.error) / 100;
@@ -221,10 +218,10 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	pwm = (p + i + d);		//
 	
 	//Saturates PWM to low values
-	if(pwm >= POS_PWM_LIMIT)
-		pwm = POS_PWM_LIMIT;
-	if(pwm <= -POS_PWM_LIMIT)
-		pwm = -POS_PWM_LIMIT;
+	if(pwm >= PWM_SAT)
+		pwm = PWM_SAT;
+	if(pwm <= -PWM_SAT)
+		pwm = -PWM_SAT;
 	
 	motor_open_speed_1(pwm);
 	in_control.output = pwm;
@@ -485,33 +482,36 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	
 	//Error and integral of errors:
 	ctrl.current.error = (wanted_curr - measured_curr);					//Actual error
-	ctrl.current.error_sum = ctrl.current.error_sum + ctrl.current.error;	//Cumulative error
+	ctrl.current.error_sum = ctrl.current.error_sum + ctrl.current.gain.I_KI*ctrl.current.error;	//Cumulative error
 	
 	//Saturate cumulative error
-	if(ctrl.current.error_sum >= MAX_CUMULATIVE_ERROR)
-		ctrl.current.error_sum = MAX_CUMULATIVE_ERROR;
-	if(ctrl.current.error_sum <= -MAX_CUMULATIVE_ERROR)
-		ctrl.current.error_sum = -MAX_CUMULATIVE_ERROR;	
+	if(ctrl.current.error_sum >= MAX_CUM_CURRENT_ERROR)
+		ctrl.current.error_sum = MAX_CUM_CURRENT_ERROR;
+	if(ctrl.current.error_sum <= -MAX_CUM_CURRENT_ERROR)
+		ctrl.current.error_sum = -MAX_CUM_CURRENT_ERROR;	
 
 	//Proportional term
-	volatile int curr_p = (int) (ctrl.current.gain.I_KP * ctrl.current.error) / 100;
+	volatile int32 curr_p = (int) ((ctrl.current.gain.I_KP * ctrl.current.error)>>8);
 	//Integral term
-	volatile int curr_i = (int)(ctrl.current.gain.I_KI * ctrl.current.error_sum) / 100;
+	volatile int32 curr_i = (int)((ctrl.current.error_sum)>>8);
 	//Add differential term here if needed
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
 
 	//Output
-	volatile int curr_pwm = curr_p + curr_i;
+	volatile int32 curr_pwm = curr_p + curr_i+(*exec1.enc_ang_vel)*366/10*0+((wanted_curr*8)/43);
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
+        /*
 	    //sine_commut_pwm should be from 1024 to -1024
 	    if (curr_pwm > 1023)
 	    curr_pwm = 1023;
 	    if (curr_pwm < -1023)
 	    curr_pwm = -1023;
-
 	    exec1.sine_commut_pwm = MOTOR_ORIENTATION*curr_pwm;
+        */
+        
+        motor_open_speed_1(curr_pwm);
 	
 	#endif
 		
@@ -594,7 +594,6 @@ int motor_impedance_encoder(int wanted_pos, int new_enc_count)
 	//debug_var = current_vel;
 
  	filt_vel = (57*enc_t0)/220 + (73*enc_tm1)/660 - enc_tm2/264 - (37*enc_tm3)/440 - (43*enc_tm4)/330 - (47*enc_tm5)/330 - (53*enc_tm6)/440 - (17*enc_tm7)/264 + (17*enc_tm8)/660 + (3*enc_tm9)/20; // Derivative method that estimates best fit second order polynomial and calcualtes the derivative numerically for t = 0
- 	debug_var = filt_vel;
 	
  	i_b = ctrl.impedance.gain.Z_B * (filt_vel >> 5);
 	i_b += modifier;
@@ -626,81 +625,6 @@ void impedance_controller(void)
     damping_torq = (-1*(ctrl.impedance.actual_vel)*ctrl.impedance.gain.g1);
     
     ctrl.current.setpoint_val = (spring_torq+damping_torq);
-}
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************
-
-//Use this to test the current controller
-void test_current_tracking_blocking(void)
-{
-	init_sine_gen();
-	ctrl.active_ctrl = CTRL_CURRENT;
-	ctrl.current.gain.I_KP = 30;
-	ctrl.current.gain.I_KI = 25;
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	
-	uint16 val = 0;
-	while(1)
-	{
-		//val = output_sine();
-		//val = output_arb();		
-		//ctrl.current.setpoint_val = val*2 + 125;
-		
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		val = 200;	//output_step();
-		ctrl.current.setpoint_val = val;
-	}
-}
-
-//Can we cancel the damping by changing the Hall direction based on the encoder? Yes.
-void motor_cancel_damping_test_code_blocking(void)
-{
-	ctrl.active_ctrl = CTRL_OPEN;	
-	#if(MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(0);
-	
-	while(1)
-	{	
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		//Refresh encoder data:
-		encoder.count_last = encoder.count;	
-		encoder.count = refresh_enc_control();
-		encoder.count_dif = encoder.count - encoder.count_last;
-		
-		//Act based on the sign:
-		if(encoder.count_dif >= 0)
-		{
-			#if(MOTOR_COMMUT == COMMUT_BLOCK)
-			MotorDirection_Write(0);
-			#else
-				//ToDo 
-			#endif
-		}
-		else
-		{
-			#if(MOTOR_COMMUT == COMMUT_BLOCK)
-			MotorDirection_Write(1);
-			#else
-				//ToDo
-			#endif
-		}		
-		
-		//Loop delay (otherwise we don't get a good difference)
-		CyDelay(10);
-	}
 }
 
 //in_control.combined = [CTRL2:0][MOT_DIR][PWM]

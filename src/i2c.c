@@ -37,8 +37,7 @@
 #include "imu.h"
 #include "ext_input.h"
 #include "user-ex.h"
-#include "ext_input.h"
-#include "peripherals.h"
+#include "mag_encoders.h"
 #include "flexsea_global_structs.h"
 
 //****************************************************************************
@@ -188,7 +187,7 @@ int i2c0_read(uint8_t slave_addr, uint8_t reg_addr, uint8_t *pdata, uint16 lengt
 uint8_t I2C_0_MasterWriteByteTimeOut(uint8_t theByte, uint32 timeout)
 {
     uint8_t errStatus;
-	uint32 t = 0;	//For the timeout
+	uint32_t t = 0;	//For the timeout
 
     errStatus = I2C_0_MSTR_NOT_READY;
 
@@ -295,12 +294,3 @@ void assign_i2c_data(uint8_t *newdata)
 		}
 	}	
 }
-
-//****************************************************************************
-// Private Function(s)
-//****************************************************************************
-
-
-//****************************************************************************
-// Test Function(s) - Use with care!
-//****************************************************************************

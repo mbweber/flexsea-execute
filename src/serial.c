@@ -135,7 +135,6 @@ void init_rs485(void)
 	#endif	//USE_RS485
 }
 
-//Init UART and DMA
 void init_bluetooth(void)
 {
 	#ifdef USE_BLUETOOTH

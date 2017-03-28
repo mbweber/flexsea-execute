@@ -40,12 +40,13 @@
 #include "cyapicallbacks.h"
 #include "misc.h"
 #include "analog.h"
+#include "current_sensing.h"
 #include "control.h"
 #include "serial.h"
 #include "flexsea_board.h"
 #include "flexsea_buffers.h"
-#include "ext_input.h"
-#include "main_fsm.h"
+#include "mag_encoders.h"
+#include "sensor_commut.h"
 #include "user-ex.h"
 
 //****************************************************************************
@@ -59,7 +60,7 @@ void isr_t1_Interrupt_InterruptCallback()
 	//Clear interrupt
 	Timer_1_ReadStatusRegister();
 	isr_t1_ClearPending();
-	
+
 	//All the timings are based on 100us slots
 	//10 slots form the original 1ms timebase
 	//'t1_time_share' is from 0 to 9, it controls the main FSM
@@ -67,7 +68,7 @@ void isr_t1_Interrupt_InterruptCallback()
 	t1_new_value = 1;
 	
 	//Flag for the main code
-	t1_100us_flag = 1;	
+	t1_100us_flag = 1;
 }
 
 void isr_t2_Interrupt_InterruptCallback()
@@ -143,10 +144,27 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 	
 	#else
 		
-    	update_current_arrays();
+		/*
+		
+		*/
 		
 	#endif
 }
+
+//Current sensing:
+/*
+void isr_sar2_Interrupt_InterruptCallback()
+{	
+	static uint8_t cnt = 0;
+	cnt++;
+	cnt %= 3;
+	
+	if(cnt >= 2)
+		ADC_SAR_2_StopConvert();
+	else
+		ADC_SAR_2_StartConvert();
+}
+*/
 
 void isr_dma_uart_rx_Interrupt_InterruptCallback()
 {
@@ -188,6 +206,7 @@ void isr_spi_tx_Interrupt_InterruptCallback()
     
 	//static volatile uint16 frame_errors = 0, parity_errors = 0, man_test = 0;
 	volatile uint8_t tx_status_isr = 0;
+    static uint16 counter = 0;
 	
 	//Read status to clear flag:
 	tx_status_isr = SPIM_1_ReadTxStatus();
@@ -198,13 +217,28 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 		spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
 		//Next transfer:
 		spi_isr_state++;
-		SPIM_1_WriteTxData(as5047_empty_read);
+		//SPIM_1_WriteTxData(as5047_empty_read);
+		CY_SET_REG16(SPIM_1_TXDATA_PTR,as5047_empty_read);
 	}
 	else
 	{
 		//Transfer complete, decode answer:
+		spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
+    	as5047_angle = (spidata_miso[spi_isr_state] & 0x3FFF);
         spi_read_flag = 1;
-		
+        update_as504x_ang(as5047_angle, &as5047);
+        sensor_sin_commut(as5047.ang_comp_clks>>3, exec1.sine_commut_pwm);
+
+    	EX3_Write(1);
+    	update_current_arrays();
+		EX3_Write(0);
+
+	    if (counter<20000)
+        {
+            if (counter>14000){set_current_zero();}
+            counter++;
+        }
+        
         /* Partially developped error testing code:
 		
 		//Error in last command frame?
@@ -224,4 +258,19 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 		*/        
 	}   
 	#endif	//USE_AS5047
+    //EX2_Write(0);
+}
+
+//Interrupt triggers when PWM A reloads
+void isr_mot_Interrupt_InterruptCallback()
+{
+	//Encoder, sine commutation:
+	#if(MOTOR_COMMUT == COMMUT_SINE) 
+
+	    #if(ENC_COMMUT == ENC_AS5047)
+			//Start reading, result via ISR 
+			as5047_read_single_isr(AS5047_REG_ANGLECOM); 
+		#endif //ENC_AS5047
+
+	#endif	//(MOTOR_COMMUT == COMMUT_SINE)
 }

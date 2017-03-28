@@ -42,10 +42,14 @@
 // Shared variable(s)
 //****************************************************************************
 
+//Onboard:
 extern struct strain_s strain1;
 extern uint16_t adc_strain_filtered;	
 extern volatile uint16_t adc_strain;
 extern volatile uint16 adc_delsig_dma_array[8];
+
+//External:
+extern uint16 ext_strain[6];
 	
 //****************************************************************************
 // Prototype(s):
@@ -59,6 +63,10 @@ void strain_test_blocking(void);
 void dma_2_config(void);
 uint16 strain_filter_dma(void);
 
+int strain_6ch_read(uint8_t internal_reg_addr, uint8_t *pData, uint16 length);
+void strain_amp_6ch_test_code_blocking(void);
+void strain_6ch_bytes_to_words(uint8_t *buf);
+void get_6ch_strain(void);
 uint8_t compressAndSplit6ch(uint8_t *buf, uint16 ch0, uint16 ch1, uint16 ch2, \
 							uint16 ch3, uint16 ch4, uint16 ch5);
 void unpackCompressed6ch(uint8_t *buf, uint16 *v0, uint16 *v1, uint16 *v2, \
@@ -69,7 +77,7 @@ void compress6chTestCodeBlocking(void);
 // Definition(s):
 //****************************************************************************
 
-//I�C Addresses - 7bits convention
+//I2C Addresses - 7bits convention
 #define I2C_POT_ADDR			0b0101000
 
 //MCP4661
@@ -99,6 +107,36 @@ void compress6chTestCodeBlocking(void);
 
 //DMA Bytes per transfer (16bits values = 2 bytes/word)
 #define DMA2_BYTES_PER_XFER		(2*STRAIN_BUF_LEN)
+
+//6-ch Strain Amplifier:
+#define I2C_SLAVE_ADDR_6CH		0x66	//I'm assuming this is 7bits
+
+//EZI2C Buffer:
+#define EZI2C_WBUF_SIZE			8
+#define EZI2C_RBUF_SIZE			12
+#define EZI2C_BUF_SIZE			(EZI2C_WBUF_SIZE + EZI2C_RBUF_SIZE)
+
+//EZI2C Shared memory locations:
+#define MEM_W_CONTROL1			0
+#define MEM_W_CONTROL2			1
+#define MEM_W_OFFS_CH1			2
+#define MEM_W_OFFS_CH2			3
+#define MEM_W_OFFS_CH3			4
+#define MEM_W_OFFS_CH4			5
+#define MEM_W_OFFS_CH5			6
+#define MEM_W_OFFS_CH6			7
+#define MEM_R_CH1_H				8
+#define MEM_R_CH1_L				9
+#define MEM_R_CH2_H				10
+#define MEM_R_CH2_L				11
+#define MEM_R_CH3_H				12
+#define MEM_R_CH3_L				13
+#define MEM_R_CH4_H				14
+#define MEM_R_CH4_L				15
+#define MEM_R_CH5_H				16
+#define MEM_R_CH5_L				17
+#define MEM_R_CH6_H				18
+#define MEM_R_CH6_L				19
 
 //****************************************************************************
 // Structure(s):

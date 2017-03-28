@@ -42,7 +42,6 @@
 //****************************************************************************	
 	
 extern struct imu_s imu;
-//extern uint8_t imu_last_request;
 	
 //****************************************************************************
 // Define Flag(s):
@@ -155,7 +154,7 @@ void reset_imu(void);					//reset IMU registers to default
 void disable_imu(void);					//disable the IMU by shutting down clocks, etc.
 
 // low level functions; probably don't have to call them in main.c
-int imu_write(uint8_t internal_reg_addr, uint8_t* pData, uint16 length); 
+int imu_write(uint8_t internal_reg_addr, uint8_t* pData, uint16 length);
 void imu_test_code_blocking(void);
 
 //****************************************************************************

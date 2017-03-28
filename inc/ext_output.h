@@ -60,4 +60,3 @@ void test_pwro_output_blocking(void);
 
 	
 #endif	//INC_EXT_OUT_H
-	

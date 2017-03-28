@@ -42,7 +42,8 @@
 #include "main_fsm.h"
 #include "user-ex.h"
 #include "cyapicallbacks.h"
-#include "calibration_tools.h"
+#include "flexsea_system.h"
+#include "misc.h"
 
 //****************************************************************************
 // Variable(s)
@@ -87,7 +88,7 @@ int main(void)
 	
 	//Main loop
 	while(1)
-	{
+	{             
 		if(t1_new_value == 1)
 		{
 			//If the time share slot changed we run the timing FSM. Refer to
@@ -105,12 +106,12 @@ int main(void)
 			
 			//The code below is executed every 100us, after the previous slot. 
 			//Keep it short! (<10us if possible)
-			mainFSM10kHz();         
+			mainFSM10kHz();     
 		}
 		else
 		{
 			//Asynchronous code goes here.
-			mainFSMasynchronous();			
+			mainFSMasynchronous();
 		}
 	}
 }

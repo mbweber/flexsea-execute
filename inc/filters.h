@@ -19,47 +19,47 @@
 	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
 	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
 	Biomechatronics research group <http://biomech.media.mit.edu/>
-	[Contributors]
+	[Contributors] Luke Mooney
 *****************************************************************************
-	[This file] gen_waveform: Generate waveforms for some test functions
+	[This file] filters: Digital filters
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
-	* 2016-09-29 | jfduval | Released under GPL-3.0 release
-	*
+	* 2017-03-27 | jfduval | Released under GPL-3.0 release
 ****************************************************************************/
 
-#ifndef INC_GEN_WAVE_H
-#define INC_GEN_WAVE_H
+#ifndef INC_FILTERS_H
+#define INC_FILTERS_H
 
 //****************************************************************************
 // Include(s)
-//****************************************************************************
+//****************************************************************************	
 
 #include "main.h"
+#include <flexsea_user_structs.h>
 
 //****************************************************************************
-// Shared variable(s)
+// Prototype(s):
 //****************************************************************************
 
-
-//****************************************************************************
-// Public Function Prototype(s):
-//****************************************************************************
-
-uint16 output_sine(void);
-uint16 output_arb(void);
-uint16 output_step(void);
-
-void init_sine_gen(void);
+int32_t filt_array_10khz(int64_t *,int64_t *,int,int64_t);
+int32_t filt_array_1khz(int64_t *,int64_t *,int,int64_t);
+int32_t filt_array_250hz(int64_t *,int64_t *,int,int64_t);
+int get_median(int, int, int);
+void filt_array_1khz_struct(struct filtvar_s *, int);
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
+//Motor current ADC:
 
 //****************************************************************************
-// Structure(s)
+// Shared variable(s)
+//****************************************************************************	
+
+
+//****************************************************************************
+// Structure(s):
 //****************************************************************************
 
-
-#endif	//INC_GEN_WAVE_H
+#endif	//INC_FILTERS_H

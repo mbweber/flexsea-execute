@@ -45,35 +45,36 @@ extern int findingpoles;
 
 extern uint8_t measure_motor_resistance;
 
-extern uint16 phaseAcoms[2048]; 
-extern uint16 phaseBcoms[2048]; 
-extern uint16 phaseCcoms[2048]; 
+extern int16 phaseAcoms[2048]; 
+extern int16 phaseBcoms[2048]; 
+extern int16 phaseCcoms[2048]; 
+
+extern uint16 PWM_A_Value;
+extern uint16 PWM_B_Value;
+extern uint16 PWM_C_Value;
+
 //****************************************************************************
 // Public Function Prototype(s):
 //****************************************************************************
 
-void motor_spi_block_commutation(int angle);
-void motor_spi_block_commutation_triangletest();
-void motor_spi_findpoles();
 void find_poles(void);
-void find_poles_blocking(void);
-void find_poles2(void);
-void non_blocking_step_test(void);
-void non_blocking_sin_commut(int16 pwm);
 void load_eeprom_to_angles(void);
 void fill_comm_tables(int32);
 void sensor_sin_commut(int16, int32);
 
 void test_sinusoidal_blocking(void);
-int get_sin_profile(int32, int32);
+int get_sin_profile(double, double);
 
 //****************************************************************************
 // Definition(s):
 #define NUMPOLES        126
 #define SHIFT_G         0
-#define PWM_DEAD        90 //dead time causes by the PWM module
+#define PWM_MAX         1000
+#define PWM_DEAD        20 //dead time caused by the PWM module + extra needed to stop wishing sound
+#define PWM_AMP         495//(2000-PWM_DEAD)/4
+#define PWM_OFFSET      505//(1000-PWM_AMP)
 #define MAX_ENC         16383
-//#define PWM_DEAD2       41 //dead time caused by the opening and closing of the FETS
+//#define PWM_DEAD2		41 //dead time caused by the opening and closing of the FETS
 //****************************************************************************
 
 //****************************************************************************

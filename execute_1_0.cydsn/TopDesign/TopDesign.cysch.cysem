@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0 Update 1" xmlns="http://cypress.com/xsd/cysem">
-  <Instances count="134">
+  <Instances count="146">
     <Instance guid="02f2cf2c-2c7a-49df-9246-7a3435c21be3" name="SCL_1" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -2692,15 +2692,15 @@
         <Value>true</Value>
       </Parameter>
       <Parameter name="CompareType1">
-        <Value>1</Value>
-        <Expression>B_PWM__Less_Than</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Greater_Than</Expression>
       </Parameter>
       <Parameter name="CompareType2">
         <Value>1</Value>
         <Expression>B_PWM__Less_Than</Expression>
       </Parameter>
       <Parameter name="CompareValue1">
-        <Value>10</Value>
+        <Value>990</Value>
       </Parameter>
       <Parameter name="CompareValue2">
         <Value>1</Value>
@@ -2735,7 +2735,7 @@
         <Expression>B_PWM__DBM_256_Clocks</Expression>
       </Parameter>
       <Parameter name="DeadTime">
-        <Value>29</Value>
+        <Value>19</Value>
       </Parameter>
       <Parameter name="DitherOffset">
         <Value>0</Value>
@@ -2771,11 +2771,11 @@
         <Value>1</Value>
       </Parameter>
       <Parameter name="Period">
-        <Value>2000</Value>
+        <Value>1000</Value>
       </Parameter>
       <Parameter name="PWMMode">
-        <Value>1</Value>
-        <Expression>B_PWM__Two_Outputs</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Center_Align</Expression>
       </Parameter>
       <Parameter name="Resolution">
         <Value>16</Value>
@@ -3617,6 +3617,90 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="32637e26-48eb-42fa-a444-35b275fdae63" name="Clock_2" component="cy_clock_v2_20">
+      <Parameter name="CheckTolerance">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Clock_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>2</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>20</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="desired_freq">
+        <Value>5.12</Value>
+      </Parameter>
+      <Parameter name="desired_freq_unit">
+        <Value>6</Value>
+      </Parameter>
+      <Parameter name="divisor">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="EnableDigitalDomainOutput">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="FractDividerDenominator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerNumerator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerUsed">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>Clock_2</Value>
+      </Parameter>
+      <Parameter name="is_direct">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="is_divider">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="is_freq">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="minus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="ph_align_clock_id">
+        <Value />
+      </Parameter>
+      <Parameter name="ph_align_clock_name">
+        <Value />
+      </Parameter>
+      <Parameter name="plus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="source_clock_id">
+        <Value>5d35c49e-16a9-4494-aff7-1e65e229efcf</Value>
+      </Parameter>
+      <Parameter name="source_clock_name">
+        <Value>HBUS_40MHZ</Value>
+      </Parameter>
+      <Parameter name="SyncWithBusClk">
+        <Value>true</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="348081a1-1855-4d12-b422-646299804265" name="DMA_3" component="cy_dma_v1_70">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -3801,6 +3885,126 @@
         <Expression>B_Timer__TM_None</Expression>
       </Parameter>
     </Instance>
+    <Instance guid="374abe63-012d-4f5b-81dc-9c7f23f622ba" name="or_2" component="or_v1_0">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>or_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>or_2</Value>
+      </Parameter>
+      <Parameter name="NumTerminals">
+        <Value>2</Value>
+      </Parameter>
+      <Parameter name="TerminalWidth">
+        <Value>1</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="385e3f69-6bef-47c5-9c8c-37eacb59a118" name="Clock_5" component="cy_clock_v2_20">
+      <Parameter name="CheckTolerance">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Clock_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>2</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>20</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="desired_freq">
+        <Value>5.12</Value>
+      </Parameter>
+      <Parameter name="desired_freq_unit">
+        <Value>6</Value>
+      </Parameter>
+      <Parameter name="divisor">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="EnableDigitalDomainOutput">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="FractDividerDenominator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerNumerator">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="FractDividerUsed">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>Clock_5</Value>
+      </Parameter>
+      <Parameter name="is_direct">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="is_divider">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="is_freq">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="minus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="ph_align_clock_id">
+        <Value />
+      </Parameter>
+      <Parameter name="ph_align_clock_name">
+        <Value />
+      </Parameter>
+      <Parameter name="plus_tolerance">
+        <Value>5</Value>
+      </Parameter>
+      <Parameter name="source_clock_id">
+        <Value>5d35c49e-16a9-4494-aff7-1e65e229efcf</Value>
+      </Parameter>
+      <Parameter name="source_clock_name">
+        <Value>HBUS_40MHZ</Value>
+      </Parameter>
+      <Parameter name="SyncWithBusClk">
+        <Value>true</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="3954f332-eb76-4449-a163-a5ce9f97accf" name="ADC_SAR_2" component="ADC_SAR_v3_0">
       <Parameter name="ADC_Clock">
         <Value>1</Value>
@@ -3815,15 +4019,15 @@
         <Expression>HighPower</Expression>
       </Parameter>
       <Parameter name="ADC_Reference">
-        <Value>0</Value>
-        <Expression>Int_Ref_Not_Bypassed</Expression>
+        <Value>1</Value>
+        <Expression>Int_Ref_Bypass</Expression>
       </Parameter>
       <Parameter name="ADC_Resolution">
         <Value>12</Value>
       </Parameter>
       <Parameter name="ADC_SampleMode">
-        <Value>0</Value>
-        <Expression>Free_Running</Expression>
+        <Value>2</Value>
+        <Expression>Hardware_Trigger</Expression>
       </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -3863,7 +4067,7 @@
         <Value>false</Value>
       </Parameter>
       <Parameter name="Sample_Rate">
-        <Value>100000</Value>
+        <Value>400000</Value>
       </Parameter>
     </Instance>
     <Instance guid="3b427007-b525-46da-a888-823397ce16b3" name="ADC_SAR_1" component="ADC_SAR_v3_0">
@@ -4337,6 +4541,82 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="41fc0632-34f1-41f1-8103-afc68cf04790" name="and_1" component="and_v1_0">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>and_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>and_1</Value>
+      </Parameter>
+      <Parameter name="NumTerminals">
+        <Value>2</Value>
+      </Parameter>
+      <Parameter name="TerminalWidth">
+        <Value>1</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="438d1040-42d7-407a-98f9-17842377f5ba" name="DMA_PB" component="cy_dma_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>DMA_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="hw_request_enabled">
+        <Value>true</Value>
+        <Expression>True</Expression>
+      </Parameter>
+      <Parameter name="hw_request_type">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="hw_termination_enabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>DMA_PB</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="43ac236e-1399-4300-b39a-3d5a5234fc0f" name="SPIM_Clk" component="cy_clock_v2_20">
       <Parameter name="CheckTolerance">
         <Value>true</Value>
@@ -4421,6 +4701,100 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
+    <Instance guid="481b6dfb-9699-422e-9604-c52de3be06cf" name="Counter_1" component="Counter_v3_0">
+      <Parameter name="CaptureMode">
+        <Value>0</Value>
+        <Expression>B_Counter__None</Expression>
+      </Parameter>
+      <Parameter name="ClockMode">
+        <Value>0</Value>
+        <Expression>B_Counter__Up_Counter</Expression>
+      </Parameter>
+      <Parameter name="CompareMode">
+        <Value>1</Value>
+        <Expression>B_Counter__Less_Than</Expression>
+      </Parameter>
+      <Parameter name="CompareStatusEdgeSense">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CompareValue">
+        <Value>2</Value>
+        <Expression>2u</Expression>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Counter_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>3</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="EnableMode">
+        <Value>0</Value>
+        <Expression>B_Counter__Control_Register_Only</Expression>
+      </Parameter>
+      <Parameter name="FixedFunction">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>Counter_1</Value>
+      </Parameter>
+      <Parameter name="InterruptOnCapture">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InterruptOnCompare">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InterruptOnOverUnderFlow">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InterruptOnTC">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="Period">
+        <Value>255</Value>
+      </Parameter>
+      <Parameter name="ReloadOnCapture">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ReloadOnCompare">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ReloadOnOverUnder">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="ReloadOnReset">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="Resolution">
+        <Value>8</Value>
+        <Expression>B_Counter__R8</Expression>
+      </Parameter>
+      <Parameter name="RunMode">
+        <Value>1</Value>
+        <Expression>B_Counter__RM_OneShot</Expression>
+      </Parameter>
+      <Parameter name="UseInterrupt">
+        <Value>true</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="4840e6aa-f3d9-462d-b36d-916fe7419d98" name="and_2" component="and_v1_0">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -4455,6 +4829,40 @@
       </Parameter>
       <Parameter name="TerminalWidth">
         <Value>1</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="48c0a911-03e9-4097-9887-fdfb539c08f5" name="isr_mot" component="cy_isr_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>isr_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>isr_mot</Value>
+      </Parameter>
+      <Parameter name="InterruptType">
+        <Value>0</Value>
+        <Expression>DERIVED</Expression>
       </Parameter>
     </Instance>
     <Instance guid="4c15b41e-e284-4978-99e7-5aaee19bd0ce" name="EX0" component="cy_pins_v2_20">
@@ -6673,6 +7081,46 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="7233ed58-c16b-457c-98ff-40e2cbf514c0" name="DMA_PC" component="cy_dma_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>DMA_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="hw_request_enabled">
+        <Value>true</Value>
+        <Expression>True</Expression>
+      </Parameter>
+      <Parameter name="hw_request_type">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="hw_termination_enabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>DMA_PC</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="72463f96-822d-40d2-aad2-bc2cd379f7ff" name="I2C_1" component="I2C_v3_50">
       <Parameter name="Address_Decode">
         <Value>1</Value>
@@ -6854,6 +7302,42 @@
         <Value>Control_Reg_1</Value>
       </Parameter>
       <Parameter name="NumOutputs">
+        <Value>1</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="787beb59-fc87-4485-bbf9-e6abebf72115" name="or_1" component="or_v1_0">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>or_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>or_1</Value>
+      </Parameter>
+      <Parameter name="NumTerminals">
+        <Value>2</Value>
+      </Parameter>
+      <Parameter name="TerminalWidth">
         <Value>1</Value>
       </Parameter>
     </Instance>
@@ -8061,6 +8545,39 @@
       </Parameter>
       <Parameter name="UsePaOutRst">
         <Value>false</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="854b7918-f280-44ab-93f8-0f649218c2de" name="cy_srff_1" component="cy_srff_v1_0">
+      <Parameter name="ArrayWidth">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>cy_srff_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>cy_srff_1</Value>
       </Parameter>
     </Instance>
     <Instance guid="8554e186-0b05-47d7-82dc-62a62b8536e3" name="PGA_1" component="PGA_v2_0">
@@ -9624,6 +10141,46 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="99c93402-cc9a-4de2-ad01-fdb5f4c9b320" name="DMA_PA" component="cy_dma_v1_70">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>DMA_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>70</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="hw_request_enabled">
+        <Value>true</Value>
+        <Expression>True</Expression>
+      </Parameter>
+      <Parameter name="hw_request_type">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="hw_termination_enabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>DMA_PA</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="9ac49a9e-3a20-468b-a331-7d42984e50f0" name="SDA_0" component="cy_pins_v2_20">
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
@@ -10087,15 +10644,15 @@
         <Value>true</Value>
       </Parameter>
       <Parameter name="CompareType1">
-        <Value>1</Value>
-        <Expression>B_PWM__Less_Than</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Greater_Than</Expression>
       </Parameter>
       <Parameter name="CompareType2">
         <Value>1</Value>
         <Expression>B_PWM__Less_Than</Expression>
       </Parameter>
       <Parameter name="CompareValue1">
-        <Value>10</Value>
+        <Value>990</Value>
       </Parameter>
       <Parameter name="CompareValue2">
         <Value>1</Value>
@@ -10130,7 +10687,7 @@
         <Expression>B_PWM__DBM_256_Clocks</Expression>
       </Parameter>
       <Parameter name="DeadTime">
-        <Value>29</Value>
+        <Value>19</Value>
       </Parameter>
       <Parameter name="DitherOffset">
         <Value>0</Value>
@@ -10166,11 +10723,11 @@
         <Value>1</Value>
       </Parameter>
       <Parameter name="Period">
-        <Value>2000</Value>
+        <Value>1000</Value>
       </Parameter>
       <Parameter name="PWMMode">
-        <Value>1</Value>
-        <Expression>B_PWM__Two_Outputs</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Center_Align</Expression>
       </Parameter>
       <Parameter name="Resolution">
         <Value>16</Value>
@@ -11889,15 +12446,15 @@
         <Value>true</Value>
       </Parameter>
       <Parameter name="CompareType1">
-        <Value>1</Value>
-        <Expression>B_PWM__Less_Than</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Greater_Than</Expression>
       </Parameter>
       <Parameter name="CompareType2">
         <Value>1</Value>
         <Expression>B_PWM__Less_Than</Expression>
       </Parameter>
       <Parameter name="CompareValue1">
-        <Value>10</Value>
+        <Value>990</Value>
       </Parameter>
       <Parameter name="CompareValue2">
         <Value>1</Value>
@@ -11932,7 +12489,7 @@
         <Expression>B_PWM__DBM_256_Clocks</Expression>
       </Parameter>
       <Parameter name="DeadTime">
-        <Value>29</Value>
+        <Value>19</Value>
       </Parameter>
       <Parameter name="DitherOffset">
         <Value>0</Value>
@@ -11968,11 +12525,11 @@
         <Value>1</Value>
       </Parameter>
       <Parameter name="Period">
-        <Value>2000</Value>
+        <Value>1000</Value>
       </Parameter>
       <Parameter name="PWMMode">
-        <Value>1</Value>
-        <Expression>B_PWM__Two_Outputs</Expression>
+        <Value>3</Value>
+        <Expression>B_PWM__Center_Align</Expression>
       </Parameter>
       <Parameter name="Resolution">
         <Value>16</Value>
@@ -14404,209 +14961,6 @@
         <Value>1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="ca3c49af-aaaf-4479-a01d-cd7be6c441fe" name="EX2" component="cy_pins_v2_20">
-      <Parameter name="CY_CONST_CONFIG">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_REMOVE">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_SUPPRESS_API_GEN">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
-      </Parameter>
-      <Parameter name="DedicatedInterrupts">
-        <Value />
-      </Parameter>
-      <Parameter name="DisplayAsBus">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="DisplayInputHWConnections">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="DisplayOutputHWConnections">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="DriveCurrents">
-        <Value />
-      </Parameter>
-      <Parameter name="DriveModes">
-        <Value>110</Value>
-      </Parameter>
-      <Parameter name="HotSwaps">
-        <Value />
-      </Parameter>
-      <Parameter name="HysteresisModes">
-        <Value />
-      </Parameter>
-      <Parameter name="InClkEnableMode">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="InitialDriveStates">
-        <Value />
-      </Parameter>
-      <Parameter name="InputBuffersEnabled">
-        <Value />
-      </Parameter>
-      <Parameter name="InputMultipliers">
-        <Value />
-      </Parameter>
-      <Parameter name="InputSyncModes">
-        <Value />
-      </Parameter>
-      <Parameter name="InputSyncs">
-        <Value />
-      </Parameter>
-      <Parameter name="INSTANCE_NAME">
-        <Value>EX2</Value>
-      </Parameter>
-      <Parameter name="InterruptModes">
-        <Value />
-      </Parameter>
-      <Parameter name="InterruptModes_1">
-        <Value />
-      </Parameter>
-      <Parameter name="InterruptModes_2">
-        <Value />
-      </Parameter>
-      <Parameter name="InterruptModes_3">
-        <Value />
-      </Parameter>
-      <Parameter name="InvertInClock">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="InvertInClockEn">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="InvertInReset">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="InvertOutClock">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="InvertOutClockEn">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="InvertOutReset">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="IOVoltages">
-        <Value />
-      </Parameter>
-      <Parameter name="LayoutMode">
-        <Value>2</Value>
-        <Expression>eCONTIGUOUS_NONSPANNING</Expression>
-      </Parameter>
-      <Parameter name="NumPins">
-        <Value>1</Value>
-      </Parameter>
-      <Parameter name="OEResetEnabled">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="OESyncs">
-        <Value />
-      </Parameter>
-      <Parameter name="OutClkEnableMode">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="OutputClockModes">
-        <Value />
-      </Parameter>
-      <Parameter name="OutputDriveLevels">
-        <Value />
-      </Parameter>
-      <Parameter name="OutputModes">
-        <Value />
-      </Parameter>
-      <Parameter name="OutputMultipliers">
-        <Value />
-      </Parameter>
-      <Parameter name="OutputResetEnabled">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="OutputSyncs">
-        <Value />
-      </Parameter>
-      <Parameter name="PaPin">
-        <Value>-1</Value>
-      </Parameter>
-      <Parameter name="PinAliases">
-        <Value />
-      </Parameter>
-      <Parameter name="PinTypes">
-        <Value>0001</Value>
-      </Parameter>
-      <Parameter name="PowerOnResetState">
-        <Value>4</Value>
-        <Expression>eUNSPECIFIED</Expression>
-      </Parameter>
-      <Parameter name="ShowAnnotationTerm">
-        <Value />
-      </Parameter>
-      <Parameter name="ShowInClkEnTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ShowInClkTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ShowInRstTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ShowOutClkEnTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ShowOutClkTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ShowOutRstTerm">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="SIOGroups">
-        <Value />
-      </Parameter>
-      <Parameter name="SlewRates">
-        <Value />
-      </Parameter>
-      <Parameter name="TermMode_interrupt">
-        <Value>0</Value>
-      </Parameter>
-      <Parameter name="ThresholdLevels">
-        <Value />
-      </Parameter>
-      <Parameter name="UsePaInClk">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="UsePaInClkEn">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="UsePaInRst">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="UsePaOutClk">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="UsePaOutClkEn">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="UsePaOutRst">
-        <Value>false</Value>
-      </Parameter>
-    </Instance>
     <Instance guid="cd57e4ff-cf33-4cb9-916c-dd22c70728d7" name="Clock_4" component="cy_clock_v2_20">
       <Parameter name="CheckTolerance">
         <Value>true</Value>
@@ -16109,13 +16463,13 @@
         <Value>0</Value>
       </Parameter>
       <Parameter name="DisplayOutputHWConnections">
-        <Value />
+        <Value>0</Value>
       </Parameter>
       <Parameter name="DriveCurrents">
         <Value />
       </Parameter>
       <Parameter name="DriveModes">
-        <Value>010</Value>
+        <Value>000</Value>
       </Parameter>
       <Parameter name="HotSwaps">
         <Value />
@@ -16218,7 +16572,7 @@
         <Value />
       </Parameter>
       <Parameter name="PinTypes">
-        <Value>0000</Value>
+        <Value>0001</Value>
       </Parameter>
       <Parameter name="PowerOnResetState">
         <Value>4</Value>
@@ -18433,6 +18787,242 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
+    <Instance guid="f9c018db-4682-466b-bf57-d1b5f250eafd" name="cy_srff_2" component="cy_srff_v1_0">
+      <Parameter name="ArrayWidth">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>cy_srff_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>1</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>0</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>cy_srff_2</Value>
+      </Parameter>
+    </Instance>
+    <Instance guid="fa739454-d170-4ccd-a2d1-8834ac65e15f" name="EX2" component="cy_pins_v2_20">
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_FITTER_NAME">
+        <Value>Pin_N</Value>
+        <Expression>`=GetShortInstanceName()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MAJOR_VERSION">
+        <Value>2</Value>
+        <Expression>`=GetMajorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_MINOR_VERSION">
+        <Value>20</Value>
+        <Expression>`=GetMinorVersion()`</Expression>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_VERSION">
+        <Value>PSoC Creator  4.0 Update 1</Value>
+        <Expression>`=GetMarketingNameWithVersion()`</Expression>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
+      </Parameter>
+      <Parameter name="DisplayAsBus">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="DisplayInputHWConnections">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="DisplayOutputHWConnections">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="DriveCurrents">
+        <Value />
+      </Parameter>
+      <Parameter name="DriveModes">
+        <Value>110</Value>
+      </Parameter>
+      <Parameter name="HotSwaps">
+        <Value />
+      </Parameter>
+      <Parameter name="HysteresisModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InClkEnableMode">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="InitialDriveStates">
+        <Value />
+      </Parameter>
+      <Parameter name="InputBuffersEnabled">
+        <Value />
+      </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
+      <Parameter name="InputSyncModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InputSyncs">
+        <Value />
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>EX2</Value>
+      </Parameter>
+      <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
+        <Value />
+      </Parameter>
+      <Parameter name="InvertInClock">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InvertInClockEn">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InvertInReset">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InvertOutClock">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InvertOutClockEn">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="InvertOutReset">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="IOVoltages">
+        <Value />
+      </Parameter>
+      <Parameter name="LayoutMode">
+        <Value>2</Value>
+        <Expression>eCONTIGUOUS_NONSPANNING</Expression>
+      </Parameter>
+      <Parameter name="NumPins">
+        <Value>1</Value>
+      </Parameter>
+      <Parameter name="OEResetEnabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="OESyncs">
+        <Value />
+      </Parameter>
+      <Parameter name="OutClkEnableMode">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="OutputClockModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputDriveLevels">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputResetEnabled">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="OutputSyncs">
+        <Value />
+      </Parameter>
+      <Parameter name="PaPin">
+        <Value>-1</Value>
+      </Parameter>
+      <Parameter name="PinAliases">
+        <Value />
+      </Parameter>
+      <Parameter name="PinTypes">
+        <Value>0001</Value>
+      </Parameter>
+      <Parameter name="PowerOnResetState">
+        <Value>4</Value>
+        <Expression>eUNSPECIFIED</Expression>
+      </Parameter>
+      <Parameter name="ShowAnnotationTerm">
+        <Value />
+      </Parameter>
+      <Parameter name="ShowInClkEnTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ShowInClkTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ShowInRstTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ShowOutClkEnTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ShowOutClkTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ShowOutRstTerm">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="SIOGroups">
+        <Value />
+      </Parameter>
+      <Parameter name="SlewRates">
+        <Value />
+      </Parameter>
+      <Parameter name="TermMode_interrupt">
+        <Value>0</Value>
+      </Parameter>
+      <Parameter name="ThresholdLevels">
+        <Value />
+      </Parameter>
+      <Parameter name="UsePaInClk">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="UsePaInClkEn">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="UsePaInRst">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="UsePaOutClk">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="UsePaOutClkEn">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="UsePaOutRst">
+        <Value>false</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="faf38518-5b30-487a-80fc-f4fa5aef1cdc" name="Timer_angleread" component="Timer_v2_70">
       <Parameter name="CaptureAlternatingFall">
         <Value>false</Value>
@@ -18718,11 +19308,11 @@
       </Parameter>
     </Instance>
   </Instances>
-  <Signals count="256">
+  <Signals count="278">
     <Signal name="mywire_1[1:0]" type="Digital" terminalCount="3">
       <Terminal name="BasicCounter_1.cnt[1:0]" type="Instance Digital Output" />
-      <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
       <Terminal name="AMuxHw_1.selectorBus[1:0]" type="Instance Digital Input" />
+      <Terminal name="or_2.term1" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_12" type="Digital" terminalCount="2">
       <Terminal name="TA_RESET.control_0" type="Instance Digital Output" />
@@ -19279,10 +19869,6 @@
       <Terminal name="PWM_B.ph2" type="Instance Digital Output" />
       <Terminal name="PWML2.y_0" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_9110" type="Digital" terminalCount="2">
-      <Terminal name="BasicCounter_1.clock" type="Instance Digital Input" />
-      <Terminal name="ADC_SAR_2.eos" type="Instance Digital Output" />
-    </Signal>
     <Signal name="Net_11083" type="Analog" terminalCount="2">
       <Terminal name="AMux_1.AinTerm5" type="Instance Analog InOut" />
       <Terminal name="vRef_1.vout" type="Instance Analog InOut" />
@@ -19372,9 +19958,9 @@
       <Terminal name="timer_clock.dig_domain_out" type="Instance Digital Output" />
     </Signal>
     <Signal name="Net_11436" type="Digital" terminalCount="4">
-      <Terminal name="PWM_C.clock" type="Instance Digital Input" />
-      <Terminal name="PWM_B.clock" type="Instance Digital Input" />
       <Terminal name="PWM_A.clock" type="Instance Digital Input" />
+      <Terminal name="PWM_B.clock" type="Instance Digital Input" />
+      <Terminal name="PWM_C.clock" type="Instance Digital Input" />
       <Terminal name="Clock_6.clock_out" type="Instance Digital Output" />
     </Signal>
     <Signal name="Net_11448" type="Digital" terminalCount="2">
@@ -19390,178 +19976,23 @@
       <Terminal name="DMA_1.nrq" type="Instance Digital Output" />
     </Signal>
     <Signal name="Net_11575" type="Analog" terminalCount="2">
-      <Terminal name="MUXO.analog_0" type="Instance Analog InOut" />
-      <Terminal name="AMuxHw_1.AoutTerm" type="Instance Analog InOut" />
+      <Terminal name="AMuxHw_1.AinTerm0" type="Instance Analog InOut" />
+      <Terminal name="CS3.analog_0" type="Instance Analog InOut" />
     </Signal>
     <Signal name="Net_11713" type="Digital" terminalCount="2">
       <Terminal name="Timer_angleread.clock" type="Instance Digital Input" />
       <Terminal name="timer_clock.clock_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_11717" type="Analog" terminalCount="2">
-      <Terminal name="AMuxHw_1.AinTerm0" type="Instance Analog InOut" />
-      <Terminal name="CS3.analog_0" type="Instance Analog InOut" />
-    </Signal>
-    <Signal name="Net_11824" type="Digital" terminalCount="2">
-      <Terminal name="DMA_1.drq" type="Instance Digital Input" />
-      <Terminal name="ADC_SAR_2.eoc" type="Instance Digital Output" />
-    </Signal>
     <Signal name="Net_11839" type="Digital" terminalCount="4">
       <Terminal name="Control_Reg_1.control_0" type="Instance Digital Output" />
-      <Terminal name="PWM_C.enable" type="Instance Digital Input" />
       <Terminal name="PWM_B.enable" type="Instance Digital Input" />
+      <Terminal name="PWM_C.enable" type="Instance Digital Input" />
       <Terminal name="PWM_A.enable" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_11841" type="Analog" terminalCount="3">
       <Terminal name="AOP_OUT.analog_0" type="Instance Analog InOut" />
       <Terminal name="Opamp_1.Vout" type="Instance Analog InOut" />
       <Terminal name="ADC_SAR_2.vplus" type="Instance Analog InOut" />
-    </Signal>
-    <Signal name="Net_12093" type="Digital" terminalCount="2">
-      <Terminal name="PWM_A.reset" type="Instance Digital Input" />
-      <Terminal name="cy_constant_10.val" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12104" type="Analog" terminalCount="1">
-      <Terminal name="ADC_SAR_2.vminus" type="Instance Analog InOut" />
-    </Signal>
-    <Signal name="Net_12105" type="Digital" terminalCount="1">
-      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12106" type="Digital" terminalCount="1">
-      <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12107" type="Analog" terminalCount="1">
-      <Terminal name="ADC_SAR_2.vdac_ref" type="Instance Analog InOut" />
-    </Signal>
-    <Signal name="Net_12108" type="Digital" terminalCount="1">
-      <Terminal name="VDAC8_1.strobe" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12109[7:0]" type="Digital" terminalCount="1">
-      <Terminal name="VDAC8_1.data[7:0]" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12111" type="Digital" terminalCount="1">
-      <Terminal name="DMA_1.trq" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12112" type="Digital" terminalCount="2">
-      <Terminal name="PWM_B.reset" type="Instance Digital Input" />
-      <Terminal name="cy_constant_12.val" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12122" type="Digital" terminalCount="2">
-      <Terminal name="PWM_C.reset" type="Instance Digital Input" />
-      <Terminal name="cy_constant_14.val" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12132" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_1" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12133" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_2" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12134" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_3" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12135" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_4" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12136" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_5" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12137" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_6" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12138" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.control_7" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12139" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.clock" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12140" type="Digital" terminalCount="1">
-      <Terminal name="Control_Reg_1.reset" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12286" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.tc" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12287" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.pwm1" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12288" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.pwm2" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12289" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.interrupt" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12290" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.capture" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12291" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.kill" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12292" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.trigger" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12293" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.cmp_sel" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12294" type="Digital" terminalCount="1">
-      <Terminal name="PWM_C.pwm" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12295" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.tc" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12296" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.pwm1" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12297" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.pwm2" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12298" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.interrupt" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12299" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.capture" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12300" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.kill" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12301" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.trigger" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12302" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.cmp_sel" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12303" type="Digital" terminalCount="1">
-      <Terminal name="PWM_B.pwm" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12304" type="Digital" terminalCount="1">
-      <Terminal name="Clock_7.dig_domain_out" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12305" type="Digital" terminalCount="1">
-      <Terminal name="Clock_6.dig_domain_out" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12306" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.tc" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12307" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.pwm1" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12308" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.pwm2" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12309" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.interrupt" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_12310" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.capture" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12311" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.kill" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12312" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.trigger" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12313" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.cmp_sel" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_12314" type="Digital" terminalCount="1">
-      <Terminal name="PWM_A.pwm" type="Instance Digital Output" />
     </Signal>
     <Signal name="Net_12318" type="Analog" terminalCount="2">
       <Terminal name="AMuxHw_1.AinTerm1" type="Instance Analog InOut" />
@@ -19580,6 +20011,251 @@
     </Signal>
     <Signal name="Net_12424" type="Digital" terminalCount="1">
       <Terminal name="UART_1.tx_interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12425" type="Digital" terminalCount="2">
+      <Terminal name="PWM_A.reset" type="Instance Digital Input" />
+      <Terminal name="cy_constant_10.val" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12435" type="Analog" terminalCount="1">
+      <Terminal name="ADC_SAR_2.vminus" type="Instance Analog InOut" />
+    </Signal>
+    <Signal name="Net_12436" type="Digital" terminalCount="1">
+      <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12437" type="Analog" terminalCount="1">
+      <Terminal name="ADC_SAR_2.vdac_ref" type="Instance Analog InOut" />
+    </Signal>
+    <Signal name="Net_12438" type="Digital" terminalCount="1">
+      <Terminal name="VDAC8_1.strobe" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12439[7:0]" type="Digital" terminalCount="1">
+      <Terminal name="VDAC8_1.data[7:0]" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12441" type="Digital" terminalCount="1">
+      <Terminal name="DMA_1.trq" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12442" type="Digital" terminalCount="2">
+      <Terminal name="PWM_B.reset" type="Instance Digital Input" />
+      <Terminal name="cy_constant_12.val" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12451" type="Digital" terminalCount="2">
+      <Terminal name="PWM_C.reset" type="Instance Digital Input" />
+      <Terminal name="cy_constant_14.val" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12460" type="Analog" terminalCount="2">
+      <Terminal name="MUXO.analog_0" type="Instance Analog InOut" />
+      <Terminal name="AMuxHw_1.AoutTerm" type="Instance Analog InOut" />
+    </Signal>
+    <Signal name="Net_12461" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_1" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12462" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_2" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12463" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_3" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12464" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_4" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12465" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_5" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12466" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_6" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12467" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.control_7" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12468" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.clock" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12469" type="Digital" terminalCount="1">
+      <Terminal name="Control_Reg_1.reset" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12470" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PA.trq" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12471" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PA.nrq" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12472" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PB.trq" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12473" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PB.nrq" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12474" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PC.trq" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12475" type="Digital" terminalCount="1">
+      <Terminal name="DMA_PC.nrq" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12476" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.tc" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12477" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12478" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.enable" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12479" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.capture" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12480" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.upCnt" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12481" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.downCnt" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12482" type="Digital" terminalCount="1">
+      <Terminal name="Counter_1.up_ndown" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12509" type="Digital" terminalCount="2">
+      <Terminal name="DMA_PB.drq" type="Instance Digital Input" />
+      <Terminal name="PWM_B.tc" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12510" type="Digital" terminalCount="3">
+      <Terminal name="DMA_PA.drq" type="Instance Digital Input" />
+      <Terminal name="isr_mot.int_signal" type="Instance Digital Input" />
+      <Terminal name="PWM_A.tc" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12514" type="Digital" terminalCount="3">
+      <Terminal name="DMA_PC.drq" type="Instance Digital Input" />
+      <Terminal name="cy_srff_1.s" type="Instance Digital Input" />
+      <Terminal name="PWM_C.tc" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12600" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.pwm1" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12601" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.pwm2" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12602" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12603" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.capture" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12604" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.kill" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12605" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.trigger" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12606" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.cmp_sel" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12607" type="Digital" terminalCount="1">
+      <Terminal name="PWM_A.pwm" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12608" type="Digital" terminalCount="1">
+      <Terminal name="Clock_6.dig_domain_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12609" type="Digital" terminalCount="1">
+      <Terminal name="Clock_7.dig_domain_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12610" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.pwm1" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12611" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.pwm2" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12612" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12613" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.capture" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12614" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.kill" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12615" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.trigger" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12616" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.cmp_sel" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12617" type="Digital" terminalCount="1">
+      <Terminal name="PWM_B.pwm" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12618" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.pwm1" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12619" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.pwm2" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12620" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.interrupt" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12621" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.capture" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12622" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.kill" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12623" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.trigger" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12624" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.cmp_sel" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12625" type="Digital" terminalCount="1">
+      <Terminal name="PWM_C.pwm" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12626" type="Digital" terminalCount="1">
+      <Terminal name="Clock_2.dig_domain_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12627" type="Digital" terminalCount="1">
+      <Terminal name="Clock_5.dig_domain_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12631" type="Digital" terminalCount="2">
+      <Terminal name="and_1.gateOut" type="Instance Digital Output" />
+      <Terminal name="or_1.term1" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12662" type="Digital" terminalCount="2">
+      <Terminal name="or_2.gateOut" type="Instance Digital Output" />
+      <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12700" type="Digital" terminalCount="2">
+      <Terminal name="or_1.gateOut" type="Instance Digital Output" />
+      <Terminal name="cy_srff_2.s" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_12739" type="Digital" terminalCount="2">
+      <Terminal name="cy_srff_1.clk" type="Instance Digital Input" />
+      <Terminal name="Clock_2.clock_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_12771" type="Digital" terminalCount="2">
+      <Terminal name="Counter_1.comp" type="Instance Digital Output" />
+      <Terminal name="and_1.term1" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13017" type="Digital" terminalCount="3">
+      <Terminal name="cy_srff_2.clk" type="Instance Digital Input" />
+      <Terminal name="Counter_1.clock" type="Instance Digital Input" />
+      <Terminal name="Clock_5.clock_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13047" type="Digital" terminalCount="2">
+      <Terminal name="DMA_1.drq" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_2.eoc" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13087" type="Digital" terminalCount="4">
+      <Terminal name="cy_srff_1.q" type="Instance Digital Output" />
+      <Terminal name="Counter_1.reset" type="Instance Digital Input" />
+      <Terminal name="or_2.term0" type="Instance Digital Input" />
+      <Terminal name="or_1.term0" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13175" type="Digital" terminalCount="2">
+      <Terminal name="cy_srff_2.q" type="Instance Digital Output" />
+      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_13180" type="Digital" terminalCount="6">
+      <Terminal name="BasicCounter_1.clock" type="Instance Digital Input" />
+      <Terminal name="Counter_1.count" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_2.eos" type="Instance Digital Output" />
+      <Terminal name="cy_srff_1.r" type="Instance Digital Input" />
+      <Terminal name="cy_srff_2.r" type="Instance Digital Input" />
+      <Terminal name="and_1.term0" type="Instance Digital Input" />
     </Signal>
   </Signals>
   <Properties>

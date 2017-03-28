@@ -38,13 +38,13 @@
 #include "main.h"
 #include "motor.h"
 #include "control.h"
-#include "analog.h"
+#include "current_sensing.h"
 #include "ext_input.h"
 #include "safety.h"
 #include "user-ex.h"
 #include "flexsea_global_structs.h"
+#include "flexsea_user_structs.h"
 #include "flexsea_sys_def.h"
-#include "gen_waveform.h"
 #include "mem_angle.h"
 #include "sensor_commut.h"
 
@@ -53,6 +53,7 @@
 //****************************************************************************
 
 uint8_t hall_conv[6] = {5,4,6,2,3,1};
+uint16_t myPWMcompareA = 0, myPWMcompareB = 0, myPWMcompareC = 0;
 
 //****************************************************************************
 // Function(s)
@@ -71,10 +72,7 @@ void init_motor(void)
 	//Default is Brake mode:
 	Coast_Brake_Write(1);
 	
-	//ADC2: Motor current
-	ADC_SAR_2_Start();
-	adc_sar2_dma_config();
-	isr_sar2_dma_Start();
+	initCurrentSensing();
 	
 	#if(CURRENT_SENSING != CS_LEGACY)
 		
@@ -83,23 +81,25 @@ void init_motor(void)
 	#endif
 	
 	#else	//(MOTOR_COMMUT == COMMUT_BLOCK)
-		
+	
+    initCurrentSensing();  
+        
 	//Start 3 PWM at 0%  
 	PWM_A_Start();
-	PWM_A_WriteCompare1(0);			  
+	//PWM_A_WriteCompare1(0);		//Edge: Compare1, Center: Compare
+	PWM_A_WriteCompare(505);
     PWM_B_Start();
-	PWM_B_WriteCompare1(0);
+	//PWM_B_WriteCompare1(0);
+	PWM_B_WriteCompare(505);
 	PWM_C_Start();
-	PWM_C_WriteCompare1(0);
+	//PWM_C_WriteCompare1(0);
+	PWM_C_WriteCompare(505);
+	setDmaPwmCompare(505,505,505);
+	initDmaPwmCompare();
+	isr_mot_Start();
     
     Control_Reg_1_Write(1);
-    //Control_Reg_2_Write(1);
-
-	//ADC2: Motor current
-	ADC_SAR_2_Start();
-	adc_sar2_dma_config();
-	isr_sar2_dma_Start();
-	ADC_SAR_2_IRQ_Enable();    
+    CyDelay(1);     
 	
 	//Angle table can be stored in EEPROM or FLASH:
 	#ifdef USE_EEPROM		
@@ -113,12 +113,6 @@ void init_motor(void)
 		
 	#endif	//(MOTOR_COMMUT == COMMUT_BLOCK)
 
-	//VDAC8: OpAmp VREF
-	VDAC8_1_Start();
-	
-	//Analog amplifiers & multiplexer(s):
-	Opamp_1_Start();
-
 	//Quadrature 1: Motor shaft encoder
 	#ifdef USE_QEI
 	init_qei();
@@ -131,16 +125,17 @@ void init_motor(void)
 	#endif	//MOTOR_TYPE == MOTOR_BRUSHED	
 }
 
-//TODO: rename to setMotorVoltage, or smthng like that
+//TODO: rename to setMotorVoltage, or something like that
 // takes as an argument the voltage to set the motor to, in milliVolts
 // applies a PWM to the motor, considering the nonlinear relationship between PWM and motor voltage
 // also accounts for the linear relationship between motor voltage & battery voltage
-void motor_open_speed_1(int16 voltageToApply)
+void motor_open_speed_1(int32 voltageToApply)
 {
-	const int32_t MAX_VOLTAGE = 30000;
+	const int32_t MAX_VOLTAGE = 50000;
 	const int32_t MAX_PWM_ALLOWED = 1024;
-	const uint16_t BATT_VOLT_READING_AT_34V = 143;
-	const uint16_t BATT_VOLT_READING_AT_17V = 30;
+	const uint16_t BATT_VOLT_READING_AT_34V = 135;
+    const uint16_t BATT_VOLT_READING_AT_52V = 240;
+	const uint16_t BATT_VOLT_READING_AT_17V = 39;
 	
 	//store voltage in an int32, we are gonna save resolution by magnifying intermediate values by like 1000
 	int32_t v = (int32_t)voltageToApply;
@@ -149,38 +144,17 @@ void motor_open_speed_1(int16 voltageToApply)
 	v = (v > MAX_VOLTAGE) ? MAX_VOLTAGE : v;
 	v = (v < -1*MAX_VOLTAGE) ? -1*MAX_VOLTAGE : v;
 	
+    globvar[9] = v/10;
+    
 	int32_t pwmToApply = 0;
-	
-	//only set a pwm if we have a legal/valid battery voltage
-	if(BATT_VOLT_READING_AT_17V < safety_cop.v_vb && safety_cop.v_vb < BATT_VOLT_READING_AT_34V)
-	{	
-		/* 	To see where all the magic numbers are coming from, check out the document titled
-			'LinearizationOfPwmMapping.docx' 
-		 	should be found somewhere on the team drive
-		*/
-		
-		//voltage divided by battery voltage, units = 10*mV per V
-		int32_t effortScaled = (100000 * v) / (1764 * safety_cop.v_vb + 99906);
+	int32_t cur_bat_voltage = 0;
+    cur_bat_voltage = (176 * (int32_t)(safety_cop.v_vb) + 9991); //battery voltage in mV
 
-		//PWM has a nonlinear mapping to voltage
-		//here we apply the inverse non linear mapping ( approximated ), to balance the effect
-		if(effortScaled < -34)
-		{
-			//1.53 * e - 35.382, scaled up 1000, e already been scaled 10 however
-			pwmToApply = (153 * effortScaled - 35382);
-		}
-		else if(effortScaled < 34)
-		{
-			//11.45 * e, scaled up 1000, e already been scaled 10 however
-			pwmToApply = (1145 * effortScaled);
-		}
-		else
-		{
-			//1.53 * e + 35.382, scaled up 1000, e already been scaled 10 however
-			pwmToApply = (153 * effortScaled + 35382);
-		}
-		
-		pwmToApply = pwmToApply / 1000;
+    
+	//only set a pwm if we have a legal/valid battery voltage
+	if(17000 < cur_bat_voltage && cur_bat_voltage < 54000)
+	{	
+		pwmToApply = (v*76) / (cur_bat_voltage>>4);
 	}
 	
     #if (MOTOR_COMMUT == COMMUT_BLOCK)
@@ -279,6 +253,48 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 	#endif
 }
 
+//PWM Compare1 registers are set via DMA, not via the API function calls:
+void initDmaPwmCompare(void)
+{
+	uint8 DMA_PA_Chan, DMA_PB_Chan, DMA_PC_Chan;
+	uint8 DMA_PA_TD[1], DMA_PB_TD[1], DMA_PC_TD[1];
+
+	//DMA Configuration for DMA_PA:
+	DMA_PA_Chan = DMA_PA_DmaInitialize(DMA_PX_BYTES_PER_BURST, DMA_PX_REQUEST_PER_BURST, 
+	    HI16(DMA_PX_SRC_BASE), HI16(DMA_PX_DST_BASE));
+	DMA_PA_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_PA_TD[0], 2, DMA_PA_TD[0], DMA_PA__TD_TERMOUT_EN);
+	CyDmaTdSetAddress(DMA_PA_TD[0], LO16((uint32)&myPWMcompareA), LO16((uint32)PWM_A_COMPARE1_LSB_PTR));
+	CyDmaChSetInitialTd(DMA_PA_Chan, DMA_PA_TD[0]);
+	CyDmaChEnable(DMA_PA_Chan, 1);
+	
+	//DMA Configuration for DMA_PB:
+	DMA_PB_Chan = DMA_PB_DmaInitialize(DMA_PX_BYTES_PER_BURST, DMA_PX_REQUEST_PER_BURST, 
+	    HI16(DMA_PX_SRC_BASE), HI16(DMA_PX_DST_BASE));
+	DMA_PB_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_PB_TD[0], 2, DMA_PB_TD[0], DMA_PB__TD_TERMOUT_EN);
+	CyDmaTdSetAddress(DMA_PB_TD[0], LO16((uint32)&myPWMcompareB), LO16((uint32)PWM_B_COMPARE1_LSB_PTR));
+	CyDmaChSetInitialTd(DMA_PB_Chan, DMA_PB_TD[0]);
+	CyDmaChEnable(DMA_PB_Chan, 1);
+	
+	//DMA Configuration for DMA_PC:
+	DMA_PC_Chan = DMA_PC_DmaInitialize(DMA_PX_BYTES_PER_BURST, DMA_PX_REQUEST_PER_BURST, 
+	    HI16(DMA_PX_SRC_BASE), HI16(DMA_PX_DST_BASE));
+	DMA_PC_TD[0] = CyDmaTdAllocate();
+	CyDmaTdSetConfiguration(DMA_PC_TD[0], 2, DMA_PC_TD[0], DMA_PC__TD_TERMOUT_EN);
+	CyDmaTdSetAddress(DMA_PC_TD[0], LO16((uint32)&myPWMcompareC), LO16((uint32)PWM_C_COMPARE1_LSB_PTR));
+	CyDmaChSetInitialTd(DMA_PC_Chan, DMA_PC_TD[0]);
+	CyDmaChEnable(DMA_PC_Chan, 1);
+}
+
+//Use this to set the new PWM Compare1 values:
+void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c)
+{
+	myPWMcompareA = a;
+	myPWMcompareB = b;
+	myPWMcompareC = c;
+}
+
 //****************************************************************************
 // Test Function(s) - Use with care!
 //****************************************************************************
@@ -316,88 +332,4 @@ void motor_fixed_pwm_test_code_non_blocking(int spd)
 	Coast_Brake_Write(1);	//Brake
 	#endif
 	motor_open_speed_1(spd);	
-}
-
-//Use this to send PWM pulses in open speed mode
-void test_pwm_pulse_blocking(void)
-{
-	uint16 val = 0;
-	
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(0);	
-	
-	while(1)
-	{	
-		//RGB LED = Hall code:
-		LED_R_Write(EX1_Read());
-		LED_G_Write(EX2_Read());
-		LED_B_Write(EX3_Read());
-		
-		val = output_step();
-		motor_open_speed_1(val);
-	}
-}
-
-//Use before main while() as a basic test
-void motor_stepper_test_blocking_1(int spd)
-{
-	uint8_t hall_code_0 = 0, hall_code = 0;
-	
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);	//Brake
-	#endif
-	motor_open_speed_1(spd);
-	
-	while(1)
-	{
-		hall_code_0++;
-		hall_code_0 %= 6;
-		hall_code = hall_conv[hall_code_0];
-		
-		#if (MOTOR_COMMUT == COMMUT_BLOCK)
-		Virtual_Hall_Write(hall_code);
-		#endif
-		
-		LED_R_Write(hall_code & 0x01);
-		LED_G_Write((hall_code & 0x02)>>1);
-		LED_B_Write((hall_code & 0x04)>>2);
-		
-		CyDelay(10);
-	}
-}
-
-//To test with the full stack, use this init...
-void motor_stepper_test_init(int spd)
-{
-	ctrl.active_ctrl = CTRL_OPEN;
-	#if (MOTOR_COMMUT == COMMUT_BLOCK)
-	Coast_Brake_Write(1);
-	#endif
-	motor_open_speed_1(spd);	
-}
-
-//...and this runtime function
-void motor_stepper_test_runtime(int div)
-{
-	//Call this function at 1ms intervals. The divider will
-	//allow longer delays between steps.
-	
-	static uint8_t hall_code_0 = 0, hall_code = 0;
-	static int delay_cnt = 0;
-	
-	delay_cnt++;
-	if(delay_cnt >= div)
-	{
-		delay_cnt = 0;
-	
-		hall_code_0++;
-		hall_code_0 %= 6;
-		hall_code = hall_conv[hall_code_0];
-		
-		//Hall_Write(hall_code);	//ToDo Enable
-	}	
 }

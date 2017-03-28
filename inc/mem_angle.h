@@ -34,8 +34,9 @@
 /*
 Notes - EEPROM:
 ===============
-EEPROM can be written one row (16 bytes) at the time. Our angle table is
-126*uint16 = 252 bytes. 252/16 = 15.75 = 16 rows.
+EEPROM can be written one row (16 bytes) at the time. Our commutation angle 
+table is 126*uint16 = 252 bytes. 252/16 = 15.75 = 16 rows.
+Our joint angle table is 258*int16 = 516 bytes. 516/16 = 33.25 = 33 rows.
 It can take up to 20ms per write, so 320ms total.
 We start at address 0.
 	
@@ -56,35 +57,47 @@ FLASH so the value of this code is very limited...
 //****************************************************************************
 
 //****************************************************************************
-// Public Function Prototype(s):
-//****************************************************************************	
-
-void init_eeprom(void);
-void save_angles_to_eeprom(uint16 *new_angles);
-void load_angles_from_eeprom(uint16 *ee_angles);
-void test_angle_eeprom(void);
-
-void init_flash(void);
-void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8_t arr);
-void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8_t arr);
-void test_angle_flash(void);
-
-//****************************************************************************
 // Definition(s):
 //****************************************************************************	
 
 //EEPROM:
-#define EE_ROW_LEN_WORD			8
-#define EE_ROW_LEN_BYTES		(EE_ROW_LEN_WORD*2)
-#define EE_ANGLE_MAX_ROW		16
-#define EE_SIZE_BYTES			(EE_ROW_LEN_BYTES * EE_ANGLE_MAX_ROW)
+#define EE_ROW_LEN_WORD				8
+#define EE_ROW_LEN_BYTES			(EE_ROW_LEN_WORD*2)
+//Commutation:
+#define EE_ANGLE_COMM_START			0
+#define EE_ANGLE_COMM_LEN			16
+//Joint:
+#define EE_ANGLE_JOINT_START		20
+#define EE_ANGLE_JOINT_LEN			40
+
+//#define EE_SIZE_BYTES				(EE_ROW_LEN_BYTES * EE_ANGLE_MAX_ROW)
 
 //FLASH:
-#define FLASH_MAX_DATAPOINTS	250	//2048
+#define FLASH_MAX_DATAPOINTS		250	//2048
 
 //Test code:
-#define TEST_DATA_LEN			128		//Do not change
-#define DATA_INC				300
+#define TEST_DATA_LEN				128		//Do not change
+#define TEST_DATA_LEN2				258		//Do not change
+#define DATA_INC					300
+#define DATA_INC2					50
+
+typedef enum{
+	COMMUTATION = 0, 
+	JOINT} eepromTable; 
+
+//****************************************************************************
+// Public Function Prototype(s):
+//****************************************************************************	
+
+void init_eeprom(void);
+void save_angles_to_eeprom(uint16 *new_angles, eepromTable table);
+void load_angles_from_eeprom(uint16 *ee_angles, eepromTable table);
+void test_angle_eeprom(void);
+
+void init_flash(void);
+void save_angles_to_flash(uint16 *new_angles, uint16 datapoints, uint8 arr);
+void load_angles_from_flash(uint16 *ee_angles, uint16 datapoints, uint8 arr);
+void test_angle_flash(void);
 
 //****************************************************************************
 // Structure(s)
@@ -92,4 +105,3 @@ void test_angle_flash(void);
 
 	
 #endif	//INC_MEM_ANG_H
-	

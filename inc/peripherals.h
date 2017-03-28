@@ -36,7 +36,6 @@
 //****************************************************************************
 	
 #include "main.h"
-#include "../../flexsea-system/inc/flexsea_system.h"
 	
 //****************************************************************************
 // Public Function Prototype(s):
@@ -44,24 +43,11 @@
 
 void init_peripherals(void);
 void init_tb_timers(void);
-void init_angle_timer(void);
-
-void update_counts_since_last_ang_read(struct as504x_s *as504x);
-void reset_ang_counter(struct as504x_s *);
-void update_as504x(int32_t, struct as504x_s *);
-void init_as504x(struct as504x_s *as504x, int);
-void init_angsense(struct angsense_s *as);
 
 //****************************************************************************
 // Shared Variable(s):
 //****************************************************************************
 
-//ToDo: why do we have UART buffers here?! Remove once tested
-/*
-extern uint8_t uart_dma_rx_buf[96];
-extern uint8_t uart_dma_rx_buf_unwrapped[96];
-extern uint8_t uart_dma_tx_buf[96];
-*/
 extern uint8_t gui_fsm_flag;
 
 //****************************************************************************

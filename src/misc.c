@@ -37,9 +37,9 @@
 
 #include "main.h"
 #include "misc.h"
-#include "mem_angle.h"
 #include "user-ex.h"
 #include <flexsea_comm.h>
+//(Add #include as needed when running test code)
 
 //****************************************************************************
 // Variable(s)
@@ -48,19 +48,11 @@
 //Timers:
 volatile uint8_t t1_100us_flag = 0;
 volatile uint8_t t1_time_share = 0, t1_new_value = 0;
-int32 angle_read_counter = 0, last_angle_read_gap = 0;
+//int32_t angle_read_counter = 0, last_angle_read_gap = 0;
 
 //ADC:
 uint8_t adc_sar1_flag = 0;
 volatile uint8_t adc_delsig_flag = 0;
-
-//AS5047 Magnetic Encoder:
-uint16 last_as5047_word = 0;
-
-//****************************************************************************
-// Private Function Prototype(s):
-//****************************************************************************
-
 
 //****************************************************************************
 // Public Function(s)
@@ -108,15 +100,10 @@ void test_code_blocking(void)
 	//motor_fixed_pwm_test_code_blocking(200);
 	//wdclk_test_blocking();
 	//timing_test_blocking();
-	//test_current_tracking_blocking();
-	//test_pwm_pulse_blocking();
 	//test_uart_dma_xmit();
 	//motor_cancel_damping_test_code_blocking();
-	//csea_knee_up_down_test_demo();
-	//motor_stepper_test_blocking_1(80);
 	//test_pwro_output_blocking();
 	//strain_amp_6ch_test_code_blocking();
-	//as5047_test_code_blocking();
 	//as5048b_test_code_blocking();
 	//rgbLedRefresh_testcode_blocking();
 	//compress6chTestCodeBlocking();
@@ -128,15 +115,10 @@ void test_code_non_blocking(void)
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 	//Non-Blocking Test code
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	#ifdef USE_SPI_COMMUT		
-	motor_stepper_test_init(0);
-	//Note: deadtime is 55, small PWM values won't make it move.
-	//Starting at 0, GUI will change that when it wants.	
-	#endif	//USE_SPI_COMMUT	
 	//motor_fixed_pwm_test_code_non_blocking(125);
 	//pwro_output(245);	
 	//test_angle_eeprom();
-	test_angle_flash();
+	//test_angle_flash();
 	//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=		
 }
 
@@ -188,13 +170,3 @@ void bootManage(void)
 	CyDelay(1);
 	EX15_Write(0);
 }
-
-
-//****************************************************************************
-// Private Function(s)
-//****************************************************************************
-
-
-//****************************************************************************
-// Deprecated Function(s)
-//****************************************************************************

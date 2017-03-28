@@ -19,6 +19,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="GLOBAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -36,12 +37,13 @@
         <Data key="enabled" value="True" />
         <Data key="minus_accuracy" value="0" />
         <Data key="minus_tolerance" value="5" />
-        <Data key="name" value="HBUS_40MHZ" />
+        <Data key="name" value="H40M" />
         <Data key="named_src_direct_connect" value="False" />
-        <Data key="netlist_name" value="HBUS_40MHZ" />
+        <Data key="netlist_name" value="H40M" />
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="GLOBAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -64,6 +66,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="GLOBAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -76,8 +79,8 @@
         <Data key="check_tolerance" value="False" />
         <Data key="clock_version" value="v1" />
         <Data key="derive_type" value="AUTO" />
-        <Data key="desired_freq" value="1" />
-        <Data key="desired_unit" value="6" />
+        <Data key="desired_freq" value="1000000" />
+        <Data key="desired_unit" value="0" />
         <Data key="divider" value="80" />
         <Data key="domain" value="ANALOG" />
         <Data key="enabled" value="True" />
@@ -88,6 +91,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -105,12 +109,13 @@
         <Data key="enabled" value="True" />
         <Data key="minus_accuracy" value="0" />
         <Data key="minus_tolerance" value="5" />
-        <Data key="name" value="I2C_2_BusClock" />
+        <Data key="name" value="I2C_0_BusClock" />
         <Data key="named_src_direct_connect" value="True" />
-        <Data key="netlist_name" value="\I2C_2:BusClock\" />
+        <Data key="netlist_name" value="\I2C_0:BusClock\" />
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="75C2148C-3656-4d8a-846D-0CAE99AB6FF7" />
         <Data key="src_clk_name" value="BUS_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -134,6 +139,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="75C2148C-3656-4d8a-846D-0CAE99AB6FF7" />
         <Data key="src_clk_name" value="BUS_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -192,7 +198,7 @@
         <Data key="derive_type" value="NAMED_DIVIDER" />
         <Data key="desired_freq" value="0" />
         <Data key="desired_unit" value="15" />
-        <Data key="divider" value="8" />
+        <Data key="divider" value="4" />
         <Data key="domain" value="0" />
         <Data key="enabled" value="True" />
         <Data key="minus_accuracy" value="0" />
@@ -203,8 +209,57 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="5d35c49e-16a9-4494-aff7-1e65e229efcf" />
-        <Data key="src_clk_name" value="HBUS_40MHZ" />
+        <Data key="src_clk_name" value="H40M" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
+      <Group key="81b472ec-960a-4d82-98aa-b39aaeb06783">
+        <Data key="check_tolerance" value="True" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="Clock_6" />
+        <Data key="named_src_direct_connect" value="True" />
+        <Data key="netlist_name" value="Clock_6" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="5d35c49e-16a9-4494-aff7-1e65e229efcf" />
+        <Data key="src_clk_name" value="H40M" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
+      <Group key="385e3f69-6bef-47c5-9c8c-37eacb59a118">
+        <Data key="check_tolerance" value="True" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="Clock_5" />
+        <Data key="named_src_direct_connect" value="True" />
+        <Data key="netlist_name" value="Clock_5" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="5d35c49e-16a9-4494-aff7-1e65e229efcf" />
+        <Data key="src_clk_name" value="H40M" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -249,8 +304,32 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="5d35c49e-16a9-4494-aff7-1e65e229efcf" />
-        <Data key="src_clk_name" value="HBUS_40MHZ" />
+        <Data key="src_clk_name" value="H40M" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
+      <Group key="3954f332-eb76-4449-a163-a5ce9f97accf/696a0979-21fc-4185-bf38-6c79febcde7a">
+        <Data key="check_tolerance" value="False" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="AUTO" />
+        <Data key="desired_freq" value="7200000" />
+        <Data key="desired_unit" value="0" />
+        <Data key="divider" value="11" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="ADC_SAR_2_theACLK" />
+        <Data key="netlist_name" value="\ADC_SAR_2:theACLK\" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
+        <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -295,6 +374,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="20" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -318,8 +398,33 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="12" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
+      <Group key="32637e26-48eb-42fa-a444-35b275fdae63">
+        <Data key="check_tolerance" value="True" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="Clock_2" />
+        <Data key="named_src_direct_connect" value="True" />
+        <Data key="netlist_name" value="Clock_2" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="5d35c49e-16a9-4494-aff7-1e65e229efcf" />
+        <Data key="src_clk_name" value="H40M" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -393,6 +498,29 @@
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
       </Group>
+      <Group key="ac0a8b10-175c-48f6-9051-6584d2183a66/be0a0e37-ad17-42ca-b5a1-1a654d736358">
+        <Data key="check_tolerance" value="True" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="AUTO" />
+        <Data key="desired_freq" value="1843.2" />
+        <Data key="desired_unit" value="3" />
+        <Data key="divider" value="43" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="3.9373684210526316" />
+        <Data key="name" value="UART_1_IntClock" />
+        <Data key="netlist_name" value="\UART_1:IntClock\" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="3.9373684210526316" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
+        <Data key="src_clk_name" value="MASTER_CLK" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
       <Group key="acfeba15-5f02-432f-b894-bd007292b1d6">
         <Data key="check_tolerance" value="True" />
         <Data key="clock_version" value="v1" />
@@ -416,25 +544,50 @@
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
       </Group>
+      <Group key="b0cb42c1-4a27-49db-80b0-69928e07dd4f">
+        <Data key="check_tolerance" value="True" />
+        <Data key="clock_version" value="v1" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
+        <Data key="domain" value="DIGITAL" />
+        <Data key="enabled" value="True" />
+        <Data key="minus_accuracy" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="Clock_7" />
+        <Data key="named_src_direct_connect" value="True" />
+        <Data key="netlist_name" value="Clock_7" />
+        <Data key="placement" value="AUTO" />
+        <Data key="plus_accuracy" value="0" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="75C2148C-3656-4d8a-846D-0CAE99AB6FF7" />
+        <Data key="src_clk_name" value="BUS_CLK" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="sync_with_bus_clk" value="True" />
+        <Data key="user_set_domain" value="False" />
+      </Group>
       <Group key="b6d5c289-2c2e-4de0-a73e-d1bef29506e5">
         <Data key="check_tolerance" value="True" />
         <Data key="clock_version" value="v1" />
-        <Data key="derive_type" value="NAMED_FREQ" />
-        <Data key="desired_freq" value="6.4" />
-        <Data key="desired_unit" value="6" />
-        <Data key="divider" value="13" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
         <Data key="domain" value="0" />
         <Data key="enabled" value="True" />
         <Data key="minus_accuracy" value="0" />
         <Data key="minus_tolerance" value="5" />
         <Data key="name" value="i2cclk" />
-        <Data key="named_src_direct_connect" value="False" />
+        <Data key="named_src_direct_connect" value="True" />
         <Data key="netlist_name" value="i2cclk" />
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
-        <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
-        <Data key="src_clk_name" value="MASTER_CLK" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="711de943-fa9c-4df5-b091-219324337088" />
+        <Data key="src_clk_name" value="CLK_6M4HZ" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -456,8 +609,9 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
-        <Data key="src_clk_id" value="8c1b58ce-4dda-4d49-858c-db31f56726f6" />
-        <Data key="src_clk_name" value="HALF_BUS_40MHZ" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="0f7218e6-b915-4f87-9549-626f05d864c3" />
+        <Data key="src_clk_name" value="ADCCLK" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -488,21 +642,23 @@
       <Group key="cd57e4ff-cf33-4cb9-916c-dd22c70728d7">
         <Data key="check_tolerance" value="True" />
         <Data key="clock_version" value="v1" />
-        <Data key="derive_type" value="AUTO" />
-        <Data key="desired_freq" value="5.12" />
-        <Data key="desired_unit" value="6" />
-        <Data key="divider" value="16" />
+        <Data key="derive_type" value="NAMED_DIVIDER" />
+        <Data key="desired_freq" value="0" />
+        <Data key="desired_unit" value="15" />
+        <Data key="divider" value="0" />
         <Data key="domain" value="0" />
         <Data key="enabled" value="True" />
         <Data key="minus_accuracy" value="0" />
         <Data key="minus_tolerance" value="5" />
         <Data key="name" value="Clock_4" />
+        <Data key="named_src_direct_connect" value="True" />
         <Data key="netlist_name" value="Clock_4" />
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="5" />
-        <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
-        <Data key="src_clk_name" value="MASTER_CLK" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="src_clk_id" value="711de943-fa9c-4df5-b091-219324337088" />
+        <Data key="src_clk_name" value="CLK_6M4HZ" />
         <Data key="start_on_reset" value="True" />
         <Data key="sync_with_bus_clk" value="True" />
         <Data key="user_set_domain" value="False" />
@@ -524,6 +680,7 @@
         <Data key="placement" value="AUTO" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="1" />
+        <Data key="scope" value="LOCAL" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -572,6 +729,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="" />
         <Data key="src_clk_name" value="" />
         <Data key="start_on_reset" value="False" />
@@ -594,6 +752,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="46B167E3-1786-4598-8688-AACCF18668D4" />
         <Data key="src_clk_name" value="XTAL" />
         <Data key="start_on_reset" value="True" />
@@ -616,6 +775,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="" />
         <Data key="src_clk_name" value="" />
         <Data key="start_on_reset" value="False" />
@@ -653,6 +813,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="61737EF6-3B74-48f9-8B91-F7473A442AE7" />
         <Data key="src_clk_name" value="MASTER_CLK" />
         <Data key="start_on_reset" value="True" />
@@ -676,6 +837,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="39D5E4C2-EBFC-44ab-AE3D-19F9BBFD674D" />
         <Data key="src_clk_name" value="PLL_OUT" />
         <Data key="start_on_reset" value="True" />
@@ -700,6 +862,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0.25" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="CEF43CFB-0213-49b9-B980-2FFAB81C5B47" />
         <Data key="src_clk_name" value="IMO" />
         <Data key="start_on_reset" value="False" />
@@ -726,6 +889,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="100" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="" />
         <Data key="src_clk_name" value="" />
         <Data key="start_on_reset" value="True" />
@@ -750,6 +914,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0.25" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="" />
         <Data key="src_clk_name" value="" />
         <Data key="start_on_reset" value="True" />
@@ -772,6 +937,7 @@
         <Data key="placement" value="GLOBAL" />
         <Data key="plus_accuracy" value="0" />
         <Data key="plus_tolerance" value="0" />
+        <Data key="scope" value="BUILTIN" />
         <Data key="src_clk_id" value="" />
         <Data key="src_clk_name" value="" />
         <Data key="start_on_reset" value="False" />
@@ -792,20 +958,26 @@
   <Group key="DWRInstGuidMapping">
     <Group key="Clock">
       <Data key="3b427007-b525-46da-a888-823397ce16b3/696a0979-21fc-4185-bf38-6c79febcde7a" value="ADC_SAR_1_theACLK" />
-      <Data key="6f2d57bd-b6d0-4115-93da-ded3485bf4ed/5ece924d-20ba-480e-9102-bc082dcdd926" value="I2C_2_BusClock" />
+      <Data key="6f2d57bd-b6d0-4115-93da-ded3485bf4ed/5ece924d-20ba-480e-9102-bc082dcdd926" value="I2C_0_BusClock" />
       <Data key="6f11deb1-b223-4d37-a6c4-7e9676e39cc8" value="Clock_1" />
       <Data key="9a92efcc-7e00-4edf-aa52-e6f8716f6279" value="ADC_CLK" />
       <Data key="37ef6ab9-39f3-406a-a606-772ba1add768" value="Clock_2" />
       <Data key="43ac236e-1399-4300-b39a-3d5a5234fc0f" value="SPIM_Clk" />
+      <Data key="81b472ec-960a-4d82-98aa-b39aaeb06783" value="Clock_6" />
+      <Data key="385e3f69-6bef-47c5-9c8c-37eacb59a118" value="Clock_5" />
       <Data key="419c3f98-13a1-400d-a38d-6ad89baf42c3" value="Clock_6" />
       <Data key="968f1cad-7924-4e85-9373-12b170941a5a" value="timebase" />
+      <Data key="3954f332-eb76-4449-a163-a5ce9f97accf/696a0979-21fc-4185-bf38-6c79febcde7a" value="ADC_SAR_2_theACLK" />
       <Data key="4568b72a-4e44-4474-8448-7c1e5b31b8b2/5ed615c6-e1f0-40ed-8816-f906ef67d531" value="emFile_1_Clock_1" />
       <Data key="8000f750-f1b4-4d47-895d-e776c73676dc/b7604721-db56-4477-98c2-8fae77869066" value="ADC_DelSig_1_Ext_CP_Clk" />
       <Data key="8000f750-f1b4-4d47-895d-e776c73676dc/edd15f43-b66b-457b-be3a-5342345270c8" value="ADC_DelSig_1_theACLK" />
+      <Data key="32637e26-48eb-42fa-a444-35b275fdae63" value="Clock_2" />
       <Data key="6478998a-9c74-46ba-8f70-a9ddb0af7ebc" value="Clock_7" />
       <Data key="8305309e-ba46-4cf9-9513-96cfce88a58c" value="Clock_5" />
       <Data key="a9074f04-2e1b-4f3a-8dce-1616f786f2f6" value="Clock_3" />
+      <Data key="ac0a8b10-175c-48f6-9051-6584d2183a66/be0a0e37-ad17-42ca-b5a1-1a654d736358" value="UART_1_IntClock" />
       <Data key="acfeba15-5f02-432f-b894-bd007292b1d6" value="Clock_6" />
+      <Data key="b0cb42c1-4a27-49db-80b0-69928e07dd4f" value="Clock_7" />
       <Data key="b6d5c289-2c2e-4de0-a73e-d1bef29506e5" value="i2cclk" />
       <Data key="c0fb34bd-1044-4931-9788-16b01ce89812" value="timer_clock" />
       <Data key="c39ef993-d787-4c0c-8ad6-c0c81f866442/03f503a7-085a-4304-b786-de885b1c2f21" value="USBUART_1_Clock_vbus" />
@@ -891,6 +1063,8 @@
       <Data key="1627c6c5-da46-4237-835c-0fefc81c69b3" value="EX7" />
       <Data key="1837c9d5-8530-433a-8074-752a9cba1b19" value="DI" />
       <Data key="2071c6c3-748b-42fe-881e-750c2af155ff" value="PWMH3" />
+      <Data key="2772cb4d-fa47-449d-bcb9-93a6a97b904f" value="EX14_1" />
+      <Data key="3954f332-eb76-4449-a163-a5ce9f97accf/16a808f6-2e13-45b9-bce0-b001c8655113" value="ADC_SAR_2_Bypass" />
       <Data key="22863ebe-a37b-476f-b252-6e49a8c00b12" value="SDA_1" />
       <Data key="40137fea-e41e-4f9f-898d-ad3cabc9f134" value="LED_B" />
       <Data key="55128a27-53d7-4f39-8ac4-d078030f0066" value="LED_2" />
@@ -933,6 +1107,7 @@
       <Data key="edc06dca-2333-42fc-80ee-dbcaae851c01" value="EXP3" />
       <Data key="f4d69244-58a2-45d9-8dd0-2a9090b7da96" value="EX10" />
       <Data key="f4943eea-8816-449d-b24c-3f3285ba6337" value="DE3" />
+      <Data key="fa739454-d170-4ccd-a2d1-8834ac65e15f" value="EX2" />
       <Data key="fe5cf87b-629d-4408-8e19-e5c839be3b7e" value="NOT_RE2" />
     </Group>
   </Group>
@@ -4454,6 +4629,11 @@
     <Group key="f4943eea-8816-449d-b24c-3f3285ba6337">
       <Group key="0">
         <Data key="Port Format" value="6,4" />
+      </Group>
+    </Group>
+    <Group key="fa739454-d170-4ccd-a2d1-8834ac65e15f">
+      <Group key="0">
+        <Data key="Port Format" value="4,3" />
       </Group>
     </Group>
     <Group key="fe5cf87b-629d-4408-8e19-e5c839be3b7e">

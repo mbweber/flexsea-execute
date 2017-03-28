@@ -91,7 +91,7 @@ void usbRuntimeConnect(void)
 	    USBUART_1_CDC_Init();
 		usbConnected = 1;
 	}
-}	
+}
 
 void get_usb_data(void)
 {

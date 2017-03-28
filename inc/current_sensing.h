@@ -19,53 +19,61 @@
 	[Lead developper] Jean-Francois (JF) Duval, jfduval at dephy dot com.
 	[Origin] Based on Jean-Francois Duval's work at the MIT Media Lab 
 	Biomechatronics research group <http://biomech.media.mit.edu/>
-	[Contributors]
+	[Contributors] Luke Mooney
 *****************************************************************************
-	[This file] main_fsm: Contains all the case() code for the main FSM
+	[This file] current_sensing: ADC configurations, read & filter functions
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
-	* 2016-09-29 | jfduval | Released under GPL-3.0 release
-	*
+	* 2017-03-27 | jfduval | Released under GPL-3.0 release
 ****************************************************************************/
-	
-#ifndef INC_MAIN_FSM_H
-#define INC_MAIN_FSM_H
+
+#ifndef INC_CURRENT_SENSING_H
+#define INC_CURRENT_SENSING_H
 
 //****************************************************************************
 // Include(s)
-//****************************************************************************
-	
+//****************************************************************************	
+
 #include "main.h"
-	
-//****************************************************************************
-// Shared variable(s)
-//****************************************************************************
+//#include <flexsea_user_structs.h>
 
 //****************************************************************************
-// Public Function Prototype(s):
+// Prototype(s):
 //****************************************************************************
 
-void mainFSM0(void);
-void mainFSM1(void);
-void mainFSM2(void);
-void mainFSM3(void);
-void mainFSM4(void);
-void mainFSM5(void);
-void mainFSM6(void);
-void mainFSM7(void);
-void mainFSM8(void);
-void mainFSM9(void);
-
-void mainFSM10kHz(void);
-void mainFSMasynchronous(void);
+void initCurrentSensing(void);
+void adc_sar2_dma_config(void);
+void current_rms_1(void);
+void update_current_arrays(void);
+void set_current_zero(void);
+void get_phase_currents(int32_t *);
+void adc_sar2_dma_reinit(void);
 
 //****************************************************************************
 // Definition(s):
 //****************************************************************************
 
+//Motor current ADC:
+#define ADC2_BUF_LEN				9
+#define ADC2_BUF_LEN_3RD	        3
+
+//DMA ADC SAR 2
+#define DMA_1_BYTES_PER_BURST 		2
+#define DMA_1_REQUEST_PER_BURST 	1
+#define DMA_1_SRC_BASE 				(CYDEV_PERIPH_BASE)
+#define DMA_1_DST_BASE 				(CYDEV_SRAM_BASE)
 
 //****************************************************************************
-// Structure(s)
+// Shared variable(s)
+//****************************************************************************	
+
+extern int16 adc_dma_array[ADC2_BUF_LEN];
+extern int16 adc_dma_array_buf[ADC2_BUF_LEN];
+extern volatile uint8_t current_sensing_flag;
+extern volatile int hallCurr;
+
+//****************************************************************************
+// Structure(s):
 //****************************************************************************
 
-#endif	//INC_MAIN_FSM_H
+#endif	//INC_CURRENT_SENSING_H

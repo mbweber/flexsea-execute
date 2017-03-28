@@ -21,7 +21,8 @@
 	Biomechatronics research group <http://biomech.media.mit.edu/>
 	[Contributors]
 *****************************************************************************
-	[This file] calibration_tools: functionality & logic tracking the state of calibration procedures
+	[This file] calibration_tools: functionality & logic tracking the state 
+	of calibration procedures
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2017-02-07 | dweisdorf | Initial GPL-3.0 release
@@ -50,5 +51,6 @@ inline uint8_t isLegalCalibrationProcedure(uint8_t procedure)
 {
 	//ensure procedure is not out of bounds
 	//ensure procedure has only 1 bit true
-	return ((procedure == 1 || procedure % 2 == 0) && procedure <= CALIBRATION_FIND_CURRENT_ZEROES);
+	return ((procedure == 1 || procedure % 2 == 0) && \
+		procedure <= CALIBRATION_FIND_CURRENT_ZEROES);
 }

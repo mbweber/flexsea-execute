@@ -135,4 +135,3 @@ extern struct scop safety_cop;
 #define CMB_FLAGS_STATUS2(err_v_3v3)		(err_v_3v3 & 0x03)
 	
 #endif	//INC_SAFE_H
-	
