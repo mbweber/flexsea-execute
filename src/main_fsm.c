@@ -205,22 +205,31 @@ void mainFSM6(void)
 //Case 7:
 void mainFSM7(void)
 {
-	static int sinceLastStreamSend = 0;
-	if(isStreaming)
-	{
-		if(!sinceLastStreamSend)
-		{
-			//hopefully this works ok
-			uint8_t cp_str[256] = {0};
-			cp_str[P_XID] = streamReceiver;
-			(*flexsea_payload_ptr[streamCmd][RX_PTYPE_READ]) (cp_str, &streamPortInfo);			
-		}
-		sinceLastStreamSend++;
-		sinceLastStreamSend%=streamPeriod;
-	}
-
 	//Encoder velocity estimation:
-	update_as504x_vel(&as5047);
+	update_as504x_vel(&as5047);	
+	
+	static int sinceLastStreamSend[MAX_STREAMS] = {0};	
+	uint8_t cp_str[256] = {0};
+	int i;
+	for(i=0;i<isStreaming;i++)
+		sinceLastStreamSend[i]++;
+	
+	for(i=0;i<isStreaming;i++)
+	{
+		if(sinceLastStreamSend[i] >= streamPeriods[i])
+		{
+			cp_str[P_XID] = streamReceivers[i];
+			(*flexsea_payload_ptr[streamCmds[i]][RX_PTYPE_READ]) (cp_str, &streamPortInfos[i]);		
+			
+			sinceLastStreamSend[i] -= streamPeriods[i];
+			
+			//return so as not to try to send multiple messages in the same cycle
+			//since we already incremented counter, we will still average to the proper frequency
+			//assuming that it is possible to hit the desired frequencies all at once (based on perforamce of comm stack)
+			return;
+		}
+	}
+	
 }
 
 //Case 8: SAR ADC filtering
