@@ -107,7 +107,8 @@ void filter_sar_adc(void)
 		for(j = 0; j < ADC1_BUF_LEN; j++)
 		{
 			//Add the values
-			adc_sum += (uint32)adc1_dbuf[i][j];
+			//adc_sum += (uint32)adc1_dbuf[i][j]; //DOuble buffer (disabled)
+			adc_sum += (uint32)adc1_res[i][j];
 		}
 		
 		//And divide to get mean
