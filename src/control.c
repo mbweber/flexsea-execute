@@ -210,7 +210,7 @@ int32 motor_position_pid(int32 wanted_pos, int32 actual_pos)
 	p = (ctrl.position.gain.P_KP * ctrl.position.error) / 100;
 	in_control.r[0] = p;
 	//Integral term
-	i = (ctrl.position.gain.P_KI * ctrl.position.error_sum) / 100;
+	i = (ctrl.position.gain.P_KI * ctrl.position.error_sum) / 5000;
 	in_control.r[1] = i;
 	//Differential term:
 	d = (ctrl.position.gain.P_KD * ctrl.position.error_dif) / 100;
