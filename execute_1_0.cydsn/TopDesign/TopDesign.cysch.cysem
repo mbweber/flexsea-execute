@@ -19024,8 +19024,8 @@
     </Signal>
     <Signal name="Net_12639" type="Digital" terminalCount="3">
       <Terminal name="cy_srff_1.q" type="Instance Digital Output" />
-      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
       <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_12640" type="Digital" terminalCount="1">
       <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />
