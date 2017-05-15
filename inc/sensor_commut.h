@@ -49,9 +49,9 @@ extern int16 phaseAcoms[2048];
 extern int16 phaseBcoms[2048]; 
 extern int16 phaseCcoms[2048]; 
 
-extern uint16 PWM_A_Value;
-extern uint16 PWM_B_Value;
-extern uint16 PWM_C_Value;
+extern int32_t PWM_A_Value;
+extern int32_t PWM_B_Value;
+extern int32_t PWM_C_Value;
 
 //****************************************************************************
 // Public Function Prototype(s):
@@ -59,20 +59,21 @@ extern uint16 PWM_C_Value;
 
 void find_poles(void);
 void load_eeprom_to_angles(void);
-void fill_comm_tables(int32);
+void fill_comm_tables(int32,int16_t *);
 void sensor_sin_commut(int16, int32);
 
 void test_sinusoidal_blocking(void);
 int get_sin_profile(double, double);
 
+void calc_motor_L(void);
+
 //****************************************************************************
 // Definition(s):
 #define NUMPOLES        126
 #define SHIFT_G         0
-#define PWM_MAX         1000
+#define PWM_MAX         990
 #define PWM_DEAD        20 //dead time caused by the PWM module + extra needed to stop wishing sound
 #define PWM_AMP         495//(2000-PWM_DEAD)/4
-#define PWM_OFFSET      505//(1000-PWM_AMP)
 #define MAX_ENC         16383
 //#define PWM_DEAD2		41 //dead time caused by the opening and closing of the FETS
 //****************************************************************************

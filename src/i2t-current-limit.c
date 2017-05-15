@@ -35,6 +35,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include "i2t-current-limit.h"
+#include "flexsea_user_structs.h"
 
 //****************************************************************************
 // Variable(s)
@@ -126,6 +127,7 @@ int32_t i2t_compute(void)
 	//We are now ready to square the value and add it to our integral:
 	squaredCurrent = squared[sampleAverage];
 	integral = integral + squaredCurrent;
+
 	if(integral > I2T_LEAK)
 	{
 		integral -= I2T_LEAK;

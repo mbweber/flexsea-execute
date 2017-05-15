@@ -38,6 +38,7 @@
 #include "user-ex.h"
 #include "filters.h"
 #include "flexsea_global_structs.h"
+#include "dynamic_user_structs.h"
 
 //****************************************************************************
 // Variable(s)
@@ -147,6 +148,7 @@ void reset_ang_counter(struct as504x_s *as504x)
 void init_as504x(struct as504x_s *as504x)
 {
 	init_diffarr(&as504x->raw_angs_clks);
+    //init_diffarr(&as504x->raw_angs_clks_slow);
     init_diffarr(&as504x->raw_vels_cpms);    
     
     as504x->filt_vel_cpms = 0; 
@@ -268,17 +270,15 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
     as504x->ang_comp_clks = ((((as504x->counts_since_last_ang_read+53)*(as504x->filt.vel_cpms))/1000+(as504x->ang_abs_clks)+16384)%16384); 
 }
 
-void update_as504x_ang(int32_t ang, struct as504x_s *as504x)
-{
-    as504x->ang_abs_clks = ang;
+void update_as504x_absang(int32_t ang, struct as504x_s *as504x)
+{    
+    as504x->ang_abs_clks = ang; 
     as504x->ang_comp_clks = ((((66)*(as504x->filt_vel_cpms))/1000+(as504x->ang_abs_clks)+16384)%16384);
-    as504x->ang_comp_clks_for_cur = ((((-60)*(as504x->filt_vel_cpms))/1000+(as504x->ang_abs_clks)+16384)%16384);
 }
 
 void update_as504x_vel(struct as504x_s *as504x)
-{
-    static int64_t last_ang_abs_clks = 0;
-    
+{   
+    static int64_t last_ang_abs_clks = 0;    
     //determine if the encoder has rotated past 0/16383 point and in what direction
     if (as504x->ang_abs_clks-last_ang_abs_clks<-5000)
     {
@@ -289,12 +289,13 @@ void update_as504x_vel(struct as504x_s *as504x)
         as504x->num_rot--;
     }
     last_ang_abs_clks = as504x->ang_abs_clks;
+    update_diffarr(&as504x->raw_angs_clks,((as504x->num_rot<<14)+as504x->ang_abs_clks),2);
 
-    update_diffarr(&as504x->raw_angs_clks,((as504x->num_rot<<14)+as504x->ang_abs_clks),20);
-    as504x->filt_vel_cpms = as504x->raw_angs_clks.curdif/20;
-    
-    as504x->signed_ang = -1 * as504x->raw_angs_clks.curval * MOTOR_ORIENTATION;
-	as504x->signed_ang_vel = -1 * as504x->filt_vel_cpms * MOTOR_ORIENTATION;
+    as504x->filt_vel_cpms = get_vel_1k_5samples(&as504x->raw_angs_clks)/1000;
+
+    as504x->signed_ang =  as504x->raw_angs_clks.curval * MOTOR_ORIENTATION;
+	as504x->signed_ang_vel = as504x->filt_vel_cpms * MOTOR_ORIENTATION;
+
 }
 
 //****************************************************************************

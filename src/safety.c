@@ -38,6 +38,8 @@
 #include "motor.h"
 #include "i2t-current-limit.h"
 #include "user-ex.h"
+#include "flexsea_user_structs.h"
+#include "../inc/dynamic_user_structs.h"
 
 //****************************************************************************
 // Variable(s)
@@ -70,6 +72,8 @@ void decode_psoc4_values(uint8_t *psoc4_data)
             bat_volt_counter=0;
         }
     }
+    safety_cop.v_vb_mv =  (int32_t)safety_cop.v_vb*176+9991;
+    //dynamicUserData.bat_volt = (uint16_t)(safety_cop.v_vb_mv);
     
 	//safety_cop.v_vb = psoc4_data[MEM_R_VB_SNS];
 	safety_cop.v_vg = psoc4_data[MEM_R_VG_SNS];

@@ -134,3 +134,47 @@ void filt_array_1khz_struct(struct filtvar_s *fv, int cut_off)
     fv->filts[0] = (bs_1k[cut_off-1]*(fv->raws[1]+fv->raws[0])-as_1k[cut_off-1]*fv->filts[1])>>15;
     fv->filt = (int32_t)(fv->filts[0]>>5);
 }
+
+
+int32 acc_reg_coef_1k_down[5] = {2915,-1458,-2915,-1458,2915};
+int32_t get_accl_1k_5samples_downsampled(struct diffarr_s * das)
+{
+    uint8 jj;
+    int32_t accsum;
+    int32_t initval = get_diffarr_elmnt(das,0);
+    accsum = 0;
+    
+    for (jj=0; jj<4; jj++)
+    {
+        accsum+= (get_diffarr_elmnt(das,28-jj*7)-initval)*acc_reg_coef_1k_down[jj];
+    }
+    return accsum*2;   
+}
+
+int32 vel_reg_coef_1k_5samples[5] = {-200,-100,0,100,200};
+int32_t get_vel_1k_5samples(struct diffarr_s * das)
+{
+    uint8 jj;
+    int32_t accsum;
+    accsum = 0;
+    int32_t initval = get_diffarr_elmnt(das,0);
+    for (jj=0; jj<4; jj++)
+    {
+        accsum+= (get_diffarr_elmnt(das,4-jj)-initval)*vel_reg_coef_1k_5samples[jj];
+    }
+    return accsum; // /10
+}
+
+int32 vel_reg_coef_1k_5samples_downsampled[5] = {-286,-143,0,143,286};
+int32_t get_vel_1k_5samples_downsampled(struct diffarr_s * das)
+{
+    uint8 jj;
+    int32_t accsum;
+    accsum = 0;
+    int32_t initval = get_diffarr_elmnt(das,0);
+    for (jj=0; jj<4; jj++)
+    {
+        accsum+= (get_diffarr_elmnt(das,28-jj*7)-initval)*vel_reg_coef_1k_5samples_downsampled[jj];
+    }
+    return accsum/10; // /10
+}

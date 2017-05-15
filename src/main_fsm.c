@@ -56,6 +56,7 @@
 #include "strain.h"
 #include "mag_encoders.h"
 #include "user-ex.h"
+#include <flexsea_board.h>
 
 //****************************************************************************
 // Variable(s)
@@ -99,7 +100,7 @@ void mainFSM2(void)
 {
 	#ifdef USE_I2T_LIMIT
 	//Sample current (I2t limit):
-	i2t_sample(ctrl.current.actual_val);
+	i2t_sample(ctrl.current.actual_vals.avg);
 	#endif	//USE_I2T_LIMIT
 			
 	//100ms timebase:
@@ -205,36 +206,38 @@ void mainFSM6(void)
 //Case 7:
 void mainFSM7(void)
 {
-	//Encoder velocity estimation:
-	update_as504x_vel(&as5047);	
-	
-	static int sinceLastStreamSend[MAX_STREAMS] = {0};	
-	uint8_t cp_str[256] = {0};
-	int i;
-	for(i=0;i<isStreaming;i++)
-		sinceLastStreamSend[i]++;
-	
-	for(i=0;i<isStreaming;i++)
+	static int sinceLastStreamSend[MAX_STREAMS] = {0};
+	if(isStreaming)
 	{
-		if(sinceLastStreamSend[i] >= streamPeriods[i])
+		int i;
+		for(i=0;i<isStreaming;i++)
+			sinceLastStreamSend[i]++;
+		
+		for(i=0;i<isStreaming;i++)
 		{
-			cp_str[P_XID] = streamReceivers[i];
-			(*flexsea_payload_ptr[streamCmds[i]][RX_PTYPE_READ]) (cp_str, &streamPortInfos[i]);		
+			if(sinceLastStreamSend[i] >= streamPeriods[i])
+			{
+				//hopefully this works ok - assumption is that rx_r pure reads take no info from the cp_str
+				uint8_t cp_str[256] = {0};
+				cp_str[P_XID] = streamReceivers[i];
+				(*flexsea_payload_ptr[streamCmds[i]][RX_PTYPE_READ]) (cp_str, &streamPortInfos[i]);	
+				
+				sinceLastStreamSend[i] -= streamPeriods[i];
+				
+				//we return to avoid sending two msgs in one cycle
+				//since counters were already incremented, we will still try to hit other stream frequencies
+				return;
+			}
 			
-			sinceLastStreamSend[i] -= streamPeriods[i];
-			
-			//return so as not to try to send multiple messages in the same cycle
-			//since we already incremented counter, we will still average to the proper frequency
-			//assuming that it is possible to hit the desired frequencies all at once (based on perforamce of comm stack)
-			return;
 		}
 	}
-	
 }
 
 //Case 8: SAR ADC filtering
 void mainFSM8(void)
 {
+    update_diffarr_avg(&ctrl.current.actual_vals,50);
+    calc_motor_L();
 	if(adc_sar1_flag)
 	{
 		filter_sar_adc();
@@ -295,7 +298,7 @@ void mainFSM10kHz(void)
     	if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
     	{
     		//Current controller
-    		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_val);
+    		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_vals.avg);
     	}
         else
         {

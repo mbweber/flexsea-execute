@@ -82,7 +82,6 @@ void isr_t2_Interrupt_InterruptCallback()
 	//Transfer is over, enable Receiver & disable Emitter
 	UART_DMA_XMIT_Write(0);		//No transmission
 	DE_Write(0);
-	//CyDelayUs(1);
 	NOT_RE_Write(0);
 	
 	T2_RESET_Write(1);	
@@ -109,14 +108,8 @@ void isr_sar1_dma_Interrupt_InterruptCallback()
 	/*
 	//Next channel:
 	ch++;
-	ch %= ADC1_CHANNELS;
+	ch %= ADC1_CHANNELS;*/
 	
-	//Once we have all the channels we copy the buffer:
-	if(!adc_sar1_flag)
-	{
-		double_buffer_adc();
-	}
-	*/
 	adc_sar1_flag = 1;
 
 	//Refresh MUX:
@@ -126,6 +119,7 @@ void isr_sar1_dma_Interrupt_InterruptCallback()
 }
 
 //Current sensing:
+static uint8 update_current_flag = 0;
 void isr_sar2_dma_Interrupt_InterruptCallback()
 {	
 	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_LEGACY))
@@ -147,12 +141,8 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 			motor_current_pid_2(ctrl.current.setpoint_val, ctrl.current.actual_val);
 		}
 	
-	#else
-		
-		/*
-		
-		*/
-		
+	#else		
+		update_current_flag = 1;		
 	#endif
 }
 
@@ -208,10 +198,11 @@ void ADC_SAR_1_ISR_InterruptCallback()
 void isr_spi_tx_Interrupt_InterruptCallback()
 {
 	#ifdef USE_AS5047
-    
+
 	//static volatile uint16 frame_errors = 0, parity_errors = 0, man_test = 0;
 	volatile uint8_t tx_status_isr = 0;
     static uint16 counter = 0;
+    static uint8 velcounter = 0;
 	
 	//Read status to clear flag:
 	tx_status_isr = SPIM_1_ReadTxStatus();
@@ -231,12 +222,23 @@ void isr_spi_tx_Interrupt_InterruptCallback()
 		spidata_miso[spi_isr_state] = SPIM_1_ReadRxData();
     	as5047_angle = (spidata_miso[spi_isr_state] & 0x3FFF);
         spi_read_flag = 1;
-        update_as504x_ang(as5047_angle, &as5047);
+        update_as504x_absang(as5047_angle, &as5047);
         sensor_sin_commut(as5047.ang_comp_clks>>3, exec1.sine_commut_pwm);
 
-    	EX3_Write(1);
+        if (update_current_flag)
+        {
     	update_current_arrays();
-		EX3_Write(0);
+        update_current_flag = 0;
+		}
+        
+        if (velcounter>=20)
+        {
+            //Encoder velocity estimation:
+            //update_as504x_contang(&as5047);
+	        update_as504x_vel(&as5047);
+            velcounter = 0;           
+        }
+        velcounter++;
 
 	    if (counter<20000)
         {

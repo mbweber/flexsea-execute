@@ -69,14 +69,14 @@ extern uint8_t currentLimit;
 //that your sensor can read is 30A and you want to support 15A continuous, 
 //use (15000 >> I2C_SCALE_DOWN_SHIFT)^2 = 13689. With 15A flowing, your 
 //integrator will stay at 0. Anything above it will increase its count.
-#define I2T_LEAK				1526
+#define I2T_LEAK				(6103)
 //What current limit do you want?
 //Limit = (TIME_AT_LIMIT_CURR / dt) * ( (CURR_LIMIT>>I2C_SCALE_DOWN_SHIFT)^2 - I2T_LEAK )
 //Ex.: 30A for 7.5s 
-//	Limit = (7.5s / 100ms) * ( (30000mA/128)^2 - 13689)
+//	Limit = (7.5s / 0.1s) * ( (30000mA/128)^2 - 13689)
 //	Limit = 75 * ( 54931 - 13689) = 3093150
-#define I2T_LIMIT				22888
-#define I2T_WARNING				(0.8*I2T_LIMIT)
+#define I2T_LIMIT				(457000)
+#define I2T_WARNING				(366000) //.8* I2T_LIMIT
 
 //How long will it last at 20A?
 //time = (Limit * dt) / ( (CURR>>I2C_SCALE_DOWN_SHIFT)^2 - I2T_LEAK )

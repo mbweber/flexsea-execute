@@ -57,7 +57,8 @@ void init_angsense(struct angsense_s *as);
 void init_as504x(struct as504x_s *as504x);
 
 void update_as504x(int32_t ang, struct as504x_s *as504x);
-void update_as504x_ang(int32_t ang, struct as504x_s *as504x);
+void update_as504x_absang(int32_t ang, struct as504x_s *as504x);
+void update_as504x_contang(struct as504x_s *as504x);
 void update_as504x_vel(struct as504x_s *as504x);
 
 //****************************************************************************

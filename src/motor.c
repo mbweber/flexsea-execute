@@ -47,6 +47,7 @@
 #include "flexsea_sys_def.h"
 #include "mem_angle.h"
 #include "sensor_commut.h"
+#include "dynamic_user_structs.h"
 
 //****************************************************************************
 // Variable(s)
@@ -87,14 +88,14 @@ void init_motor(void)
 	//Start 3 PWM at 0%  
 	PWM_A_Start();
 	//PWM_A_WriteCompare1(0);		//Edge: Compare1, Center: Compare
-	PWM_A_WriteCompare(505);
+	PWM_A_WriteCompare(PWM_AMP);
     PWM_B_Start();
 	//PWM_B_WriteCompare1(0);
-	PWM_B_WriteCompare(505);
+	PWM_B_WriteCompare(PWM_AMP);
 	PWM_C_Start();
 	//PWM_C_WriteCompare1(0);
-	PWM_C_WriteCompare(505);
-	setDmaPwmCompare(505,505,505);
+	PWM_C_WriteCompare(PWM_AMP);
+	setDmaPwmCompare(PWM_AMP,PWM_AMP,PWM_AMP);
 	initDmaPwmCompare();
 	isr_mot_Start();
     
@@ -133,9 +134,6 @@ void motor_open_speed_1(int32 voltageToApply)
 {
 	const int32_t MAX_VOLTAGE = 50000;
 	const int32_t MAX_PWM_ALLOWED = 1024;
-	const uint16_t BATT_VOLT_READING_AT_34V = 135;
-    const uint16_t BATT_VOLT_READING_AT_52V = 240;
-	const uint16_t BATT_VOLT_READING_AT_17V = 39;
 	
 	//store voltage in an int32, we are gonna save resolution by magnifying intermediate values by like 1000
 	int32_t v = (int32_t)voltageToApply;
@@ -144,17 +142,13 @@ void motor_open_speed_1(int32 voltageToApply)
 	v = (v > MAX_VOLTAGE) ? MAX_VOLTAGE : v;
 	v = (v < -1*MAX_VOLTAGE) ? -1*MAX_VOLTAGE : v;
 	
-    globvar[9] = v/10;
-    
 	int32_t pwmToApply = 0;
-	int32_t cur_bat_voltage = 0;
-    cur_bat_voltage = (176 * (int32_t)(safety_cop.v_vb) + 9991); //battery voltage in mV
 
     
 	//only set a pwm if we have a legal/valid battery voltage
-	if(17000 < cur_bat_voltage && cur_bat_voltage < 54000)
+	if(17000 <  safety_cop.v_vb_mv &&  safety_cop.v_vb_mv < 54000)
 	{	
-		pwmToApply = (v*76) / (cur_bat_voltage>>4);
+		pwmToApply = (v*76) / ( safety_cop.v_vb_mv>>4);
 	}
 	
     #if (MOTOR_COMMUT == COMMUT_BLOCK)
@@ -201,6 +195,9 @@ void motor_open_speed_1(int32 voltageToApply)
         
         exec1.sine_commut_pwm = MOTOR_ORIENTATION*(int16_t)(pwmToApply);
     #endif
+    
+    //dynamicUserData.pwm = MOTOR_ORIENTATION*(int16_t)(pwmToApply);
+    //dynamicUserData.mot_vol = v/10;
 }
 
 //Controls motor PWM duty cycle

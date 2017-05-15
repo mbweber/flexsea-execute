@@ -42,8 +42,8 @@
 // Shared variable(s)
 //****************************************************************************
 
-extern volatile struct ctrl_s ctrl;
-extern volatile struct in_control_s in_control;
+extern struct ctrl_s ctrl;
+extern struct in_control_s in_control;
 	
 //****************************************************************************
 // Prototype(s):
@@ -77,7 +77,7 @@ void in_control_get_pwm_dir(void);
 #define CURRENT_SPAN			((int32)1850)		//Variation from zero (technically, that's SPAN/2)
 #define CURRENT_POS_LIMIT		CURRENT_SPAN
 #define CURRENT_NEG_LIMIT		(-CURRENT_SPAN)
-#define MAX_CUM_CURRENT_ERROR	7000000
+#define MAX_CUM_CURRENT_ERROR	14000000
 
 //Impedance controller
 #define B1 						2898195LL 			// 3rd order Butterworth filter numerator constants

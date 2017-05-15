@@ -68,7 +68,7 @@ void init_analog(void)
 	ADC_SAR_1_Start();
 	adc_sar1_dma_config();
 	isr_sar1_dma_Start();
-	ADC_SAR_1_StartConvert();	//Start converting
+	//ADC_SAR_1_StartConvert();	//Start converting
 }
 
 uint16 adc_avg8(uint16 new_data)
@@ -96,7 +96,7 @@ uint16 adc_avg8(uint16 new_data)
 //Filters the ADC buffer
 void filter_sar_adc(void)
 {
-	uint8_t i = 0, j = 0;
+	uint16_t i = 0, j = 0;
 	uint32 adc_sum = 0;
 	
 	//For each channel:
@@ -107,7 +107,6 @@ void filter_sar_adc(void)
 		for(j = 0; j < ADC1_BUF_LEN; j++)
 		{
 			//Add the values
-			//adc_sum += (uint32)adc1_dbuf[i][j]; //DOuble buffer (disabled)
 			adc_sum += (uint32)adc1_res[i][j];
 		}
 		
@@ -146,13 +145,13 @@ int16 read_analog(uint8_t ch)
 }
 
 //DMA for ADC SAR 1 transfers (Expansion, VB_SNS, etc.)
-//Triggers an ISR after 9 samples
+//Triggers an ISR after N samples
 void adc_sar1_dma_config(void)
 {
 	DMA_5_Chan = DMA_5_DmaInitialize(DMA_5_BYTES_PER_BURST, DMA_5_REQUEST_PER_BURST,
 	    HI16(DMA_5_SRC_BASE), HI16(DMA_5_DST_BASE));
 	DMA_5_TD[0] = CyDmaTdAllocate();
-	CyDmaTdSetConfiguration(DMA_5_TD[0], 18, DMA_5_TD[0], DMA_5__TD_TERMOUT_EN | TD_INC_DST_ADR);
+	CyDmaTdSetConfiguration(DMA_5_TD[0], ADC1_BUF_LEN*2, DMA_5_TD[0], DMA_5__TD_TERMOUT_EN | TD_INC_DST_ADR);
 	CyDmaTdSetAddress(DMA_5_TD[0], LO16((uint32)ADC_SAR_1_SAR_WRK0_PTR), LO16((uint32)adc_sar1_dma_array));
 	CyDmaChSetInitialTd(DMA_5_Chan, DMA_5_TD[0]);
 	CyDmaChEnable(DMA_5_Chan, 1);

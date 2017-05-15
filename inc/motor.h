@@ -55,6 +55,9 @@ void motor_fixed_pwm_test_code_non_blocking(int spd);
 void initDmaPwmCompare(void);
 void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c);
 
+void initDmaPwmCompare(void);
+void setDmaPwmCompare(uint16_t a, uint16_t b, uint16_t c);
+
 //****************************************************************************
 // Definition(s):
 //****************************************************************************

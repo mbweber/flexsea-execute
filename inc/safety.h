@@ -47,6 +47,7 @@ struct scop
 	uint16 v_vb, v_vg, v_3v3;
 	uint8_t temperature;
 	uint8_t status1, status2;
+    int32_t v_vb_mv;
 };
 	
 //****************************************************************************

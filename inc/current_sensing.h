@@ -43,7 +43,6 @@
 
 void initCurrentSensing(void);
 void adc_sar2_dma_config(void);
-void current_rms_1(void);
 void update_current_arrays(void);
 void set_current_zero(void);
 void get_phase_currents(int32_t *);

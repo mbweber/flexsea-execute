@@ -78,7 +78,6 @@ int main(void)
 	//Test code, use with care. Normal code might NOT run when enabled!
 	//test_code_blocking();
 	//test_code_non_blocking();
-	//find_poles_blocking();
     
 	//Project specific initialization code
 	init_user();

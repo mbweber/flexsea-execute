@@ -55,9 +55,9 @@ void double_buffer_adc(void);
 //****************************************************************************
 
 //General ADC:
-#define ADC1_CHANNELS				6
-#define ADC1_BUF_LEN				8
-#define ADC1_SHIFT					3
+#define ADC1_CHANNELS				2
+#define ADC1_BUF_LEN				32
+#define ADC1_SHIFT					5
 //Shift is used for averaging, match with BUF_LEN
 
 //DMA ADC SAR 1 (General)

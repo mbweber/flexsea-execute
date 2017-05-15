@@ -36,6 +36,7 @@
 
 #include "main.h"
 #include <flexsea_user_structs.h>
+#include "flexsea_global_structs.h"
 
 //****************************************************************************
 // Prototype(s):
@@ -46,6 +47,10 @@ int32_t filt_array_1khz(int64_t *,int64_t *,int,int64_t);
 int32_t filt_array_250hz(int64_t *,int64_t *,int,int64_t);
 int get_median(int, int, int);
 void filt_array_1khz_struct(struct filtvar_s *, int);
+
+int32_t get_accl_1k_5samples_downsampled(struct diffarr_s *);
+int32_t get_vel_1k_5samples(struct diffarr_s *);
+int32_t get_vel_1k_5samples_downsampled(struct diffarr_s *);
 
 //****************************************************************************
 // Definition(s):
