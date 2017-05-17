@@ -272,7 +272,7 @@ void update_as504x(int32_t ang, struct as504x_s *as504x)
 
 void update_as504x_absang(int32_t ang, struct as504x_s *as504x)
 {    
-    as504x->ang_abs_clks = ang; 
+    as504x->ang_abs_clks = ang;
     as504x->ang_comp_clks = ((((66)*(as504x->filt_vel_cpms))/1000+(as504x->ang_abs_clks)+16384)%16384);
 }
 

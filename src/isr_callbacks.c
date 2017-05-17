@@ -146,21 +146,6 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 	#endif
 }
 
-//Current sensing:
-/*
-void isr_sar2_Interrupt_InterruptCallback()
-{	
-	static uint8_t cnt = 0;
-	cnt++;
-	cnt %= 3;
-	
-	if(cnt >= 2)
-		ADC_SAR_2_StopConvert();
-	else
-		ADC_SAR_2_StartConvert();
-}
-*/
-
 void isr_dma_uart_rx_Interrupt_InterruptCallback()
 {
 	//Update rx_buf with the latest DMA data:

@@ -35,6 +35,7 @@
 #include "main.h"
 #include "i2c.h"
 #include "imu.h"
+#include "strain.h"
 #include "ext_input.h"
 #include "user-ex.h"
 #include "mag_encoders.h"
