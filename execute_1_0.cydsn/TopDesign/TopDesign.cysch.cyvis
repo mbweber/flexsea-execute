@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0 Update 1" template="Empty (17&quot; x 11&quot;)" xmlns="http://cypress.com/xsd/cyvis">
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.1" template="Empty (17&quot; x 11&quot;)" xmlns="http://cypress.com/xsd/cyvis">
   <Page index="0" name="Main" enabled="true" shapeCount="4">
     <Annotation shapeName="Shape_861" zorder="0">
       <Location x="486" y="143.9999" />
@@ -20,7 +20,7 @@ jfduval@dephy.com, lmooney@dephy.com
 Dephy, Inc. 
 50 Terminal St, Bldg 2 Unit 520
 Boston, MA 02129
-05/15/2017]]></Text>
+07/05/2017]]></Text>
       <Fill>
         <SolidBrush color="0, 0, 0" />
       </Fill>
@@ -13255,7 +13255,7 @@ Boston, MA 02129
     </Wire>
   </Page>
   <Page index="4" name="Comm" enabled="true" shapeCount="72">
-    <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_0">
+    <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_10">
       <Location x="744" y="470.1273" />
       <Size width="72" height="57.87265" />
       <SubShapes>
@@ -19208,7 +19208,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_1679" zorder="76" guid="9051cd53-2999-453c-b286-769c43e00395" name="Em_EEPROM_1" component="Em_EEPROM_v1_10">
+    <Instance shapeName="Shape_1679" zorder="76" guid="9051cd53-2999-453c-b286-769c43e00395" name="Em_EEPROM_1" component="Em_EEPROM_v1_20">
       <Location x="587.9999" y="491.4327" />
       <Size width="84.00006" height="60.56726" />
       <SubShapes>

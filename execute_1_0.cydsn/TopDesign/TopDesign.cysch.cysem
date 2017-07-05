@@ -1,31 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.0 Update 1" xmlns="http://cypress.com/xsd/cysem">
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="PSoC Creator  4.1" xmlns="http://cypress.com/xsd/cysem">
   <Instances count="136">
     <Instance guid="02f2cf2c-2c7a-49df-9246-7a3435c21be3" name="SCL_1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -205,20 +192,11 @@
       </Parameter>
     </Instance>
     <Instance guid="04ef40fe-1a02-4b30-a0fc-e4bd40297fff" name="cy_constant_8" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -226,10 +204,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -245,30 +219,17 @@
       </Parameter>
     </Instance>
     <Instance guid="084fb29f-4dde-4cb1-b9a3-021fb6338571" name="PWMH2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -448,30 +409,17 @@
       </Parameter>
     </Instance>
     <Instance guid="085bf492-49b3-4138-8fc8-9a612a7dc0e1" name="isr_t2" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_t2</Value>
@@ -482,30 +430,17 @@
       </Parameter>
     </Instance>
     <Instance guid="092e0852-f51c-496b-b6e8-53eaa5465053" name="cy_constant_3" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -521,30 +456,17 @@
       </Parameter>
     </Instance>
     <Instance guid="0983f00c-78b9-4368-a5ae-a2fb0120bb34" name="DMA_5" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -599,20 +521,11 @@
       <Parameter name="BusDisplay">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Control_Reg_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>80</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -620,10 +533,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
         <Value>false</Value>
@@ -636,20 +545,11 @@
       </Parameter>
     </Instance>
     <Instance guid="0ab286d0-4071-41f8-b646-1c07fc2fc8e0" name="SPI_CS" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -657,10 +557,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -840,30 +736,17 @@
       </Parameter>
     </Instance>
     <Instance guid="0ae4d616-596e-4091-8aee-9a257104767e" name="PWML3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -1043,30 +926,17 @@
       </Parameter>
     </Instance>
     <Instance guid="0b1f50f2-de0d-4712-9b96-57188339d248" name="VR1_PRE" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -1246,30 +1116,17 @@
       </Parameter>
     </Instance>
     <Instance guid="0d39c70b-e650-46a8-96be-70e5808175cc" name="CS1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -1449,30 +1306,17 @@
       </Parameter>
     </Instance>
     <Instance guid="0de5046d-da1f-4719-8ee3-65126dbe052b" name="DE" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -1652,30 +1496,17 @@
       </Parameter>
     </Instance>
     <Instance guid="107442a4-08ad-45db-b05a-410492fa43d4" name="cy_constant_5" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -1691,20 +1522,11 @@
       </Parameter>
     </Instance>
     <Instance guid="1425177d-0d0e-4468-8bcc-e638e5509a9b" name="SPI_MISO" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -1712,10 +1534,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -1901,20 +1719,11 @@
       <Parameter name="ClockInternal">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>SPIM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -1922,10 +1731,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DesiredBitRate">
         <Value>1000000</Value>
@@ -1988,20 +1793,11 @@
       </Parameter>
     </Instance>
     <Instance guid="1627c6c5-da46-4237-835c-0fefc81c69b3" name="EX7" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -2009,10 +1805,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -2192,30 +1984,17 @@
       </Parameter>
     </Instance>
     <Instance guid="177b8698-3144-483e-a708-9a29aadd6924" name="PWMH1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -2395,30 +2174,17 @@
       </Parameter>
     </Instance>
     <Instance guid="1837c9d5-8530-433a-8074-752a9cba1b19" name="DI" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -2598,30 +2364,17 @@
       </Parameter>
     </Instance>
     <Instance guid="192099b9-ca3f-40e5-87db-7a303f789565" name="Opamp_2" component="OpAmp_v1_90">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Opamp_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>90</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>Opamp_2</Value>
@@ -2705,30 +2458,17 @@
       <Parameter name="CompareValue2">
         <Value>1</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PWM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>30</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
         <Value>2</Value>
@@ -2835,30 +2575,17 @@
       </Parameter>
     </Instance>
     <Instance guid="1f7b49a1-58dc-4e68-9682-01a899d51330" name="BasicCounter_1" component="BasicCounter_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>BasicCounter_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>BasicCounter_1</Value>
@@ -2868,30 +2595,17 @@
       </Parameter>
     </Instance>
     <Instance guid="2071c6c3-748b-42fe-881e-750c2af155ff" name="PWMH3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -3071,30 +2785,17 @@
       </Parameter>
     </Instance>
     <Instance guid="2094d79d-dfcd-40e8-b7b8-dba77d849484" name="cy_constant_1" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -3110,30 +2811,17 @@
       </Parameter>
     </Instance>
     <Instance guid="22863ebe-a37b-476f-b252-6e49a8c00b12" name="SDA_1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -3313,30 +3001,17 @@
       </Parameter>
     </Instance>
     <Instance guid="22da00bb-271d-4486-8fde-f0ef3c106e8f" name="Opamp_1" component="OpAmp_v1_90">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Opamp_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>90</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>Opamp_1</Value>
@@ -3351,30 +3026,17 @@
       </Parameter>
     </Instance>
     <Instance guid="2ad6c3cb-64fb-40cb-bfd5-e7291867906d" name="isr_sar1_dma" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_sar1_dma</Value>
@@ -3385,30 +3047,17 @@
       </Parameter>
     </Instance>
     <Instance guid="2bb0547c-8345-4358-99c6-dd02e59ffc66" name="ZeroTerminal_1" component="ZeroTerminal">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>ZeroTerminal_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>ZeroTerminal_1</Value>
@@ -3418,30 +3067,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>5.12</Value>
@@ -3499,30 +3135,17 @@
       </Parameter>
     </Instance>
     <Instance guid="348081a1-1855-4d12-b422-646299804265" name="DMA_3" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -3539,30 +3162,17 @@
       </Parameter>
     </Instance>
     <Instance guid="353c73b2-4f27-466b-b8f2-84aacef20b4b" name="isr_dma_uart_rx" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_dma_uart_rx</Value>
@@ -3573,30 +3183,17 @@
       </Parameter>
     </Instance>
     <Instance guid="3596614d-8fb8-48c8-b358-4a2f20d73368" name="DieTemp_1" component="DieTemp_v2_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DieTemp_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>DieTemp_1</Value>
@@ -3619,30 +3216,17 @@
         <Value>0</Value>
         <Expression>B_Timer__CM_None</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Timer_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
         <Value>0</Value>
@@ -3706,30 +3290,17 @@
         <Value>2</Value>
         <Expression>Hardware_Trigger</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>ADC_SAR_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_next_out">
         <Value>true</Value>
@@ -3771,30 +3342,17 @@
         <Value>2</Value>
         <Expression>Hardware_Trigger</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>ADC_SAR_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_next_out">
         <Value>false</Value>
@@ -3813,30 +3371,17 @@
       </Parameter>
     </Instance>
     <Instance guid="3cd12378-528d-4eb2-a155-aa83e7787f23" name="NOT_RE3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -4016,30 +3561,17 @@
       </Parameter>
     </Instance>
     <Instance guid="40137fea-e41e-4f9f-898d-ad3cabc9f134" name="LED_B" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -4219,30 +3751,17 @@
       </Parameter>
     </Instance>
     <Instance guid="438d1040-42d7-407a-98f9-17842377f5ba" name="DMA_PB" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -4262,30 +3781,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>10</Value>
@@ -4343,30 +3849,17 @@
       </Parameter>
     </Instance>
     <Instance guid="4840e6aa-f3d9-462d-b36d-916fe7419d98" name="and_2" component="and_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>and_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>and_2</Value>
@@ -4379,30 +3872,17 @@
       </Parameter>
     </Instance>
     <Instance guid="48c0a911-03e9-4097-9887-fdfb539c08f5" name="isr_mot" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_mot</Value>
@@ -4413,30 +3893,17 @@
       </Parameter>
     </Instance>
     <Instance guid="4c15b41e-e284-4978-99e7-5aaee19bd0ce" name="EX0" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -4616,20 +4083,11 @@
       </Parameter>
     </Instance>
     <Instance guid="520846a0-fd61-4632-88ab-034476624d47" name="EX8" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -4637,10 +4095,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -4820,30 +4274,17 @@
       </Parameter>
     </Instance>
     <Instance guid="52f31aa9-2f0a-497d-9a1f-1424095e13e6" name="LED_R" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -5023,20 +4464,11 @@
       </Parameter>
     </Instance>
     <Instance guid="536caedf-f676-4658-a2c3-dce981f15908" name="isr_spi_tx" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -5044,10 +4476,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_spi_tx</Value>
@@ -5058,30 +4486,17 @@
       </Parameter>
     </Instance>
     <Instance guid="55128a27-53d7-4f39-8ac4-d078030f0066" name="LED_2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -5261,30 +4676,17 @@
       </Parameter>
     </Instance>
     <Instance guid="56b3df0f-35d1-494d-b64d-b12b26ae4477" name="EX4" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -5464,30 +4866,17 @@
       </Parameter>
     </Instance>
     <Instance guid="5c57e823-9a4f-4b8f-858a-8c583382e1bc" name="SCL_0" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -5667,30 +5056,17 @@
       </Parameter>
     </Instance>
     <Instance guid="5c9b4a8c-fc3f-49dc-bf1e-43c946da305e" name="TX3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -5870,30 +5246,17 @@
       </Parameter>
     </Instance>
     <Instance guid="5ca0311e-3c1d-44ef-bef5-7d65ae6e07ab" name="DMA_2" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -5910,30 +5273,17 @@
       </Parameter>
     </Instance>
     <Instance guid="5d711b05-0b4a-49d8-87f4-dd879a8f7d37" name="cy_constant_4" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -5949,30 +5299,17 @@
       </Parameter>
     </Instance>
     <Instance guid="622edb5c-2698-4303-847d-f086676ccf25" name="isr_dma_uart_tx" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_dma_uart_tx</Value>
@@ -5983,30 +5320,17 @@
       </Parameter>
     </Instance>
     <Instance guid="62eab5ab-3c73-456e-acee-2d2181a4f594" name="CS3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -6192,20 +5516,11 @@
       <Parameter name="CounterSize">
         <Value>32</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>QuadDec_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -6213,10 +5528,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>QuadDec_1</Value>
@@ -6234,30 +5545,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>10</Value>
@@ -6322,30 +5620,17 @@
       <Parameter name="BusSpeed_kHz">
         <Value>400</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>I2C_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableWakeup">
         <Value>false</Value>
@@ -6425,20 +5710,11 @@
       </Parameter>
     </Instance>
     <Instance guid="70e95715-b68f-4f10-a284-85f2071eb52d" name="EX9" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -6446,10 +5722,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -6629,30 +5901,17 @@
       </Parameter>
     </Instance>
     <Instance guid="7233ed58-c16b-457c-98ff-40e2cbf514c0" name="DMA_PC" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -6676,30 +5935,17 @@
       <Parameter name="BusSpeed_kHz">
         <Value>100</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>I2C_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableWakeup">
         <Value>false</Value>
@@ -6817,30 +6063,17 @@
       <Parameter name="BusDisplay">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Control_Reg_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>80</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
         <Value>false</Value>
@@ -6853,30 +6086,17 @@
       </Parameter>
     </Instance>
     <Instance guid="790b1e02-9b13-4699-8288-9795704c13fa" name="PWML2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -7072,30 +6292,17 @@
         <Value>0</Value>
         <Expression>B_Timer__CM_None</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Timer_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
         <Value>0</Value>
@@ -7262,30 +6469,17 @@
         <Value>2</Value>
         <Expression>Continuous</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>ADC_DelSig_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Enable_Vref_Vss">
         <Value>false</Value>
@@ -7368,30 +6562,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>5.12</Value>
@@ -7449,30 +6630,17 @@
       </Parameter>
     </Instance>
     <Instance guid="82a96047-ffee-429b-93d3-073c9cd91d9d" name="RX3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -7652,20 +6820,11 @@
       </Parameter>
     </Instance>
     <Instance guid="83b2fde2-60ad-45b6-9e5c-cb3baa6e3f9a" name="SPI_CLK" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -7673,10 +6832,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -7856,30 +7011,17 @@
       </Parameter>
     </Instance>
     <Instance guid="84abdea6-3ad6-4694-8a01-526e9fae4a54" name="NOT_RE" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -8062,60 +7204,34 @@
       <Parameter name="ArrayWidth">
         <Value>1</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_srff_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>cy_srff_1</Value>
       </Parameter>
     </Instance>
     <Instance guid="8554e186-0b05-47d7-82dc-62a62b8536e3" name="PGA_1" component="PGA_v2_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PGA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Gain">
         <Value>0</Value>
@@ -8172,30 +7288,17 @@
       <Parameter name="BusDisplay">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Control_Reg_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>80</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
         <Value>false</Value>
@@ -8208,30 +7311,17 @@
       </Parameter>
     </Instance>
     <Instance guid="868f5a1c-994d-4b20-9efd-f0362c8a4fad" name="DE2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -8411,30 +7501,17 @@
       </Parameter>
     </Instance>
     <Instance guid="870c2564-7f13-4893-b7aa-013b169cbee7" name="cy_constant_6" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -8488,30 +7565,17 @@
       <Parameter name="BusDisplay">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Control_Reg_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>80</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="ExternalReset">
         <Value>false</Value>
@@ -8524,30 +7588,17 @@
       </Parameter>
     </Instance>
     <Instance guid="8a8037f8-fbdd-4009-8a37-3a908c6ec9ff" name="CS2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -8727,30 +7778,17 @@
       </Parameter>
     </Instance>
     <Instance guid="8ca50709-e96c-4458-b043-7ed6e9666e07" name="LED_HB" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -8930,30 +7968,17 @@
       </Parameter>
     </Instance>
     <Instance guid="8f62c90f-ecf8-47e2-8cdc-6a23c24a880d" name="PWML1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -9132,31 +8157,18 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="9051cd53-2999-453c-b286-769c43e00395" name="Em_EEPROM_1" component="Em_EEPROM_v1_10">
+    <Instance guid="9051cd53-2999-453c-b286-769c43e00395" name="Em_EEPROM_1" component="Em_EEPROM_v1_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Em_EEPROM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>10</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>Em_EEPROM_1</Value>
@@ -9166,30 +8178,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>12</Value>
@@ -9247,30 +8246,17 @@
       </Parameter>
     </Instance>
     <Instance guid="995684f9-bce0-4ad0-8f68-1452e1104b2e" name="EX5" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -9450,30 +8436,17 @@
       </Parameter>
     </Instance>
     <Instance guid="99c93402-cc9a-4de2-ad01-fdb5f4c9b320" name="DMA_PA" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -9490,30 +8463,17 @@
       </Parameter>
     </Instance>
     <Instance guid="9ac49a9e-3a20-468b-a331-7d42984e50f0" name="SDA_0" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -9693,30 +8653,17 @@
       </Parameter>
     </Instance>
     <Instance guid="9ae32649-d5b8-44a5-a1b0-79509d25f51b" name="VR1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -9965,30 +8912,17 @@
       <Parameter name="CompareValue2">
         <Value>1</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PWM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>30</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
         <Value>2</Value>
@@ -10098,30 +9032,17 @@
       <Parameter name="Channels">
         <Value>3</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>AMuxHw_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>AMuxHw_1</Value>
@@ -10139,30 +9060,17 @@
       </Parameter>
     </Instance>
     <Instance guid="a3798f19-631c-49f2-84b3-b3a7fd0bd8d6" name="R_1" component="Resistor_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>R_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Include_In_Netlist">
         <Value>false</Value>
@@ -10184,30 +9092,17 @@
       <Parameter name="Channels">
         <Value>2</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>AMux_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>80</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>AMux_1</Value>
@@ -10243,30 +9138,17 @@
       <Parameter name="CRCoutputsEn">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>UART_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnIntRXInterrupt">
         <Value>false</Value>
@@ -10366,30 +9248,17 @@
       </Parameter>
     </Instance>
     <Instance guid="ac95ee2d-b8fd-455d-97ec-17587f54038e" name="EX12" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -10575,20 +9444,11 @@
       <Parameter name="ClockInternal">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>SPIM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -10596,10 +9456,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DesiredBitRate">
         <Value>1000000</Value>
@@ -10662,30 +9518,17 @@
       </Parameter>
     </Instance>
     <Instance guid="acddca44-0b5b-4638-a300-335ae86fa1de" name="SG_VO1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -10865,30 +9708,17 @@
       </Parameter>
     </Instance>
     <Instance guid="afe54385-6846-49a9-a36b-5eb2647a1033" name="isr_sar2_dma" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_sar2_dma</Value>
@@ -10920,30 +9750,17 @@
       <Parameter name="CRCoutputsEn">
         <Value>false</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>UART_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>50</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnIntRXInterrupt">
         <Value>false</Value>
@@ -11046,30 +9863,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>5.12</Value>
@@ -11127,30 +9931,17 @@
       </Parameter>
     </Instance>
     <Instance guid="b40b9b66-4a21-45de-8244-069969f4e972" name="PGA_2" component="PGA_v2_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PGA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Gain">
         <Value>0</Value>
@@ -11172,30 +9963,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>6.4</Value>
@@ -11253,30 +10031,17 @@
       </Parameter>
     </Instance>
     <Instance guid="b7268f95-f192-4809-86fd-e4873cff838c" name="EX6" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -11525,30 +10290,17 @@
       <Parameter name="CompareValue2">
         <Value>1</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PWM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>30</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
         <Value>2</Value>
@@ -11655,30 +10407,17 @@
       </Parameter>
     </Instance>
     <Instance guid="bafacbd5-99af-40dd-b507-3db1f0f5c115" name="DMA_6" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -11764,30 +10503,17 @@
       <Parameter name="CompareValue2">
         <Value>127</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>PWM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>30</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeadBand">
         <Value>0</Value>
@@ -11897,20 +10623,11 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -11918,10 +10635,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>100</Value>
@@ -11978,7 +10691,7 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
-    <Instance guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_0">
+    <Instance guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_10">
       <Parameter name="AudioDescriptors">
         <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
 <Tree xmlns:CustomizerVersion="3_0">
@@ -12203,30 +10916,17 @@
   </Tree_x0020_Descriptors>
 </Tree>]]></Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>USBFS_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DeviceDescriptors">
         <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
@@ -13543,30 +12243,17 @@
       </Parameter>
     </Instance>
     <Instance guid="c58f71f3-7f17-4bb3-a115-b86b01cdd405" name="EX15" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -13746,30 +12433,17 @@
       </Parameter>
     </Instance>
     <Instance guid="c592cd56-b5c9-4b4f-b723-f3a345946de0" name="DMA_4" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -13786,30 +12460,17 @@
       </Parameter>
     </Instance>
     <Instance guid="c651854e-5223-4bde-aef0-48cb8ca1e33d" name="EX13" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -13989,30 +12650,17 @@
       </Parameter>
     </Instance>
     <Instance guid="c9c81bcb-de72-49f1-a46c-47eb2bc02b11" name="cy_constant_14" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -14031,30 +12679,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>5.12</Value>
@@ -14112,30 +12747,17 @@
       </Parameter>
     </Instance>
     <Instance guid="cdc5f6b9-668f-4dbe-b070-3e7016d9cffb" name="VDAC8_1" component="VDAC8_v1_90">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>VDAC8_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>90</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Data_Source">
         <Value>0</Value>
@@ -14164,30 +12786,17 @@
       </Parameter>
     </Instance>
     <Instance guid="cdf30640-039d-4701-8819-2dd609afb8bf" name="DMA_1" component="cy_dma_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>DMA_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="hw_request_enabled">
         <Value>true</Value>
@@ -14204,30 +12813,17 @@
       </Parameter>
     </Instance>
     <Instance guid="cf2221de-dc40-4ada-a998-69820ac06b55" name="RO" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -14407,30 +13003,17 @@
       </Parameter>
     </Instance>
     <Instance guid="d09ce09b-20db-4f46-be0a-dc24a2362c57" name="RX2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -14610,30 +13193,17 @@
       </Parameter>
     </Instance>
     <Instance guid="d38eb3b9-2db7-4293-a338-17857b84877e" name="EX11" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -14813,30 +13383,17 @@
       </Parameter>
     </Instance>
     <Instance guid="d41397d2-4422-4c9b-9a6a-28b3b4651577" name="EX14" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -15016,30 +13573,17 @@
       </Parameter>
     </Instance>
     <Instance guid="d703b41b-73bd-449e-97a5-781be751719e" name="AOP_IN" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -15219,30 +13763,17 @@
       </Parameter>
     </Instance>
     <Instance guid="db1e391b-6bc8-4152-b24b-6e802846e2e7" name="AOP_OUT" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -15421,30 +13952,17 @@
       </Parameter>
     </Instance>
     <Instance guid="dce881f0-f0a6-4dd6-b2ff-3fa52717821a" name="cy_constant_12" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -15460,30 +13978,17 @@
       </Parameter>
     </Instance>
     <Instance guid="de6de415-92b7-4131-bb5a-8772e6121996" name="isr_delsig" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_delsig</Value>
@@ -15494,30 +13999,17 @@
       </Parameter>
     </Instance>
     <Instance guid="de8546ac-31a9-4c2b-afab-80e44d9e0ff4" name="EX3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -15697,30 +14189,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e0977d8e-7b14-41de-8efb-e38793785771" name="isr_t1" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_t1</Value>
@@ -15731,30 +14210,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e1325ca4-6904-4634-ba34-c84170f6924e" name="cy_constant_10" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -15770,30 +14236,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e1a14373-6254-431a-9aa2-328dc357b82c" name="PWR" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -15973,30 +14426,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e5436f58-70f0-4665-8f80-05378ed941c8" name="WDCLK" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -16176,30 +14616,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e59a8e91-b2d3-4882-9571-2c7128eb530e" name="LED_G" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -16379,30 +14806,17 @@
       </Parameter>
     </Instance>
     <Instance guid="e6509c46-dc7e-4732-9102-737ac8af795f" name="MUXO" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -16582,30 +14996,17 @@
       </Parameter>
     </Instance>
     <Instance guid="ea1918ee-a964-4470-866f-43bcc1980493" name="TX2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -16785,30 +15186,17 @@
       </Parameter>
     </Instance>
     <Instance guid="eb7364b8-fbfc-4127-9b72-72d4e254c514" name="EX1" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -16988,20 +15376,11 @@
       </Parameter>
     </Instance>
     <Instance guid="ec67f5e0-6dbf-455c-bf0d-b1a27eb33372" name="ZeroTerminal_3" component="ZeroTerminal">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>ZeroTerminal_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -17009,29 +15388,16 @@
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
       </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
-      </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>ZeroTerminal_3</Value>
       </Parameter>
     </Instance>
     <Instance guid="ed092b9b-d398-4703-be89-cebf998501f6" name="SPI_MOSI" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>true</Value>
@@ -17039,10 +15405,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -17222,30 +15584,17 @@
       </Parameter>
     </Instance>
     <Instance guid="eda4107f-addb-4291-8c81-25db693c1313" name="cy_constant_15" component="cy_constant_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>cy_constant_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DisplayAsHex">
         <Value>false</Value>
@@ -17261,30 +15610,17 @@
       </Parameter>
     </Instance>
     <Instance guid="f17a0770-58b5-4f74-b5fe-630b37da437c" name="R_2" component="Resistor_v1_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>R_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="Include_In_Netlist">
         <Value>false</Value>
@@ -17300,30 +15636,17 @@
       </Parameter>
     </Instance>
     <Instance guid="f18424d6-ccd2-487c-b26a-2e25388249dd" name="isr_dma_uart_bt_rx" component="cy_isr_v1_70">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>isr_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>1</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>isr_dma_uart_bt_rx</Value>
@@ -17334,30 +15657,17 @@
       </Parameter>
     </Instance>
     <Instance guid="f4943eea-8816-449d-b24c-3f3285ba6337" name="DE3" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -17537,30 +15847,17 @@
       </Parameter>
     </Instance>
     <Instance guid="f4d69244-58a2-45d9-8dd0-2a9090b7da96" name="EX10" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -17740,30 +16037,17 @@
       </Parameter>
     </Instance>
     <Instance guid="f718299a-1bde-49d4-8693-0bb2451cad50" name="EEPROM_1" component="EEPROM_v3_0">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>EEPROM_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>3</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>0</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="INSTANCE_NAME">
         <Value>EEPROM_1</Value>
@@ -17773,30 +16057,17 @@
       <Parameter name="CheckTolerance">
         <Value>true</Value>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Clock_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="desired_freq">
         <Value>32</Value>
@@ -17854,30 +16125,17 @@
       </Parameter>
     </Instance>
     <Instance guid="fa739454-d170-4ccd-a2d1-8834ac65e15f" name="EX2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -18073,20 +16331,11 @@
         <Value>0</Value>
         <Expression>B_Timer__CM_None</Expression>
       </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Timer_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>70</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
@@ -18094,10 +16343,6 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="EnableMode">
         <Value>0</Value>
@@ -18138,30 +16383,17 @@
       </Parameter>
     </Instance>
     <Instance guid="fe5cf87b-629d-4408-8e19-e5c839be3b7e" name="NOT_RE2" component="cy_pins_v2_20">
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
       <Parameter name="CY_CONST_CONFIG">
         <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_FITTER_NAME">
-        <Value>Pin_N</Value>
-        <Expression>`=GetShortInstanceName()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MAJOR_VERSION">
-        <Value>2</Value>
-        <Expression>`=GetMajorVersion()`</Expression>
-      </Parameter>
-      <Parameter name="CY_MINOR_VERSION">
-        <Value>20</Value>
-        <Expression>`=GetMinorVersion()`</Expression>
       </Parameter>
       <Parameter name="CY_REMOVE">
         <Value>false</Value>
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_VERSION">
-        <Value>PSoC Creator  4.0 Update 1</Value>
-        <Expression>`=GetMarketingNameWithVersion()`</Expression>
       </Parameter>
       <Parameter name="DedicatedInterrupts">
         <Value />
@@ -18341,7 +16573,7 @@
       </Parameter>
     </Instance>
   </Instances>
-  <Signals count="259">
+  <Signals count="257">
     <Signal name="mywire_1[1:0]" type="Digital" terminalCount="3">
       <Terminal name="BasicCounter_1.cnt[1:0]" type="Instance Digital Output" />
       <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
@@ -18610,12 +16842,6 @@
     </Signal>
     <Signal name="Net_2467" type="Digital" terminalCount="1">
       <Terminal name="I2C_0.itclk" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_2521" type="Digital" terminalCount="1">
-      <Terminal name="USBUART_1.sof" type="Instance Digital Output" />
-    </Signal>
-    <Signal name="Net_2522" type="Digital" terminalCount="1">
-      <Terminal name="USBUART_1.vbusdet" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_3394" type="Digital" terminalCount="1">
       <Terminal name="SPIM_1.rx_interrupt" type="Instance Digital Output" />
@@ -19024,8 +17250,8 @@
     </Signal>
     <Signal name="Net_12639" type="Digital" terminalCount="3">
       <Terminal name="cy_srff_1.q" type="Instance Digital Output" />
-      <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input" />
       <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_12640" type="Digital" terminalCount="1">
       <Terminal name="ADC_SAR_2.aclk" type="Instance Digital Input" />

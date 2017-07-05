@@ -171,7 +171,6 @@ void update_current_arrays(void)
             phase_b_com = (int)phaseBcoms[phase_b_ang>>3];
             phase_c_com = (int)phaseCcoms[phase_c_ang>>3];
             
-            
             static int32_t cursum,cursomcntr;
             cursum = 0;
             cursomcntr = 0;

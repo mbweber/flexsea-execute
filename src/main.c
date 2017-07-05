@@ -87,7 +87,7 @@ int main(void)
 	
 	//Main loop
 	while(1)
-	{             
+	{
 		if(t1_new_value == 1)
 		{
 			//If the time share slot changed we run the timing FSM. Refer to
@@ -105,7 +105,7 @@ int main(void)
 			
 			//The code below is executed every 100us, after the previous slot. 
 			//Keep it short! (<10us if possible)
-			mainFSM10kHz();     
+			mainFSM10kHz();
 		}
 		else
 		{

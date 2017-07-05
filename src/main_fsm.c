@@ -65,7 +65,7 @@
 uint8_t eL0 = 0, eL1 = 0, eL2 = 0;
 uint16 safety_delay = 0;
 uint8_t new_cmd_led = 0;
-uint8_t toggle_wdclk = 0;	
+uint8_t toggle_wdclk = 0;
 
 //****************************************************************************
 // Private Function Prototype(s):
@@ -89,7 +89,7 @@ void mainFSM1(void)
 {
 	//Read from Safety Co-Processor
 	#ifdef USE_I2C_1
-		
+	
 	safety_cop_read_all();
 	
 	#endif 	//USE_I2C_1
@@ -163,14 +163,14 @@ void mainFSM5(void)
 
 	//Trapezoidal trajectories (can be used for both Position & Impedance)	
 	if((ctrl.active_ctrl == CTRL_POSITION) || (ctrl.active_ctrl == CTRL_IMPEDANCE))
-	{									
+	{
 		ctrl.position.trap_t++;
-        ctrl.impedance.trap_t++;
-        ctrl.position.setp = trapez_get_pos(steps);	//New setpoint
+		ctrl.impedance.trap_t++;
+		ctrl.position.setp = trapez_get_pos(steps);	//New setpoint
 		ctrl.impedance.setpoint_val = trapez_get_pos(steps);	//New setpoint
 	}
 	
-	#endif	//USE_TRAPEZ  
+	#endif	//USE_TRAPEZ
 }
 
 //Case 6: P & Z controllers, 0 PWM
@@ -191,7 +191,7 @@ void mainFSM6(void)
 	}
 	else if(ctrl.active_ctrl == CTRL_IMPEDANCE)
 	{
-        impedance_controller();
+		impedance_controller();
 	}
 	
 	//#endif	//USE_TRAPEZ
@@ -228,7 +228,6 @@ void mainFSM7(void)
 				//since counters were already incremented, we will still try to hit other stream frequencies
 				return;
 			}
-			
 		}
 	}
 }
@@ -236,8 +235,8 @@ void mainFSM7(void)
 //Case 8: SAR ADC filtering
 void mainFSM8(void)
 {
-    update_diffarr_avg(&ctrl.current.actual_vals,50);
-    calc_motor_L();
+	update_diffarr_avg(&ctrl.current.actual_vals,50);
+	calc_motor_L();
 	if(adc_sar1_flag)
 	{
 		filter_sar_adc();
@@ -247,7 +246,7 @@ void mainFSM8(void)
 
 //Case 9: User functions & 1s timebase	
 void mainFSM9(void)
-{    
+{
 	if(calibrationFlags & CALIBRATION_FIND_POLES)
 	{
 		find_poles();
@@ -262,7 +261,7 @@ void mainFSM9(void)
 			user_fsm();
 		#endif
 	}
-    
+	
 	//1s timebase:
 	if(timebase_1s())
 	{
@@ -295,15 +294,15 @@ void mainFSM10kHz(void)
 		
 		//current_rms_1();	//update the motor current
 		
-    	if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
-    	{
-    		//Current controller
-    		motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_vals.avg);
-    	}
-        else
-        {
-            ctrl.current.error_sum = 0;
-        }
+		if((calibrationFlags == 0) && ((ctrl.active_ctrl == CTRL_CURRENT) || (ctrl.active_ctrl == CTRL_IMPEDANCE)))
+		{
+			//Current controller
+			motor_current_pid_3(ctrl.current.setpoint_val, ctrl.current.actual_vals.avg);
+		}
+		else
+		{
+			ctrl.current.error_sum = 0;
+		}
 		
 	#endif
 
