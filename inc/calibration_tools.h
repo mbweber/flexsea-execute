@@ -40,9 +40,9 @@
 extern uint8_t calibrationFlags;
 
 // UTILITY FUNCTIONS
-inline uint8_t isFindingPoles();
-inline uint8_t isFindingCurrentZeroes();
-inline uint8_t isRunningCalibrationProcedure();
-inline uint8_t isLegalCalibrationProcedure(uint8_t procedure);
+uint8_t isFindingPoles();
+uint8_t isFindingCurrentZeroes();
+uint8_t isRunningCalibrationProcedure();
+uint8_t isLegalCalibrationProcedure(uint8_t procedure);
 	
 #endif	//CALIBRATION_TOOLS_H
