@@ -267,7 +267,7 @@ void mainFSM9(void)
 	{
 		//Tries to connect to USB:
 		usbRuntimeConnect();
-	} 
+	}
 }
 
 //10kHz time slot:

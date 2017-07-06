@@ -60,7 +60,9 @@ uint8_t DMA_5_TD[1];
 void init_analog(void)
 {
 	//Analog amplifiers & multiplexer(s):
-	AMux_1_Start();				//Start the MUX
+	AMuxSeq_1_Start();				//Start the MUX
+	AMuxSeq_1_Next();				//Selects the 1st ch (see datasheet)
+	Opamp_3_Start();
 	PGA_1_Start();
 	PGA_2_Start();
 	
@@ -149,7 +151,7 @@ int16 read_analog(uint8_t ch)
 void adc_sar1_dma_config(void)
 {
 	DMA_5_Chan = DMA_5_DmaInitialize(DMA_5_BYTES_PER_BURST, DMA_5_REQUEST_PER_BURST,
-	    HI16(DMA_5_SRC_BASE), HI16(DMA_5_DST_BASE));
+		HI16(DMA_5_SRC_BASE), HI16(DMA_5_DST_BASE));
 	DMA_5_TD[0] = CyDmaTdAllocate();
 	CyDmaTdSetConfiguration(DMA_5_TD[0], ADC1_BUF_LEN*2, DMA_5_TD[0], DMA_5__TD_TERMOUT_EN | TD_INC_DST_ADR);
 	CyDmaTdSetAddress(DMA_5_TD[0], LO16((uint32)ADC_SAR_1_SAR_WRK0_PTR), LO16((uint32)adc_sar1_dma_array));

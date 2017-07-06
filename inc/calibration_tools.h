@@ -21,7 +21,8 @@
 	Biomechatronics research group <http://biomech.media.mit.edu/>
 	[Contributors]
 *****************************************************************************
-	[This file] calibration_tools: functionality & logic tracking the state of calibration procedures
+	[This file] calibration_tools: functionality & logic tracking the state 
+	of calibration procedures
 *****************************************************************************
 	[Change log] (Convention: YYYY-MM-DD | author | comment)
 	* 2017-02-07 | dweisdorf | Initial GPL-3.0 release

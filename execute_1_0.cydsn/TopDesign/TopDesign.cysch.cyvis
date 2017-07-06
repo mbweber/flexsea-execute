@@ -8891,28 +8891,24 @@ Boston, MA 02129
       <Point2 x="558" y="342" />
     </Wire>
   </Page>
-  <Page index="3" name="Motor - Sine" enabled="true" shapeCount="136">
-    <Wire shapeName="Shape_52" zorder="192" effectiveName="Net_613" type="Analog">
-      <Point1 x="846" y="564" />
-      <Point2 x="858" y="564" />
-    </Wire>
-    <Instance shapeName="Shape_84" zorder="190" guid="f4d69244-58a2-45d9-8dd0-2a9090b7da96" name="EX10" component="cy_pins_v2_20">
-      <Location x="579.9404" y="547.5" />
+  <Page index="3" name="Motor - Sine" enabled="true" shapeCount="157">
+    <Instance shapeName="Shape_84" zorder="192" guid="f4d69244-58a2-45d9-8dd0-2a9090b7da96" name="EX10" component="cy_pins_v2_20">
+      <Location x="369.9404" y="547.5" />
       <Size width="59.05957" height="9" />
       <SubShapes>
         <Line>
-          <Point x="616.5" y="552" />
-          <Point x="630" y="552" />
+          <Point x="406.5" y="552" />
+          <Point x="420" y="552" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
             <SolidBrush color="192, 64, 0" />
           </Outline>
         </Line>
         <Terminal name="EX10.analog_0" type="Instance Analog InOut">
-          <Location x="636" y="552" />
+          <Location x="426" y="552" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Rectangle>
-          <Location x="607.5" y="547.5" />
+          <Location x="397.5" y="547.5" />
           <Size width="9" height="9" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
             <SolidBrush color="128, 128, 128" />
@@ -8922,7 +8918,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="579.9404" y="547.6543" />
+          <Location x="369.9404" y="547.6543" />
           <Text>EX10</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -8931,7 +8927,7 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="609.0078" y="550.2617" />
+          <Location x="399.0078" y="550.2617" />
           <Size width="6.123047" height="3.708984" />
           <NoOutline />
           <Fill>
@@ -8939,7 +8935,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="609.0078" y="550.2617" />
+          <Location x="399.0078" y="550.2617" />
           <Text>1[2]</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -8949,23 +8945,23 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_140" zorder="191" guid="d38eb3b9-2db7-4293-a338-17857b84877e" name="EX11" component="cy_pins_v2_20">
-      <Location x="579.9404" y="643.5" />
+    <Instance shapeName="Shape_140" zorder="193" guid="d38eb3b9-2db7-4293-a338-17857b84877e" name="EX11" component="cy_pins_v2_20">
+      <Location x="369.9404" y="643.5" />
       <Size width="59.05957" height="9" />
       <SubShapes>
         <Line>
-          <Point x="616.5" y="648" />
-          <Point x="630" y="648" />
+          <Point x="406.5" y="648" />
+          <Point x="420" y="648" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
             <SolidBrush color="192, 64, 0" />
           </Outline>
         </Line>
         <Terminal name="EX11.analog_0" type="Instance Analog InOut">
-          <Location x="636" y="648" />
+          <Location x="426" y="648" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Rectangle>
-          <Location x="607.5" y="643.5" />
+          <Location x="397.5" y="643.5" />
           <Size width="9" height="9" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
             <SolidBrush color="128, 128, 128" />
@@ -8975,7 +8971,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="579.9404" y="643.6543" />
+          <Location x="369.9404" y="643.6543" />
           <Text>EX11</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -8984,7 +8980,7 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="609.0078" y="646.2617" />
+          <Location x="399.0078" y="646.2617" />
           <Size width="6.123047" height="3.708984" />
           <NoOutline />
           <Fill>
@@ -8992,7 +8988,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="609.0078" y="646.2617" />
+          <Location x="399.0078" y="646.2617" />
           <Text>1[4]</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9002,12 +8998,12 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_209" zorder="189" guid="3b427007-b525-46da-a888-823397ce16b3" name="ADC_SAR_1" component="ADC_SAR_v3_0">
-      <Location x="855" y="529.9549" />
+    <Instance shapeName="Shape_209" zorder="191" guid="3b427007-b525-46da-a888-823397ce16b3" name="ADC_SAR_1" component="ADC_SAR_v3_0">
+      <Location x="657" y="505.9549" />
       <Size width="90" height="101.7052" />
       <SubShapes>
         <Rectangle>
-          <Location x="864" y="552" />
+          <Location x="666" y="528" />
           <Size width="72" height="72" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9017,36 +9013,36 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Line>
-          <Point x="864" y="564" />
-          <Point x="882" y="564" />
+          <Point x="666" y="540" />
+          <Point x="684" y="540" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Terminal name="ADC_SAR_1.vplus" type="Instance Analog InOut">
-          <Location x="858" y="564" />
+          <Location x="660" y="540" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input">
-          <Location x="858" y="600" />
+          <Location x="660" y="576" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="865.9726" y="597.8242" />
+          <Location x="667.9726" y="573.8242" />
           <Text>soc</Text>
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Terminal name="ADC_SAR_1.eoc" type="Instance Digital Output">
-          <Location x="942" y="612" />
+          <Location x="744" y="588" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="918.08" y="609.8242" />
+          <Location x="720.08" y="585.8242" />
           <Text>eoc</Text>
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="864" y="540" />
+          <Location x="666" y="516" />
           <Size width="72" height="12" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9056,7 +9052,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="876.692" y="541.9659" />
+          <Location x="678.692" y="517.9659" />
           <Text>ADC_SAR</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9065,12 +9061,12 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <ClosedShape>
-          <Point x="888" y="558" />
-          <Point x="924" y="558" />
-          <Point x="924" y="582" />
-          <Point x="888" y="582" />
-          <Point x="876" y="570" />
-          <Point x="888" y="558" />
+          <Point x="690" y="534" />
+          <Point x="726" y="534" />
+          <Point x="726" y="558" />
+          <Point x="690" y="558" />
+          <Point x="678" y="546" />
+          <Point x="690" y="534" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9079,28 +9075,28 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Line>
-          <Point x="885" y="576" />
-          <Point x="891" y="576" />
+          <Point x="687" y="552" />
+          <Point x="693" y="552" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="885" y="564" />
-          <Point x="891" y="564" />
+          <Point x="687" y="540" />
+          <Point x="693" y="540" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="888" y="561" />
-          <Point x="888" y="567" />
+          <Point x="690" y="537" />
+          <Point x="690" y="543" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Annotation>
-          <Location x="874.3434" y="529.9549" />
+          <Location x="676.3434" y="505.9549" />
           <Text>ADC_SAR_1</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -9110,7 +9106,7 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Annotation>
-          <Location x="896.1142" y="566.0118" />
+          <Location x="698.1142" y="542.0118" />
           <Text>SAR</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9119,7 +9115,7 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Annotation>
-          <Location x="915.0671" y="625.7382" />
+          <Location x="717.0671" y="601.7382" />
           <Text>12-bit</Text>
           <Expression>`=$ADC_Resolution`-bit</Expression>
           <Fill>
@@ -9129,28 +9125,28 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Line>
-          <Point x="872" y="576" />
-          <Point x="872" y="579" />
+          <Point x="674" y="552" />
+          <Point x="674" y="555" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="872" y="576" />
-          <Point x="882" y="576" />
+          <Point x="674" y="552" />
+          <Point x="684" y="552" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="872" y="576" />
-          <Point x="872" y="588" />
+          <Point x="674" y="552" />
+          <Point x="674" y="564" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Flat" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Annotation>
-          <Location x="883.7245" y="583.9818" />
+          <Location x="685.7245" y="559.9818" />
           <Text>vref_out</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9159,45 +9155,45 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Line>
-          <Point x="872" y="588" />
-          <Point x="878" y="588" />
+          <Point x="674" y="564" />
+          <Point x="680" y="564" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="876" y="590" />
-          <Point x="880" y="590" />
+          <Point x="678" y="566" />
+          <Point x="682" y="566" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="876" y="586" />
-          <Point x="880" y="586" />
+          <Point x="678" y="562" />
+          <Point x="682" y="562" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="880" y="586" />
-          <Point x="880" y="590" />
+          <Point x="682" y="562" />
+          <Point x="682" y="566" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="876" y="586" />
-          <Point x="876" y="590" />
+          <Point x="678" y="562" />
+          <Point x="678" y="566" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
       </SubShapes>
     </Instance>
-    <Rectangle shapeName="Shape_839" zorder="188">
-      <Location x="564" y="504" />
-      <Size width="546" height="204" />
+    <Rectangle shapeName="Shape_839" zorder="190">
+      <Location x="359.9999" y="504" />
+      <Size width="552.0001" height="204" />
       <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
         <SolidBrush color="0, 0, 0" />
       </Outline>
@@ -9205,8 +9201,8 @@ Boston, MA 02129
         <SolidBrush color="255, 255, 255" />
       </Fill>
     </Rectangle>
-    <Annotation shapeName="Shape_840" zorder="198">
-      <Location x="569.9999" y="509.9999" />
+    <Annotation shapeName="Shape_840" zorder="194">
+      <Location x="365.9999" y="509.9999" />
       <Size width="90" height="12" />
       <Text>SAR ADC:</Text>
       <Fill>
@@ -9215,12 +9211,12 @@ Boston, MA 02129
       <Font value="Microsoft Sans Serif, 10pt, style=Bold, Underline" />
       <TextAlignment value="TopLeft" />
     </Annotation>
-    <Instance shapeName="Shape_1042" zorder="199" guid="0983f00c-78b9-4368-a5ae-a2fb0120bb34" name="DMA_5" component="cy_dma_v1_70">
-      <Location x="951" y="577.8325" />
+    <Instance shapeName="Shape_1042" zorder="195" guid="0983f00c-78b9-4368-a5ae-a2fb0120bb34" name="DMA_5" component="cy_dma_v1_70">
+      <Location x="753" y="553.8325" />
       <Size width="60" height="58.16748" />
       <SubShapes>
         <Rectangle>
-          <Location x="960" y="600" />
+          <Location x="762" y="576" />
           <Size width="42" height="36" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9230,7 +9226,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Rectangle>
-          <Location x="960" y="588" />
+          <Location x="762" y="564" />
           <Size width="42" height="12" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9240,7 +9236,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="959.9999" y="588" />
+          <Location x="761.9999" y="564" />
           <Size width="42" height="13" />
           <Text>DMA</Text>
           <Fill>
@@ -9250,7 +9246,7 @@ Boston, MA 02129
           <TextAlignment value="TopCenter" />
         </Annotation>
         <Annotation>
-          <Location x="968.9524" y="577.8325" />
+          <Location x="770.9524" y="553.8325" />
           <Text>DMA_5</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -9260,31 +9256,31 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Terminal name="DMA_5.drq" type="Instance Digital Input">
-          <Location x="954" y="612" />
+          <Location x="756" y="588" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="962.0338" y="606.6589" />
+          <Location x="764.0338" y="582.6589" />
           <Text>drq</Text>
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Terminal name="DMA_5.nrq" type="Instance Digital Output">
-          <Location x="1008" y="612" />
+          <Location x="810" y="588" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="985.7526" y="608.3473" />
+          <Location x="787.7526" y="584.3473" />
           <Text>nrq</Text>
           <TextAlignment value="MiddleRight" />
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_1043" zorder="200" guid="2ad6c3cb-64fb-40cb-bfd5-e7291867906d" name="isr_sar1_dma" component="cy_isr_v1_70">
-      <Location x="1011" y="607" />
+    <Instance shapeName="Shape_1043" zorder="196" guid="2ad6c3cb-64fb-40cb-bfd5-e7291867906d" name="isr_sar1_dma" component="cy_isr_v1_70">
+      <Location x="813" y="583" />
       <Size width="90.17859" height="10" />
       <SubShapes>
         <Rectangle>
-          <Location x="1020" y="607" />
+          <Location x="822" y="583" />
           <Size width="18" height="10" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
             <SolidBrush color="0, 0, 0" />
@@ -9294,11 +9290,11 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Terminal name="isr_sar1_dma.int_signal" type="Instance Digital Input">
-          <Location x="1014" y="612" />
+          <Location x="816" y="588" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="1040.344" y="607.9384" />
+          <Location x="842.3436" y="583.9384" />
           <Text>isr_sar1_dma</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -9308,19 +9304,19 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <ClosedShape>
-          <Point x="1023.006" y="615.0001" />
-          <Point x="1026.966" y="612.7693" />
-          <Point x="1026.966" y="614.0242" />
-          <Point x="1030.325" y="611.7933" />
-          <Point x="1030.325" y="613.0482" />
-          <Point x="1035.005" y="609.0048" />
-          <Point x="1034.985" y="609.0048" />
-          <Point x="1030.905" y="611.2357" />
-          <Point x="1030.925" y="611.2357" />
-          <Point x="1030.925" y="609.9808" />
-          <Point x="1027.566" y="612.2116" />
-          <Point x="1027.566" y="610.9568" />
-          <Point x="1023.006" y="615.0001" />
+          <Point x="825.0062" y="591.0001" />
+          <Point x="828.9657" y="588.7693" />
+          <Point x="828.9657" y="590.0242" />
+          <Point x="832.3254" y="587.7933" />
+          <Point x="832.3254" y="589.0482" />
+          <Point x="837.005" y="585.0048" />
+          <Point x="836.985" y="585.0048" />
+          <Point x="832.9054" y="587.2357" />
+          <Point x="832.9254" y="587.2357" />
+          <Point x="832.9254" y="585.9808" />
+          <Point x="829.5657" y="588.2116" />
+          <Point x="829.5657" y="586.9568" />
+          <Point x="825.0062" y="591.0001" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9330,80 +9326,12 @@ Boston, MA 02129
         </ClosedShape>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_1045" zorder="203" effectiveName="Net_6514" type="Digital">
-      <Point1 x="1008" y="612" />
-      <Point2 x="1014" y="612" />
-    </Wire>
-    <Wire shapeName="Shape_1127" zorder="201" effectiveName="Net_6363" type="Digital">
-      <Point1 x="942" y="612" />
-      <Point2 x="954" y="612" />
-    </Wire>
-    <Instance shapeName="Shape_1139" zorder="205" guid="aa809710-5df0-4f53-9314-a6d1be44d725" name="AMux_1" component="AMux_v1_80">
-      <Location x="806.5859" y="535.9385" />
-      <Size width="42.41406" height="46.06152" />
-      <SubShapes>
-        <Annotation>
-          <Location x="806.5859" y="535.9385" />
-          <Text>AMux_1</Text>
-          <Expression>`=$INSTANCE_NAME`</Expression>
-          <Fill>
-            <SolidBrush color="0, 0, 0" />
-          </Fill>
-          <Font value="Microsoft Sans Serif, 10pt" />
-          <TextAlignment value="TopRight" />
-        </Annotation>
-        <Terminal name="AMux_1.AinTerm0" type="Instance Analog InOut">
-          <Location x="816" y="558" />
-          <ShowWireGuide value="true" />
-        </Terminal>
-        <Terminal name="AMux_1.AinTerm1" type="Instance Analog InOut">
-          <Location x="816" y="570" />
-          <ShowWireGuide value="true" />
-        </Terminal>
-        <Terminal name="AMux_1.AoutTerm" type="Instance Analog InOut">
-          <Location x="846" y="564" />
-          <ShowWireGuide value="true" />
-        </Terminal>
-        <ClosedShape>
-          <Point x="822" y="546" />
-          <Point x="840" y="558" />
-          <Point x="840" y="570" />
-          <Point x="822" y="582" />
-          <Point x="822" y="546" />
-          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
-            <SolidBrush color="0, 0, 0" />
-          </Outline>
-          <Fill>
-            <SolidBrush color="220, 220, 220" />
-          </Fill>
-        </ClosedShape>
-        <Annotation>
-          <Location x="825.9727" y="566.5508" />
-          <Text>1</Text>
-          <Expression>`=$Channels-1`</Expression>
-          <Fill>
-            <SolidBrush color="0, 0, 0" />
-          </Fill>
-          <Font value="Microsoft Sans Serif, 8pt" />
-          <TextAlignment value="TopRight" />
-        </Annotation>
-        <Annotation>
-          <Location x="825.4453" y="555.5508" />
-          <Text>0</Text>
-          <Fill>
-            <SolidBrush color="0, 0, 0" />
-          </Fill>
-          <Font value="Microsoft Sans Serif, 8pt" />
-          <TextAlignment value="TopRight" />
-        </Annotation>
-      </SubShapes>
-    </Instance>
-    <Instance shapeName="Shape_1318" zorder="208" guid="8554e186-0b05-47d7-82dc-62a62b8536e3" name="PGA_1" component="PGA_v2_0">
-      <Location x="633" y="603.0753" />
+    <Instance shapeName="Shape_1318" zorder="197" guid="8554e186-0b05-47d7-82dc-62a62b8536e3" name="PGA_1" component="PGA_v2_0">
+      <Location x="423" y="603.0753" />
       <Size width="108" height="92.92468" />
       <SubShapes>
         <Rectangle>
-          <Location x="642" y="624" />
+          <Location x="432" y="624" />
           <Size width="90" height="72" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9413,21 +9341,21 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Line>
-          <Point x="720" y="654" />
-          <Point x="732" y="654" />
+          <Point x="510" y="654" />
+          <Point x="522" y="654" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="660" y="678" />
-          <Point x="654" y="678" />
+          <Point x="450" y="678" />
+          <Point x="444" y="678" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Rectangle>
-          <Location x="642" y="613" />
+          <Location x="432" y="613" />
           <Size width="90" height="12" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9437,7 +9365,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="676.9943" y="615.0411" />
+          <Location x="466.9943" y="615.0411" />
           <Text>PGA</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9446,16 +9374,16 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Terminal name="PGA_1.Vin" type="Instance Analog InOut">
-          <Location x="636" y="648" />
+          <Location x="426" y="648" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="643.8273" y="637.7026" />
+          <Location x="433.8273" y="637.7026" />
           <Text>Vin</Text>
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Annotation>
-          <Location x="699.6244" y="603.0753" />
+          <Location x="489.6244" y="603.0753" />
           <Text>PGA_1</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -9465,45 +9393,45 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Line>
-          <Point x="726" y="678" />
-          <Point x="726" y="654" />
+          <Point x="516" y="678" />
+          <Point x="516" y="654" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="642" y="648" />
-          <Point x="690" y="648" />
+          <Point x="432" y="648" />
+          <Point x="480" y="648" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="684" y="678" />
-          <Point x="684" y="660" />
+          <Point x="474" y="678" />
+          <Point x="474" y="660" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="684" y="660" />
-          <Point x="690" y="660" />
+          <Point x="474" y="660" />
+          <Point x="480" y="660" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="654" y="678" />
-          <Point x="654" y="684" />
+          <Point x="444" y="678" />
+          <Point x="444" y="684" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <ClosedShape>
-          <Point x="648" y="684" />
-          <Point x="654" y="690" />
-          <Point x="660" y="684" />
-          <Point x="648" y="684" />
+          <Point x="438" y="684" />
+          <Point x="444" y="690" />
+          <Point x="450" y="684" />
+          <Point x="438" y="684" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9512,28 +9440,28 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Terminal name="PGA_1.Vout" type="Instance Analog InOut">
-          <Location x="738" y="654" />
+          <Location x="528" y="654" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Line>
-          <Point x="678" y="678" />
-          <Point x="696" y="678" />
+          <Point x="468" y="678" />
+          <Point x="486" y="678" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="726" y="678" />
-          <Point x="714" y="678" />
+          <Point x="516" y="678" />
+          <Point x="504" y="678" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <ClosedShape>
-          <Point x="690" y="672" />
-          <Point x="720" y="654" />
-          <Point x="690" y="636" />
-          <Point x="690" y="672" />
+          <Point x="480" y="672" />
+          <Point x="510" y="654" />
+          <Point x="480" y="636" />
+          <Point x="480" y="672" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9542,7 +9470,7 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Annotation>
-          <Location x="692.0323" y="644.4653" />
+          <Location x="482.0323" y="644.4653" />
           <Text>+</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9551,7 +9479,7 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Annotation>
-          <Location x="691.6315" y="659.779" />
+          <Location x="481.6315" y="659.779" />
           <Text>-</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9560,111 +9488,111 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Line>
-          <Point x="660" y="678" />
-          <Point x="662" y="682" />
+          <Point x="450" y="678" />
+          <Point x="452" y="682" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="662" y="682" />
-          <Point x="665" y="674" />
+          <Point x="452" y="682" />
+          <Point x="455" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="668" y="682" />
-          <Point x="665" y="674" />
+          <Point x="458" y="682" />
+          <Point x="455" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="668" y="682" />
-          <Point x="671" y="674" />
+          <Point x="458" y="682" />
+          <Point x="461" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="674" y="682" />
-          <Point x="671" y="674" />
+          <Point x="464" y="682" />
+          <Point x="461" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="674" y="682" />
-          <Point x="677" y="674" />
+          <Point x="464" y="682" />
+          <Point x="467" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="678" y="678" />
-          <Point x="677" y="674" />
+          <Point x="468" y="678" />
+          <Point x="467" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="696" y="678" />
-          <Point x="698" y="682" />
+          <Point x="486" y="678" />
+          <Point x="488" y="682" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="698" y="682" />
-          <Point x="701" y="674" />
+          <Point x="488" y="682" />
+          <Point x="491" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="704" y="682" />
-          <Point x="701" y="674" />
+          <Point x="494" y="682" />
+          <Point x="491" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="704" y="682" />
-          <Point x="707" y="674" />
+          <Point x="494" y="682" />
+          <Point x="497" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="710" y="682" />
-          <Point x="707" y="674" />
+          <Point x="500" y="682" />
+          <Point x="497" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="710" y="682" />
-          <Point x="713" y="674" />
+          <Point x="500" y="682" />
+          <Point x="503" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="714" y="678" />
-          <Point x="713" y="674" />
+          <Point x="504" y="678" />
+          <Point x="503" y="674" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_1334" zorder="209" guid="b40b9b66-4a21-45de-8244-069969f4e972" name="PGA_2" component="PGA_v2_0">
-      <Location x="633" y="507.0753" />
+    <Instance shapeName="Shape_1334" zorder="198" guid="b40b9b66-4a21-45de-8244-069969f4e972" name="PGA_2" component="PGA_v2_0">
+      <Location x="417" y="507.0753" />
       <Size width="108" height="92.92465" />
       <SubShapes>
         <Rectangle>
-          <Location x="642" y="528" />
+          <Location x="426" y="528" />
           <Size width="90" height="72" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9674,21 +9602,21 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Line>
-          <Point x="720" y="558" />
-          <Point x="732" y="558" />
+          <Point x="504" y="558" />
+          <Point x="516" y="558" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="660" y="582" />
-          <Point x="654" y="582" />
+          <Point x="444" y="582" />
+          <Point x="438" y="582" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Rectangle>
-          <Location x="642" y="517" />
+          <Location x="426" y="517" />
           <Size width="90" height="12" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
             <SolidBrush color="0, 0, 0" />
@@ -9698,7 +9626,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="676.9943" y="519.0411" />
+          <Location x="460.9943" y="519.0411" />
           <Text>PGA</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9707,16 +9635,16 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Terminal name="PGA_2.Vin" type="Instance Analog InOut">
-          <Location x="636" y="552" />
+          <Location x="420" y="552" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Annotation>
-          <Location x="643.8273" y="541.7026" />
+          <Location x="427.8273" y="541.7026" />
           <Text>Vin</Text>
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Annotation>
-          <Location x="699.6244" y="507.0753" />
+          <Location x="483.6244" y="507.0753" />
           <Text>PGA_2</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -9726,45 +9654,45 @@ Boston, MA 02129
           <TextAlignment value="TopRight" />
         </Annotation>
         <Line>
-          <Point x="726" y="582" />
-          <Point x="726" y="558" />
+          <Point x="510" y="582" />
+          <Point x="510" y="558" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="642" y="552" />
-          <Point x="690" y="552" />
+          <Point x="426" y="552" />
+          <Point x="474" y="552" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="684" y="582" />
-          <Point x="684" y="564" />
+          <Point x="468" y="582" />
+          <Point x="468" y="564" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="684" y="564" />
-          <Point x="690" y="564" />
+          <Point x="468" y="564" />
+          <Point x="474" y="564" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="654" y="582" />
-          <Point x="654" y="588" />
+          <Point x="438" y="582" />
+          <Point x="438" y="588" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <ClosedShape>
-          <Point x="648" y="588" />
-          <Point x="654" y="594" />
-          <Point x="660" y="588" />
-          <Point x="648" y="588" />
+          <Point x="432" y="588" />
+          <Point x="438" y="594" />
+          <Point x="444" y="588" />
+          <Point x="432" y="588" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9773,28 +9701,28 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Terminal name="PGA_2.Vout" type="Instance Analog InOut">
-          <Location x="738" y="558" />
+          <Location x="522" y="558" />
           <ShowWireGuide value="true" />
         </Terminal>
         <Line>
-          <Point x="678" y="582" />
-          <Point x="696" y="582" />
+          <Point x="462" y="582" />
+          <Point x="480" y="582" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <Line>
-          <Point x="726" y="582" />
-          <Point x="714" y="582" />
+          <Point x="510" y="582" />
+          <Point x="498" y="582" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 128" />
           </Outline>
         </Line>
         <ClosedShape>
-          <Point x="690" y="576" />
-          <Point x="720" y="558" />
-          <Point x="690" y="540" />
-          <Point x="690" y="576" />
+          <Point x="474" y="576" />
+          <Point x="504" y="558" />
+          <Point x="474" y="540" />
+          <Point x="474" y="576" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9803,7 +9731,7 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Annotation>
-          <Location x="692.0323" y="548.4653" />
+          <Location x="476.0323" y="548.4653" />
           <Text>+</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9812,7 +9740,7 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Annotation>
-          <Location x="691.6315" y="563.779" />
+          <Location x="475.6315" y="563.779" />
           <Text>-</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -9821,99 +9749,99 @@ Boston, MA 02129
           <TextAlignment value="TopLeft" />
         </Annotation>
         <Line>
-          <Point x="660" y="582" />
-          <Point x="662" y="586" />
+          <Point x="444" y="582" />
+          <Point x="446" y="586" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="662" y="586" />
-          <Point x="665" y="578" />
+          <Point x="446" y="586" />
+          <Point x="449" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="668" y="586" />
-          <Point x="665" y="578" />
+          <Point x="452" y="586" />
+          <Point x="449" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="668" y="586" />
-          <Point x="671" y="578" />
+          <Point x="452" y="586" />
+          <Point x="455" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="674" y="586" />
-          <Point x="671" y="578" />
+          <Point x="458" y="586" />
+          <Point x="455" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="674" y="586" />
-          <Point x="677" y="578" />
+          <Point x="458" y="586" />
+          <Point x="461" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="678" y="582" />
-          <Point x="677" y="578" />
+          <Point x="462" y="582" />
+          <Point x="461" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="696" y="582" />
-          <Point x="698" y="586" />
+          <Point x="480" y="582" />
+          <Point x="482" y="586" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="698" y="586" />
-          <Point x="701" y="578" />
+          <Point x="482" y="586" />
+          <Point x="485" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="704" y="586" />
-          <Point x="701" y="578" />
+          <Point x="488" y="586" />
+          <Point x="485" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="704" y="586" />
-          <Point x="707" y="578" />
+          <Point x="488" y="586" />
+          <Point x="491" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="710" y="586" />
-          <Point x="707" y="578" />
+          <Point x="494" y="586" />
+          <Point x="491" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="710" y="586" />
-          <Point x="713" y="578" />
+          <Point x="494" y="586" />
+          <Point x="497" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
         </Line>
         <Line>
-          <Point x="714" y="582" />
-          <Point x="713" y="578" />
+          <Point x="498" y="582" />
+          <Point x="497" y="578" />
           <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="0.5">
             <SolidBrush color="0, 0, 0" />
           </Outline>
@@ -9931,8 +9859,8 @@ Boston, MA 02129
       </Fill>
     </Rectangle>
     <Rectangle shapeName="Shape_2565" zorder="1">
-      <Location x="168" y="78" />
-      <Size width="294" height="384" />
+      <Location x="120" y="78" />
+      <Size width="342" height="384" />
       <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
         <SolidBrush color="0, 0, 0" />
       </Outline>
@@ -10161,6 +10089,15 @@ Boston, MA 02129
           <Location x="356.3153" y="134.4203" />
           <Text>tc</Text>
           <TextAlignment value="MiddleRight" />
+        </Annotation>
+        <Terminal name="PWM_A.kill" type="Instance Digital Input">
+          <Location x="288" y="150" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="296.5304" y="145.7496" />
+          <Text>kill</Text>
+          <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Terminal name="PWM_A.enable" type="Instance Digital Input">
           <Location x="288" y="126" />
@@ -11862,6 +11799,15 @@ Boston, MA 02129
           <Text>tc</Text>
           <TextAlignment value="MiddleRight" />
         </Annotation>
+        <Terminal name="PWM_B.kill" type="Instance Digital Input">
+          <Location x="288" y="270" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="296.5304" y="265.7496" />
+          <Text>kill</Text>
+          <TextAlignment value="MiddleLeft" />
+        </Annotation>
         <Terminal name="PWM_B.enable" type="Instance Digital Input">
           <Location x="288" y="246" />
           <ShowWireGuide value="true" />
@@ -12034,6 +11980,15 @@ Boston, MA 02129
           <Location x="356.3153" y="374.4203" />
           <Text>tc</Text>
           <TextAlignment value="MiddleRight" />
+        </Annotation>
+        <Terminal name="PWM_C.kill" type="Instance Digital Input">
+          <Location x="288" y="390" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="296.5304" y="385.7496" />
+          <Text>kill</Text>
+          <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Terminal name="PWM_C.enable" type="Instance Digital Input">
           <Location x="288" y="366" />
@@ -12616,11 +12571,7 @@ Boston, MA 02129
       <Point1 x="630" y="192" />
       <Point2 x="642" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2718" zorder="168" effectiveName="Net_12639" type="Digital">
-      <Point1 x="600" y="432" />
-      <Point2 x="678" y="432" />
-    </Wire>
-    <Wire shapeName="Shape_2719" zorder="184" effectiveName="Net_12639" type="Digital">
+    <Wire shapeName="Shape_2719" zorder="186" effectiveName="Net_12771" type="Digital">
       <Point1 x="678" y="354" />
       <Point2 x="678" y="432" />
     </Wire>
@@ -12636,34 +12587,6 @@ Boston, MA 02129
         <Text>[1]</Text>
         <TextAlignment value="TopLeft" />
       </Annotation>
-    </Wire>
-    <Wire shapeName="Shape_2725" zorder="210" effectiveName="Net_247" type="Analog">
-      <Point1 x="786" y="570" />
-      <Point2 x="786" y="654" />
-    </Wire>
-    <Wire shapeName="Shape_2727" zorder="196" effectiveName="Net_247" type="Analog">
-      <Point1 x="786" y="570" />
-      <Point2 x="816" y="570" />
-    </Wire>
-    <Wire shapeName="Shape_2728" zorder="206" effectiveName="Net_247" type="Analog">
-      <Point1 x="738" y="654" />
-      <Point2 x="786" y="654" />
-    </Wire>
-    <Wire shapeName="Shape_2730" zorder="194" effectiveName="Net_429" type="Analog">
-      <Point1 x="738" y="558" />
-      <Point2 x="816" y="558" />
-    </Wire>
-    <Wire shapeName="Shape_2732" zorder="212" effectiveName="Net_12639" type="Digital">
-      <Point1 x="750" y="600" />
-      <Point2 x="858" y="600" />
-    </Wire>
-    <Wire shapeName="Shape_2733" zorder="214" effectiveName="Net_12639" type="Digital">
-      <Point1 x="750" y="432" />
-      <Point2 x="750" y="600" />
-    </Wire>
-    <Wire shapeName="Shape_2734" zorder="216" effectiveName="Net_12639" type="Digital">
-      <Point1 x="678" y="432" />
-      <Point2 x="750" y="432" />
     </Wire>
     <Instance shapeName="Shape_2744" zorder="150" guid="48c0a911-03e9-4097-9887-fdfb539c08f5" name="isr_mot" component="cy_isr_v1_70">
       <Location x="381" y="85" />
@@ -12714,6 +12637,277 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 0" />
           </Fill>
         </ClosedShape>
+      </SubShapes>
+    </Instance>
+    <Wire shapeName="Shape_2797" zorder="199" effectiveName="Net_12684" type="Analog">
+      <Point1 x="420" y="552" />
+      <Point2 x="426" y="552" />
+    </Wire>
+    <Instance shapeName="Shape_2823" zorder="205" guid="69de8a27-d8ef-49f3-95dc-120e085bc4bd" name="AMuxSeq_1" component="AMuxSeq_v1_80">
+      <Location x="572.2607" y="511.9385" />
+      <Size width="60.73926" height="70.06152" />
+      <SubShapes>
+        <ClosedShape>
+          <Point x="606" y="522" />
+          <Point x="624" y="534" />
+          <Point x="624" y="570" />
+          <Point x="606" y="582" />
+          <Point x="606" y="522" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </ClosedShape>
+        <Annotation>
+          <Location x="572.2607" y="511.9385" />
+          <Text>AMuxSeq_1</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <Annotation>
+          <Location x="609.4453" y="531.5508" />
+          <Text>0</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 8pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <Annotation>
+          <Location x="609.4375" y="566.5508" />
+          <Text>3</Text>
+          <Expression>`=$Channels-1`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 8pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <Rectangle>
+          <Location x="606" y="540" />
+          <Size width="18" height="24" />
+          <NoOutline />
+          <NoFill />
+        </Rectangle>
+        <Line>
+          <Point x="608" y="541" />
+          <Point x="612" y="541" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="618" y="546" />
+          <Point x="612" y="541" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="ArrowAnchor" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="622" y="546" />
+          <Point x="618" y="546" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="615" y="544" />
+          <Point x="615" y="555" />
+          <Outline dashStyle="Dot" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="544" />
+          <Point x="612" y="544" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="547" />
+          <Point x="612" y="547" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="550" />
+          <Point x="612" y="550" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="553" />
+          <Point x="612" y="553" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="618" y="558" />
+          <Point x="612" y="553" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="ArrowAnchor" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="622" y="558" />
+          <Point x="618" y="558" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="556" />
+          <Point x="612" y="556" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="559" />
+          <Point x="612" y="559" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="562" />
+          <Point x="612" y="562" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Rectangle>
+          <Location x="606" y="546" />
+          <Size width="18" height="12" />
+          <NoOutline />
+          <NoFill />
+        </Rectangle>
+        <Line>
+          <Point x="608" y="547" />
+          <Point x="612" y="547" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="618" y="552" />
+          <Point x="612" y="547" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="ArrowAnchor" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="622" y="552" />
+          <Point x="618" y="552" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="550" />
+          <Point x="612" y="550" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="553" />
+          <Point x="612" y="553" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="608" y="556" />
+          <Point x="612" y="556" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+        </Line>
+        <GroupedShape>
+          <Location x="606" y="546" />
+          <Size width="18" height="12" />
+          <SubShapes>
+            <Rectangle>
+              <Location x="606" y="546" />
+              <Size width="18" height="12" />
+              <NoOutline />
+              <NoFill />
+            </Rectangle>
+            <Line>
+              <Point x="608" y="547" />
+              <Point x="612" y="547" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+            <Line>
+              <Point x="618" y="552" />
+              <Point x="612" y="547" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="ArrowAnchor" lineJoin="Miter" weight="0.5">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+            <Line>
+              <Point x="622" y="552" />
+              <Point x="618" y="552" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+            <Line>
+              <Point x="608" y="550" />
+              <Point x="612" y="550" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+            <Line>
+              <Point x="608" y="553" />
+              <Point x="612" y="553" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+            <Line>
+              <Point x="608" y="556" />
+              <Point x="612" y="556" />
+              <Outline dashStyle="Solid" startCap="Flat" endCap="RoundAnchor" lineJoin="Miter" weight="0.25">
+                <SolidBrush color="0, 0, 0" />
+              </Outline>
+            </Line>
+          </SubShapes>
+        </GroupedShape>
+        <Terminal name="AMuxSeq_1.AinTerm0" type="Instance Analog InOut">
+          <Location x="600" y="534" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Terminal name="AMuxSeq_1.AinTerm1" type="Instance Analog InOut">
+          <Location x="600" y="546" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Terminal name="AMuxSeq_1.AinTerm2" type="Instance Analog InOut">
+          <Location x="600" y="558" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Terminal name="AMuxSeq_1.AinTerm3" type="Instance Analog InOut">
+          <Location x="600" y="570" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Terminal name="AMuxSeq_1.AoutTerm" type="Instance Analog InOut">
+          <Location x="630" y="552" />
+          <ShowWireGuide value="true" />
+        </Terminal>
       </SubShapes>
     </Instance>
     <Instance shapeName="Shape_2825" zorder="135" guid="99c93402-cc9a-4de2-ad01-fdb5f4c9b320" name="DMA_PA" component="cy_dma_v1_70">
@@ -12908,6 +13102,10 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
+    <Wire shapeName="Shape_2837" zorder="206" effectiveName="Net_12761" type="Digital">
+      <Point1 x="744" y="588" />
+      <Point2 x="756" y="588" />
+    </Wire>
     <Wire shapeName="Shape_2840" zorder="138" effectiveName="Net_12514" type="Digital">
       <Point1 x="396" y="366" />
       <Point2 x="396" y="378" />
@@ -12915,6 +13113,10 @@ Boston, MA 02129
     <Wire shapeName="Shape_2841" zorder="133" effectiveName="Net_12514" type="Digital">
       <Point1 x="372" y="378" />
       <Point2 x="396" y="378" />
+    </Wire>
+    <Wire shapeName="Shape_2842" zorder="208" effectiveName="Net_12760" type="Digital">
+      <Point1 x="810" y="588" />
+      <Point2 x="816" y="588" />
     </Wire>
     <Wire shapeName="Shape_2843" zorder="140" effectiveName="Net_12509" type="Digital">
       <Point1 x="372" y="258" />
@@ -13049,6 +13251,377 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
+    <Wire shapeName="Shape_2897" zorder="210" effectiveName="Net_12771" type="Digital">
+      <Point1 x="648" y="576" />
+      <Point2 x="660" y="576" />
+    </Wire>
+    <Wire shapeName="Shape_2941" zorder="212" effectiveName="Net_13307" type="Analog">
+      <Point1 x="636" y="540" />
+      <Point2 x="636" y="552" />
+    </Wire>
+    <Wire shapeName="Shape_2942" zorder="214" effectiveName="Net_12771" type="Digital">
+      <Point1 x="648" y="432" />
+      <Point2 x="648" y="576" />
+    </Wire>
+    <Wire shapeName="Shape_2943" zorder="170" effectiveName="Net_12771" type="Digital">
+      <Point1 x="600" y="432" />
+      <Point2 x="648" y="432" />
+    </Wire>
+    <Wire shapeName="Shape_2944" zorder="168" effectiveName="Net_12771" type="Digital">
+      <Point1 x="648" y="432" />
+      <Point2 x="678" y="432" />
+    </Wire>
+    <Wire shapeName="Shape_2946" zorder="201" effectiveName="Net_12774" type="Analog">
+      <Point1 x="522" y="534" />
+      <Point2 x="600" y="534" />
+    </Wire>
+    <Wire shapeName="Shape_2948" zorder="203" effectiveName="Net_13335" type="Analog">
+      <Point1 x="528" y="546" />
+      <Point2 x="600" y="546" />
+    </Wire>
+    <Wire shapeName="Shape_2950" zorder="216" effectiveName="Net_13307" type="Analog">
+      <Point1 x="636" y="540" />
+      <Point2 x="660" y="540" />
+    </Wire>
+    <Wire shapeName="Shape_2951" zorder="218" effectiveName="Net_13307" type="Analog">
+      <Point1 x="630" y="552" />
+      <Point2 x="636" y="552" />
+    </Wire>
+    <Instance shapeName="Shape_2952" zorder="220" guid="babfee65-1790-40e3-b2a3-cde6c38ce072" name="vRef_1" component="cy_vref_v1_70">
+      <Location x="530.8018" y="564" />
+      <Size width="60.19824" height="12" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="564" y="565" />
+          <Size width="18" height="10" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="255, 255, 128" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="560.9983" y="564" />
+          <Size width="24.00012" height="12" />
+          <Text>Vref</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 8pt, style=Bold" />
+          <TextAlignment value="MiddleCenter" />
+        </Annotation>
+        <Terminal name="vRef_1.vout" type="Instance Analog InOut">
+          <Location x="588" y="570" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="530.8018" y="565.6543" />
+          <Text>1.024V</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="MiddleRight" />
+        </Annotation>
+      </SubShapes>
+    </Instance>
+    <Wire shapeName="Shape_2953" zorder="221" effectiveName="Net_12774" type="Analog">
+      <Point1 x="522" y="534" />
+      <Point2 x="522" y="558" />
+    </Wire>
+    <Wire shapeName="Shape_2954" zorder="223" effectiveName="Net_13335" type="Analog">
+      <Point1 x="528" y="546" />
+      <Point2 x="528" y="654" />
+    </Wire>
+    <Wire shapeName="Shape_2955" zorder="225" effectiveName="Net_12777" type="Analog">
+      <Point1 x="588" y="570" />
+      <Point2 x="600" y="570" />
+    </Wire>
+    <Instance shapeName="Shape_2956" zorder="227" guid="35d5126a-d353-460b-8926-750f7035ed05" name="MV3" component="cy_pins_v2_20">
+      <Location x="547.959" y="655.5" />
+      <Size width="55.04102" height="9" />
+      <SubShapes>
+        <Line>
+          <Point x="580.5" y="660" />
+          <Point x="594" y="660" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="192, 64, 0" />
+          </Outline>
+        </Line>
+        <Terminal name="MV3.analog_0" type="Instance Analog InOut">
+          <Location x="600" y="660" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Rectangle>
+          <Location x="571.5" y="655.5" />
+          <Size width="9" height="9" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="255, 255, 255" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="547.959" y="655.6543" />
+          <Text>MV3</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="MiddleRight" />
+        </Annotation>
+        <Rectangle>
+          <Location x="572.625" y="658.2617" />
+          <Size width="6.505859" height="3.708984" />
+          <NoOutline />
+          <Fill>
+            <SolidBrush color="255, 255, 255" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="572.625" y="658.2617" />
+          <Text>4[0]</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 4pt" />
+          <TextAlignment value="MiddleCenter" />
+        </Annotation>
+      </SubShapes>
+    </Instance>
+    <Instance shapeName="Shape_2958" zorder="228" guid="ca5b77bb-249e-47b4-995c-bced3d873752" name="Opamp_3" component="OpAmp_v1_90">
+      <Location x="609" y="620.0753" />
+      <Size width="72" height="75.92468" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="618" y="642" />
+          <Size width="54" height="54" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </Rectangle>
+        <Line>
+          <Point x="660" y="666" />
+          <Point x="672" y="666" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <Rectangle>
+          <Location x="618" y="630" />
+          <Size width="54" height="12" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="255, 255, 128" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="628.3524" y="632.0961" />
+          <Text>Opamp</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+        <Terminal name="Opamp_3.Vplus" type="Instance Analog InOut">
+          <Location x="612" y="660" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="628.2709" y="620.0753" />
+          <Text>Opamp_3</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <Line>
+          <Point x="666" y="690" />
+          <Point x="666" y="666" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="624" y="690" />
+          <Point x="624" y="672" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="624" y="672" />
+          <Point x="630" y="672" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <Terminal name="Opamp_3.Vout" type="Instance Analog InOut">
+          <Location x="678" y="666" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Line>
+          <Point x="666" y="690" />
+          <Point x="624" y="690" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="618" y="660" />
+          <Point x="630" y="660" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 128" />
+          </Outline>
+        </Line>
+        <ClosedShape>
+          <Point x="630" y="684" />
+          <Point x="660" y="666" />
+          <Point x="630" y="648" />
+          <Point x="630" y="684" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.5">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="0, 255, 255" />
+          </Fill>
+        </ClosedShape>
+        <Annotation>
+          <Location x="632.6315" y="671.779" />
+          <Text>-</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Symbol, 14pt, style=Bold" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+        <Annotation>
+          <Location x="632.0323" y="656.4653" />
+          <Text>+</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Symbol, 14pt, style=Bold" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+      </SubShapes>
+    </Instance>
+    <Wire shapeName="Shape_2961" zorder="229" effectiveName="Net_13344" type="Analog">
+      <Point1 x="678" y="666" />
+      <Point2 x="702" y="666" />
+    </Wire>
+    <Wire shapeName="Shape_2962" zorder="231" effectiveName="Net_13339" type="Analog">
+      <Point1 x="600" y="660" />
+      <Point2 x="612" y="660" />
+    </Wire>
+    <Wire shapeName="Shape_2969" zorder="233" effectiveName="Net_13344" type="Analog">
+      <Point1 x="702" y="612" />
+      <Point2 x="702" y="666" />
+    </Wire>
+    <Wire shapeName="Shape_2972" zorder="237" effectiveName="Net_13344" type="Analog">
+      <Point1 x="540" y="558" />
+      <Point2 x="540" y="612" />
+    </Wire>
+    <Wire shapeName="Shape_2973" zorder="239" effectiveName="Net_13344" type="Analog">
+      <Point1 x="540" y="558" />
+      <Point2 x="600" y="558" />
+    </Wire>
+    <Wire shapeName="Shape_2974" zorder="235" effectiveName="Net_13344" type="Analog">
+      <Point1 x="540" y="612" />
+      <Point2 x="702" y="612" />
+    </Wire>
+    <Instance shapeName="Shape_2975" zorder="241" guid="e2d9e866-558b-4f7b-b797-9bc5a0fb5fa2" name="PWM_Kill" component="CyControlReg_v1_80">
+      <Location x="133.8854" y="369" />
+      <Size width="42.11458" height="81" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="144" y="378" />
+          <Size width="32" height="72" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </Rectangle>
+        <Terminal name="PWM_Kill.control_0" type="Instance Digital Output">
+          <Location x="168" y="372" />
+          <ShowWireGuide value="true" />
+        </Terminal>
+        <Annotation>
+          <Location x="163.5457" y="381.9874" />
+          <Text>control_0</Text>
+          <TextAlignment value="MiddleLeft" />
+        </Annotation>
+        <Annotation>
+          <Location x="133.8854" y="380.5289" />
+          <Text>PWM_Kill</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+        <Rectangle>
+          <Location x="144" y="378" />
+          <Size width="12" height="72" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="144, 238, 144" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="145.1209" y="386.4806" />
+          <Text>Control Reg</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopCenter" />
+        </Annotation>
+      </SubShapes>
+    </Instance>
+    <Wire shapeName="Shape_2976" zorder="242" effectiveName="Net_12712" type="Digital">
+      <Point1 x="228" y="390" />
+      <Point2 x="288" y="390" />
+    </Wire>
+    <Wire shapeName="Shape_2979" zorder="248" effectiveName="Net_12712" type="Digital">
+      <Point1 x="228" y="150" />
+      <Point2 x="288" y="150" />
+    </Wire>
+    <Wire shapeName="Shape_2981" zorder="250" effectiveName="Net_12712" type="Digital">
+      <Point1 x="228" y="270" />
+      <Point2 x="288" y="270" />
+    </Wire>
+    <Wire shapeName="Shape_2982" zorder="246" effectiveName="Net_12712" type="Digital">
+      <Point1 x="228" y="150" />
+      <Point2 x="228" y="270" />
+    </Wire>
+    <Wire shapeName="Shape_2983" zorder="244" effectiveName="Net_12712" type="Digital">
+      <Point1 x="228" y="270" />
+      <Point2 x="228" y="390" />
+    </Wire>
+    <Wire shapeName="Shape_2984" zorder="252" effectiveName="Net_12712" type="Digital">
+      <Point1 x="168" y="270" />
+      <Point2 x="168" y="372" />
+    </Wire>
+    <Wire shapeName="Shape_2986" zorder="254" effectiveName="Net_12712" type="Digital">
+      <Point1 x="168" y="270" />
+      <Point2 x="228" y="270" />
+    </Wire>
     <Wire shapeName="Shape_3199" zorder="94" effectiveName="mywire_1[1]" type="Digital">
       <Point1 x="510" y="324" />
       <Point2 x="510" y="378" />
@@ -13201,7 +13774,7 @@ Boston, MA 02129
       <Point1 x="216" y="126" />
       <Point2 x="288" y="126" />
     </Wire>
-    <Wire shapeName="Shape_3569" zorder="164" effectiveName="Net_12639" type="Digital">
+    <Wire shapeName="Shape_3569" zorder="164" effectiveName="Net_12771" type="Digital">
       <Point1 x="678" y="354" />
       <Point2 x="684" y="354" />
     </Wire>
@@ -13213,7 +13786,7 @@ Boston, MA 02129
       <Point1 x="558" y="444" />
       <Point2 x="564" y="444" />
     </Wire>
-    <Wire shapeName="Shape_3749" zorder="170" effectiveName="Net_12739" type="Digital">
+    <Wire shapeName="Shape_3749" zorder="172" effectiveName="Net_12739" type="Digital">
       <Point1 x="546" y="468" />
       <Point2 x="564" y="468" />
     </Wire>
@@ -13225,31 +13798,31 @@ Boston, MA 02129
       <Point1 x="774" y="354" />
       <Point2 x="774" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3756" zorder="172" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3756" zorder="174" effectiveName="Net_13180" type="Digital">
       <Point1 x="522" y="348" />
       <Point2 x="522" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3759" zorder="174" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3759" zorder="176" effectiveName="Net_13180" type="Digital">
       <Point1 x="522" y="348" />
       <Point2 x="528" y="348" />
     </Wire>
-    <Wire shapeName="Shape_3760" zorder="176" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3760" zorder="178" effectiveName="Net_13180" type="Digital">
       <Point1 x="522" y="396" />
       <Point2 x="558" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3773" zorder="178" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3773" zorder="180" effectiveName="Net_12514" type="Digital">
       <Point1 x="486" y="396" />
       <Point2 x="486" y="432" />
     </Wire>
-    <Wire shapeName="Shape_3774" zorder="180" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3774" zorder="182" effectiveName="Net_12514" type="Digital">
       <Point1 x="396" y="396" />
       <Point2 x="486" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3775" zorder="182" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3775" zorder="184" effectiveName="Net_12514" type="Digital">
       <Point1 x="396" y="378" />
       <Point2 x="396" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3776" zorder="186" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3776" zorder="188" effectiveName="Net_12514" type="Digital">
       <Point1 x="486" y="432" />
       <Point2 x="564" y="432" />
     </Wire>

@@ -100,6 +100,7 @@ void init_motor(void)
 	isr_mot_Start();
     
     Control_Reg_1_Write(1);
+	PWM_Kill_Write(0);
     CyDelay(1);     
 	
 	//Angle table can be stored in EEPROM or FLASH:

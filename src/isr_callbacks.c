@@ -87,35 +87,32 @@ void isr_t2_Interrupt_InterruptCallback()
 	T2_RESET_Write(1);	
 }
 
-//General ADC - we get here after 8 samples have been taken
-//Hack: there is a contamination issue. As a temporary workaround,
-//we only read Analog 0 ***ToDo fix***
+//General ADC - we get here after N samples have been taken
 void isr_sar1_dma_Interrupt_InterruptCallback()
 {
-	static uint8_t ch = 0;
-	int i = 0;
+	volatile int8_t ch = 0;
+	volatile static int8_t chMem[10];
+	volatile static uint8_t idx = 0;
 	
-	//Stop conversion
-	//ADC_SAR_1_StopConvert();
+	//What was the last channel?
+	ch = AMuxSeq_1_GetChannel();
+	if(ch < 0 || ch >= ADC1_CHANNELS)
+		ch = 0;	//Error
 
-	//Copy the last DMA buffer to our 2D array:
-	for(i = 0; i < ADC1_BUF_LEN-1; i++)
-	{
-		adc1_res[ch][i] = adc_sar1_dma_array[i+1];
-	}	
-    adc1_res[ch][ADC1_BUF_LEN-1] = adc_sar1_dma_array[ADC1_BUF_LEN-1];
+	//Debugging:
+	chMem[idx] = ch;
+	idx++;
+	idx %= 10;
 	
-	/*
-	//Next channel:
-	ch++;
-	ch %= ADC1_CHANNELS;*/
+	adc1_res[ch][0] = adc_sar1_dma_array[0];
+	adc1_res[ch][1] = adc_sar1_dma_array[1];
+	adc1_res[ch][2] = adc_sar1_dma_array[2];
+	adc1_res[ch][3] = adc_sar1_dma_array[3];
 	
+	//Next:
+	AMuxSeq_1_Next();
+
 	adc_sar1_flag = 1;
-
-	//Refresh MUX:
-	AMux_1_Select(ch);	
-	
-	//ADC_SAR_1_StartConvert();		
 }
 
 //Current sensing:
