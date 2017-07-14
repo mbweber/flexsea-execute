@@ -62,7 +62,6 @@ void init_qei(void)
 
 //Updates the structure with the latest encoder value
 //Only deals with the Controller encoder (no commutation)
-
 int32 refresh_enc_control(void)
 {
     //Count: actual, last, difference
@@ -85,12 +84,14 @@ int32 refresh_enc_control(void)
     #elif(ENC_CONTROL == ENC_CUSTOM)
 		encoder.count = CTRL_ENC_FCT(get_enc_custom());
 	#endif
-		
+	
+	/*
 	encoder.count_dif = encoder.count - encoder.count_last;
 	
 	//For the position & impedance controllers we use the last count
 	ctrl.position.pos = encoder.count;
 	ctrl.impedance.actual_val = encoder.count;
+	*/
 	
 	return encoder.count;
 }

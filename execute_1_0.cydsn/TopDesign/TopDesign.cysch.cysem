@@ -17708,8 +17708,8 @@
     </Signal>
     <Signal name="Net_12771" type="Digital" terminalCount="3">
       <Terminal name="cy_srff_1.q" type="Instance Digital Output" />
-      <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input" />
       <Terminal name="ADC_SAR_2.soc" type="Instance Digital Input" />
+      <Terminal name="ADC_SAR_1.soc" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_12774" type="Analog" terminalCount="2">
       <Terminal name="AMuxSeq_1.AinTerm0" type="Instance Analog InOut" />

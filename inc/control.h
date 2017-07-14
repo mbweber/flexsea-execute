@@ -56,7 +56,6 @@ int32 motor_position_pid_ff_1(int32 wanted_pos, int32 actual_pos, int32 ff);
 int32 motor_current_pid(int32 wanted_curr, int32 measured_curr);
 int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr);
 extern inline int32 motor_current_pid_2(int32 wanted_curr, int32 measured_curr);
-int motor_impedance_encoder(int wanted_pos, int new_enc_count);
 void impedance_controller();
 void in_control_combine(void);
 void in_control_get_pwm_dir(void);
@@ -78,16 +77,6 @@ void in_control_get_pwm_dir(void);
 #define CURRENT_POS_LIMIT		CURRENT_SPAN
 #define CURRENT_NEG_LIMIT		(-CURRENT_SPAN)
 #define MAX_CUM_CURRENT_ERROR	14000000
-
-//Impedance controller
-#define B1 						2898195LL 			// 3rd order Butterworth filter numerator constants
-#define B2 						8694584LL
-#define B3 						8694584LL
-#define B4 						2898195LL
-#define A1 						1000000000LL 		// 3rd order Butterworth filter denominator constants
-#define A2 						-2374094744LL
-#define A3  					1929355669LL
-#define A4 						-532075368LL
 
 //Nickname for the controller gains:
 #define I_KP					g0

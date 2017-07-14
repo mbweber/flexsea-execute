@@ -28,6 +28,9 @@
 	*
 ****************************************************************************/
 
+//Comment the next line to disable the velocity feed-forward term:
+#define USE_FEED_FORWARD
+
 //****************************************************************************
 // Include(s)
 //****************************************************************************
@@ -302,7 +305,11 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	//In both cases we divide by 100 to get a finer gain adjustement w/ integer values.
 
 	//Output
-	volatile int32 curr_pwm = curr_p + curr_i + as5047.signed_ang_vel*37 + wanted_curr/10;
+	#ifdef USE_FEED_FORWARD
+		volatile int32 curr_pwm = curr_p + curr_i + as5047.signed_ang_vel*37 + wanted_curr/10;
+	#else
+		volatile int32 curr_pwm = curr_p + curr_i;
+	#endif	//USE_FEED_FORWARD
 	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 
@@ -348,78 +355,7 @@ inline int32 motor_current_pid_3(int32 wanted_curr, int32 measured_curr)
 	return ctrl.current.error;    
 }
 
-// Impedance controller -- EJ Rouse, 8/11/14
-// There will be filter transients for first few iterations -- maybe turn loops off for 100 ms?
-// Variables created: stiffness, damping, prev_enc_count
-int motor_impedance_encoder(int wanted_pos, int new_enc_count)
-{
-	// Initialize vars
-	int i_k = 0, i_b = 0;	
-	static long long prev_enc_count = 0, prev_vel1 = 0, prev_vel2 = 0, prev_vel3 = 0;
-	static long long prev_filt1 = 0, prev_filt2 = 0, prev_filt3 = 0; 
-	long long current_vel = 0, filt_vel = 0, current_val = 0;
-	static int enc_t0 = 0, enc_tm1 = 0, enc_tm2 = 0, enc_tm3 = 0, enc_tm4 = 0, enc_tm5 = 0, enc_tm6 = 0, enc_tm7 = 0, enc_tm8 = 0, enc_tm9 = 0;
-	long long motor_direction = new_enc_count - prev_enc_count;
-	int modifier = 0;
-	
-	//Test code:
-	if(motor_direction <= 0)
-	{
-		//MotorDirection_Write(0);
-		//modifier = 50;
-	}
-	else
-	{
-		//MotorDirection_Write(1);
-		modifier = 0;
-	}
-	//End of test code
-
-	ctrl.impedance.error = new_enc_count - wanted_pos;		//Actual error
-	in_control.setp = wanted_pos;
-	in_control.actual_val = new_enc_count;
-	in_control.error = ctrl.impedance.error;
-	
-	//Current for stiffness term. Gain factor depends on the encoder count.
-	#if(ACTIVE_PROJECT == PROJECT_CSEA_KNEE)
-		i_k = ctrl.impedance.gain.Z_K * (ctrl.impedance.error >> 4);
-	#else
-		i_k = ctrl.impedance.gain.Z_K * (ctrl.impedance.error >> 8);
-	#endif
-	
-	
-	//Velocity measured on n cycles:
-	enc_tm9 = enc_tm8; enc_tm8 = enc_tm7; enc_tm7 = enc_tm6; enc_tm6 = enc_tm5; enc_tm5 = enc_tm4; enc_tm4 = enc_tm3; enc_tm3 = enc_tm2; enc_tm2 = enc_tm1; enc_tm1 = enc_t0;
-	enc_t0 = new_enc_count;
-	
-	//Damping term
-	//Difference velocity
-	//current_vel = (enc_t0 - enc_tm4);
-	//debug_var = current_vel;
-
- 	filt_vel = (57*enc_t0)/220 + (73*enc_tm1)/660 - enc_tm2/264 - (37*enc_tm3)/440 - (43*enc_tm4)/330 - (47*enc_tm5)/330 - (53*enc_tm6)/440 - (17*enc_tm7)/264 + (17*enc_tm8)/660 + (3*enc_tm9)/20; // Derivative method that estimates best fit second order polynomial and calcualtes the derivative numerically for t = 0
-	
- 	i_b = ctrl.impedance.gain.Z_B * (filt_vel >> 5);
-	i_b += modifier;
-
-	//Output
-	current_val = (i_k + i_b);		// Impedance command, motor current in terms of effort (A)
-	
-	// Changes variables for derivative filtering
-	prev_enc_count = new_enc_count;
-	prev_vel3 = prev_vel2;
-	prev_vel2 = prev_vel1;
-	prev_vel1 = current_vel;
-	prev_filt3 = prev_filt2;
-	prev_filt2 = prev_filt1;
-	prev_filt1 = filt_vel;
-
-	ctrl.current.setpoint_val = (int32)current_val;
-	in_control.output = ctrl.current.setpoint_val;
-
-	return ctrl.impedance.error;
-}
-
+//Impedance controller
 void impedance_controller(void)
 {
     int32 spring_torq; 
