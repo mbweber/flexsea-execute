@@ -11727,56 +11727,6 @@ Boston, MA 02129
     </Wire>
   </Page>
   <Page index="4" name="Comm" enabled="true" shapeCount="66">
-    <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_20">
-      <Location x="720" y="332.1273" />
-      <Size width="72" height="57.87265" />
-      <SubShapes>
-        <Rectangle>
-          <Location x="720" y="354" />
-          <Size width="72" height="36" />
-          <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
-            <SolidBrush color="0, 0, 0" />
-          </Outline>
-          <Fill>
-            <SolidBrush color="220, 220, 220" />
-          </Fill>
-        </Rectangle>
-        <Rectangle>
-          <Location x="720" y="342" />
-          <Size width="72" height="12" />
-          <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
-            <SolidBrush color="0, 0, 0" />
-          </Outline>
-          <Fill>
-            <SolidBrush color="135, 206, 235" />
-          </Fill>
-        </Rectangle>
-        <Annotation>
-          <Location x="739.6187" y="343.9654" />
-          <Text>USBFS</Text>
-          <Fill>
-            <SolidBrush color="0, 0, 0" />
-          </Fill>
-          <Font value="Microsoft Sans Serif, 10pt" />
-          <TextAlignment value="TopLeft" />
-        </Annotation>
-        <Annotation>
-          <Location x="732.0269" y="332.1273" />
-          <Text>USBUART_1</Text>
-          <Expression>`=$INSTANCE_NAME`</Expression>
-          <Fill>
-            <SolidBrush color="0, 0, 0" />
-          </Fill>
-          <Font value="Microsoft Sans Serif, 10pt" />
-          <TextAlignment value="TopRight" />
-        </Annotation>
-        <Image>
-          <Location x="732.4999" y="357.125" />
-          <Size width="52.5" height="25.87503" />
-          <ImageChecksum value="09928263405f05c5ca9a3c30672d1ee0" />
-        </Image>
-      </SubShapes>
-    </Instance>
     <Instance shapeName="Shape_3" zorder="61" guid="9ac49a9e-3a20-468b-a331-7d42984e50f0" name="SDA_0" component="cy_pins_v2_20">
       <Location x="651" y="481.5" />
       <Size width="66.6377" height="9.006836" />
@@ -12954,7 +12904,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_272" zorder="76" guid="ac95ee2d-b8fd-455d-97ec-17587f54038e" name="EX12" component="cy_pins_v2_20">
+    <Instance shapeName="Shape_272" zorder="75" guid="ac95ee2d-b8fd-455d-97ec-17587f54038e" name="EX12" component="cy_pins_v2_20">
       <Location x="711.9404" y="205.5" />
       <Size width="59.05957" height="9" />
       <SubShapes>
@@ -13682,7 +13632,7 @@ Boston, MA 02129
       <Point1 x="588" y="372" />
       <Point2 x="594" y="372" />
     </Wire>
-    <Annotation shapeName="Shape_1021" zorder="72">
+    <Annotation shapeName="Shape_1021" zorder="71">
       <Location x="713.9999" y="311.9999" />
       <Size width="90" height="12" />
       <Text>USB:</Text>
@@ -13710,7 +13660,7 @@ Boston, MA 02129
       <Point1 x="588" y="192" />
       <Point2 x="612" y="192" />
     </Wire>
-    <Instance shapeName="Shape_1162" zorder="75" guid="c651854e-5223-4bde-aef0-48cb8ca1e33d" name="EX13" component="cy_pins_v2_20">
+    <Instance shapeName="Shape_1162" zorder="74" guid="c651854e-5223-4bde-aef0-48cb8ca1e33d" name="EX13" component="cy_pins_v2_20">
       <Location x="873" y="205.5" />
       <Size width="59.26465" height="9" />
       <SubShapes>
@@ -13792,7 +13742,7 @@ Boston, MA 02129
       <Point1 x="522" y="306" />
       <Point2 x="534" y="306" />
     </Wire>
-    <Annotation shapeName="Shape_1165" zorder="73">
+    <Annotation shapeName="Shape_1165" zorder="72">
       <Location x="425.9999" y="546" />
       <Size width="78.00006" height="31" />
       <Text><![CDATA[Safety-CoP & strain gauge pot. 5V.]]></Text>
@@ -13802,7 +13752,7 @@ Boston, MA 02129
       <Font value="Microsoft Sans Serif, 8pt" />
       <TextAlignment value="TopCenter" />
     </Annotation>
-    <Annotation shapeName="Shape_1166" zorder="74">
+    <Annotation shapeName="Shape_1166" zorder="73">
       <Location x="575.9999" y="545.9999" />
       <Size width="72" height="12.00001" />
       <Text><![CDATA[IMU & Expansion. 3V3.]]></Text>
@@ -13812,7 +13762,7 @@ Boston, MA 02129
       <Font value="Microsoft Sans Serif, 8pt" />
       <TextAlignment value="TopCenter" />
     </Annotation>
-    <Instance shapeName="Shape_1718" zorder="77" guid="ac0a8b10-175c-48f6-9051-6584d2183a66" name="UART_1" component="UART_v2_50">
+    <Instance shapeName="Shape_1718" zorder="76" guid="ac0a8b10-175c-48f6-9051-6584d2183a66" name="UART_1" component="UART_v2_50">
       <Location x="777" y="175.9385" />
       <Size width="90" height="115.2177" />
       <SubShapes>
@@ -13922,7 +13872,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_1721" zorder="78" guid="2094d79d-dfcd-40e8-b7b8-dba77d849484" name="cy_constant_1" component="cy_constant_v1_0">
+    <Instance shapeName="Shape_1721" zorder="77" guid="2094d79d-dfcd-40e8-b7b8-dba77d849484" name="cy_constant_1" component="cy_constant_v1_0">
       <Location x="744" y="265" />
       <Size width="27" height="10" />
       <SubShapes>
@@ -13951,23 +13901,23 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_1722" zorder="79" effectiveName="Net_11171" type="Digital">
+    <Wire shapeName="Shape_1722" zorder="78" effectiveName="Net_11171" type="Digital">
       <Point1 x="768" y="270" />
       <Point2 x="780" y="270" />
     </Wire>
-    <Wire shapeName="Shape_1729" zorder="81" effectiveName="Net_1522" type="Digital">
+    <Wire shapeName="Shape_1729" zorder="80" effectiveName="Net_1522" type="Digital">
       <Point1 x="498" y="192" />
       <Point2 x="504" y="192" />
     </Wire>
-    <Wire shapeName="Shape_1730" zorder="83" effectiveName="Net_11189" type="Digital">
+    <Wire shapeName="Shape_1730" zorder="82" effectiveName="Net_11189" type="Digital">
       <Point1 x="768" y="210" />
       <Point2 x="780" y="210" />
     </Wire>
-    <Wire shapeName="Shape_1731" zorder="85" effectiveName="Net_11187" type="Digital">
+    <Wire shapeName="Shape_1731" zorder="84" effectiveName="Net_11187" type="Digital">
       <Point1 x="864" y="210" />
       <Point2 x="876" y="210" />
     </Wire>
-    <Annotation shapeName="Shape_1732" zorder="87">
+    <Annotation shapeName="Shape_1732" zorder="86">
       <Location x="713.9999" y="156" />
       <Size width="102.0001" height="12" />
       <Text>Bluetooth (external):</Text>
@@ -13987,6 +13937,56 @@ Boston, MA 02129
         <SolidBrush color="255, 255, 255" />
       </Fill>
     </Rectangle>
+    <Instance shapeName="Shape_2787" zorder="87" guid="beca5e2d-f70f-4900-a4db-7eca1ed3126e" name="USBUART_1" component="USBFS_v3_20">
+      <Location x="720" y="332.1273" />
+      <Size width="72" height="57.87265" />
+      <SubShapes>
+        <Rectangle>
+          <Location x="720" y="354" />
+          <Size width="72" height="36" />
+          <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="220, 220, 220" />
+          </Fill>
+        </Rectangle>
+        <Rectangle>
+          <Location x="720" y="342" />
+          <Size width="72" height="12" />
+          <Outline dashStyle="Solid" startCap="Round" endCap="Round" lineJoin="Round" weight="1">
+            <SolidBrush color="0, 0, 0" />
+          </Outline>
+          <Fill>
+            <SolidBrush color="135, 206, 235" />
+          </Fill>
+        </Rectangle>
+        <Annotation>
+          <Location x="739.6187" y="343.9654" />
+          <Text>USBFS</Text>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopLeft" />
+        </Annotation>
+        <Annotation>
+          <Location x="732.0269" y="332.1273" />
+          <Text>USBUART_1</Text>
+          <Expression>`=$INSTANCE_NAME`</Expression>
+          <Fill>
+            <SolidBrush color="0, 0, 0" />
+          </Fill>
+          <Font value="Microsoft Sans Serif, 10pt" />
+          <TextAlignment value="TopRight" />
+        </Annotation>
+        <Image>
+          <Location x="732.4999" y="357.125" />
+          <Size width="52.5" height="25.87503" />
+          <ImageChecksum value="09928263405f05c5ca9a3c30672d1ee0" />
+        </Image>
+      </SubShapes>
+    </Instance>
   </Page>
   <Page index="5" name="Sensors &amp; External" enabled="true" shapeCount="82">
     <Instance shapeName="Shape_6" zorder="61" guid="56b3df0f-35d1-494d-b64d-b12b26ae4477" name="EX4" component="cy_pins_v2_20">

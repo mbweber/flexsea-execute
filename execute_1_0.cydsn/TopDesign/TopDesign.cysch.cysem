@@ -11564,6 +11564,888 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
+    <Instance guid="beca5e2d-f70f-4900-a4db-7eca1ed3126e" name="USBUART_1" component="USBFS_v3_20">
+      <Parameter name="AudioDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="Audio">
+      <Nodes />
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="CDCDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="CDC">
+      <Nodes>
+        <DescriptorNode Key="Interface60">
+          <m_value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>ALTERNATE</bDescriptorType>
+            <bLength>0</bLength>
+            <DisplayName>CDC Interface 1</DisplayName>
+          </m_value>
+          <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>ALTERNATE</bDescriptorType>
+            <bLength>0</bLength>
+            <DisplayName>CDC Interface 1</DisplayName>
+          </Value>
+          <Nodes>
+            <DescriptorNode Key="USBDescriptor61">
+              <m_value d8p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>INTERFACE</bDescriptorType>
+                <bLength>9</bLength>
+                <iwInterface>49</iwInterface>
+                <bInterfaceClass>2</bInterfaceClass>
+                <bAlternateSetting>0</bAlternateSetting>
+                <bInterfaceNumber>0</bInterfaceNumber>
+                <bNumEndpoints>1</bNumEndpoints>
+                <bInterfaceSubClass>2</bInterfaceSubClass>
+                <bInterfaceProtocol>1</bInterfaceProtocol>
+                <iInterface>3</iInterface>
+                <sInterface>CDC Communication Interface</sInterface>
+              </m_value>
+              <Value d8p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>INTERFACE</bDescriptorType>
+                <bLength>9</bLength>
+                <iwInterface>49</iwInterface>
+                <bInterfaceClass>2</bInterfaceClass>
+                <bAlternateSetting>0</bAlternateSetting>
+                <bInterfaceNumber>0</bInterfaceNumber>
+                <bNumEndpoints>1</bNumEndpoints>
+                <bInterfaceSubClass>2</bInterfaceSubClass>
+                <bInterfaceProtocol>1</bInterfaceProtocol>
+                <iInterface>3</iInterface>
+                <sInterface>CDC Communication Interface</sInterface>
+              </Value>
+              <Nodes>
+                <DescriptorNode Key="USBDescriptor63">
+                  <m_value d10p1:type="CyCDCHeaderDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>HEADER</bDescriptorSubtype>
+                    <bcdADC>272</bcdADC>
+                  </m_value>
+                  <Value d10p1:type="CyCDCHeaderDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>HEADER</bDescriptorSubtype>
+                    <bcdADC>272</bcdADC>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+                <DescriptorNode Key="USBDescriptor64">
+                  <m_value d10p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>4</bLength>
+                    <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
+                    <bmCapabilities>2</bmCapabilities>
+                  </m_value>
+                  <Value d10p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>4</bLength>
+                    <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
+                    <bmCapabilities>2</bmCapabilities>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+                <DescriptorNode Key="USBDescriptor65">
+                  <m_value d10p1:type="CyCDCUnionDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>UNION</bDescriptorSubtype>
+                    <bSubordinateInterface>AQ==</bSubordinateInterface>
+                  </m_value>
+                  <Value d10p1:type="CyCDCUnionDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>UNION</bDescriptorSubtype>
+                    <bSubordinateInterface>AQ==</bSubordinateInterface>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+                <DescriptorNode Key="USBDescriptor66">
+                  <m_value d10p1:type="CyCDCCallManagementDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
+                    <bDataInterface>1</bDataInterface>
+                  </m_value>
+                  <Value d10p1:type="CyCDCCallManagementDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>CDC</bDescriptorType>
+                    <bLength>5</bLength>
+                    <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
+                    <bDataInterface>1</bDataInterface>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+                <DescriptorNode Key="USBDescriptor67">
+                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>129</bEndpointAddress>
+                    <bmAttributes>3</bmAttributes>
+                  </m_value>
+                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>129</bEndpointAddress>
+                    <bmAttributes>3</bmAttributes>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+              </Nodes>
+            </DescriptorNode>
+          </Nodes>
+        </DescriptorNode>
+        <DescriptorNode Key="Interface68">
+          <m_value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>ALTERNATE</bDescriptorType>
+            <bLength>0</bLength>
+            <DisplayName>CDC Interface 2</DisplayName>
+          </m_value>
+          <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>ALTERNATE</bDescriptorType>
+            <bLength>0</bLength>
+            <DisplayName>CDC Interface 2</DisplayName>
+          </Value>
+          <Nodes>
+            <DescriptorNode Key="USBDescriptor69">
+              <m_value d8p1:type="CyDataInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>INTERFACE</bDescriptorType>
+                <bLength>9</bLength>
+                <iwInterface>50</iwInterface>
+                <bInterfaceClass>10</bInterfaceClass>
+                <bAlternateSetting>0</bAlternateSetting>
+                <bInterfaceNumber>1</bInterfaceNumber>
+                <bNumEndpoints>2</bNumEndpoints>
+                <bInterfaceSubClass>0</bInterfaceSubClass>
+                <bInterfaceProtocol>0</bInterfaceProtocol>
+                <iInterface>4</iInterface>
+                <sInterface>CDC Data Interface</sInterface>
+              </m_value>
+              <Value d8p1:type="CyDataInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>INTERFACE</bDescriptorType>
+                <bLength>9</bLength>
+                <iwInterface>50</iwInterface>
+                <bInterfaceClass>10</bInterfaceClass>
+                <bAlternateSetting>0</bAlternateSetting>
+                <bInterfaceNumber>1</bInterfaceNumber>
+                <bNumEndpoints>2</bNumEndpoints>
+                <bInterfaceSubClass>0</bInterfaceSubClass>
+                <bInterfaceProtocol>0</bInterfaceProtocol>
+                <iInterface>4</iInterface>
+                <sInterface>CDC Data Interface</sInterface>
+              </Value>
+              <Nodes>
+                <DescriptorNode Key="USBDescriptor71">
+                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>130</bEndpointAddress>
+                    <bmAttributes>2</bmAttributes>
+                    <wMaxPacketSize>64</wMaxPacketSize>
+                  </m_value>
+                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>130</bEndpointAddress>
+                    <bmAttributes>2</bmAttributes>
+                    <wMaxPacketSize>64</wMaxPacketSize>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+                <DescriptorNode Key="USBDescriptor72">
+                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>3</bEndpointAddress>
+                    <bmAttributes>2</bmAttributes>
+                    <wMaxPacketSize>64</wMaxPacketSize>
+                  </m_value>
+                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ENDPOINT</bDescriptorType>
+                    <bLength>7</bLength>
+                    <DoubleBuffer>false</DoubleBuffer>
+                    <bEndpointAddress>3</bEndpointAddress>
+                    <bmAttributes>2</bmAttributes>
+                    <wMaxPacketSize>64</wMaxPacketSize>
+                  </Value>
+                  <Nodes />
+                </DescriptorNode>
+              </Nodes>
+            </DescriptorNode>
+          </Nodes>
+        </DescriptorNode>
+      </Nodes>
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="CY_COMMENT">
+        <Value />
+      </Parameter>
+      <Parameter name="CY_CONST_CONFIG">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="CY_REMOVE">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="CY_SUPPRESS_API_GEN">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="DeviceDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="Device">
+      <Nodes>
+        <DescriptorNode Key="USBDescriptor51">
+          <m_value d6p1:type="DeviceDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>DEVICE</bDescriptorType>
+            <bLength>18</bLength>
+            <iwManufacturer>47</iwManufacturer>
+            <iwProduct>48</iwProduct>
+            <sManufacturer>Cypress Semiconductor</sManufacturer>
+            <sProduct>USBUART</sProduct>
+            <sSerialNumber />
+            <bDeviceClass>2</bDeviceClass>
+            <bDeviceSubClass>0</bDeviceSubClass>
+            <bDeviceProtocol>0</bDeviceProtocol>
+            <bMaxPacketSize0>0</bMaxPacketSize0>
+            <idVendor>1204</idVendor>
+            <idProduct>62002</idProduct>
+            <bcdDevice>1</bcdDevice>
+            <bcdUSB>512</bcdUSB>
+            <iManufacturer>1</iManufacturer>
+            <iProduct>2</iProduct>
+            <iSerialNumber>0</iSerialNumber>
+            <bNumConfigurations>1</bNumConfigurations>
+            <bMemoryMgmt>0</bMemoryMgmt>
+            <bMemoryAlloc>0</bMemoryAlloc>
+          </m_value>
+          <Value d6p1:type="DeviceDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>DEVICE</bDescriptorType>
+            <bLength>18</bLength>
+            <iwManufacturer>47</iwManufacturer>
+            <iwProduct>48</iwProduct>
+            <sManufacturer>Cypress Semiconductor</sManufacturer>
+            <sProduct>USBUART</sProduct>
+            <sSerialNumber />
+            <bDeviceClass>2</bDeviceClass>
+            <bDeviceSubClass>0</bDeviceSubClass>
+            <bDeviceProtocol>0</bDeviceProtocol>
+            <bMaxPacketSize0>0</bMaxPacketSize0>
+            <idVendor>1204</idVendor>
+            <idProduct>62002</idProduct>
+            <bcdDevice>1</bcdDevice>
+            <bcdUSB>512</bcdUSB>
+            <iManufacturer>1</iManufacturer>
+            <iProduct>2</iProduct>
+            <iSerialNumber>0</iSerialNumber>
+            <bNumConfigurations>1</bNumConfigurations>
+            <bMemoryMgmt>0</bMemoryMgmt>
+            <bMemoryAlloc>0</bMemoryAlloc>
+          </Value>
+          <Nodes>
+            <DescriptorNode Key="USBDescriptor56">
+              <m_value d8p1:type="ConfigDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>CONFIGURATION</bDescriptorType>
+                <bLength>9</bLength>
+                <iwConfiguration>47</iwConfiguration>
+                <sConfiguration>Cypress Semiconductor</sConfiguration>
+                <wTotalLength>67</wTotalLength>
+                <bNumInterfaces>2</bNumInterfaces>
+                <bConfigurationValue>0</bConfigurationValue>
+                <iConfiguration>1</iConfiguration>
+                <bmAttributes>128</bmAttributes>
+                <bMaxPower>50</bMaxPower>
+              </m_value>
+              <Value d8p1:type="ConfigDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
+                <bDescriptorType>CONFIGURATION</bDescriptorType>
+                <bLength>9</bLength>
+                <iwConfiguration>47</iwConfiguration>
+                <sConfiguration>Cypress Semiconductor</sConfiguration>
+                <wTotalLength>67</wTotalLength>
+                <bNumInterfaces>2</bNumInterfaces>
+                <bConfigurationValue>0</bConfigurationValue>
+                <iConfiguration>1</iConfiguration>
+                <bmAttributes>128</bmAttributes>
+                <bMaxPower>50</bMaxPower>
+              </Value>
+              <Nodes>
+                <DescriptorNode Key="Interface60">
+                  <m_value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ALTERNATE</bDescriptorType>
+                    <bLength>0</bLength>
+                    <DisplayName>CDC Interface 1</DisplayName>
+                  </m_value>
+                  <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ALTERNATE</bDescriptorType>
+                    <bLength>0</bLength>
+                    <DisplayName>CDC Interface 1</DisplayName>
+                  </Value>
+                  <Nodes>
+                    <DescriptorNode Key="USBDescriptor61">
+                      <m_value d12p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
+                        <bDescriptorType>INTERFACE</bDescriptorType>
+                        <bLength>9</bLength>
+                        <iwInterface>49</iwInterface>
+                        <bInterfaceClass>2</bInterfaceClass>
+                        <bAlternateSetting>0</bAlternateSetting>
+                        <bInterfaceNumber>0</bInterfaceNumber>
+                        <bNumEndpoints>1</bNumEndpoints>
+                        <bInterfaceSubClass>2</bInterfaceSubClass>
+                        <bInterfaceProtocol>1</bInterfaceProtocol>
+                        <iInterface>3</iInterface>
+                        <sInterface>CDC Communication Interface</sInterface>
+                      </m_value>
+                      <Value d12p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
+                        <bDescriptorType>INTERFACE</bDescriptorType>
+                        <bLength>9</bLength>
+                        <iwInterface>49</iwInterface>
+                        <bInterfaceClass>2</bInterfaceClass>
+                        <bAlternateSetting>0</bAlternateSetting>
+                        <bInterfaceNumber>0</bInterfaceNumber>
+                        <bNumEndpoints>1</bNumEndpoints>
+                        <bInterfaceSubClass>2</bInterfaceSubClass>
+                        <bInterfaceProtocol>1</bInterfaceProtocol>
+                        <iInterface>3</iInterface>
+                        <sInterface>CDC Communication Interface</sInterface>
+                      </Value>
+                      <Nodes>
+                        <DescriptorNode Key="USBDescriptor63">
+                          <m_value d14p1:type="CyCDCHeaderDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>HEADER</bDescriptorSubtype>
+                            <bcdADC>272</bcdADC>
+                          </m_value>
+                          <Value d14p1:type="CyCDCHeaderDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>HEADER</bDescriptorSubtype>
+                            <bcdADC>272</bcdADC>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                        <DescriptorNode Key="USBDescriptor64">
+                          <m_value d14p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>4</bLength>
+                            <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
+                            <bmCapabilities>2</bmCapabilities>
+                          </m_value>
+                          <Value d14p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>4</bLength>
+                            <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
+                            <bmCapabilities>2</bmCapabilities>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                        <DescriptorNode Key="USBDescriptor65">
+                          <m_value d14p1:type="CyCDCUnionDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>UNION</bDescriptorSubtype>
+                            <bSubordinateInterface>AQ==</bSubordinateInterface>
+                          </m_value>
+                          <Value d14p1:type="CyCDCUnionDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>UNION</bDescriptorSubtype>
+                            <bSubordinateInterface>AQ==</bSubordinateInterface>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                        <DescriptorNode Key="USBDescriptor66">
+                          <m_value d14p1:type="CyCDCCallManagementDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
+                            <bDataInterface>1</bDataInterface>
+                          </m_value>
+                          <Value d14p1:type="CyCDCCallManagementDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>CDC</bDescriptorType>
+                            <bLength>5</bLength>
+                            <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
+                            <bDataInterface>1</bDataInterface>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                        <DescriptorNode Key="USBDescriptor67">
+                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>129</bEndpointAddress>
+                            <bmAttributes>3</bmAttributes>
+                          </m_value>
+                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>129</bEndpointAddress>
+                            <bmAttributes>3</bmAttributes>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                      </Nodes>
+                    </DescriptorNode>
+                  </Nodes>
+                </DescriptorNode>
+                <DescriptorNode Key="Interface68">
+                  <m_value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ALTERNATE</bDescriptorType>
+                    <bLength>0</bLength>
+                    <DisplayName>CDC Interface 2</DisplayName>
+                  </m_value>
+                  <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
+                    <bDescriptorType>ALTERNATE</bDescriptorType>
+                    <bLength>0</bLength>
+                    <DisplayName>CDC Interface 2</DisplayName>
+                  </Value>
+                  <Nodes>
+                    <DescriptorNode Key="USBDescriptor69">
+                      <m_value d12p1:type="CyDataInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
+                        <bDescriptorType>INTERFACE</bDescriptorType>
+                        <bLength>9</bLength>
+                        <iwInterface>50</iwInterface>
+                        <bInterfaceClass>10</bInterfaceClass>
+                        <bAlternateSetting>0</bAlternateSetting>
+                        <bInterfaceNumber>1</bInterfaceNumber>
+                        <bNumEndpoints>2</bNumEndpoints>
+                        <bInterfaceSubClass>0</bInterfaceSubClass>
+                        <bInterfaceProtocol>0</bInterfaceProtocol>
+                        <iInterface>4</iInterface>
+                        <sInterface>CDC Data Interface</sInterface>
+                      </m_value>
+                      <Value d12p1:type="CyDataInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
+                        <bDescriptorType>INTERFACE</bDescriptorType>
+                        <bLength>9</bLength>
+                        <iwInterface>50</iwInterface>
+                        <bInterfaceClass>10</bInterfaceClass>
+                        <bAlternateSetting>0</bAlternateSetting>
+                        <bInterfaceNumber>1</bInterfaceNumber>
+                        <bNumEndpoints>2</bNumEndpoints>
+                        <bInterfaceSubClass>0</bInterfaceSubClass>
+                        <bInterfaceProtocol>0</bInterfaceProtocol>
+                        <iInterface>4</iInterface>
+                        <sInterface>CDC Data Interface</sInterface>
+                      </Value>
+                      <Nodes>
+                        <DescriptorNode Key="USBDescriptor71">
+                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>130</bEndpointAddress>
+                            <bmAttributes>2</bmAttributes>
+                            <wMaxPacketSize>64</wMaxPacketSize>
+                          </m_value>
+                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>130</bEndpointAddress>
+                            <bmAttributes>2</bmAttributes>
+                            <wMaxPacketSize>64</wMaxPacketSize>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                        <DescriptorNode Key="USBDescriptor72">
+                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>3</bEndpointAddress>
+                            <bmAttributes>2</bmAttributes>
+                            <wMaxPacketSize>64</wMaxPacketSize>
+                          </m_value>
+                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
+                            <bDescriptorType>ENDPOINT</bDescriptorType>
+                            <bLength>7</bLength>
+                            <DoubleBuffer>false</DoubleBuffer>
+                            <bEndpointAddress>3</bEndpointAddress>
+                            <bmAttributes>2</bmAttributes>
+                            <wMaxPacketSize>64</wMaxPacketSize>
+                          </Value>
+                          <Nodes />
+                        </DescriptorNode>
+                      </Nodes>
+                    </DescriptorNode>
+                  </Nodes>
+                </DescriptorNode>
+              </Nodes>
+            </DescriptorNode>
+          </Nodes>
+        </DescriptorNode>
+      </Nodes>
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="EnableBatteryChargDetect">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="EnableCDCApi">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="EnableMidiApi">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="endpointMA">
+        <Value>0</Value>
+        <Expression>MA_Static</Expression>
+      </Parameter>
+      <Parameter name="endpointMM">
+        <Value>0</Value>
+        <Expression>EP_Manual</Expression>
+      </Parameter>
+      <Parameter name="epDMAautoOptimization">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="extern_cls">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="extern_vbus">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="extern_vnd">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="extJackCount">
+        <Value>0</Value>
+        <Expression>0u</Expression>
+      </Parameter>
+      <Parameter name="Gen16bitEpAccessApi">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="HandleMscRequests">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="HIDReportDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="HIDReport">
+      <Nodes />
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="INSTANCE_NAME">
+        <Value>USBUART_1</Value>
+      </Parameter>
+      <Parameter name="isrGroupArbiter">
+        <Value>0</Value>
+        <Expression>InterruptHigh</Expression>
+      </Parameter>
+      <Parameter name="isrGroupBusReset">
+        <Value>2</Value>
+        <Expression>InterruptLow</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp0">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp1">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp2">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp3">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp4">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp5">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp6">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp7">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupEp8">
+        <Value>1</Value>
+        <Expression>InterruptMedium</Expression>
+      </Parameter>
+      <Parameter name="isrGroupLpm">
+        <Value>0</Value>
+        <Expression>InterruptHigh</Expression>
+      </Parameter>
+      <Parameter name="isrGroupSof">
+        <Value>2</Value>
+        <Expression>InterruptLow</Expression>
+      </Parameter>
+      <Parameter name="max_interfaces_num">
+        <Value>2</Value>
+        <Expression>2u</Expression>
+      </Parameter>
+      <Parameter name="MidiDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="Midi">
+      <Nodes />
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="Mode">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="mon_vbus">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="MscDescriptors">
+        <Value />
+      </Parameter>
+      <Parameter name="MscLogicalUnitsNum">
+        <Value>1</Value>
+        <Expression>1u</Expression>
+      </Parameter>
+      <Parameter name="out_sof">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="Pid">
+        <Value>F232</Value>
+      </Parameter>
+      <Parameter name="powerpad_vbus">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="ProdactName">
+        <Value />
+      </Parameter>
+      <Parameter name="ProdactRevision">
+        <Value />
+      </Parameter>
+      <Parameter name="rm_arb_int">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_dma_1">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_2">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_3">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_4">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_5">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_6">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_7">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dma_8">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_dp_int">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_0">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_1">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_2">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_3">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_4">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_5">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_6">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_7">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_ep_isr_8">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_lpm_int">
+        <Value>true</Value>
+      </Parameter>
+      <Parameter name="rm_ord_int">
+        <Value>true</Value>
+        <Expression>True</Expression>
+      </Parameter>
+      <Parameter name="rm_sof_int">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="rm_usb_int">
+        <Value>false</Value>
+      </Parameter>
+      <Parameter name="StringDescriptors">
+        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Tree xmlns:CustomizerVersion="3_20">
+  <Tree_x0020_Descriptors>
+    <DescriptorNode Key="String">
+      <Nodes>
+        <DescriptorNode Key="LANGID">
+          <m_value d6p1:type="StringZeroDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>4</bLength>
+            <wLANGID>1033</wLANGID>
+          </m_value>
+          <Value d6p1:type="StringZeroDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>4</bLength>
+            <wLANGID>1033</wLANGID>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+        <DescriptorNode Key="USBDescriptor47">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>44</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>Cypress Semiconductor</bString>
+            <bUsed>false</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>44</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>Cypress Semiconductor</bString>
+            <bUsed>false</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+        <DescriptorNode Key="USBDescriptor48">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>16</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>USBUART</bString>
+            <bUsed>false</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>16</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>USBUART</bString>
+            <bUsed>false</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+        <DescriptorNode Key="USBDescriptor49">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>56</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>CDC Communication Interface</bString>
+            <bUsed>false</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>56</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>CDC Communication Interface</bString>
+            <bUsed>false</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+        <DescriptorNode Key="USBDescriptor50">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>38</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>CDC Data Interface</bString>
+            <bUsed>false</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>38</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>CDC Data Interface</bString>
+            <bUsed>false</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+      </Nodes>
+    </DescriptorNode>
+    <DescriptorNode Key="SpecialString">
+      <Nodes>
+        <DescriptorNode Key="Serial">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>2</bLength>
+            <snType>SILICON_NUMBER</snType>
+            <bString />
+            <bUsed>true</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>2</bLength>
+            <snType>SILICON_NUMBER</snType>
+            <bString />
+            <bUsed>true</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+        <DescriptorNode Key="EE">
+          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>16</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>MSFT100</bString>
+            <bUsed>false</bUsed>
+          </m_value>
+          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
+            <bDescriptorType>STRING</bDescriptorType>
+            <bLength>16</bLength>
+            <snType>USER_ENTERED_TEXT</snType>
+            <bString>MSFT100</bString>
+            <bUsed>false</bUsed>
+          </Value>
+          <Nodes />
+        </DescriptorNode>
+      </Nodes>
+    </DescriptorNode>
+  </Tree_x0020_Descriptors>
+</Tree>]]></Value>
+      </Parameter>
+      <Parameter name="VendorName">
+        <Value />
+      </Parameter>
+      <Parameter name="Vid">
+        <Value>04B4</Value>
+      </Parameter>
+    </Instance>
     <Instance guid="c079eebc-f0ed-4a97-b2ac-43b36f8af894" name="EdgeDetect_1" component="EdgeDetect_v1_0">
       <Parameter name="CY_COMMENT">
         <Value />
@@ -11655,1557 +12537,6 @@
       </Parameter>
       <Parameter name="SyncWithBusClk">
         <Value>true</Value>
-      </Parameter>
-    </Instance>
-    <Instance guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_20">
-      <Parameter name="AudioDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="Audio">
-      <Nodes />
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="CDCDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="CDC">
-      <Nodes>
-        <DescriptorNode Key="Interface847">
-          <m_value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>ALTERNATE</bDescriptorType>
-            <bLength>0</bLength>
-            <DisplayName>CDC Interface 1</DisplayName>
-          </m_value>
-          <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>ALTERNATE</bDescriptorType>
-            <bLength>0</bLength>
-            <DisplayName>CDC Interface 1</DisplayName>
-          </Value>
-          <Nodes>
-            <DescriptorNode Key="USBDescriptor848">
-              <m_value d8p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>INTERFACE</bDescriptorType>
-                <bLength>9</bLength>
-                <iwInterface>9</iwInterface>
-                <bInterfaceClass>2</bInterfaceClass>
-                <bAlternateSetting>0</bAlternateSetting>
-                <bInterfaceNumber>0</bInterfaceNumber>
-                <bNumEndpoints>1</bNumEndpoints>
-                <bInterfaceSubClass>2</bInterfaceSubClass>
-                <bInterfaceProtocol>0</bInterfaceProtocol>
-                <iInterface>2</iInterface>
-                <sInterface>CDC Communication Interface</sInterface>
-              </m_value>
-              <Value d8p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>INTERFACE</bDescriptorType>
-                <bLength>9</bLength>
-                <iwInterface>9</iwInterface>
-                <bInterfaceClass>2</bInterfaceClass>
-                <bAlternateSetting>0</bAlternateSetting>
-                <bInterfaceNumber>0</bInterfaceNumber>
-                <bNumEndpoints>1</bNumEndpoints>
-                <bInterfaceSubClass>2</bInterfaceSubClass>
-                <bInterfaceProtocol>0</bInterfaceProtocol>
-                <iInterface>2</iInterface>
-                <sInterface>CDC Communication Interface</sInterface>
-              </Value>
-              <Nodes>
-                <DescriptorNode Key="USBDescriptor850">
-                  <m_value d10p1:type="CyCDCHeaderDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>HEADER</bDescriptorSubtype>
-                    <bcdADC>272</bcdADC>
-                  </m_value>
-                  <Value d10p1:type="CyCDCHeaderDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>HEADER</bDescriptorSubtype>
-                    <bcdADC>272</bcdADC>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-                <DescriptorNode Key="USBDescriptor851">
-                  <m_value d10p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>4</bLength>
-                    <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
-                    <bmCapabilities>2</bmCapabilities>
-                  </m_value>
-                  <Value d10p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>4</bLength>
-                    <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
-                    <bmCapabilities>2</bmCapabilities>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-                <DescriptorNode Key="USBDescriptor852">
-                  <m_value d10p1:type="CyCDCUnionDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>UNION</bDescriptorSubtype>
-                    <bSubordinateInterface>AQ==</bSubordinateInterface>
-                  </m_value>
-                  <Value d10p1:type="CyCDCUnionDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>UNION</bDescriptorSubtype>
-                    <bSubordinateInterface>AQ==</bSubordinateInterface>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-                <DescriptorNode Key="USBDescriptor853">
-                  <m_value d10p1:type="CyCDCCallManagementDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
-                    <bDataInterface>1</bDataInterface>
-                  </m_value>
-                  <Value d10p1:type="CyCDCCallManagementDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>CDC</bDescriptorType>
-                    <bLength>5</bLength>
-                    <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
-                    <bDataInterface>1</bDataInterface>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-                <DescriptorNode Key="USBDescriptor854">
-                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>129</bEndpointAddress>
-                    <bmAttributes>3</bmAttributes>
-                  </m_value>
-                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>129</bEndpointAddress>
-                    <bmAttributes>3</bmAttributes>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-              </Nodes>
-            </DescriptorNode>
-          </Nodes>
-        </DescriptorNode>
-        <DescriptorNode Key="Interface855">
-          <m_value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>ALTERNATE</bDescriptorType>
-            <bLength>0</bLength>
-            <DisplayName>CDC Interface 2</DisplayName>
-          </m_value>
-          <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>ALTERNATE</bDescriptorType>
-            <bLength>0</bLength>
-            <DisplayName>CDC Interface 2</DisplayName>
-          </Value>
-          <Nodes>
-            <DescriptorNode Key="USBDescriptor856">
-              <m_value d8p1:type="CyDataInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>INTERFACE</bDescriptorType>
-                <bLength>9</bLength>
-                <iwInterface>612</iwInterface>
-                <bInterfaceClass>10</bInterfaceClass>
-                <bAlternateSetting>0</bAlternateSetting>
-                <bInterfaceNumber>1</bInterfaceNumber>
-                <bNumEndpoints>2</bNumEndpoints>
-                <bInterfaceSubClass>0</bInterfaceSubClass>
-                <bInterfaceProtocol>0</bInterfaceProtocol>
-                <iInterface>3</iInterface>
-                <sInterface>CDC Data Interface</sInterface>
-              </m_value>
-              <Value d8p1:type="CyDataInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>INTERFACE</bDescriptorType>
-                <bLength>9</bLength>
-                <iwInterface>612</iwInterface>
-                <bInterfaceClass>10</bInterfaceClass>
-                <bAlternateSetting>0</bAlternateSetting>
-                <bInterfaceNumber>1</bInterfaceNumber>
-                <bNumEndpoints>2</bNumEndpoints>
-                <bInterfaceSubClass>0</bInterfaceSubClass>
-                <bInterfaceProtocol>0</bInterfaceProtocol>
-                <iInterface>3</iInterface>
-                <sInterface>CDC Data Interface</sInterface>
-              </Value>
-              <Nodes>
-                <DescriptorNode Key="USBDescriptor858">
-                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>130</bEndpointAddress>
-                    <bmAttributes>2</bmAttributes>
-                    <wMaxPacketSize>64</wMaxPacketSize>
-                  </m_value>
-                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>130</bEndpointAddress>
-                    <bmAttributes>2</bmAttributes>
-                    <wMaxPacketSize>64</wMaxPacketSize>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-                <DescriptorNode Key="USBDescriptor859">
-                  <m_value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>3</bEndpointAddress>
-                    <bmAttributes>2</bmAttributes>
-                    <wMaxPacketSize>64</wMaxPacketSize>
-                  </m_value>
-                  <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ENDPOINT</bDescriptorType>
-                    <bLength>7</bLength>
-                    <DoubleBuffer>false</DoubleBuffer>
-                    <bEndpointAddress>3</bEndpointAddress>
-                    <bmAttributes>2</bmAttributes>
-                    <wMaxPacketSize>64</wMaxPacketSize>
-                  </Value>
-                  <Nodes />
-                </DescriptorNode>
-              </Nodes>
-            </DescriptorNode>
-          </Nodes>
-        </DescriptorNode>
-      </Nodes>
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="CY_COMMENT">
-        <Value />
-      </Parameter>
-      <Parameter name="CY_CONST_CONFIG">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="CY_REMOVE">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="CY_SUPPRESS_API_GEN">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="DeviceDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="Device">
-      <Nodes>
-        <DescriptorNode Key="USBDescriptor838">
-          <m_value d6p1:type="DeviceDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>DEVICE</bDescriptorType>
-            <bLength>18</bLength>
-            <iwManufacturer>7</iwManufacturer>
-            <iwProduct>613</iwProduct>
-            <sManufacturer>MIT Biomechatronics</sManufacturer>
-            <sProduct>FlexSEA-Execute 0.1</sProduct>
-            <sSerialNumber />
-            <bDeviceClass>2</bDeviceClass>
-            <bDeviceSubClass>0</bDeviceSubClass>
-            <bDeviceProtocol>0</bDeviceProtocol>
-            <bMaxPacketSize0>0</bMaxPacketSize0>
-            <idVendor>1204</idVendor>
-            <idProduct>8</idProduct>
-            <bcdDevice>1</bcdDevice>
-            <bcdUSB>512</bcdUSB>
-            <iManufacturer>1</iManufacturer>
-            <iProduct>4</iProduct>
-            <iSerialNumber>0</iSerialNumber>
-            <bNumConfigurations>1</bNumConfigurations>
-            <bMemoryMgmt>0</bMemoryMgmt>
-            <bMemoryAlloc>0</bMemoryAlloc>
-          </m_value>
-          <Value d6p1:type="DeviceDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>DEVICE</bDescriptorType>
-            <bLength>18</bLength>
-            <iwManufacturer>7</iwManufacturer>
-            <iwProduct>613</iwProduct>
-            <sManufacturer>MIT Biomechatronics</sManufacturer>
-            <sProduct>FlexSEA-Execute 0.1</sProduct>
-            <sSerialNumber />
-            <bDeviceClass>2</bDeviceClass>
-            <bDeviceSubClass>0</bDeviceSubClass>
-            <bDeviceProtocol>0</bDeviceProtocol>
-            <bMaxPacketSize0>0</bMaxPacketSize0>
-            <idVendor>1204</idVendor>
-            <idProduct>8</idProduct>
-            <bcdDevice>1</bcdDevice>
-            <bcdUSB>512</bcdUSB>
-            <iManufacturer>1</iManufacturer>
-            <iProduct>4</iProduct>
-            <iSerialNumber>0</iSerialNumber>
-            <bNumConfigurations>1</bNumConfigurations>
-            <bMemoryMgmt>0</bMemoryMgmt>
-            <bMemoryAlloc>0</bMemoryAlloc>
-          </Value>
-          <Nodes>
-            <DescriptorNode Key="USBDescriptor843">
-              <m_value d8p1:type="ConfigDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>CONFIGURATION</bDescriptorType>
-                <bLength>9</bLength>
-                <iwConfiguration>7</iwConfiguration>
-                <sConfiguration>MIT Biomechatronics</sConfiguration>
-                <wTotalLength>67</wTotalLength>
-                <bNumInterfaces>2</bNumInterfaces>
-                <bConfigurationValue>0</bConfigurationValue>
-                <iConfiguration>1</iConfiguration>
-                <bmAttributes>192</bmAttributes>
-                <bMaxPower>125</bMaxPower>
-              </m_value>
-              <Value d8p1:type="ConfigDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>CONFIGURATION</bDescriptorType>
-                <bLength>9</bLength>
-                <iwConfiguration>7</iwConfiguration>
-                <sConfiguration>MIT Biomechatronics</sConfiguration>
-                <wTotalLength>67</wTotalLength>
-                <bNumInterfaces>2</bNumInterfaces>
-                <bConfigurationValue>0</bConfigurationValue>
-                <iConfiguration>1</iConfiguration>
-                <bmAttributes>192</bmAttributes>
-                <bMaxPower>125</bMaxPower>
-              </Value>
-              <Nodes>
-                <DescriptorNode Key="Interface847">
-                  <m_value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ALTERNATE</bDescriptorType>
-                    <bLength>0</bLength>
-                    <DisplayName>CDC Interface 1</DisplayName>
-                  </m_value>
-                  <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ALTERNATE</bDescriptorType>
-                    <bLength>0</bLength>
-                    <DisplayName>CDC Interface 1</DisplayName>
-                  </Value>
-                  <Nodes>
-                    <DescriptorNode Key="USBDescriptor848">
-                      <m_value d12p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
-                        <bDescriptorType>INTERFACE</bDescriptorType>
-                        <bLength>9</bLength>
-                        <iwInterface>9</iwInterface>
-                        <bInterfaceClass>2</bInterfaceClass>
-                        <bAlternateSetting>0</bAlternateSetting>
-                        <bInterfaceNumber>0</bInterfaceNumber>
-                        <bNumEndpoints>1</bNumEndpoints>
-                        <bInterfaceSubClass>2</bInterfaceSubClass>
-                        <bInterfaceProtocol>0</bInterfaceProtocol>
-                        <iInterface>2</iInterface>
-                        <sInterface>CDC Communication Interface</sInterface>
-                      </m_value>
-                      <Value d12p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
-                        <bDescriptorType>INTERFACE</bDescriptorType>
-                        <bLength>9</bLength>
-                        <iwInterface>9</iwInterface>
-                        <bInterfaceClass>2</bInterfaceClass>
-                        <bAlternateSetting>0</bAlternateSetting>
-                        <bInterfaceNumber>0</bInterfaceNumber>
-                        <bNumEndpoints>1</bNumEndpoints>
-                        <bInterfaceSubClass>2</bInterfaceSubClass>
-                        <bInterfaceProtocol>0</bInterfaceProtocol>
-                        <iInterface>2</iInterface>
-                        <sInterface>CDC Communication Interface</sInterface>
-                      </Value>
-                      <Nodes>
-                        <DescriptorNode Key="USBDescriptor850">
-                          <m_value d14p1:type="CyCDCHeaderDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>HEADER</bDescriptorSubtype>
-                            <bcdADC>272</bcdADC>
-                          </m_value>
-                          <Value d14p1:type="CyCDCHeaderDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>HEADER</bDescriptorSubtype>
-                            <bcdADC>272</bcdADC>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                        <DescriptorNode Key="USBDescriptor851">
-                          <m_value d14p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>4</bLength>
-                            <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
-                            <bmCapabilities>2</bmCapabilities>
-                          </m_value>
-                          <Value d14p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>4</bLength>
-                            <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>
-                            <bmCapabilities>2</bmCapabilities>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                        <DescriptorNode Key="USBDescriptor852">
-                          <m_value d14p1:type="CyCDCUnionDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>UNION</bDescriptorSubtype>
-                            <bSubordinateInterface>AQ==</bSubordinateInterface>
-                          </m_value>
-                          <Value d14p1:type="CyCDCUnionDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>UNION</bDescriptorSubtype>
-                            <bSubordinateInterface>AQ==</bSubordinateInterface>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                        <DescriptorNode Key="USBDescriptor853">
-                          <m_value d14p1:type="CyCDCCallManagementDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
-                            <bDataInterface>1</bDataInterface>
-                          </m_value>
-                          <Value d14p1:type="CyCDCCallManagementDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>CDC</bDescriptorType>
-                            <bLength>5</bLength>
-                            <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>
-                            <bDataInterface>1</bDataInterface>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                        <DescriptorNode Key="USBDescriptor854">
-                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>129</bEndpointAddress>
-                            <bmAttributes>3</bmAttributes>
-                          </m_value>
-                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>129</bEndpointAddress>
-                            <bmAttributes>3</bmAttributes>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                      </Nodes>
-                    </DescriptorNode>
-                  </Nodes>
-                </DescriptorNode>
-                <DescriptorNode Key="Interface855">
-                  <m_value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ALTERNATE</bDescriptorType>
-                    <bLength>0</bLength>
-                    <DisplayName>CDC Interface 2</DisplayName>
-                  </m_value>
-                  <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">
-                    <bDescriptorType>ALTERNATE</bDescriptorType>
-                    <bLength>0</bLength>
-                    <DisplayName>CDC Interface 2</DisplayName>
-                  </Value>
-                  <Nodes>
-                    <DescriptorNode Key="USBDescriptor856">
-                      <m_value d12p1:type="CyDataInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
-                        <bDescriptorType>INTERFACE</bDescriptorType>
-                        <bLength>9</bLength>
-                        <iwInterface>612</iwInterface>
-                        <bInterfaceClass>10</bInterfaceClass>
-                        <bAlternateSetting>0</bAlternateSetting>
-                        <bInterfaceNumber>1</bInterfaceNumber>
-                        <bNumEndpoints>2</bNumEndpoints>
-                        <bInterfaceSubClass>0</bInterfaceSubClass>
-                        <bInterfaceProtocol>0</bInterfaceProtocol>
-                        <iInterface>3</iInterface>
-                        <sInterface>CDC Data Interface</sInterface>
-                      </m_value>
-                      <Value d12p1:type="CyDataInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">
-                        <bDescriptorType>INTERFACE</bDescriptorType>
-                        <bLength>9</bLength>
-                        <iwInterface>612</iwInterface>
-                        <bInterfaceClass>10</bInterfaceClass>
-                        <bAlternateSetting>0</bAlternateSetting>
-                        <bInterfaceNumber>1</bInterfaceNumber>
-                        <bNumEndpoints>2</bNumEndpoints>
-                        <bInterfaceSubClass>0</bInterfaceSubClass>
-                        <bInterfaceProtocol>0</bInterfaceProtocol>
-                        <iInterface>3</iInterface>
-                        <sInterface>CDC Data Interface</sInterface>
-                      </Value>
-                      <Nodes>
-                        <DescriptorNode Key="USBDescriptor858">
-                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>130</bEndpointAddress>
-                            <bmAttributes>2</bmAttributes>
-                            <wMaxPacketSize>64</wMaxPacketSize>
-                          </m_value>
-                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>130</bEndpointAddress>
-                            <bmAttributes>2</bmAttributes>
-                            <wMaxPacketSize>64</wMaxPacketSize>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                        <DescriptorNode Key="USBDescriptor859">
-                          <m_value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>3</bEndpointAddress>
-                            <bmAttributes>2</bmAttributes>
-                            <wMaxPacketSize>64</wMaxPacketSize>
-                          </m_value>
-                          <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">
-                            <bDescriptorType>ENDPOINT</bDescriptorType>
-                            <bLength>7</bLength>
-                            <DoubleBuffer>false</DoubleBuffer>
-                            <bEndpointAddress>3</bEndpointAddress>
-                            <bmAttributes>2</bmAttributes>
-                            <wMaxPacketSize>64</wMaxPacketSize>
-                          </Value>
-                          <Nodes />
-                        </DescriptorNode>
-                      </Nodes>
-                    </DescriptorNode>
-                  </Nodes>
-                </DescriptorNode>
-              </Nodes>
-            </DescriptorNode>
-          </Nodes>
-        </DescriptorNode>
-      </Nodes>
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="EnableBatteryChargDetect">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="EnableCDCApi">
-        <Value>true</Value>
-        <Expression>True</Expression>
-      </Parameter>
-      <Parameter name="EnableMidiApi">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="endpointMA">
-        <Value>0</Value>
-        <Expression>MA_Static</Expression>
-      </Parameter>
-      <Parameter name="endpointMM">
-        <Value>1</Value>
-        <Expression>EP_DMAmanual</Expression>
-      </Parameter>
-      <Parameter name="epDMAautoOptimization">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="extern_cls">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="extern_vbus">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="extern_vnd">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="extJackCount">
-        <Value>0</Value>
-        <Expression>0u</Expression>
-      </Parameter>
-      <Parameter name="Gen16bitEpAccessApi">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="HandleMscRequests">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="HIDReportDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="HIDReport">
-      <Nodes>
-        <DescriptorNode Key="USBDescriptor761">
-          <m_value d6p1:type="HIDReportDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>HID_REPORT</bDescriptorType>
-            <bLength>2</bLength>
-            <Name>3-Button Mouse</Name>
-            <wLength>50</wLength>
-          </m_value>
-          <Value d6p1:type="HIDReportDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>HID_REPORT</bDescriptorType>
-            <bLength>2</bLength>
-            <Name>3-Button Mouse</Name>
-            <wLength>50</wLength>
-          </Value>
-          <Nodes>
-            <DescriptorNode Key="USBDescriptor762">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor763">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor764">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="160" Type="COLLECTION">
-                  <Value>
-                    <unsignedByte>161</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="160" Type="COLLECTION">
-                  <Value>
-                    <unsignedByte>161</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor765">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor766">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="160" Type="COLLECTION">
-                  <Value>
-                    <unsignedByte>161</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="160" Type="COLLECTION">
-                  <Value>
-                    <unsignedByte>161</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor767">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>9</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>9</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor768">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="24" Type="USAGE_MINIMUM">
-                  <Value>
-                    <unsignedByte>25</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="24" Type="USAGE_MINIMUM">
-                  <Value>
-                    <unsignedByte>25</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor769">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="40" Type="USAGE_MAXIMUM">
-                  <Value>
-                    <unsignedByte>41</unsignedByte>
-                    <unsignedByte>3</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="40" Type="USAGE_MAXIMUM">
-                  <Value>
-                    <unsignedByte>41</unsignedByte>
-                    <unsignedByte>3</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor770">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="20" Type="LOGICAL_MINIMUM">
-                  <Value>
-                    <unsignedByte>21</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="20" Type="LOGICAL_MINIMUM">
-                  <Value>
-                    <unsignedByte>21</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor771">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="36" Type="LOGICAL_MAXIMUM">
-                  <Value>
-                    <unsignedByte>37</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="36" Type="LOGICAL_MAXIMUM">
-                  <Value>
-                    <unsignedByte>37</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor772">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>3</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>3</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor773">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor774">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor775">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor776">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>5</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>5</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor777">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor778">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="4" Type="USAGE_PAGE">
-                  <Value>
-                    <unsignedByte>5</unsignedByte>
-                    <unsignedByte>1</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor779">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>48</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>48</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor780">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>49</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="8" Type="USAGE">
-                  <Value>
-                    <unsignedByte>9</unsignedByte>
-                    <unsignedByte>49</unsignedByte>
-                  </Value>
-                  <Kind>List</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor781">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="20" Type="LOGICAL_MINIMUM">
-                  <Value>
-                    <unsignedByte>21</unsignedByte>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="20" Type="LOGICAL_MINIMUM">
-                  <Value>
-                    <unsignedByte>21</unsignedByte>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor782">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="36" Type="LOGICAL_MAXIMUM">
-                  <Value>
-                    <unsignedByte>37</unsignedByte>
-                    <unsignedByte>127</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="36" Type="LOGICAL_MAXIMUM">
-                  <Value>
-                    <unsignedByte>37</unsignedByte>
-                    <unsignedByte>127</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor783">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>8</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="116" Type="REPORT_SIZE">
-                  <Value>
-                    <unsignedByte>117</unsignedByte>
-                    <unsignedByte>8</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor784">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="148" Type="REPORT_COUNT">
-                  <Value>
-                    <unsignedByte>149</unsignedByte>
-                    <unsignedByte>2</unsignedByte>
-                  </Value>
-                  <Kind>Int</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor785">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>6</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="128" Type="INPUT">
-                  <Value>
-                    <unsignedByte>129</unsignedByte>
-                    <unsignedByte>6</unsignedByte>
-                  </Value>
-                  <Kind>Bits</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor786">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="192" Type="END_COLLECTION">
-                  <Value>
-                    <unsignedByte>192</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>None</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="192" Type="END_COLLECTION">
-                  <Value>
-                    <unsignedByte>192</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>None</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-            <DescriptorNode Key="USBDescriptor787">
-              <m_value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="192" Type="END_COLLECTION">
-                  <Value>
-                    <unsignedByte>192</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>None</Kind>
-                </Item>
-              </m_value>
-              <Value d8p1:type="HIDReportItemDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">
-                <bDescriptorType>HID_REPORT_ITEM</bDescriptorType>
-                <bLength>1</bLength>
-                <Item Code="192" Type="END_COLLECTION">
-                  <Value>
-                    <unsignedByte>192</unsignedByte>
-                    <unsignedByte>0</unsignedByte>
-                  </Value>
-                  <Kind>None</Kind>
-                </Item>
-              </Value>
-              <Nodes />
-            </DescriptorNode>
-          </Nodes>
-        </DescriptorNode>
-      </Nodes>
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="INSTANCE_NAME">
-        <Value>USBUART_1</Value>
-      </Parameter>
-      <Parameter name="isrGroupArbiter">
-        <Value>0</Value>
-        <Expression>InterruptHigh</Expression>
-      </Parameter>
-      <Parameter name="isrGroupBusReset">
-        <Value>2</Value>
-        <Expression>InterruptLow</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp0">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp1">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp2">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp3">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp4">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp5">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp6">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp7">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupEp8">
-        <Value>1</Value>
-        <Expression>InterruptMedium</Expression>
-      </Parameter>
-      <Parameter name="isrGroupLpm">
-        <Value>0</Value>
-        <Expression>InterruptHigh</Expression>
-      </Parameter>
-      <Parameter name="isrGroupSof">
-        <Value>2</Value>
-        <Expression>InterruptLow</Expression>
-      </Parameter>
-      <Parameter name="max_interfaces_num">
-        <Value>2</Value>
-        <Expression>2u</Expression>
-      </Parameter>
-      <Parameter name="MidiDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="Midi">
-      <Nodes />
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="Mode">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="mon_vbus">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="MscDescriptors">
-        <Value />
-      </Parameter>
-      <Parameter name="MscLogicalUnitsNum">
-        <Value>1</Value>
-        <Expression>1u</Expression>
-      </Parameter>
-      <Parameter name="out_sof">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="Pid">
-        <Value>0008</Value>
-      </Parameter>
-      <Parameter name="powerpad_vbus">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="ProdactName">
-        <Value />
-      </Parameter>
-      <Parameter name="ProdactRevision">
-        <Value />
-      </Parameter>
-      <Parameter name="rm_arb_int">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_dma_1">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_dma_2">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_dma_3">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_dma_4">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_dma_5">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_dma_6">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_dma_7">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_dma_8">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_dp_int">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_0">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_1">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_2">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_3">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_4">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_5">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_6">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_7">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_ep_isr_8">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_lpm_int">
-        <Value>true</Value>
-      </Parameter>
-      <Parameter name="rm_ord_int">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_sof_int">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="rm_usb_int">
-        <Value>false</Value>
-      </Parameter>
-      <Parameter name="StringDescriptors">
-        <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Tree xmlns:CustomizerVersion="3_0">
-  <Tree_x0020_Descriptors>
-    <DescriptorNode Key="String">
-      <Nodes>
-        <DescriptorNode Key="LANGID">
-          <m_value d6p1:type="StringZeroDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>4</bLength>
-            <wLANGID>1033</wLANGID>
-          </m_value>
-          <Value d6p1:type="StringZeroDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>4</bLength>
-            <wLANGID>1033</wLANGID>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-        <DescriptorNode Key="USBDescriptor7">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>40</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>MIT Biomechatronics</bString>
-            <bUsed>true</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>40</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>MIT Biomechatronics</bString>
-            <bUsed>true</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-        <DescriptorNode Key="USBDescriptor9">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>56</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>CDC Communication Interface</bString>
-            <bUsed>true</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>56</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>CDC Communication Interface</bString>
-            <bUsed>true</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-        <DescriptorNode Key="USBDescriptor612">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>38</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>CDC Data Interface</bString>
-            <bUsed>false</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>38</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>CDC Data Interface</bString>
-            <bUsed>false</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-        <DescriptorNode Key="USBDescriptor613">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>40</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>FlexSEA-Execute 0.1</bString>
-            <bUsed>false</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>40</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>FlexSEA-Execute 0.1</bString>
-            <bUsed>false</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-      </Nodes>
-    </DescriptorNode>
-    <DescriptorNode Key="SpecialString">
-      <Nodes>
-        <DescriptorNode Key="Serial">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>2</bLength>
-            <snType>SILICON_NUMBER</snType>
-            <bString />
-            <bUsed>true</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>2</bLength>
-            <snType>SILICON_NUMBER</snType>
-            <bString />
-            <bUsed>true</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-        <DescriptorNode Key="EE">
-          <m_value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>16</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>MSFT100</bString>
-            <bUsed>true</bUsed>
-          </m_value>
-          <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">
-            <bDescriptorType>STRING</bDescriptorType>
-            <bLength>16</bLength>
-            <snType>USER_ENTERED_TEXT</snType>
-            <bString>MSFT100</bString>
-            <bUsed>true</bUsed>
-          </Value>
-          <Nodes />
-        </DescriptorNode>
-      </Nodes>
-    </DescriptorNode>
-  </Tree_x0020_Descriptors>
-</Tree>]]></Value>
-      </Parameter>
-      <Parameter name="VendorName">
-        <Value />
-      </Parameter>
-      <Parameter name="Vid">
-        <Value>04B4</Value>
       </Parameter>
     </Instance>
     <Instance guid="c58f71f3-7f17-4bb3-a115-b86b01cdd405" name="EX15" component="cy_pins_v2_20">
@@ -17135,7 +16466,7 @@
       </Parameter>
     </Instance>
   </Instances>
-  <Signals count="298">
+  <Signals count="300">
     <Signal name="mywire_1[1:0]" type="Digital" terminalCount="3">
       <Terminal name="BasicCounter_1.cnt[1:0]" type="Instance Digital Output" />
       <Terminal name="BasicCounter_1.reset" type="Instance Digital Input" />
@@ -18146,6 +17477,12 @@
     </Signal>
     <Signal name="Net_13817" type="Digital" terminalCount="1">
       <Terminal name="Clock_6.dig_domain_out" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13820" type="Digital" terminalCount="1">
+      <Terminal name="USBUART_1.sof" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_13821" type="Digital" terminalCount="1">
+      <Terminal name="USBUART_1.vbusdet" type="Instance Digital Input" />
     </Signal>
   </Signals>
   <Properties>
