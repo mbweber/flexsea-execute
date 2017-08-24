@@ -290,6 +290,15 @@ void mainFSM10kHz(void)
 	
 	#endif	//USE_COMM
 	
+	//Current sensing:
+	#if(MOTOR_COMMUT == COMMUT_BLOCK)
+	if(update_current_flag == 1)
+	{
+		update_current_arrays();
+		update_current_flag = 0;
+	}
+	#endif	//(MOTOR_COMMUT == COMMUT_BLOCK)
+	
 	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
 		(MOTOR_COMMUT == COMMUT_SINE))
 		

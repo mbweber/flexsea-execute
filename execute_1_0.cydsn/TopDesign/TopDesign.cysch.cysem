@@ -827,7 +827,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="0c6412a0-b2ea-4b9d-8feb-24c851a1767d" name="CS1" component="cy_pins_v2_10">
+    <Instance guid="0c6412a0-b2ea-4b9d-8feb-24c851a1767d" name="CS1" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -839,6 +839,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -870,6 +873,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value>0</Value>
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -880,6 +886,15 @@
         <Value>CS1</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -926,6 +941,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -1677,7 +1695,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="180a4126-be23-4e0f-84fc-9a2f17ba0361" name="PWML2" component="cy_pins_v2_10">
+    <Instance guid="180a4126-be23-4e0f-84fc-9a2f17ba0361" name="PWML2" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -1689,6 +1707,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -1720,6 +1741,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -1730,6 +1754,15 @@
         <Value>PWML2</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -1776,6 +1809,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -2064,7 +2100,7 @@
         <Expression>ABUF_HIGHPOWER</Expression>
       </Parameter>
     </Instance>
-    <Instance guid="1ea163a5-96b8-49b5-b1df-0e9b3c14842a" name="CS3" component="cy_pins_v2_10">
+    <Instance guid="1ea163a5-96b8-49b5-b1df-0e9b3c14842a" name="CS3" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -2076,6 +2112,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -2107,6 +2146,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value>0</Value>
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -2117,6 +2159,15 @@
         <Value>CS3</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -2163,6 +2214,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -2816,7 +2870,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="366ed71f-6bab-4bec-81a8-ea59e9332049" name="Timer_2" component="Timer_v2_70">
+    <Instance guid="366ed71f-6bab-4bec-81a8-ea59e9332049" name="Timer_2" component="Timer_v2_80">
       <Parameter name="CaptureAlternatingFall">
         <Value>false</Value>
       </Parameter>
@@ -5032,7 +5086,7 @@
         <Value>1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="61fcc736-cd67-48a8-9680-0e9874dc7328" name="PWML3" component="cy_pins_v2_10">
+    <Instance guid="61fcc736-cd67-48a8-9680-0e9874dc7328" name="PWML3" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -5044,6 +5098,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -5075,6 +5132,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -5085,6 +5145,15 @@
         <Value>PWML3</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -5131,6 +5200,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -5313,7 +5385,7 @@
         <Value>DMA_1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="65ddb12f-42df-47c6-bdb3-14853b1c1f83" name="CS2" component="cy_pins_v2_10">
+    <Instance guid="65ddb12f-42df-47c6-bdb3-14853b1c1f83" name="CS2" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -5325,6 +5397,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -5356,6 +5431,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value>0</Value>
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -5366,6 +5444,15 @@
         <Value>CS2</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -5412,6 +5499,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -5723,7 +5813,7 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
-    <Instance guid="69c3fa97-e04d-4986-a38f-943229965c59" name="QuadDec_1" component="QuadDec_v3_0">
+    <Instance guid="69c3fa97-e04d-4986-a38f-943229965c59" name="QuadDec_1" component="QuadDec_v2_40">
       <Parameter name="CounterResolution">
         <Value>4</Value>
       </Parameter>
@@ -6265,7 +6355,7 @@
         <Value>10K</Value>
       </Parameter>
     </Instance>
-    <Instance guid="7da87c79-ecc1-4c24-afe5-6109e299983b" name="Timer_1" component="Timer_v2_70">
+    <Instance guid="7da87c79-ecc1-4c24-afe5-6109e299983b" name="Timer_1" component="Timer_v2_80">
       <Parameter name="CaptureAlternatingFall">
         <Value>false</Value>
       </Parameter>
@@ -6548,7 +6638,7 @@
         <Expression>Software</Expression>
       </Parameter>
     </Instance>
-    <Instance guid="81b4729a-59ee-426c-9f39-b98351e01c8a" name="AOP_IN" component="cy_pins_v2_10">
+    <Instance guid="81b4729a-59ee-426c-9f39-b98351e01c8a" name="AOP_IN" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -6560,6 +6650,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -6591,6 +6684,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value>0</Value>
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -6601,6 +6697,15 @@
         <Value>AOP_IN</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -6647,6 +6752,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -8716,7 +8824,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="9ee7e103-e529-4e2b-900d-80a68dd5d88f" name="PWMH2" component="cy_pins_v2_10">
+    <Instance guid="9ee7e103-e529-4e2b-900d-80a68dd5d88f" name="PWMH2" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -8728,6 +8836,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -8759,6 +8870,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -8769,6 +8883,15 @@
         <Value>PWMH2</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -8815,6 +8938,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -8972,7 +9098,7 @@
         <Value>1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="a572df6a-16d9-40d9-b859-9b59d592588e" name="MUXO" component="cy_pins_v2_10">
+    <Instance guid="a572df6a-16d9-40d9-b859-9b59d592588e" name="MUXO" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -8984,6 +9110,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -9015,6 +9144,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value>0</Value>
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -9025,6 +9157,15 @@
         <Value>MUXO</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -9071,6 +9212,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -10278,7 +10422,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="b7ef921a-be15-4f2b-abe6-4aabdf37e876" name="PWMH1" component="cy_pins_v2_10">
+    <Instance guid="b7ef921a-be15-4f2b-abe6-4aabdf37e876" name="PWMH1" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -10290,6 +10434,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -10319,6 +10466,9 @@
         <Value />
       </Parameter>
       <Parameter name="InputBuffersEnabled">
+        <Value />
+      </Parameter>
+      <Parameter name="InputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="InputSyncModes">
@@ -10333,6 +10483,15 @@
       <Parameter name="InterruptModes">
         <Value />
       </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
+        <Value />
+      </Parameter>
       <Parameter name="InvertInClock">
         <Value>false</Value>
       </Parameter>
@@ -10377,6 +10536,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -10450,7 +10612,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="b8b8adf7-df3e-4b18-be5f-6e1ac06a3fec" name="PWML1" component="cy_pins_v2_10">
+    <Instance guid="b8b8adf7-df3e-4b18-be5f-6e1ac06a3fec" name="PWML1" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -10462,6 +10624,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -10491,6 +10656,9 @@
         <Value />
       </Parameter>
       <Parameter name="InputBuffersEnabled">
+        <Value />
+      </Parameter>
+      <Parameter name="InputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="InputSyncModes">
@@ -10505,6 +10673,15 @@
       <Parameter name="InterruptModes">
         <Value />
       </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
+        <Value />
+      </Parameter>
       <Parameter name="InvertInClock">
         <Value>false</Value>
       </Parameter>
@@ -10549,6 +10726,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -10622,7 +10802,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="b974f587-e4e1-4d3e-a177-636ab0c25454" name="PWMH3" component="cy_pins_v2_10">
+    <Instance guid="b974f587-e4e1-4d3e-a177-636ab0c25454" name="PWMH3" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -10634,6 +10814,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -10665,6 +10848,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -10675,6 +10861,15 @@
         <Value>PWMH3</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -10721,6 +10916,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -11128,7 +11326,7 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
-    <Instance guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_10">
+    <Instance guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_20">
       <Parameter name="AudioDescriptors">
         <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
 <Tree xmlns:CustomizerVersion="3_0">
@@ -13112,7 +13310,7 @@
         <Expression>ABUF_HIGHPOWER</Expression>
       </Parameter>
     </Instance>
-    <Instance guid="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" name="AOP_OUT" component="cy_pins_v2_10">
+    <Instance guid="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" name="AOP_OUT" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -13124,6 +13322,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -13155,6 +13356,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -13165,6 +13369,15 @@
         <Value>AOP_OUT</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -13210,6 +13423,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -13354,7 +13570,7 @@
         <Value>true</Value>
       </Parameter>
     </Instance>
-    <Instance guid="ce73189f-5148-43a5-99ce-ea0f208598b4" name="EX1" component="cy_pins_v2_10">
+    <Instance guid="ce73189f-5148-43a5-99ce-ea0f208598b4" name="EX1" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -13366,6 +13582,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -13397,6 +13616,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -13407,6 +13629,15 @@
         <Value>EX1</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -13453,6 +13684,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -14122,7 +14356,7 @@
         <Value>false</Value>
       </Parameter>
     </Instance>
-    <Instance guid="d3a3e99e-1259-4a31-9da7-9c098c3b6678" name="EX2" component="cy_pins_v2_10">
+    <Instance guid="d3a3e99e-1259-4a31-9da7-9c098c3b6678" name="EX2" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -14134,6 +14368,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -14165,6 +14402,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -14175,6 +14415,15 @@
         <Value>EX2</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -14221,6 +14470,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -14545,7 +14797,7 @@
         <Value>1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="db945790-2f7b-4ede-a9b2-cc33276fe167" name="EX3" component="cy_pins_v2_10">
+    <Instance guid="db945790-2f7b-4ede-a9b2-cc33276fe167" name="EX3" component="cy_pins_v2_20">
       <Parameter name="CY_COMMENT">
         <Value />
       </Parameter>
@@ -14557,6 +14809,9 @@
       </Parameter>
       <Parameter name="CY_SUPPRESS_API_GEN">
         <Value>false</Value>
+      </Parameter>
+      <Parameter name="DedicatedInterrupts">
+        <Value />
       </Parameter>
       <Parameter name="DisplayAsBus">
         <Value>false</Value>
@@ -14588,6 +14843,9 @@
       <Parameter name="InputBuffersEnabled">
         <Value />
       </Parameter>
+      <Parameter name="InputMultipliers">
+        <Value />
+      </Parameter>
       <Parameter name="InputSyncModes">
         <Value />
       </Parameter>
@@ -14598,6 +14856,15 @@
         <Value>EX3</Value>
       </Parameter>
       <Parameter name="InterruptModes">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_1">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_2">
+        <Value />
+      </Parameter>
+      <Parameter name="InterruptModes_3">
         <Value />
       </Parameter>
       <Parameter name="InvertInClock">
@@ -14644,6 +14911,9 @@
         <Value />
       </Parameter>
       <Parameter name="OutputModes">
+        <Value />
+      </Parameter>
+      <Parameter name="OutputMultipliers">
         <Value />
       </Parameter>
       <Parameter name="OutputResetEnabled">
@@ -16297,7 +16567,7 @@
         <Value>1</Value>
       </Parameter>
     </Instance>
-    <Instance guid="faf38518-5b30-487a-80fc-f4fa5aef1cdc" name="Timer_angleread" component="Timer_v2_70">
+    <Instance guid="faf38518-5b30-487a-80fc-f4fa5aef1cdc" name="Timer_angleread" component="Timer_v2_80">
       <Parameter name="CaptureAlternatingFall">
         <Value>false</Value>
       </Parameter>
@@ -17108,12 +17378,6 @@
     <Signal name="Net_5321" type="Digital" terminalCount="1">
       <Terminal name="I2C_1.itclk" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_5324" type="Digital" terminalCount="1">
-      <Terminal name="QuadDec_1.index" type="Instance Digital Input" />
-    </Signal>
-    <Signal name="Net_5325" type="Digital" terminalCount="1">
-      <Terminal name="QuadDec_1.interrupt" type="Instance Digital Output" />
-    </Signal>
     <Signal name="Net_6418" type="Digital" terminalCount="1">
       <Terminal name="timebase.dig_domain_out" type="Instance Digital Output" />
     </Signal>
@@ -17166,9 +17430,9 @@
     </Signal>
     <Signal name="Net_7684" type="Digital" terminalCount="4">
       <Terminal name="Use_Hall.control_0" type="Instance Digital Output" />
+      <Terminal name="mux_3.muxsel" type="Instance Digital Input" />
       <Terminal name="mux_2.muxsel" type="Instance Digital Input" />
       <Terminal name="mux_1.muxsel" type="Instance Digital Input" />
-      <Terminal name="mux_3.muxsel" type="Instance Digital Input" />
     </Signal>
     <Signal name="Net_7980" type="Analog" terminalCount="2">
       <Terminal name="AMuxHw_1.AinTerm0" type="Instance Analog InOut" />
@@ -17543,41 +17807,47 @@
       <Terminal name="Status_Reg_1.clock" type="Instance Digital Input" />
       <Terminal name="Clock_6.clock_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13781" type="Digital" terminalCount="1">
+    <Signal name="Net_14165" type="Digital" terminalCount="1">
       <Terminal name="Clock_6.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13782" type="Digital" terminalCount="1">
+    <Signal name="Net_14166" type="Digital" terminalCount="1">
       <Terminal name="Clock_3.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13783" type="Digital" terminalCount="1">
+    <Signal name="Net_14167" type="Digital" terminalCount="1">
       <Terminal name="Clock_5.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13784" type="Digital" terminalCount="1">
+    <Signal name="Net_14168" type="Digital" terminalCount="1">
       <Terminal name="Clock_2.dig_domain_out" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13785" type="Digital" terminalCount="1">
+    <Signal name="Net_14169" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.tc" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13786" type="Digital" terminalCount="1">
+    <Signal name="Net_14170" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.pwm1" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13787" type="Digital" terminalCount="1">
+    <Signal name="Net_14171" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.interrupt" type="Instance Digital Output" />
     </Signal>
-    <Signal name="Net_13788" type="Digital" terminalCount="1">
+    <Signal name="Net_14172" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.capture" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_13789" type="Digital" terminalCount="1">
+    <Signal name="Net_14173" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.kill" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_13790" type="Digital" terminalCount="1">
+    <Signal name="Net_14174" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.trigger" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_13791" type="Digital" terminalCount="1">
+    <Signal name="Net_14175" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.cmp_sel" type="Instance Digital Input" />
     </Signal>
-    <Signal name="Net_13792" type="Digital" terminalCount="1">
+    <Signal name="Net_14176" type="Digital" terminalCount="1">
       <Terminal name="PWM_1.pwm" type="Instance Digital Output" />
+    </Signal>
+    <Signal name="Net_14177" type="Digital" terminalCount="1">
+      <Terminal name="QuadDec_1.index" type="Instance Digital Input" />
+    </Signal>
+    <Signal name="Net_14178" type="Digital" terminalCount="1">
+      <Terminal name="QuadDec_1.interrupt" type="Instance Digital Output" />
     </Signal>
   </Signals>
   <Properties>

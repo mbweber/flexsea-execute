@@ -94,7 +94,7 @@ int main(void)
 			//timing.xlsx for more details. 't1_new_value' updates at 10kHz,
 			//each slot at 1kHz.			
             
-            t1_new_value = 0;            
+            t1_new_value = 0;
 			
 			//Timing FSM:
 			fsmCases[t1_time_share]();

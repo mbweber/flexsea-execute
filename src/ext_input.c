@@ -69,6 +69,9 @@ int32 refresh_enc_control(void)
 	
 	#if(ENC_CONTROL == ENC_QUADRATURE)
 		encoder.count = CTRL_ENC_FCT(QuadDec_1_GetCounter());
+		encoder.count_dif = encoder.count - encoder.count_last;
+		ctrl.position.pos = encoder.count;
+		ctrl.impedance.actual_val = encoder.count;
 	#elif(ENC_CONTROL == ENC_ANALOG)
 		encoder.count = get_analog_pos();	
 	#elif(ENC_CONTROL == ENC_AS5047)
@@ -84,14 +87,6 @@ int32 refresh_enc_control(void)
     #elif(ENC_CONTROL == ENC_CUSTOM)
 		encoder.count = CTRL_ENC_FCT(get_enc_custom());
 	#endif
-	
-	/*
-	encoder.count_dif = encoder.count - encoder.count_last;
-	
-	//For the position & impedance controllers we use the last count
-	ctrl.position.pos = encoder.count;
-	ctrl.impedance.actual_val = encoder.count;
-	*/
 	
 	return encoder.count;
 }

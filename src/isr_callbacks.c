@@ -139,7 +139,8 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 	#endif
 	
 	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_DEFAULT))
-		update_current_arrays();
+		//update_current_arrays();
+		update_current_flag = 1;
 	#else		
 		update_current_flag = 1;		
 	#endif

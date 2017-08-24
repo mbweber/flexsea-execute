@@ -4570,7 +4570,7 @@ Boston, MA 02129
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="942.692" y="481.9659" />
+          <Location x="942.692" y="481.966" />
           <Text>ADC_SAR</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
@@ -5107,7 +5107,7 @@ Boston, MA 02129
     </Instance>
     <Instance shapeName="Shape_1334" zorder="330" guid="b40b9b66-4a21-45de-8244-069969f4e972" name="PGA_2" component="PGA_v2_0">
       <Location x="681" y="471.0753" />
-      <Size width="108" height="92.92468" />
+      <Size width="108" height="92.92465" />
       <SubShapes>
         <Rectangle>
           <Location x="690" y="492" />
@@ -5386,7 +5386,7 @@ Boston, MA 02129
         <SolidBrush color="255, 255, 255" />
       </Fill>
     </Rectangle>
-    <Instance shapeName="Shape_2378" zorder="2" guid="b7ef921a-be15-4f2b-abe6-4aabdf37e876" name="PWMH1" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2378" zorder="2" guid="b7ef921a-be15-4f2b-abe6-4aabdf37e876" name="PWMH1" component="cy_pins_v2_20">
       <Location x="531" y="277.5" />
       <Size width="71.02246" height="9" />
       <SubShapes>
@@ -5450,7 +5450,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2379" zorder="3" guid="b8b8adf7-df3e-4b18-be5f-6e1ac06a3fec" name="PWML1" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2379" zorder="3" guid="b8b8adf7-df3e-4b18-be5f-6e1ac06a3fec" name="PWML1" component="cy_pins_v2_20">
       <Location x="531" y="289.5" />
       <Size width="69.31348" height="9" />
       <SubShapes>
@@ -5764,7 +5764,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2382" zorder="6" guid="9ee7e103-e529-4e2b-900d-80a68dd5d88f" name="PWMH2" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2382" zorder="6" guid="9ee7e103-e529-4e2b-900d-80a68dd5d88f" name="PWMH2" component="cy_pins_v2_20">
       <Location x="531" y="301.5" />
       <Size width="72.32129" height="9" />
       <SubShapes>
@@ -5828,7 +5828,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2383" zorder="7" guid="180a4126-be23-4e0f-84fc-9a2f17ba0361" name="PWML2" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2383" zorder="7" guid="180a4126-be23-4e0f-84fc-9a2f17ba0361" name="PWML2" component="cy_pins_v2_20">
       <Location x="531" y="313.5" />
       <Size width="70.6123" height="9" />
       <SubShapes>
@@ -5892,7 +5892,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2384" zorder="8" guid="b974f587-e4e1-4d3e-a177-636ab0c25454" name="PWMH3" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2384" zorder="8" guid="b974f587-e4e1-4d3e-a177-636ab0c25454" name="PWMH3" component="cy_pins_v2_20">
       <Location x="531" y="325.5" />
       <Size width="72.4043" height="9" />
       <SubShapes>
@@ -5956,7 +5956,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2385" zorder="9" guid="61fcc736-cd67-48a8-9680-0e9874dc7328" name="PWML3" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2385" zorder="9" guid="61fcc736-cd67-48a8-9680-0e9874dc7328" name="PWML3" component="cy_pins_v2_20">
       <Location x="531" y="337.5" />
       <Size width="70.69531" height="9" />
       <SubShapes>
@@ -6514,7 +6514,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2392" zorder="17" guid="0c6412a0-b2ea-4b9d-8feb-24c851a1767d" name="CS1" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2392" zorder="17" guid="0c6412a0-b2ea-4b9d-8feb-24c851a1767d" name="CS1" component="cy_pins_v2_20">
       <Location x="692.7695" y="253.5" />
       <Size width="54.23047" height="9" />
       <SubShapes>
@@ -6682,7 +6682,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2394" zorder="19" guid="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" name="AOP_OUT" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2394" zorder="19" guid="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" name="AOP_OUT" component="cy_pins_v2_20">
       <Location x="1023" y="259.5" />
       <Size width="83.43945" height="9.006836" />
       <SubShapes>
@@ -6735,7 +6735,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2395" zorder="20" guid="a572df6a-16d9-40d9-b859-9b59d592588e" name="MUXO" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2395" zorder="20" guid="a572df6a-16d9-40d9-b859-9b59d592588e" name="MUXO" component="cy_pins_v2_20">
       <Location x="799.5" y="273" />
       <Size width="9" height="64.87012" />
       <SubShapes>
@@ -6788,7 +6788,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2396" zorder="21" guid="81b4729a-59ee-426c-9f39-b98351e01c8a" name="AOP_IN" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2396" zorder="21" guid="81b4729a-59ee-426c-9f39-b98351e01c8a" name="AOP_IN" component="cy_pins_v2_20">
       <Location x="812.5908" y="289.5" />
       <Size width="72.40918" height="9.006836" />
       <SubShapes>
@@ -7116,7 +7116,7 @@ Boston, MA 02129
           </Fill>
         </ClosedShape>
         <Annotation>
-          <Location x="883.7236" y="217.9384" />
+          <Location x="883.7236" y="217.9385" />
           <Text>VDAC</Text>
           <Fill>
             <SolidBrush color="0, 0, 255" />
@@ -7385,7 +7385,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2408" zorder="39" guid="65ddb12f-42df-47c6-bdb3-14853b1c1f83" name="CS2" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2408" zorder="39" guid="65ddb12f-42df-47c6-bdb3-14853b1c1f83" name="CS2" component="cy_pins_v2_20">
       <Location x="692.7695" y="265.5" />
       <Size width="54.23047" height="9" />
       <SubShapes>
@@ -7438,7 +7438,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2409" zorder="40" guid="1ea163a5-96b8-49b5-b1df-0e9b3c14842a" name="CS3" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2409" zorder="40" guid="1ea163a5-96b8-49b5-b1df-0e9b3c14842a" name="CS3" component="cy_pins_v2_20">
       <Location x="692.7695" y="277.5" />
       <Size width="54.23047" height="9" />
       <SubShapes>
@@ -7561,7 +7561,7 @@ Boston, MA 02129
     </Wire>
     <Instance shapeName="Shape_2443" zorder="67" guid="63ee9d70-f41e-4872-b801-001889159db4" name="DMA_1" component="cy_dma_v1_70">
       <Location x="747" y="115.7105" />
-      <Size width="60" height="58.28952" />
+      <Size width="60" height="58.28951" />
       <SubShapes>
         <Rectangle>
           <Location x="756" y="138" />
@@ -7699,8 +7699,8 @@ Boston, MA 02129
       <Point2 x="534" y="342" />
     </Wire>
     <Instance shapeName="Shape_2459" zorder="83" guid="ad921bac-ac66-457a-aa99-2e3435356212" name="LUT_HALL_DIR" component="LUT_v1_50">
-      <Location x="291" y="248.0942" />
-      <Size width="90" height="105.9058" />
+      <Location x="291" y="248.0943" />
+      <Size width="90" height="105.9057" />
       <SubShapes>
         <Rectangle>
           <Location x="300" y="270" />
@@ -7750,7 +7750,7 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Annotation>
-          <Location x="297.0304" y="248.0942" />
+          <Location x="297.0304" y="248.0943" />
           <Text>LUT_HALL_DIR</Text>
           <Expression>`=$INSTANCE_NAME`</Expression>
           <Fill>
@@ -8117,7 +8117,7 @@ Boston, MA 02129
           <Point x="559.5125" y="442.8782" />
           <Point x="559.5125" y="448.9281" />
           <Point x="557.3214" y="454.2606" />
-          <Point x="554.1235" y="455.9932" />
+          <Point x="554.1235" y="455.9933" />
           <Point x="553.9091" y="455.9968" />
           <Point x="560.1431" y="455.9968" />
           <Point x="559.8406" y="455.9879" />
@@ -8315,7 +8315,7 @@ Boston, MA 02129
     </Instance>
     <Instance shapeName="Shape_2500" zorder="140" guid="4638dba0-c3e5-4930-a9cf-bddc1a91afb5" name="Coast_Brake" component="CyControlReg_v1_80">
       <Location x="453" y="116.0466" />
-      <Size width="81" height="41.95345" />
+      <Size width="81" height="41.95344" />
       <SubShapes>
         <Rectangle>
           <Location x="462" y="126" />
@@ -8422,7 +8422,7 @@ Boston, MA 02129
       <Font value="Microsoft Sans Serif, 10pt, style=Bold, Underline" />
       <TextAlignment value="TopLeft" />
     </Annotation>
-    <Instance shapeName="Shape_2522" zorder="156" guid="ce73189f-5148-43a5-99ce-ea0f208598b4" name="EX1" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2522" zorder="156" guid="ce73189f-5148-43a5-99ce-ea0f208598b4" name="EX1" component="cy_pins_v2_20">
       <Location x="193.5" y="213.668" />
       <Size width="9" height="53.33203" />
       <SubShapes>
@@ -8486,7 +8486,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2523" zorder="157" guid="d3a3e99e-1259-4a31-9da7-9c098c3b6678" name="EX2" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2523" zorder="157" guid="d3a3e99e-1259-4a31-9da7-9c098c3b6678" name="EX2" component="cy_pins_v2_20">
       <Location x="181.5" y="213.668" />
       <Size width="9" height="53.33203" />
       <SubShapes>
@@ -8550,7 +8550,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_2524" zorder="158" guid="db945790-2f7b-4ede-a9b2-cc33276fe167" name="EX3" component="cy_pins_v2_10">
+    <Instance shapeName="Shape_2524" zorder="158" guid="db945790-2f7b-4ede-a9b2-cc33276fe167" name="EX3" component="cy_pins_v2_20">
       <Location x="169.5" y="213.668" />
       <Size width="9" height="53.33203" />
       <SubShapes>
@@ -8616,7 +8616,7 @@ Boston, MA 02129
     </Instance>
     <Instance shapeName="Shape_2525" zorder="159" guid="a1bcf2f7-a1ce-4c9a-86c5-032a97c75a4d" name="Virtual_Hall" component="CyControlReg_v1_80">
       <Location x="84" y="254.1686" />
-      <Size width="81" height="63.83139" />
+      <Size width="81" height="63.83138" />
       <SubShapes>
         <Rectangle>
           <Location x="84" y="264" />
@@ -10239,6 +10239,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="397.5" y="547.5" />
+          <Point x="406.5" y="556.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="406.5" y="547.5" />
+          <Point x="397.5" y="556.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="369.9404" y="547.6543" />
           <Text>EX10</Text>
@@ -10249,16 +10263,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="399.0078" y="550.2617" />
-          <Size width="6.123047" height="3.708984" />
+          <Location x="401.0352" y="550.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="399.0078" y="550.2617" />
-          <Text>1[2]</Text>
+          <Location x="401.0352" y="550.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -10292,6 +10306,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="397.5" y="643.5" />
+          <Point x="406.5" y="652.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="406.5" y="643.5" />
+          <Point x="397.5" y="652.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="369.9404" y="643.6543" />
           <Text>EX11</Text>
@@ -10302,16 +10330,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="399.0078" y="646.2617" />
-          <Size width="6.123047" height="3.708984" />
+          <Location x="401.0352" y="646.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="399.0078" y="646.2617" />
-          <Text>1[4]</Text>
+          <Location x="401.0352" y="646.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11226,6 +11254,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="169.5" />
+          <Point x="412.5" y="178.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="169.5" />
+          <Point x="403.5" y="178.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="169.6543" />
           <Text>PWMH1</Text>
@@ -11236,16 +11278,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="404" y="172.2617" />
-          <Size width="8" height="3.708984" />
+          <Location x="407.0352" y="172.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="403.8633" y="172.2617" />
-          <Text>15[3]</Text>
+          <Location x="407.0352" y="172.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11290,6 +11332,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="181.5" />
+          <Point x="412.5" y="190.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="181.5" />
+          <Point x="403.5" y="190.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="181.6543" />
           <Text>PWML1</Text>
@@ -11300,16 +11356,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="404" y="184.2617" />
-          <Size width="8" height="3.708984" />
+          <Location x="407.0352" y="184.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="403.8633" y="184.2617" />
-          <Text>15[2]</Text>
+          <Location x="407.0352" y="184.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11500,10 +11556,10 @@ Boston, MA 02129
           <Point x="238.0762" y="307.6352" />
           <Point x="238.0762" y="309.7652" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
-            <SolidBrush color="0, 0, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Outline>
           <Fill>
-            <SolidBrush color="0, 128, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Fill>
         </ClosedShape>
         <Rectangle>
@@ -11595,6 +11651,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="289.5" />
+          <Point x="412.5" y="298.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="289.5" />
+          <Point x="403.5" y="298.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="289.6543" />
           <Text>PWMH2</Text>
@@ -11605,16 +11675,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="404.7324" y="292.3105" />
-          <Size width="6.398438" height="3.660156" />
+          <Location x="407.0352" y="292.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="404.7324" y="292.3105" />
-          <Text>5[5]</Text>
+          <Location x="407.0352" y="292.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11659,6 +11729,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="301.5" />
+          <Point x="412.5" y="310.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="301.5" />
+          <Point x="403.5" y="310.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="301.6543" />
           <Text>PWML2</Text>
@@ -11669,16 +11753,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="404.7324" y="304.2734" />
-          <Size width="6.398438" height="3.697266" />
+          <Location x="407.0352" y="304.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="404.7324" y="304.2734" />
-          <Text>5[4]</Text>
+          <Location x="407.0352" y="304.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11723,6 +11807,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="409.5" />
+          <Point x="412.5" y="418.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="409.5" />
+          <Point x="403.5" y="418.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="409.6543" />
           <Text>PWMH3</Text>
@@ -11733,16 +11831,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="405.0078" y="412.2617" />
-          <Size width="6.123047" height="3.708984" />
+          <Location x="407.0352" y="412.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="405.0078" y="412.2617" />
-          <Text>1[7]</Text>
+          <Location x="407.0352" y="412.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -11787,6 +11885,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="403.5" y="421.5" />
+          <Point x="412.5" y="430.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="412.5" y="421.5" />
+          <Point x="403.5" y="430.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="416.4658" y="421.6543" />
           <Text>PWML3</Text>
@@ -11797,16 +11909,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="405.0078" y="424.2617" />
-          <Size width="6.123047" height="3.708984" />
+          <Location x="407.0352" y="424.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="405.0078" y="424.2617" />
-          <Text>1[6]</Text>
+          <Location x="407.0352" y="424.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -12186,6 +12298,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="910.5" y="181.5" />
+          <Point x="901.5" y="190.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="901.5" y="181.5" />
+          <Point x="910.5" y="190.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="913.6553" y="181.6543" />
           <Text>AOP_OUT</Text>
@@ -12196,16 +12322,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="902.8691" y="184.2617" />
-          <Size width="6.390625" height="3.708984" />
+          <Location x="905.0996" y="184.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="902.7402" y="184.2617" />
-          <Text>3[6]</Text>
+          <Location x="905.0352" y="184.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -12239,6 +12365,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="637.5" y="226.5" />
+          <Point x="646.5" y="217.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="637.5" y="217.5" />
+          <Point x="646.5" y="226.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="638.9434" y="230.4658" />
           <Text>MUXO</Text>
@@ -12249,16 +12389,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="640.2617" y="218.8691" />
-          <Size width="3.708984" height="6.390625" />
+          <Location x="640.2617" y="221.0996" />
+          <Size width="2.960938" height="1.865234" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="640.0293" y="218.7402" />
-          <Text>3[1]</Text>
+          <Location x="640.7773" y="221.0352" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -12292,6 +12432,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="691.5" y="211.5" />
+          <Point x="700.5" y="220.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="700.5" y="211.5" />
+          <Point x="691.5" y="220.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="650.5908" y="211.6543" />
           <Text>AOP_IN</Text>
@@ -12302,16 +12456,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="692.7402" y="214.2617" />
-          <Size width="6.390625" height="3.708984" />
+          <Location x="695.0352" y="214.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="692.7402" y="214.2617" />
-          <Text>3[4]</Text>
+          <Location x="695.0352" y="214.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -12506,27 +12660,27 @@ Boston, MA 02129
         </Rectangle>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2582" zorder="18" effectiveName="Net_8035" type="External">
+    <Wire shapeName="Shape_2582" zorder="18" effectiveName="" type="External">
       <Point1 x="726" y="240" />
       <Point2 x="798" y="240" />
     </Wire>
-    <Wire shapeName="Shape_2583" zorder="20" effectiveName="Net_8036" type="External">
+    <Wire shapeName="Shape_2583" zorder="20" effectiveName="" type="External">
       <Point1 x="834" y="240" />
       <Point2 x="864" y="240" />
     </Wire>
-    <Wire shapeName="Shape_2584" zorder="22" effectiveName="Net_8033" type="External">
+    <Wire shapeName="Shape_2584" zorder="22" effectiveName="" type="External">
       <Point1 x="648" y="192" />
       <Point2 x="666" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2585" zorder="24" effectiveName="Net_8034" type="External">
+    <Wire shapeName="Shape_2585" zorder="24" effectiveName="" type="External">
       <Point1 x="702" y="192" />
       <Point2 x="720" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2586" zorder="26" effectiveName="Net_8035" type="External">
+    <Wire shapeName="Shape_2586" zorder="26" effectiveName="" type="External">
       <Point1 x="726" y="228" />
       <Point2 x="726" y="240" />
     </Wire>
-    <Wire shapeName="Shape_2587" zorder="28" effectiveName="Net_8036" type="External">
+    <Wire shapeName="Shape_2587" zorder="28" effectiveName="" type="External">
       <Point1 x="864" y="192" />
       <Point2 x="864" y="240" />
     </Wire>
@@ -12805,10 +12959,10 @@ Boston, MA 02129
           <Point x="535.6352" y="229.9238" />
           <Point x="537.7652" y="229.9238" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
-            <SolidBrush color="0, 0, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Outline>
           <Fill>
-            <SolidBrush color="0, 128, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Fill>
         </ClosedShape>
         <Rectangle>
@@ -12864,23 +13018,23 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2591" zorder="33" effectiveName="Net_8030" type="Analog">
+    <Wire shapeName="Shape_2591" zorder="33" effectiveName="" type="Analog">
       <Point1 x="780" y="144" />
       <Point2 x="780" y="180" />
     </Wire>
-    <Wire shapeName="Shape_2592" zorder="35" effectiveName="Net_8030" type="Analog">
+    <Wire shapeName="Shape_2592" zorder="35" effectiveName="" type="Analog">
       <Point1 x="774" y="144" />
       <Point2 x="780" y="144" />
     </Wire>
-    <Wire shapeName="Shape_2593" zorder="37" effectiveName="Net_8031" type="Analog">
+    <Wire shapeName="Shape_2593" zorder="37" effectiveName="" type="Analog">
       <Point1 x="726" y="192" />
       <Point2 x="726" y="216" />
     </Wire>
-    <Wire shapeName="Shape_2594" zorder="39" effectiveName="Net_8031" type="Analog">
+    <Wire shapeName="Shape_2594" zorder="39" effectiveName="" type="Analog">
       <Point1 x="726" y="192" />
       <Point2 x="780" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2595" zorder="41" effectiveName="Net_8031" type="Analog">
+    <Wire shapeName="Shape_2595" zorder="41" effectiveName="" type="Analog">
       <Point1 x="720" y="216" />
       <Point2 x="726" y="216" />
     </Wire>
@@ -13019,11 +13173,11 @@ Boston, MA 02129
       <Font value="Microsoft Sans Serif, 10pt, style=Bold, Underline" />
       <TextAlignment value="TopLeft" />
     </Annotation>
-    <Wire shapeName="Shape_2600" zorder="47" effectiveName="Net_7986" type="Digital">
+    <Wire shapeName="Shape_2600" zorder="47" effectiveName="" type="Digital">
       <Point1 x="372" y="174" />
       <Point2 x="384" y="174" />
     </Wire>
-    <Wire shapeName="Shape_2601" zorder="49" effectiveName="Net_7987" type="Digital">
+    <Wire shapeName="Shape_2601" zorder="49" effectiveName="" type="Digital">
       <Point1 x="372" y="186" />
       <Point2 x="384" y="186" />
     </Wire>
@@ -13197,15 +13351,15 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2604" zorder="53" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_2604" zorder="53" effectiveName="" type="Digital">
       <Point1 x="252" y="306" />
       <Point2 x="288" y="306" />
     </Wire>
-    <Wire shapeName="Shape_2605" zorder="55" effectiveName="Net_8475" type="Digital">
+    <Wire shapeName="Shape_2605" zorder="55" effectiveName="" type="Digital">
       <Point1 x="372" y="294" />
       <Point2 x="384" y="294" />
     </Wire>
-    <Wire shapeName="Shape_2606" zorder="57" effectiveName="Net_8476" type="Digital">
+    <Wire shapeName="Shape_2606" zorder="57" effectiveName="" type="Digital">
       <Point1 x="372" y="306" />
       <Point2 x="384" y="306" />
     </Wire>
@@ -13379,11 +13533,11 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2609" zorder="61" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_2609" zorder="61" effectiveName="" type="Digital">
       <Point1 x="252" y="426" />
       <Point2 x="288" y="426" />
     </Wire>
-    <Wire shapeName="Shape_2610" zorder="63" effectiveName="Net_11450" type="Digital">
+    <Wire shapeName="Shape_2610" zorder="63" effectiveName="" type="Digital">
       <Point1 x="372" y="426" />
       <Point2 x="384" y="426" />
     </Wire>
@@ -13416,7 +13570,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2612" zorder="66" effectiveName="Net_455" type="Digital">
+    <Wire shapeName="Shape_2612" zorder="66" effectiveName="" type="Digital">
       <Point1 x="516" y="312" />
       <Point2 x="528" y="312" />
     </Wire>
@@ -13511,27 +13665,27 @@ Boston, MA 02129
         </Line>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2614" zorder="73" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_2614" zorder="73" effectiveName="" type="Digital">
       <Point1 x="252" y="186" />
       <Point2 x="252" y="306" />
     </Wire>
-    <Wire shapeName="Shape_2616" zorder="75" effectiveName="Net_11448" type="Digital">
+    <Wire shapeName="Shape_2616" zorder="75" effectiveName="" type="Digital">
       <Point1 x="372" y="414" />
       <Point2 x="384" y="414" />
     </Wire>
-    <Wire shapeName="Shape_2617" zorder="77" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_2617" zorder="77" effectiveName="" type="Digital">
       <Point1 x="252" y="186" />
       <Point2 x="288" y="186" />
     </Wire>
-    <Wire shapeName="Shape_2622" zorder="81" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_2622" zorder="81" effectiveName="" type="Digital">
       <Point1 x="768" y="354" />
       <Point2 x="774" y="354" />
     </Wire>
-    <Wire shapeName="Shape_2623" zorder="83" effectiveName="Net_11556" type="Digital">
+    <Wire shapeName="Shape_2623" zorder="83" effectiveName="" type="Digital">
       <Point1 x="834" y="366" />
       <Point2 x="840" y="366" />
     </Wire>
-    <Wire shapeName="Shape_2624" zorder="85" effectiveName="Net_8041" type="Digital">
+    <Wire shapeName="Shape_2624" zorder="85" effectiveName="" type="Digital">
       <Point1 x="558" y="228" />
       <Point2 x="606" y="228" />
     </Wire>
@@ -13589,11 +13743,11 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2626" zorder="88" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_2626" zorder="88" effectiveName="" type="Digital">
       <Point1 x="216" y="246" />
       <Point2 x="216" y="366" />
     </Wire>
-    <Wire shapeName="Shape_2632" zorder="96" effectiveName="mywire_1[1]" type="Digital">
+    <Wire shapeName="Shape_2632" zorder="96" effectiveName="" type="Digital">
       <Point1 x="510" y="324" />
       <Point2 x="528" y="324" />
     </Wire>
@@ -13622,6 +13776,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="553.5" y="187.5" />
+          <Point x="562.5" y="196.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="562.5" y="187.5" />
+          <Point x="553.5" y="196.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="530.7695" y="187.6543" />
           <Text>CS1</Text>
@@ -13632,16 +13800,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="554.7402" y="190.2617" />
-          <Size width="6.390625" height="3.708984" />
+          <Location x="557.0352" y="190.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="554.7402" y="190.2617" />
-          <Text>3[3]</Text>
+          <Location x="557.0352" y="190.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -13675,6 +13843,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="553.5" y="175.5" />
+          <Point x="562.5" y="184.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="562.5" y="175.5" />
+          <Point x="553.5" y="184.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="530.7695" y="175.6543" />
           <Text>CS3</Text>
@@ -13685,16 +13867,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="554.7402" y="178.2617" />
-          <Size width="6.390625" height="3.708984" />
+          <Location x="557.0352" y="178.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="554.7402" y="178.2617" />
-          <Text>3[0]</Text>
+          <Location x="557.0352" y="178.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -13728,6 +13910,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="553.5" y="199.5" />
+          <Point x="562.5" y="208.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="562.5" y="199.5" />
+          <Point x="553.5" y="208.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="530.7695" y="199.6543" />
           <Text>CS2</Text>
@@ -13738,16 +13934,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="554.7402" y="202.2617" />
-          <Size width="6.390625" height="3.708984" />
+          <Location x="557.0352" y="202.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="554.7402" y="202.2617" />
-          <Text>3[2]</Text>
+          <Location x="557.0352" y="202.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -13756,11 +13952,11 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2640" zorder="101" effectiveName="Net_12460" type="Analog">
+    <Wire shapeName="Shape_2640" zorder="101" effectiveName="" type="Analog">
       <Point1 x="642" y="192" />
       <Point2 x="642" y="198" />
     </Wire>
-    <Wire shapeName="Shape_2644" zorder="103" effectiveName="mywire_1[1:0]" type="Digital">
+    <Wire shapeName="Shape_2644" zorder="103" effectiveName="" type="Digital">
       <Point1 x="618" y="228" />
       <Point2 x="618" y="312" />
       <Annotation zorder="4">
@@ -13769,27 +13965,27 @@ Boston, MA 02129
         <TextAlignment value="TopRight" />
       </Annotation>
     </Wire>
-    <Wire shapeName="Shape_2649" zorder="107" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_2649" zorder="107" effectiveName="" type="Digital">
       <Point1 x="216" y="126" />
       <Point2 x="216" y="246" />
     </Wire>
-    <Wire shapeName="Shape_2650" zorder="109" effectiveName="Net_13047" type="Digital">
+    <Wire shapeName="Shape_2650" zorder="109" effectiveName="" type="Digital">
       <Point1 x="768" y="366" />
       <Point2 x="780" y="366" />
     </Wire>
-    <Wire shapeName="Shape_2653" zorder="113" effectiveName="Net_11841" type="Analog">
+    <Wire shapeName="Shape_2653" zorder="113" effectiveName="" type="Analog">
       <Point1 x="846" y="186" />
       <Point2 x="882" y="186" />
     </Wire>
-    <Wire shapeName="Shape_2654" zorder="115" effectiveName="Net_11841" type="Analog">
+    <Wire shapeName="Shape_2654" zorder="115" effectiveName="" type="Analog">
       <Point1 x="672" y="318" />
       <Point2 x="684" y="318" />
     </Wire>
-    <Wire shapeName="Shape_2655" zorder="117" effectiveName="Net_11841" type="Analog">
+    <Wire shapeName="Shape_2655" zorder="117" effectiveName="" type="Analog">
       <Point1 x="672" y="270" />
       <Point2 x="672" y="318" />
     </Wire>
-    <Wire shapeName="Shape_2656" zorder="119" effectiveName="Net_11841" type="Analog">
+    <Wire shapeName="Shape_2656" zorder="119" effectiveName="" type="Analog">
       <Point1 x="672" y="270" />
       <Point2 x="882" y="270" />
     </Wire>
@@ -13807,6 +14003,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="421.5" y="478.5" />
+          <Point x="430.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="430.5" y="478.5" />
+          <Point x="421.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="434.4658" y="469.6543" />
           <Text>EX3</Text>
@@ -13817,16 +14027,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="422.625" y="472.0293" />
-          <Size width="6.505859" height="3.708984" />
+          <Location x="425.0352" y="472.7773" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="422.625" y="472.2617" />
-          <Text>4[6]</Text>
+          <Location x="425.0352" y="472.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -13849,6 +14059,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="349.5" y="478.5" />
+          <Point x="358.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="358.5" y="478.5" />
+          <Point x="349.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="362.4658" y="469.6543" />
           <Text>EX1</Text>
@@ -13859,16 +14083,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="350.625" y="472.0293" />
-          <Size width="6.505859" height="3.697266" />
+          <Location x="353.0352" y="472.7773" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="350.625" y="472.2734" />
-          <Text>4[5]</Text>
+          <Location x="353.0352" y="472.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -13877,31 +14101,31 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2663" zorder="125" effectiveName="Net_8040" type="Analog">
+    <Wire shapeName="Shape_2663" zorder="125" effectiveName="" type="Analog">
       <Point1 x="582" y="204" />
       <Point2 x="594" y="204" />
     </Wire>
-    <Wire shapeName="Shape_2668" zorder="127" effectiveName="Net_12318" type="Analog">
+    <Wire shapeName="Shape_2668" zorder="127" effectiveName="" type="Analog">
       <Point1 x="582" y="192" />
       <Point2 x="594" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2671" zorder="129" effectiveName="Net_11575" type="Analog">
+    <Wire shapeName="Shape_2671" zorder="129" effectiveName="" type="Analog">
       <Point1 x="582" y="180" />
       <Point2 x="594" y="180" />
     </Wire>
-    <Wire shapeName="Shape_2672" zorder="131" effectiveName="Net_12460" type="Analog">
+    <Wire shapeName="Shape_2672" zorder="131" effectiveName="" type="Analog">
       <Point1 x="630" y="192" />
       <Point2 x="642" y="192" />
     </Wire>
-    <Wire shapeName="Shape_2719" zorder="186" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_2719" zorder="186" effectiveName="" type="Digital">
       <Point1 x="678" y="354" />
       <Point2 x="678" y="432" />
     </Wire>
-    <Wire shapeName="Shape_2722" zorder="151" effectiveName="mywire_1[1]" type="Digital">
+    <Wire shapeName="Shape_2722" zorder="151" effectiveName="" type="Digital">
       <Point1 x="510" y="378" />
       <Point2 x="618" y="378" />
     </Wire>
-    <Wire shapeName="Shape_2723" zorder="105" effectiveName="mywire_1[1]" type="Digital">
+    <Wire shapeName="Shape_2723" zorder="105" effectiveName="" type="Digital">
       <Point1 x="618" y="312" />
       <Point2 x="618" y="378" />
       <Annotation zorder="4">
@@ -13961,7 +14185,7 @@ Boston, MA 02129
         </ClosedShape>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2797" zorder="199" effectiveName="Net_12684" type="Analog">
+    <Wire shapeName="Shape_2797" zorder="199" effectiveName="" type="Analog">
       <Point1 x="420" y="552" />
       <Point2 x="426" y="552" />
     </Wire>
@@ -14424,23 +14648,23 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2837" zorder="206" effectiveName="Net_12761" type="Digital">
+    <Wire shapeName="Shape_2837" zorder="206" effectiveName="" type="Digital">
       <Point1 x="744" y="588" />
       <Point2 x="756" y="588" />
     </Wire>
-    <Wire shapeName="Shape_2840" zorder="138" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_2840" zorder="138" effectiveName="" type="Digital">
       <Point1 x="396" y="366" />
       <Point2 x="396" y="378" />
     </Wire>
-    <Wire shapeName="Shape_2841" zorder="133" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_2841" zorder="133" effectiveName="" type="Digital">
       <Point1 x="372" y="378" />
       <Point2 x="396" y="378" />
     </Wire>
-    <Wire shapeName="Shape_2842" zorder="208" effectiveName="Net_12760" type="Digital">
+    <Wire shapeName="Shape_2842" zorder="208" effectiveName="" type="Digital">
       <Point1 x="810" y="588" />
       <Point2 x="816" y="588" />
     </Wire>
-    <Wire shapeName="Shape_2843" zorder="140" effectiveName="Net_12509" type="Digital">
+    <Wire shapeName="Shape_2843" zorder="140" effectiveName="" type="Digital">
       <Point1 x="372" y="258" />
       <Point2 x="402" y="258" />
     </Wire>
@@ -14458,6 +14682,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="385.5" y="478.5" />
+          <Point x="394.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="394.5" y="478.5" />
+          <Point x="385.5" y="469.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="398.4658" y="469.6543" />
           <Text>EX2</Text>
@@ -14468,16 +14706,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleLeft" />
         </Annotation>
         <Rectangle>
-          <Location x="386.625" y="472.0293" />
-          <Size width="6.505859" height="3.708984" />
+          <Location x="389.0352" y="472.7773" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="386.625" y="472.2617" />
-          <Text>4[3]</Text>
+          <Location x="389.0352" y="472.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -14573,39 +14811,39 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2897" zorder="210" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_2897" zorder="210" effectiveName="" type="Digital">
       <Point1 x="648" y="576" />
       <Point2 x="660" y="576" />
     </Wire>
-    <Wire shapeName="Shape_2941" zorder="212" effectiveName="Net_13307" type="Analog">
+    <Wire shapeName="Shape_2941" zorder="212" effectiveName="" type="Analog">
       <Point1 x="636" y="540" />
       <Point2 x="636" y="552" />
     </Wire>
-    <Wire shapeName="Shape_2942" zorder="214" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_2942" zorder="214" effectiveName="" type="Digital">
       <Point1 x="648" y="432" />
       <Point2 x="648" y="576" />
     </Wire>
-    <Wire shapeName="Shape_2943" zorder="170" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_2943" zorder="170" effectiveName="" type="Digital">
       <Point1 x="600" y="432" />
       <Point2 x="648" y="432" />
     </Wire>
-    <Wire shapeName="Shape_2944" zorder="168" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_2944" zorder="168" effectiveName="" type="Digital">
       <Point1 x="648" y="432" />
       <Point2 x="678" y="432" />
     </Wire>
-    <Wire shapeName="Shape_2946" zorder="201" effectiveName="Net_12774" type="Analog">
+    <Wire shapeName="Shape_2946" zorder="201" effectiveName="" type="Analog">
       <Point1 x="522" y="534" />
       <Point2 x="600" y="534" />
     </Wire>
-    <Wire shapeName="Shape_2948" zorder="203" effectiveName="Net_13335" type="Analog">
+    <Wire shapeName="Shape_2948" zorder="203" effectiveName="" type="Analog">
       <Point1 x="528" y="546" />
       <Point2 x="600" y="546" />
     </Wire>
-    <Wire shapeName="Shape_2950" zorder="216" effectiveName="Net_13307" type="Analog">
+    <Wire shapeName="Shape_2950" zorder="216" effectiveName="" type="Analog">
       <Point1 x="636" y="540" />
       <Point2 x="660" y="540" />
     </Wire>
-    <Wire shapeName="Shape_2951" zorder="218" effectiveName="Net_13307" type="Analog">
+    <Wire shapeName="Shape_2951" zorder="218" effectiveName="" type="Analog">
       <Point1 x="630" y="552" />
       <Point2 x="636" y="552" />
     </Wire>
@@ -14648,15 +14886,15 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2953" zorder="221" effectiveName="Net_12774" type="Analog">
+    <Wire shapeName="Shape_2953" zorder="221" effectiveName="" type="Analog">
       <Point1 x="522" y="534" />
       <Point2 x="522" y="558" />
     </Wire>
-    <Wire shapeName="Shape_2954" zorder="223" effectiveName="Net_13335" type="Analog">
+    <Wire shapeName="Shape_2954" zorder="223" effectiveName="" type="Analog">
       <Point1 x="528" y="546" />
       <Point2 x="528" y="654" />
     </Wire>
-    <Wire shapeName="Shape_2955" zorder="225" effectiveName="Net_12777" type="Analog">
+    <Wire shapeName="Shape_2955" zorder="225" effectiveName="" type="Analog">
       <Point1 x="588" y="570" />
       <Point2 x="600" y="570" />
     </Wire>
@@ -14685,6 +14923,20 @@ Boston, MA 02129
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
+        <Line>
+          <Point x="571.5" y="655.5" />
+          <Point x="580.5" y="664.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
+        <Line>
+          <Point x="580.5" y="655.5" />
+          <Point x="571.5" y="664.5" />
+          <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0.25">
+            <SolidBrush color="128, 128, 128" />
+          </Outline>
+        </Line>
         <Annotation>
           <Location x="547.959" y="655.6543" />
           <Text>MV3</Text>
@@ -14695,16 +14947,16 @@ Boston, MA 02129
           <TextAlignment value="MiddleRight" />
         </Annotation>
         <Rectangle>
-          <Location x="572.625" y="658.2617" />
-          <Size width="6.505859" height="3.708984" />
+          <Location x="575.0352" y="658.2617" />
+          <Size width="1.865234" height="2.960938" />
           <NoOutline />
           <Fill>
             <SolidBrush color="255, 255, 255" />
           </Fill>
         </Rectangle>
         <Annotation>
-          <Location x="572.625" y="658.2617" />
-          <Text>4[0]</Text>
+          <Location x="575.0352" y="658.2617" />
+          <Text>0</Text>
           <Fill>
             <SolidBrush color="0, 0, 0" />
           </Fill>
@@ -14838,27 +15090,27 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2961" zorder="229" effectiveName="Net_13344" type="Analog">
+    <Wire shapeName="Shape_2961" zorder="229" effectiveName="" type="Analog">
       <Point1 x="678" y="666" />
       <Point2 x="702" y="666" />
     </Wire>
-    <Wire shapeName="Shape_2962" zorder="231" effectiveName="Net_13339" type="Analog">
+    <Wire shapeName="Shape_2962" zorder="231" effectiveName="" type="Analog">
       <Point1 x="600" y="660" />
       <Point2 x="612" y="660" />
     </Wire>
-    <Wire shapeName="Shape_2969" zorder="233" effectiveName="Net_13344" type="Analog">
+    <Wire shapeName="Shape_2969" zorder="233" effectiveName="" type="Analog">
       <Point1 x="702" y="612" />
       <Point2 x="702" y="666" />
     </Wire>
-    <Wire shapeName="Shape_2972" zorder="237" effectiveName="Net_13344" type="Analog">
+    <Wire shapeName="Shape_2972" zorder="237" effectiveName="" type="Analog">
       <Point1 x="540" y="558" />
       <Point2 x="540" y="612" />
     </Wire>
-    <Wire shapeName="Shape_2973" zorder="239" effectiveName="Net_13344" type="Analog">
+    <Wire shapeName="Shape_2973" zorder="239" effectiveName="" type="Analog">
       <Point1 x="540" y="558" />
       <Point2 x="600" y="558" />
     </Wire>
-    <Wire shapeName="Shape_2974" zorder="235" effectiveName="Net_13344" type="Analog">
+    <Wire shapeName="Shape_2974" zorder="235" effectiveName="" type="Analog">
       <Point1 x="540" y="612" />
       <Point2 x="702" y="612" />
     </Wire>
@@ -14916,55 +15168,55 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_2976" zorder="242" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2976" zorder="242" effectiveName="" type="Digital">
       <Point1 x="228" y="390" />
       <Point2 x="288" y="390" />
     </Wire>
-    <Wire shapeName="Shape_2979" zorder="248" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2979" zorder="248" effectiveName="" type="Digital">
       <Point1 x="228" y="150" />
       <Point2 x="288" y="150" />
     </Wire>
-    <Wire shapeName="Shape_2981" zorder="250" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2981" zorder="250" effectiveName="" type="Digital">
       <Point1 x="228" y="270" />
       <Point2 x="288" y="270" />
     </Wire>
-    <Wire shapeName="Shape_2982" zorder="246" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2982" zorder="246" effectiveName="" type="Digital">
       <Point1 x="228" y="150" />
       <Point2 x="228" y="270" />
     </Wire>
-    <Wire shapeName="Shape_2983" zorder="244" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2983" zorder="244" effectiveName="" type="Digital">
       <Point1 x="228" y="270" />
       <Point2 x="228" y="390" />
     </Wire>
-    <Wire shapeName="Shape_2984" zorder="252" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2984" zorder="252" effectiveName="" type="Digital">
       <Point1 x="168" y="270" />
       <Point2 x="168" y="372" />
     </Wire>
-    <Wire shapeName="Shape_2986" zorder="254" effectiveName="Net_12712" type="Digital">
+    <Wire shapeName="Shape_2986" zorder="254" effectiveName="" type="Digital">
       <Point1 x="168" y="270" />
       <Point2 x="228" y="270" />
     </Wire>
-    <Wire shapeName="Shape_3199" zorder="94" effectiveName="mywire_1[1]" type="Digital">
+    <Wire shapeName="Shape_3199" zorder="94" effectiveName="" type="Digital">
       <Point1 x="510" y="324" />
       <Point2 x="510" y="378" />
     </Wire>
-    <Wire shapeName="Shape_3222" zorder="121" effectiveName="Net_11841" type="Analog">
+    <Wire shapeName="Shape_3222" zorder="121" effectiveName="" type="Analog">
       <Point1 x="882" y="186" />
       <Point2 x="882" y="270" />
     </Wire>
-    <Wire shapeName="Shape_3231" zorder="153" effectiveName="mywire_1[1:0]" type="Digital">
+    <Wire shapeName="Shape_3231" zorder="153" effectiveName="" type="Digital">
       <Point1 x="612" y="312" />
       <Point2 x="618" y="312" />
     </Wire>
-    <Wire shapeName="Shape_3249" zorder="155" effectiveName="Net_12510" type="Digital">
+    <Wire shapeName="Shape_3249" zorder="155" effectiveName="" type="Digital">
       <Point1 x="384" y="90" />
       <Point2 x="384" y="138" />
     </Wire>
-    <Wire shapeName="Shape_3250" zorder="144" effectiveName="Net_12510" type="Digital">
+    <Wire shapeName="Shape_3250" zorder="144" effectiveName="" type="Digital">
       <Point1 x="372" y="138" />
       <Point2 x="384" y="138" />
     </Wire>
-    <Wire shapeName="Shape_3251" zorder="142" effectiveName="Net_12510" type="Digital">
+    <Wire shapeName="Shape_3251" zorder="142" effectiveName="" type="Digital">
       <Point1 x="384" y="138" />
       <Point2 x="396" y="138" />
     </Wire>
@@ -15009,10 +15261,10 @@ Boston, MA 02129
           <Point x="523.6352" y="469.9238" />
           <Point x="525.7652" y="469.9238" />
           <Outline dashStyle="Solid" startCap="Flat" endCap="Flat" lineJoin="Miter" weight="0">
-            <SolidBrush color="0, 0, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Outline>
           <Fill>
-            <SolidBrush color="0, 128, 0" />
+            <SolidBrush color="255, 255, 255" />
           </Fill>
         </ClosedShape>
         <Rectangle>
@@ -15068,89 +15320,89 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Wire shapeName="Shape_3312" zorder="158" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_3312" zorder="158" effectiveName="" type="Digital">
       <Point1 x="240" y="330" />
       <Point2 x="252" y="330" />
     </Wire>
-    <Wire shapeName="Shape_3313" zorder="71" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_3313" zorder="71" effectiveName="" type="Digital">
       <Point1 x="252" y="306" />
       <Point2 x="252" y="330" />
     </Wire>
-    <Wire shapeName="Shape_3314" zorder="69" effectiveName="Net_11436" type="Digital">
+    <Wire shapeName="Shape_3314" zorder="69" effectiveName="" type="Digital">
       <Point1 x="252" y="330" />
       <Point2 x="252" y="426" />
     </Wire>
-    <Wire shapeName="Shape_3320" zorder="92" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_3320" zorder="92" effectiveName="" type="Digital">
       <Point1 x="216" y="246" />
       <Point2 x="288" y="246" />
     </Wire>
-    <Wire shapeName="Shape_3321" zorder="90" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_3321" zorder="90" effectiveName="" type="Digital">
       <Point1 x="216" y="366" />
       <Point2 x="288" y="366" />
     </Wire>
-    <Wire shapeName="Shape_3323" zorder="160" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_3323" zorder="160" effectiveName="" type="Digital">
       <Point1 x="216" y="366" />
       <Point2 x="216" y="372" />
     </Wire>
-    <Wire shapeName="Shape_3324" zorder="162" effectiveName="Net_11839" type="Digital">
+    <Wire shapeName="Shape_3324" zorder="162" effectiveName="" type="Digital">
       <Point1 x="216" y="126" />
       <Point2 x="288" y="126" />
     </Wire>
-    <Wire shapeName="Shape_3569" zorder="164" effectiveName="Net_12771" type="Digital">
+    <Wire shapeName="Shape_3569" zorder="164" effectiveName="" type="Digital">
       <Point1 x="678" y="354" />
       <Point2 x="684" y="354" />
     </Wire>
-    <Wire shapeName="Shape_3740" zorder="111" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3740" zorder="111" effectiveName="" type="Digital">
       <Point1 x="558" y="396" />
       <Point2 x="774" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3742" zorder="166" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3742" zorder="166" effectiveName="" type="Digital">
       <Point1 x="558" y="444" />
       <Point2 x="564" y="444" />
     </Wire>
-    <Wire shapeName="Shape_3749" zorder="172" effectiveName="Net_12739" type="Digital">
+    <Wire shapeName="Shape_3749" zorder="172" effectiveName="" type="Digital">
       <Point1 x="546" y="468" />
       <Point2 x="564" y="468" />
     </Wire>
-    <Wire shapeName="Shape_3752" zorder="148" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3752" zorder="148" effectiveName="" type="Digital">
       <Point1 x="558" y="396" />
       <Point2 x="558" y="444" />
     </Wire>
-    <Wire shapeName="Shape_3753" zorder="79" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3753" zorder="79" effectiveName="" type="Digital">
       <Point1 x="774" y="354" />
       <Point2 x="774" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3756" zorder="174" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3756" zorder="174" effectiveName="" type="Digital">
       <Point1 x="522" y="348" />
       <Point2 x="522" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3759" zorder="176" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3759" zorder="176" effectiveName="" type="Digital">
       <Point1 x="522" y="348" />
       <Point2 x="528" y="348" />
     </Wire>
-    <Wire shapeName="Shape_3760" zorder="178" effectiveName="Net_13180" type="Digital">
+    <Wire shapeName="Shape_3760" zorder="178" effectiveName="" type="Digital">
       <Point1 x="522" y="396" />
       <Point2 x="558" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3773" zorder="180" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3773" zorder="180" effectiveName="" type="Digital">
       <Point1 x="486" y="396" />
       <Point2 x="486" y="432" />
     </Wire>
-    <Wire shapeName="Shape_3774" zorder="182" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3774" zorder="182" effectiveName="" type="Digital">
       <Point1 x="396" y="396" />
       <Point2 x="486" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3775" zorder="184" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3775" zorder="184" effectiveName="" type="Digital">
       <Point1 x="396" y="378" />
       <Point2 x="396" y="396" />
     </Wire>
-    <Wire shapeName="Shape_3776" zorder="188" effectiveName="Net_12514" type="Digital">
+    <Wire shapeName="Shape_3776" zorder="188" effectiveName="" type="Digital">
       <Point1 x="486" y="432" />
       <Point2 x="564" y="432" />
     </Wire>
   </Page>
   <Page index="4" name="Comm" enabled="true" shapeCount="72">
-    <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_10">
+    <Instance shapeName="Shape_2" zorder="71" guid="c39ef993-d787-4c0c-8ad6-c0c81f866442" name="USBUART_1" component="USBFS_v3_20">
       <Location x="744" y="470.1273" />
       <Size width="72" height="57.87265" />
       <SubShapes>
@@ -17519,7 +17771,7 @@ Boston, MA 02129
       <Point2 x="936" y="312" />
     </Wire>
   </Page>
-  <Page index="5" name="Sensors &amp; External" enabled="true" shapeCount="54">
+  <Page index="5" name="Sensors &amp; External" enabled="true" shapeCount="55">
     <Instance shapeName="Shape_6" zorder="45" guid="56b3df0f-35d1-494d-b64d-b12b26ae4477" name="EX4" component="cy_pins_v2_20">
       <Location x="477.668" y="223.5" />
       <Size width="30.83203" height="9" />
@@ -17562,7 +17814,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_18" zorder="35" guid="69c3fa97-e04d-4986-a38f-943229965c59" name="QuadDec_1" component="QuadDec_v3_0">
+    <Instance shapeName="Shape_18" zorder="35" guid="69c3fa97-e04d-4986-a38f-943229965c59" name="QuadDec_1" component="QuadDec_v2_40">
       <Location x="543" y="211.9025" />
       <Size width="90" height="101.2349" />
       <SubShapes>
@@ -19540,9 +19792,19 @@ Boston, MA 02129
       <Point1 x="744" y="264" />
       <Point2 x="774" y="264" />
     </Wire>
+    <Annotation shapeName="Shape_2996" zorder="74">
+      <Location x="449.9998" y="312" />
+      <Size width="78.00012" height="24" />
+      <Text>v3.0 has a bug! Currently using 2.4</Text>
+      <Fill>
+        <SolidBrush color="255, 0, 0" />
+      </Fill>
+      <Font value="Microsoft Sans Serif, 8pt" />
+      <TextAlignment value="TopLeft" />
+    </Annotation>
   </Page>
   <Page index="6" name="Misc" enabled="true" shapeCount="62">
-    <Instance shapeName="Shape_1" zorder="66" guid="faf38518-5b30-487a-80fc-f4fa5aef1cdc" name="Timer_angleread" component="Timer_v2_70">
+    <Instance shapeName="Shape_1" zorder="66" guid="faf38518-5b30-487a-80fc-f4fa5aef1cdc" name="Timer_angleread" component="Timer_v2_80">
       <Location x="819" y="343.8452" />
       <Size width="90" height="103.1892" />
       <SubShapes>
@@ -19889,7 +20151,7 @@ Boston, MA 02129
         </Annotation>
       </SubShapes>
     </Instance>
-    <Instance shapeName="Shape_173" zorder="10" guid="7da87c79-ecc1-4c24-afe5-6109e299983b" name="Timer_1" component="Timer_v2_70">
+    <Instance shapeName="Shape_173" zorder="10" guid="7da87c79-ecc1-4c24-afe5-6109e299983b" name="Timer_1" component="Timer_v2_80">
       <Location x="483" y="163.7231" />
       <Size width="90" height="103.3113" />
       <SubShapes>
@@ -20183,7 +20445,7 @@ Boston, MA 02129
         <SolidBrush color="255, 255, 255" />
       </Fill>
     </Rectangle>
-    <Instance shapeName="Shape_804" zorder="21" guid="366ed71f-6bab-4bec-81a8-ea59e9332049" name="Timer_2" component="Timer_v2_70">
+    <Instance shapeName="Shape_804" zorder="21" guid="366ed71f-6bab-4bec-81a8-ea59e9332049" name="Timer_2" component="Timer_v2_80">
       <Location x="483" y="301.7231" />
       <Size width="90" height="103.3113" />
       <SubShapes>

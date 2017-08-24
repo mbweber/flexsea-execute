@@ -4256,6 +4256,13 @@
         <Data key="Vector" value="-1" />
       </Group>
     </Group>
+    <Group key="69c3fa97-e04d-4986-a38f-943229965c59/e979b35e-c089-429a-96bb-6d4d69c94283">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="4" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
     <Group key="536caedf-f676-4658-a2c3-dce981f15908">
       <Group key="CortexM3">
         <Data key="Assigned" value="True" />
