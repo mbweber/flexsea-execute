@@ -116,7 +116,6 @@ void isr_sar1_dma_Interrupt_InterruptCallback()
 }
 
 //Current sensing:
-static uint8 update_current_flag = 0;
 void isr_sar2_dma_Interrupt_InterruptCallback()
 {	
 	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_LEGACY))
@@ -137,7 +136,10 @@ void isr_sar2_dma_Interrupt_InterruptCallback()
 			//Current controller
 			motor_current_pid_2(ctrl.current.setpoint_val, ctrl.current.actual_val);
 		}
+	#endif
 	
+	#if((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_DEFAULT))
+		update_current_arrays();
 	#else		
 		update_current_flag = 1;		
 	#endif

@@ -70,6 +70,7 @@ void init_analog(void)
 	ADC_SAR_1_Start();
 	adc_sar1_dma_config();
 	isr_sar1_dma_Start();
+	
 	//ADC_SAR_1_StartConvert();	//Start converting
 }
 

@@ -50,6 +50,7 @@ int16 adc_dma_array[ADC2_BUF_LEN];
 int16 adc_dma_array_buf[ADC2_BUF_LEN];
 
 volatile uint8_t current_sensing_flag = 0;
+uint8 update_current_flag = 0;
 
 int currPhase[8][3] = {{0,0,0}, {1,-1,0}, {-1,0,1}, {0,-1,1}, \
                        {0,1,-1}, {1,0,-1}, {-1,1,0}, {0,0,0}};
@@ -84,6 +85,12 @@ void initCurrentSensing(void)
 		
 		#endif
 	
+		//VDAC8: OpAmp VREF
+		VDAC8_1_Start();
+		
+		//Analog amplifiers & multiplexer(s):
+		Opamp_1_Start();  
+		
 	#else	//(MOTOR_COMMUT == COMMUT_BLOCK)
 	
 	    //VDAC8: OpAmp VREF
@@ -115,12 +122,21 @@ void adc_sar2_dma_config(void)
 
 		//5 transfers per ISR (10 bytes):	
 		xferLen = 10;	
+		
+	#endif
 	
-	#else
+	#if ((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING == CS_DEFAULT))
 	
+		//9 transfers per ISR (18 bytes):	
+		xferLen = ADC2_BUF_LEN*2;
+	
+	#endif
+	
+	#if (MOTOR_COMMUT == COMMUT_SINE)
+		
 		//3 transfers per ISR (6 bytes):	
 		xferLen = 6;	//3 samples
-	
+		
 	#endif
 	
 	//X transfers per ISR (2X bytes):	
@@ -136,16 +152,25 @@ void adc_sar2_dma_config(void)
 
 void update_current_arrays(void)
 {
-	adc_dma_array_buf[0] = adc_dma_array[0];
-	adc_dma_array_buf[1] = adc_dma_array[1];
-    adc_dma_array_buf[2] = adc_dma_array[2];       
-
 	#if(MOTOR_COMMUT == COMMUT_BLOCK)
 	static int phase_a_current, phase_b_current, phase_c_current;
-	int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
-    int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
-    int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
+	int ii;
+    if (calculating_current_flag == 0)
+    {
+        for (ii = 0; ii<ADC2_BUF_LEN;ii++)
+        {
+            adc_dma_array_buf[ii] = adc_dma_array[ii];
+        }
+    }   
+	volatile int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
+    volatile int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
+    volatile int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
+	#else
+	adc_dma_array_buf[0] = adc_dma_array[0];
+	adc_dma_array_buf[1] = adc_dma_array[1];
+    adc_dma_array_buf[2] = adc_dma_array[2];  
 	#endif
+	
     
     //the current measurements are separated into phases in order to assign the angle dependent motor constant to each phase
     //Current measurements -> 16.16 mAmps per IU

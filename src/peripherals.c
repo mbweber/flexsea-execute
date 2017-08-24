@@ -169,6 +169,14 @@ void init_peripherals(void)
 	gui_fsm_flag = ENABLED;
 	#endif	//(RUNTIME_FSM == ENABLED)
 	
+	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
+		(MOTOR_COMMUT == COMMUT_SINE))
+		
+		//Start converting:
+		ADC_SAR_2_StartConvert();
+		
+	#endif
+	
 	#if(MOTOR_COMMUT == COMMUT_SINE) 
 	
 		//Initialize structures:

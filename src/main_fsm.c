@@ -57,6 +57,7 @@
 #include "mag_encoders.h"
 #include "user-ex.h"
 #include <flexsea_board.h>
+#include "current_sensing.h"
 
 //****************************************************************************
 // Variable(s)
@@ -287,7 +288,7 @@ void mainFSM10kHz(void)
 		//Time to reply - RS-485?
 		sendMasterDelayedResponse();
 	
-	#endif	//USE_COMM 
+	#endif	//USE_COMM
 	
 	#if(((MOTOR_COMMUT == COMMUT_BLOCK) && (CURRENT_SENSING != CS_LEGACY)) || \
 		(MOTOR_COMMUT == COMMUT_SINE))
