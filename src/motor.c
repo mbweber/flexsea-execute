@@ -155,14 +155,15 @@ void motor_open_speed_1(int32 voltageToApply)
     #if (MOTOR_COMMUT == COMMUT_BLOCK)
 		
 		uint16 tmp = 0;
+		int16 pdc = 0;
     
          //Clip PWM to valid range
-    	if(pwm_duty >= MAX_PWM)
+    	if(pwmToApply >= MAX_PWM)
     		pdc = MAX_PWM;
-    	else if(pwm_duty <= MIN_PWM)
+    	else if(pwmToApply <= MIN_PWM)
     		pdc = MIN_PWM;
     	else
-    		pdc = pwm_duty;
+    		pdc = pwmToApply;
     	
     	//User defined sign:
     	pdc = pdc * PWM_SIGN;
@@ -254,6 +255,8 @@ void motor_open_speed_2(int16 pwm_duty, int sign)
 //PWM Compare1 registers are set via DMA, not via the API function calls:
 void initDmaPwmCompare(void)
 {
+	#if (MOTOR_COMMUT == COMMUT_SINE)
+		
 	uint8 DMA_PA_Chan, DMA_PB_Chan, DMA_PC_Chan;
 	uint8 DMA_PA_TD[1], DMA_PB_TD[1], DMA_PC_TD[1];
 
@@ -283,6 +286,8 @@ void initDmaPwmCompare(void)
 	CyDmaTdSetAddress(DMA_PC_TD[0], LO16((uint32)&myPWMcompareC), LO16((uint32)PWM_C_COMPARE1_LSB_PTR));
 	CyDmaChSetInitialTd(DMA_PC_Chan, DMA_PC_TD[0]);
 	CyDmaChEnable(DMA_PC_Chan, 1);
+	
+	#endif 	//(MOTOR_COMMUT == COMMUT_SINE)
 }
 
 //Use this to set the new PWM Compare1 values:

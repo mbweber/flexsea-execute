@@ -40,6 +40,7 @@
 #include "user-ex.h"
 #include <flexsea_comm.h>
 //(Add #include as needed when running test code)
+#include "motor.h"
 
 //****************************************************************************
 // Variable(s)
@@ -97,7 +98,7 @@ void test_code_blocking(void)
 	//strain_test_blocking();
 	//safety_cop_comm_test_blocking();
 	//imu_test_code_blocking();
-	//motor_fixed_pwm_test_code_blocking(200);
+	//motor_fixed_pwm_test_code_blocking(3500);
 	//wdclk_test_blocking();
 	//timing_test_blocking();
 	//test_uart_dma_xmit();

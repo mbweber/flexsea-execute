@@ -236,6 +236,8 @@ static void init_dma_4(void)
 //DMA6: UART RX (Bluetooth)
 static void init_dma_6(void)
 {
+	#ifdef USE_BLUETOOTH
+		
 	#define DMA_6_BYTES_PER_BURST 		1
 	#define DMA_6_REQUEST_PER_BURST 	1
 	#define DMA_6_SRC_BASE 				(CYDEV_PERIPH_BASE)
@@ -248,4 +250,6 @@ static void init_dma_6(void)
 	CyDmaTdSetAddress(DMA_6_TD[0], LO16((uint32)UART_1_RXDATA_PTR), LO16((uint32)uart_dma_bt_rx_buf));
 	CyDmaChSetInitialTd(DMA_6_Chan, DMA_6_TD[0]);
 	CyDmaChEnable(DMA_6_Chan, 1);
+	
+	#endif	//USE_BLUETOOTH
 }

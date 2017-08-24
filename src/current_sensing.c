@@ -136,11 +136,16 @@ void adc_sar2_dma_config(void)
 
 void update_current_arrays(void)
 {
-
 	adc_dma_array_buf[0] = adc_dma_array[0];
 	adc_dma_array_buf[1] = adc_dma_array[1];
     adc_dma_array_buf[2] = adc_dma_array[2];       
 
+	#if(MOTOR_COMMUT == COMMUT_BLOCK)
+	static int phase_a_current, phase_b_current, phase_c_current;
+	int phase_c_median = get_median(adc_dma_array_buf[0],adc_dma_array_buf[3],adc_dma_array_buf[6]);
+    int phase_a_median = get_median(adc_dma_array_buf[1],adc_dma_array_buf[4],adc_dma_array_buf[7]);
+    int phase_b_median = get_median(adc_dma_array_buf[2],adc_dma_array_buf[5],adc_dma_array_buf[8]);
+	#endif
     
     //the current measurements are separated into phases in order to assign the angle dependent motor constant to each phase
     //Current measurements -> 16.16 mAmps per IU
