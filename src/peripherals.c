@@ -92,7 +92,7 @@ void init_peripherals(void)
 	init_bluetooth();
 	
 	//Analog, expansion port:
-//	init_analog();
+	init_analog();
 	
 	//Clutch:
 	init_pwro();
