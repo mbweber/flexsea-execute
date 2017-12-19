@@ -29,3 +29,5 @@ execute_1_0.cydsn/execute_1_0.cycdx
 *.dephy
 execute.cywrk.*
 execute_1_0.cydsn/execute_1_0.cyprj.*
+execute_1_0.cydsn/BUILD.log
+execute_1_0.cydsn/execute_1_0.cyprj

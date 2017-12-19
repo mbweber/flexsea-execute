@@ -39,6 +39,23 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "main_fsm.h"
+#include "serial.h"
+#include "i2c.h"
+#include "motor.h"
+#include "misc.h"
+#include "ui.h"
+#include "trapez.h"
+#include "imu.h"
+#include "analog.h"
+#include "usb.h"
+#include "strain.h"
+#include "safety.h"
+#include "peripherals.h"
+#include "control.h"
+#include "sensor_commut.h"
+#include "ext_input.h"
+#include "ext_output.h"
 
 //****************************************************************************
 // Shared variable(s)
