@@ -1,19 +1,20 @@
-[submodule "flexsea-system"]
-	path = flexsea-system
-	url = https://github.com/mbweber/flexsea-system.git
-	branch = dev
 [submodule "flexsea-comm"]
 	path = flexsea-comm
 	url = https://github.com/mbweber/flexsea-comm.git
-	branch = dev
-[submodule "flexsea-shared"]
-	path = flexsea-shared
-	url = https://github.com/mbweber/flexsea-shared.git
-	branch = dev
-[submodule "flexsea-user"]
-	path = flexsea-user
-	url = https://github.com/mbweber/flexsea-user.git
-	branch = dev
+	branch = master
 [submodule "flexsea-execute-cop"]
 	path = flexsea-execute-cop
 	url = https://github.com/mbweber/flexsea-execute-cop.git
+	branch = master
+[submodule "flexsea-shared"]
+	path = flexsea-shared
+	url = https://github.com/mbweber/flexsea-shared.git
+	branch = master
+[submodule "flexsea-system"]
+	path = flexsea-system
+	url = https://github.com/mbweber/flexsea-system.git
+	branch = PosCtrlPPF
+[submodule "flexsea-user"]
+	path = flexsea-user
+	url = https://github.com/mbweber/flexsea-user.git
+	branch = PosCtrlPPF
