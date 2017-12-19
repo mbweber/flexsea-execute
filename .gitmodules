@@ -1,19 +1,19 @@
 [submodule "flexsea-system"]
 	path = flexsea-system
-	url = https://github.com/JFDuval/flexsea-system.git
+	url = https://github.com/mbweber/flexsea-system.git
 	branch = dev
 [submodule "flexsea-comm"]
 	path = flexsea-comm
-	url = https://github.com/JFDuval/flexsea-comm.git
+	url = https://github.com/mbweber/flexsea-comm.git
 	branch = dev
 [submodule "flexsea-shared"]
 	path = flexsea-shared
-	url = https://github.com/JFDuval/flexsea-shared.git
+	url = https://github.com/mbweber/flexsea-shared.git
 	branch = dev
 [submodule "flexsea-user"]
 	path = flexsea-user
-	url = https://github.com/JFDuval/flexsea-user.git
+	url = https://github.com/mbweber/flexsea-user.git
 	branch = dev
 [submodule "flexsea-execute-cop"]
 	path = flexsea-execute-cop
-	url = https://github.com/JFDuval/flexsea-execute-cop.git
+	url = https://github.com/mbweber/flexsea-execute-cop.git
