@@ -13,8 +13,8 @@
 [submodule "flexsea-system"]
 	path = flexsea-system
 	url = https://github.com/mbweber/flexsea-system.git
-	branch = PosCtrlPPF
+	branch = MomCtrlPPF
 [submodule "flexsea-user"]
 	path = flexsea-user
 	url = https://github.com/mbweber/flexsea-user.git
-	branch = PosCtrlPPF
+	branch = MomCtrlPPF
